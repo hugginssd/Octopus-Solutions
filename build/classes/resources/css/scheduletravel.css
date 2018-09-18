@@ -1,0 +1,121 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+-fx-background-color:#66ADCD;
+}
+#pane1{
+ -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#pane13{
+ -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#pane14{
+ -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#pane15{
+ -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#pane16{
+
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#pane17{
+ -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#pane18{
+     -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#lblScheduleTravel{
+ -fx-background-color:#66ADCD;
+ -fx-background-radius: 3px; 
+ -fx-border-color:#FFFFFF;
+ -fx-border-width:1pt;
+ -fx-border-radius:3px;
+}
+#anchorPane{
+   -fx-background-color:#0E3C55;
+ -fx-background-radius: 3px;  
+}
+.button{
+   -fx-background-color:#ffffff;
+    -fx-background-style:flat;
+    -fx-background-radius: 5px;
+}
+.combo-box{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:10pt;
+}
+.tab{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+/*.table-header{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:12pt;
+}*/
+.table-view .column-header .label {
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.text-field{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+
+
+}
+#pane1{
+    -fx-border-color:#a9a9a9;
+    -fx-border-radius:5px;
+}
+#pane13{
+
+    -fx-border-radius: 5px;
+    -fx-border-color:#999999;
+}
+#pane14{
+
+    -fx-border-radius: 5px;
+    -fx-border-color:#999999;
+}
+#pane15{
+
+    -fx-border-radius: 5px;
+    -fx-border-color:#999999;
+}
+#pane16{
+
+    -fx-border-radius: 5px;
+    -fx-border-color:#999999;
+}
+#pane17{
+
+    -fx-border-radius: 5px;
+    -fx-border-color:#999999;
+}
+#pane18{
+    -fx-border-radius: 5px;
+    -fx-border-color:#999999;
+
+}

@@ -1,0 +1,59 @@
+
+#name{
+    -fx-text-fill:#FFFFFF;
+}
+#logged{
+    -fx-text-fill:#FFFFFF;
+}
+#username{
+    -fx-text-fill:#FFFFFF;
+}
+#on{
+    -fx-text-fill:#FFFFFF;
+}
+#dateOn{
+    -fx-text-fill:#FFFFFF;
+}
+#date{
+    -fx-text-fill:#FFFFFF;
+}
+#timeOn{
+    -fx-text-fill:#FFFFFF;
+}
+#time{
+    -fx-text-fill:#FFFFFF;
+}
+#from{
+    -fx-text-fill:#FFFFFF;
+}
+#depFrom{
+    -fx-text-fill:#FFFFFF; 
+}
+#department{
+    -fx-text-fill:#FFFFFF;
+}
+
+#file{
+    -fx-text-fill:#383838;  
+}
+.menubar{
+    -fx-text-fill:#383838;
+}
+#menubar{
+    -fx-text-fill:#383838;
+}
+#toolbar
+{
+    -fx-border-color:  linear-gradient(#0000ff,#0099cc,#FFFFFF);
+    -fx-background-color:#000000;
+    -fx-border-radius:2%;
+    -fx-border-width: 4%;
+
+}
+.root{
+    -fx-background-color: #383838;
+    -fx-font-size: 10pt; 
+}
+.button{
+    -fx-background-color: linear-gradient(#DC9656, #AB4642);
+}

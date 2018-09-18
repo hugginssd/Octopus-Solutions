@@ -1,0 +1,79 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#tabQueue{
+    -fx-border-color: linear-gradient(#33ff99,#FFFFFF);
+    -fx-border-radius:4%;
+}
+#tabBookVisitor{
+    -fx-border-color: linear-gradient(#0066cc,#FFFFFF);
+    -fx-border-radius:4%;
+
+}
+#tabnewVisitors{
+    -fx-border-color: linear-gradient(#9436f3,#FFFFFF); 
+    -fx-border-radius:4%;
+
+}
+#click{
+    -fx-text-fill:#000000;
+}
+#visitorsDetails{
+    -fx-text-fill:#000000;
+}
+#companyDetails{
+    -fx-text-fill:#000000;
+}
+#btnbClose{
+    -fx-border-color: linear-gradient(#ff3333,#FFFFFF,#ff3333);
+    -fx-border-radius:4%;
+}
+#btnBookVisitor{
+
+    -fx-border-color: linear-gradient(#33ff99,#FFFFFF,#33ff99);
+    -fx-border-radius:4%;
+}
+#btnAddVisitor{
+    -fx-border-color: linear-gradient(#33ff99,#FFFFFF,#33ff99);
+    -fx-border-radius:4%;
+}
+#btnClose{
+    -fx-border-color: linear-gradient(#ff3333,#FFFFFF,#ff3333);
+    -fx-border-radius:4%;
+}
+.button{
+
+}
+#gridPane{
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius:2%;
+    -fx-border-width:4%;
+}
+#gridPaneQueue{
+    -fx-border-color:#DC9656;
+    -fx-border-radius:2%; 
+}
+#gridPaneBookVisitor{
+    -fx-border-color:#DC9656;
+    -fx-border-radius:2%;
+}
+#gridPaneVisitors{
+    -fx-border-color:#DC9656;
+    -fx-border-radius:2%;
+}
+#paneQueue{
+    -fx-background-color:#e8e8e8;
+}
+#paneBookVisitor{
+    -fx-background-color:#e8e8e8;
+}
+#paneNewVisitors{
+    -fx-background-color:#e8e8e8;
+}
+.mainFxmlClass {
+    -fx-background-color:#062a4e;
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius:2%;
+    -fx-border-width: 3%;
+}

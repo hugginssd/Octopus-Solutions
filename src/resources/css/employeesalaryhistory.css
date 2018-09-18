@@ -1,0 +1,26 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#anchorPane{
+    -fx-font: "Cambria";
+}
+#pane1{
+    -fx-border-color:#cccccc;
+    -fx-border-radius: 5px;
+}
+#pane2{
+    -fx-border-color:#cccccc;
+    -fx-border-radius: 5px;
+}
+#pane3{
+    -fx-border-color:#cccccc;
+    -fx-border-radius: 5px;
+}
+#pane4{
+    -fx-border-color:#cccccc;
+    -fx-border-radius: 5px;
+}

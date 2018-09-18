@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+//<<<<<<< HEAD
+<?import com.calendarfx.view.CalendarHeaderView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="1317.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.complianceAndLegal.ComplianceAndLegalController">
+    <stylesheets>
+        <URL value="@/resources/css/complianceandlegal.css" />
+    </stylesheets>
+    <children>
+        <Pane fx:id="pane1" layoutX="5.0" layoutY="3.0" prefHeight="605.0" prefWidth="739.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <Pane fx:id="pane2" layoutX="3.0" layoutY="36.0" prefHeight="84.0" prefWidth="733.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                    <children>
+                        <TextField fx:id="txtComplianceno" layoutX="14.0" layoutY="30.0" prefHeight="30.0" prefWidth="229.0" promptText="Compliance No.">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextField>
+                        <TextField fx:id="txtCompliancename" layoutX="247.0" layoutY="30.0" prefHeight="30.0" prefWidth="221.0" promptText="Compliance name">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextField>
+                        <ComboBox fx:id="cmbCompliancecategory" layoutX="472.0" layoutY="30.0" prefHeight="30.0" prefWidth="208.0" promptText="Compliance category" />
+                        <ImageView fitHeight="38.0" fitWidth="30.0" layoutX="684.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/icons/add.png" />
+
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane3" layoutX="3.0" layoutY="121.0" prefHeight="481.0" prefWidth="733.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                    <children>
+                        <TextArea fx:id="txaComplianceDescription" layoutX="14.0" layoutY="14.0" prefHeight="103.0" prefWidth="297.0" promptText="Compliance description">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextArea>
+                        <ComboBox fx:id="cmbRegulatoryauthority" layoutX="14.0" layoutY="132.0" prefHeight="30.0" prefWidth="263.0" promptText="Regulatory authority" />
+                        <TextField fx:id="txtImplementationBudget" layoutX="14.0" layoutY="175.0" prefHeight="30.0" prefWidth="297.0" promptText="Implementation budget">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextField>
+                        <TextField fx:id="txtCompliancedocument" layoutX="14.0" layoutY="217.0" prefHeight="30.0" prefWidth="297.0" promptText="Compliance document">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextField>
+                        <DatePicker fx:id="dtpComplianceCertificationDate" layoutX="14.0" layoutY="258.0" prefHeight="30.0" prefWidth="221.0" promptText="Compliance certification date" />
+                        <DatePicker fx:id="dtpRenewalcertificationdate" layoutX="14.0" layoutY="298.0" prefHeight="30.0" prefWidth="221.0" promptText="Renewal certification date" />
+                        <TextArea fx:id="txaComplianceImportance" layoutX="14.0" layoutY="338.0" prefHeight="122.0" prefWidth="297.0" promptText="Compliance importance">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextArea>
+                        <CheckBox fx:id="chkExcludeComplianceCertificationDate" layoutX="240.0" layoutY="265.0" mnemonicParsing="false" text="Exclude" textFill="#00ffc8">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></CheckBox>
+                        <CheckBox fx:id="chkRenewalCertificationDate" layoutX="241.0" layoutY="305.0" mnemonicParsing="false" text="Exclude" textFill="#00ffc8">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></CheckBox>
+                        <ImageView fx:id="imageViewAddRegulatoryAuthority" fitHeight="30.0" fitWidth="88.0" layoutX="280.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/icons/add.png" />
+                            </image>
+                        </ImageView>
+                        <Pane fx:id="pane4" layoutX="333.0" layoutY="3.0" prefHeight="253.0" prefWidth="397.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                            <children>
+                                <TextArea fx:id="txaNoncomplianceactions" layoutX="11.0" layoutY="74.0" prefHeight="158.0" prefWidth="350.0" promptText="Non-compliance actions">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font></TextArea>
+                                <TextField fx:id="txtNoncompliancefee" layoutX="11.0" layoutY="29.0" prefHeight="30.0" prefWidth="350.0" promptText="Non-compliance fee">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font></TextField>
+                                <Text fill="#00ffc8" layoutX="256.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non- Compliance">
+                                    <font>
+                                        <Font name="Cambria Bold Italic" size="15.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="pane5" layoutX="334.0" layoutY="257.0" prefHeight="222.0" prefWidth="397.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                            <children>
+                                <TextField fx:id="txtWebsites" layoutX="14.0" layoutY="24.0" prefHeight="30.0" prefWidth="350.0" promptText="Websites">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font></TextField>
+                                <TextArea fx:id="txtRegulations" layoutX="14.0" layoutY="63.0" prefHeight="103.0" prefWidth="350.0" promptText="Regulations">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font></TextArea>
+                                <TextField fx:id="txtTools" layoutX="14.0" layoutY="174.0" prefHeight="30.0" prefWidth="350.0" promptText="Tools">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font></TextField>
+                                <Text fill="#00ffc8" layoutX="82.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afirmative Action Compliance Resources">
+                                    <font>
+                                        <Font name="Cambria Bold Italic" size="15.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                    </children>
+                </Pane>
+                <Text fill="#00ffc8" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compliance Details">
+                    <font>
+                        <Font name="Cambria Bold Italic" size="24.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="pane6" layoutX="744.0" layoutY="3.0" prefHeight="605.0" prefWidth="558.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <Pane fx:id="pane8" layoutX="3.0" layoutY="3.0" prefHeight="200.0" prefWidth="552.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                    <children>
+                        <TabPane layoutX="5.0" layoutY="29.0" prefHeight="131.0" prefWidth="538.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab fx:id="tab1" text="  By Name   ">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <TextField fx:id="txtComplianceName" layoutX="18.0" layoutY="39.0" prefHeight="30.0" prefWidth="251.0" promptText="Compliance Name">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab fx:id="tab2" text="  By Compliance No.">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <TextField fx:id="txtComplianceNo" layoutX="22.0" layoutY="39.0" prefHeight="30.0" prefWidth="248.0" promptText="Compliance no">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                        <Text fill="#00ffc8" layoutX="405.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Compliance">
+                            <font>
+                                <Font name="Cambria Bold Italic" size="15.0" />
+                            </font>
+                        </Text>
+                        <Button fx:id="btnRemoveFilter" layoutX="431.0" layoutY="164.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="106.0" text="Remove Filter">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                    </children>
+                </Pane>
+                <Pane fx:id="pane7" layoutX="3.0" layoutY="204.0" prefHeight="398.0" prefWidth="552.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                    <children>
+                        <Text fill="#00ffc8" layoutX="456.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compliance">
+                            <font>
+                                <Font name="Cambria Bold Italic" size="15.0" />
+                            </font>
+                        </Text>
+                        <TableView layoutX="14.0" layoutY="22.0" prefHeight="273.0" prefWidth="529.0">
+                            <columns>
+                                <TableColumn fx:id="colComplianceno" prefWidth="109.0" text="Compliance #" />
+                                <TableColumn fx:id="colName" prefWidth="299.0" text="Name" />
+                        <TableColumn fx:id="colCategory" prefWidth="118.0" text="Category" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="btnManageComplianceForEmployees" layoutX="14.0" layoutY="300.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="300.0" text="Manage Compliance For Employees">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                        <Button fx:id="btnDelete" layoutX="14.0" layoutY="341.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" text="Delete">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                        <Button fx:id="btnDownloadAttachedDocument" layoutX="119.0" layoutY="340.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="195.0" text="Download Attached Document">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <HBox layoutX="630.0" layoutY="604.0" prefHeight="48.0" prefWidth="243.0" spacing="10.0">
+            <children>
+                <Button fx:id="btnSave" mnemonicParsing="false" prefHeight="29.0" prefWidth="99.0" text="SAVE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+                <Button fx:id="btnAddNew" mnemonicParsing="false" prefHeight="29.0" prefWidth="120.0" text="ADD NEW">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <CalendarHeaderView />
+            </children>
+            <padding>
+                <Insets left="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>

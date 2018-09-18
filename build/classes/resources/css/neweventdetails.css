@@ -1,0 +1,40 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color:#66ADCD;
+}
+.pane{
+    -fx-background-radius:3px;
+    -fx-border-radius:3px;
+    -fx-border-color:#FFFFFF;
+}
+#lblEventTextColor{ 
+    -fx-border-color:#FFFFFF;
+}
+#lblEventColor{
+    -fx-border-color:#FFFFFF;
+}
+.button{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+    -fx-background-radius: 5px;
+    -fx-border-color:#FFFFFF;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+#btnEventColor,#btnEventTextColor{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+    -fx-background-radius: 5px;
+    -fx-border-color:#FFFFFF;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;  
+}

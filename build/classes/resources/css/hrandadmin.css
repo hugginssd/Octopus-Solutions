@@ -1,0 +1,50 @@
+.root{
+     
+}
+.button{
+    -fx-background-color:#ffffff;
+    -fx-background-style:flat;
+    -fx-background-radius: 5px;
+    -fx-font-size: 9pt; 
+}
+.button{
+
+    -fx-background-color:#ffffff;
+    -fx-border-color:#000000;
+    -fx-background-style:flat;
+}
+
+.pane{
+    -fx-border-color:#3333ff;
+    -fx-border-style:solid;
+}
+#anchorPane{
+   -fx-background-color:#66ADCD;  
+}
+
+#lbSearchEmployee{
+    -fx-background-color:#66ADCD; 
+}
+#btnViewAllEmployes{
+      -fx-background-color:#66ADCD;
+      -fx-text-fill:#ffffff;
+      -fx-font-style:bold;
+    -fx-background-color:#3399ff;  
+}
+
+#lbSearchEmployee{
+    -fx-background-color:#3399ff; 
+}
+.menu-bar{
+    -fx-background-color: linear-gradient(#cccccc,#ffffff,#cccccc);
+    -fx-font-size:11pt;
+}
+.tab-pane{
+    -fx-background-color: #ffffff;
+
+}
+#btnAddOrg{
+    -fx-background-color:#ffffff;
+    -fx-background-style:flat;
+    -fx-background-radius: 40px;
+}

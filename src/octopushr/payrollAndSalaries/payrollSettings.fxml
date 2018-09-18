@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="724.0" prefWidth="1404.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.PayrollSettingsController">
+
+    <stylesheets>
+        <URL value="@/resources/css/payrollsettings.css" />
+    </stylesheets>
+    <children>
+        <MenuBar layoutX="-1.0" layoutY="-1.0" prefHeight="31.0" prefWidth="1404.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="itemClose" mnemonicParsing="false" text="Close" />
+
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Payroll">
+                    <items>
+                        <MenuItem fx:id="itemDashboard" mnemonicParsing="false" text="Dashboard" />
+                        <MenuItem fx:id="itemProcessPayroll" mnemonicParsing="false" text="Process Payroll" />
+                        <MenuItem fx:id="itemWagesBilling" mnemonicParsing="false" text="Wages  &amp; Billing" />
+                        <MenuItem fx:id="itemSalaryHistory" mnemonicParsing="false" text="Salary History" />
+                        <MenuItem fx:id="itemLoanAdvances" mnemonicParsing="false" text="Loan Advances" />
+                        <MenuItem fx:id="itemBankSheet" mnemonicParsing="false" text="Bank Sheet" />
+                        <MenuItem fx:id="itemSavingsGOSI" mnemonicParsing="false" text="Savings/GOSI" />
+                        <MenuItem fx:id="itemPayOvertime" mnemonicParsing="false" text="Pay Overtime" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Payroll Settings">
+                    <items>
+                        <MenuItem fx:id="itemPayrollAttributes" mnemonicParsing="false" text="Payroll Attributes" />
+                        <MenuItem fx:id="itemPayrollStructure" mnemonicParsing="false" text="Payroll Structure" />
+                        <MenuItem fx:id="itemEarningFormula" mnemonicParsing="false" text="Earning Formula" />
+                        <MenuItem fx:id="itemDeductionFormula" mnemonicParsing="false" text="Deduction Formula" />
+                        <MenuItem fx:id="itemContributionGOSISettings" mnemonicParsing="false" text="Contribution/GOSI Settings" />
+                        <MenuItem fx:id="itemOvertimeSettings" mnemonicParsing="false" text="Overtime Settings" />
+                        <MenuItem fx:id="itemTaxationSettings" mnemonicParsing="false" text="Taxation Settings" />
+                        <MenuItem fx:id="itemHourlySettings" mnemonicParsing="false" text="Hourly Settings" />
+                        <MenuItem fx:id="itemExemptionSettings" mnemonicParsing="false" text="Exemption Settings" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Payroll Reports">
+                    <items>
+                        <MenuItem fx:id="itemMonthlySalary" mnemonicParsing="false" text="Monthly Salary" />
+                        <MenuItem fx:id="itemNotPaidSalary" mnemonicParsing="false" text="Not-Paid Salary" />
+                        <MenuItem fx:id="itemOvertime" mnemonicParsing="false" text="Overtime" />
+                        <MenuItem fx:id="itemEmployeeSalary" mnemonicParsing="false" text="Employee Salary" />
+                        <MenuItem fx:id="itemSalaryBudget" mnemonicParsing="false" text="Salary Budget" />
+                        <MenuItem fx:id="itemAttendanceDeduction" mnemonicParsing="false" text="Attendance Deduction" />
+                        <MenuItem fx:id="itemLeaveDeduction" mnemonicParsing="false" text="Leave Deduction" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Attendance">
+                    <items>
+                        <MenuItem fx:id="itemAttendanceDashboard" mnemonicParsing="false" text="Dashboard" />
+                        <MenuItem fx:id="itemSIngleEmployee" mnemonicParsing="false" text="Single Employee" />
+                        <MenuItem fx:id="itemMultiEmployee" mnemonicParsing="false" text="Multi-Employee" />
+                        <MenuItem fx:id="itemOrganisationCalendar" mnemonicParsing="false" text="Organisation Calendar" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Attendance Settings">
+                    <items>
+                        <MenuItem fx:id="itemStaffSettings" mnemonicParsing="false" text="Staff Settings" />
+                        <MenuItem fx:id="itemPunchSettings" mnemonicParsing="false" text="Punch Settings" />
+                        <MenuItem fx:id="itemLateGracePeriod" mnemonicParsing="false" text="Late Grace Period" />
+                        <MenuItem fx:id="itemLateOvertimeCalculator" mnemonicParsing="false" text="Late &amp; Overtime Calculation" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Attendance Report">
+                    <items>
+                        <MenuItem fx:id="itemAbsent" mnemonicParsing="false" text="Absent" />
+                        <MenuItem fx:id="itemMonthlyAttendance" mnemonicParsing="false" text="Monthly Attendance" />
+                        <MenuItem fx:id="itemYealryAttendance" mnemonicParsing="false" text="Yearly Attendance" />
+                        <MenuItem fx:id="itemLateMinutes" mnemonicParsing="false" text="Late Minutes" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Leaves">
+                    <items>
+                        <MenuItem fx:id="itemLeaveDashboard" mnemonicParsing="false" text="Dashboard" />
+                        <MenuItem fx:id="itemPunchApplyleave" mnemonicParsing="false" text="Punch/Apply Leave" />
+                        <MenuItem fx:id="itemApproveleave" mnemonicParsing="false" text="Approve/Manage Leave" />
+                        <MenuItem fx:id="itemOrganisationCalendar" mnemonicParsing="false" text="Organisation Calendar" />
+                        <MenuItem fx:id="itemEmployeeLeaveCalendar" mnemonicParsing="false" text="Employee Leave Calendar" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Leave Settings">
+                    <items>
+                        <MenuItem fx:id="itemLeaveTypes" mnemonicParsing="false" text="Leave Types" />
+                        <MenuItem fx:id="itemEmployeeLeaveSettings" mnemonicParsing="false" text="Employee Leave Settings" />
+                        <MenuItem fx:id="itemHolidayVacations" mnemonicParsing="false" text="Holiday/Vacations" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="itemAbout" mnemonicParsing="false" text="About" />
+
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="481.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="octopushr.employees.UploadEmployeesController">
+
+    <stylesheets>
+        <URL value="@/resources/css/uploademployees.css" />
+    </stylesheets>
+    <children>
+        <Pane layoutX="5.0" layoutY="14.0" prefHeight="144.0" prefWidth="485.0">
+            <children>
+                <Separator layoutX="225.0" layoutY="22.0" prefHeight="3.0" prefWidth="230.0" />
+                <Label layoutX="-3.0" layoutY="6.0" prefHeight="24.0" prefWidth="230.0" text="Download Employee Blank Sheet Format">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btnDownloadBlankSheet" layoutX="225.0" layoutY="32.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="230.0" text="Download Blank Employee Sheet">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <Label layoutX="14.0" layoutY="64.0" prefHeight="24.0" prefWidth="214.0" text="Upload Employee Filled Sheet Format">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="227.0" layoutY="76.0" prefHeight="3.0" prefWidth="230.0" />
+                <Button fx:id="btnUploadEmployeeFilledSheet" layoutX="227.0" layoutY="88.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="230.0" text="Upload Employee Filled Sheet">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

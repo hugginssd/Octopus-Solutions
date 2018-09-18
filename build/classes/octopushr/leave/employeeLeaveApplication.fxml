@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+//<<<<<<< HEAD
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="767.0" prefWidth="1280.0" style="-fx-background-color: #66ADCD; -fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.leave.EmployeeLeaveApplicationController">
+    <stylesheets>
+        <URL value="@/resources/css/employeeleaveapplication.css" />
+    </stylesheets>
+    <children>
+        <Pane layoutX="3.0" layoutY="4.0" prefHeight="87.0" prefWidth="1314.0" style="-fx-background-color: #66ADCD; -fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+            <children>
+                <ComboBox fx:id="cmbSelectDepartment" layoutX="14.0" layoutY="8.0" onAction="#loadDepartmentId" prefHeight="30.0" prefWidth="192.0" promptText="---Select by department---" />
+                <ComboBox fx:id="cmbSelectEmployee" layoutX="14.0" layoutY="48.0" onAction="#selectEmployeeDetails" prefHeight="30.0" prefWidth="192.0" promptText="---Select by employee---" />
+                <ImageView fx:id="imgPerson" fitHeight="78.0" fitWidth="80.0" layoutX="303.0" layoutY="5.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../resources/icons/no-image.jpg" />
+                    </image>
+                </ImageView>
+                <Label layoutX="385.0" layoutY="18.0" prefHeight="17.0" prefWidth="102.0" text="Employee Name :" textFill="#167963">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblEmployeeName" layoutX="493.0" layoutY="19.0" prefHeight="17.0" prefWidth="226.0" text="-----------" textFill="#167963">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Label>
+                <Label layoutX="409.0" layoutY="52.0" prefHeight="17.0" prefWidth="79.0" text="Designation :" textFill="#167963">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblDesignation" layoutX="494.0" layoutY="53.0" prefHeight="17.0" prefWidth="226.0" text="-----------" textFill="#167963" wrapText="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Label>
+              <Button fx:id="btnCloseWindow" layoutX="1187.0" layoutY="7.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="30.0" prefWidth="119.0" text="Close Window">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Label fx:id="lblDepartmentId" layoutX="210.0" layoutY="15.0" onInputMethodTextChanged="#loadEmployees" prefHeight="17.0" prefWidth="79.0" text="Label" />
+            <Label fx:id="lblLeaveid" layoutX="222.0" layoutY="55.0" prefHeight="17.0" prefWidth="49.0" text="Label" />
+            </children>
+        </Pane>
+      <Pane layoutX="3.0" layoutY="93.0" prefHeight="672.0" prefWidth="1314.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+         <children>
+              <TabPane layoutX="8.0" layoutY="5.0" prefHeight="664.0" prefWidth="1302.0" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                      <Tab fx:id="tabApply" text="Apply/Punch Leave">
+                          <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="586.0" prefWidth="1302.0" style="-fx-background-color: #66ADCD;">
+                                  <children>
+                                      <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="176.0" layoutY="27.0" onMouseClicked="#addSkills" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../../resources/icons/add.png" />
+                                          </image>
+                                      </ImageView>
+                                      <Label layoutX="206.0" layoutY="25.0" prefHeight="24.0" prefWidth="88.0" text="Balance Leave:" textFill="#2d8358">
+                                          <font>
+                                              <Font name="Arial Unicode MS" size="12.0" />
+                                          </font>
+                                      </Label>
+                                      <Label layoutX="294.0" layoutY="30.0" text="0" />
+                                      <TextField fx:id="txtSubject" editable="false" layoutX="6.0" layoutY="63.0" prefHeight="30.0" prefWidth="296.0" promptText="Subject">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextField>
+                                      <DatePicker fx:id="dtpLeavefrom" layoutX="6.0" layoutY="100.0" prefHeight="30.0" prefWidth="192.0" promptText="Leave from" />
+                                      <DatePicker fx:id="dtpLeavetill" layoutX="6.0" layoutY="136.0" prefHeight="30.0" prefWidth="192.0" promptText="Leave till" />
+                                      <CheckBox fx:id="chkHalfday" layoutX="201.0" layoutY="149.0" mnemonicParsing="false" text="Half day" textFill="#228062">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="11.0" />
+                                 </font></CheckBox>
+                                      <Button fx:id="btnViewCalendar" layoutX="6.0" layoutY="171.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" text="View Calendar">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></Button>
+                                      <ComboBox fx:id="cmbSelectleavestatus" layoutX="143.0" layoutY="171.0" prefHeight="30.0" prefWidth="157.0" promptText="Select leave status" />
+                                      <TextArea fx:id="txaDescription" layoutX="6.0" layoutY="207.0" prefHeight="120.0" prefWidth="295.0" promptText="Description">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextArea>
+                                      <Button fx:id="btnSave" layoutX="6.0" layoutY="338.0" mnemonicParsing="false" onAction="#applyLeave" prefHeight="25.0" prefWidth="90.0" text="Save">
+                                          <font>
+                                              <Font name="Arial Unicode MS" size="13.0" />
+                                          </font>
+                                      </Button>
+                                      <Button fx:id="btnrefresh" layoutX="109.0" layoutY="338.0" mnemonicParsing="false" onAction="#refreshControls" prefHeight="25.0" prefWidth="90.0" text="Refresh">
+                                          <font>
+                                              <Font name="Arial Unicode MS" size="13.0" />
+                                          </font>
+                                      </Button>
+                                      <Button fx:id="btnClose" layoutX="212.0" layoutY="338.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="25.0" prefWidth="90.0" text="Close">
+                                          <font>
+                                              <Font name="Arial Unicode MS" size="13.0" />
+                                          </font>
+                                      </Button>
+                                      <Pane layoutX="316.0" layoutY="74.0" prefHeight="260.0" prefWidth="693.0">
+                                          <children>
+                                              <TableView layoutX="5.0" layoutY="8.0" prefHeight="248.0" prefWidth="682.0">
+                                                  <columns>
+                                                      <TableColumn prefWidth="75.0" text="F.No" />
+                                                      <TableColumn prefWidth="93.0" text="Leave Type" />
+                                                      <TableColumn prefWidth="100.0" text="Leave From" />
+                                                      <TableColumn prefWidth="86.0" text="Leave Till" />
+                                                      <TableColumn prefWidth="88.0" text="No. of Leaves" />
+                                                      <TableColumn prefWidth="65.0" text="Status" />
+                                                      <TableColumn prefWidth="69.0" text="Approve" />
+                                                      <TableColumn prefWidth="57.0" text="Reject" />
+                                                      <TableColumn prefWidth="48.0" text="Down" />
+                                                  </columns>
+                                              </TableView>
+                                          </children>
+                                      </Pane>
+                                      <Pane layoutX="322.0" layoutY="331.0" prefHeight="297.0" prefWidth="682.0">
+                                          <children>
+                                              <PieChart layoutX="1.0" layoutY="1.0" prefHeight="298.0" prefWidth="682.0" title="Leave taken for a year(Approved status)" />
+                                          </children>
+                                      </Pane>
+                                      <Label layoutX="316.0" layoutY="22.0" prefHeight="19.0" prefWidth="131.0" text="Employee Leave History" textFill="#228062">
+                                          <font>
+                                              <Font name="Arial Rounded MT Bold" size="11.0" />
+                                          </font>
+                                      </Label>
+                                      <Separator layoutX="446.0" layoutY="36.0" prefHeight="3.0" prefWidth="555.0" />
+                                      <DatePicker layoutX="578.0" layoutY="46.0" prefHeight="30.0" prefWidth="144.0" promptText="Year" />
+                                      <ComboBox fx:id="cmbFilterbystatus" layoutX="727.0" layoutY="47.0" prefHeight="30.0" prefWidth="150.0" promptText="---Filter by status---" />
+                                      <Button layoutX="889.0" layoutY="48.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Cancel Leave">
+                                          <font>
+                                              <Font name="Arial Unicode MS" size="13.0" />
+                                          </font>
+                                      </Button>
+                              <ComboBox fx:id="cmbSelectLeaveType" layoutX="6.0" layoutY="24.0" onAction="#loadLeaveTypeId" prefHeight="30.0" prefWidth="168.0" promptText="----Leave Type---" />
+                              <Label fx:id="lblLeavetypeId" layoutX="208.0" layoutY="2.0" prefHeight="24.0" prefWidth="88.0" text="Label" />
+                              <TextField fx:id="txtDaysencashed" layoutX="201.0" layoutY="100.0" prefHeight="30.0" prefWidth="102.0" promptText="Days encashed">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="lblPath" layoutX="5.0" layoutY="367.0" prefHeight="17.0" prefWidth="297.0" text="Label" />
+                                  </children>
+                              </AnchorPane>
+                          </content>
+                      </Tab>
+                  </tabs>
+              </TabPane>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>

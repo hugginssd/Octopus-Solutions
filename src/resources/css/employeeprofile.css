@@ -1,0 +1,20 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color:#66ADCD;
+}
+.button{
+    -fx-background-radius: 5px;
+    -fx-border-color:#FFFFFF;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+.combo-box{
+     -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Bold;
+    -fx-font-size:10pt;
+}

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="561.0" prefWidth="1102.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.documents.ExpiredDocumentsController">
+    <stylesheets>
+        <URL value="@/resources/css/expireddocuments.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="5.0" layoutY="6.0" prefHeight="547.0" prefWidth="1094.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+         <children>
+            <Pane layoutX="176.0" layoutY="42.0" prefHeight="502.0" prefWidth="915.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+               <children>
+                  <TabPane layoutX="4.0" layoutY="4.0" prefHeight="495.0" prefWidth="908.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Expired Documents">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #F4F4F4;">
+                                 <children>
+                                    <TabPane layoutX="-1.0" layoutY="-1.0" prefHeight="468.0" prefWidth="909.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="Employee Submitted Documents ">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="909.0">
+                                                   <children>
+                                                      <TableView fx:id="tableExpiredEmployeeSubmittedDocuments" layoutX="1.0" layoutY="1.0" prefHeight="407.0" prefWidth="908.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="colEmployeeIdExpiredIssued" prefWidth="82.0" text="Employee ID" />
+                                                          <TableColumn fx:id="colNameExpiredSubmittedDocuments" prefWidth="293.0" text="Name" />
+                                                            <TableColumn fx:id="colDocumentExpiredSubmittedDocuments" prefWidth="248.0" text="Document" />
+                                                            <TableColumn fx:id="colSubmitDateExpiredSubmittedDocuments" prefWidth="168.0" text="Submit Date" />
+                                                            <TableColumn fx:id="colExpiryDateExpiredSubmittedDocuments" prefWidth="114.0" text="Expiry Date" />
+                                                        </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnExpiredSubmittedDocumentsDownload" layoutX="2.0" layoutY="409.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="Employee Issued Documents">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="tableExpiredEmployeeIssuedDocuments" prefHeight="407.0" prefWidth="908.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colEmployeeIdExpiredIssued" prefWidth="82.0" text="Employee ID" />
+                                                            <TableColumn fx:id="colNameExpiredIssuedDocuments" prefWidth="293.0" text="Name" />
+                                                            <TableColumn fx:id="colDocumentExpiredIssuedDocuments2" prefWidth="248.0" text="Document" />
+                                                            <TableColumn fx:id="colSubmitDateExpiredSubmittedDocuments2" prefWidth="168.0" text="Issued Date" />
+                                                            <TableColumn fx:id="colExpiryDateExpiredIssuedDocuments" prefWidth="114.0" text="Expiry Date" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnExpiredIssuedDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab text="Employee Internal/External Documents">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="tableExpiredDocumentsEmployeeInternalDocuments" prefHeight="407.0" prefWidth="908.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colExpiredEmployeeInternalDocumentsSno" prefWidth="62.0" text="S.No." />
+                                                            <TableColumn fx:id="colNameExpiredEmployeeInternalDocuments" prefWidth="176.0" text="Name" />
+                                                            <TableColumn fx:id="colDocumentExpiredSubmittedDocuments" prefWidth="81.0" text="Employee ID" />
+                                                            <TableColumn fx:id="colExpiredDocumentsEmployeeInternalDocuments" prefWidth="114.0" text="Title" />
+                                                            <TableColumn fx:id="colDocumentTypeExpiredEmployeeInternalDocuments" prefWidth="164.0" text="Document Type" />
+                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="92.0" text="Authority" />
+                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="104.0" text="Submitted on" />
+                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="114.0" text="Expiry Date" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnExpiredEmployeeInternalDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                          <Tab text="Company Internal/External Documents">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="tableExpiredInternalCompanyDocuments" prefHeight="407.0" prefWidth="908.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colExpiredCampanyInternalDocumentsSno" prefWidth="62.0" text="S.No." />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDOcumentsName" prefWidth="176.0" text="Name" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsDocumentType" prefWidth="114.0" text="Document Type" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsAuthority" prefWidth="81.0" text="Authority" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsSubmittedon" prefWidth="164.0" text="Submitted on" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsExpiryDate" prefWidth="92.0" text="Expiry date" />
+                                                            <TableColumn fx:id="colExpiredInternalDocumentsCurrentStatus" prefWidth="104.0" text="Current Status" />
+                                                            <TableColumn fx:id="colExpiredInternalDocumentsProcessFee" prefWidth="114.0" text="Process Fee" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnExpiredCompanyInternalDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children></AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="To Be Expired Documents">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #F4F4F4;">
+                                 <children>
+                                    <TabPane layoutY="-1.0" prefHeight="468.0" prefWidth="909.0" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                          <Tab text="Employee Submitted Documents ">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="442.0" prefWidth="909.0">
+                                                   <children>
+                                                      <TableView fx:id="tableToBeExpiredEmployeeSubmittedDocuments" prefHeight="407.0" prefWidth="908.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colEmployeeId1" prefWidth="82.0" text="Employee ID" />
+                                                            <TableColumn fx:id="colNameExpiredSubmittedDocuments1" prefWidth="293.0" text="Name" />
+                                                            <TableColumn fx:id="colDocumentExpiredSubmittedDocuments1" prefWidth="248.0" text="Document" />
+                                                            <TableColumn fx:id="colSubmitDateExpiredSubmittedDocuments1" prefWidth="168.0" text="Submit Date" />
+                                                            <TableColumn fx:id="colExpiryDateExpiredSubmittedDocuments1" prefWidth="114.0" text="Expiry Date" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnToBeExpiredSubmittedDocumentsDownload" layoutX="1.0" layoutY="409.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Employee Issued Documents">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="tableToBeExpiredEmployeeIssuedDocuments1" prefHeight="407.0" prefWidth="908.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colEmployeeIdTobeExpiredIssued" prefWidth="82.0" text="Employee ID" />
+                                                            <TableColumn fx:id="colNameToBeExpiredIssuedDocuments" prefWidth="293.0" text="Name" />
+                                                            <TableColumn fx:id="colDocumentToBeExpiredIssuedDocuments" prefWidth="248.0" text="Document" />
+                                                            <TableColumn fx:id="colSubmitDateToBeExpiredIssuedDateDocuments" prefWidth="168.0" text="Issued Date" />
+                                                            <TableColumn fx:id="colExpiryDateToBeExpiredIssuedDocuments" prefWidth="114.0" text="Expiry Date" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnToBeExpiredIssuedDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Employee Internal/External Documents">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="tableToBeExpiredDocumentsEmployeeInternalDocuments" prefHeight="407.0" prefWidth="908.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colExpiredEmployeeInternalDocumentsSno1" prefWidth="62.0" text="S.No." />
+                                                            <TableColumn fx:id="colNameExpiredEmployeeInternalDocuments1" prefWidth="176.0" text="Name" />
+                                                            <TableColumn fx:id="colDocumentExpiredSubmittedDocuments2" prefWidth="81.0" text="Employee ID" />
+                                                            <TableColumn fx:id="colExpiredDocumentsEmployeeInternalDocuments1" prefWidth="114.0" text="Title" />
+                                                            <TableColumn fx:id="colDocumentTypeExpiredEmployeeInternalDocuments1" prefWidth="164.0" text="Document Type" />
+                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="92.0" text="Authority" />
+                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="104.0" text="Submitted on" />
+                                                            <TableColumn fx:id="colExpiredInternalDocuments1" prefWidth="114.0" text="Expiry Date" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnToBeExpiredEmployeeInternalDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children></AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Company Internal/External Documents">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TableView fx:id="tableExpiredInternalCompanyDocuments1" prefHeight="407.0" prefWidth="908.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="colExpiredCampanyInternalDocumentsSno1" prefWidth="62.0" text="S.No." />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDOcumentsName1" prefWidth="176.0" text="Name" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsDocumentType1" prefWidth="114.0" text="Document Type" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsAuthority1" prefWidth="81.0" text="Authority" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsSubmittedon1" prefWidth="164.0" text="Submitted on" />
+                                                            <TableColumn fx:id="colExpiredCompanyInternalDocumentsExpiryDate1" prefWidth="92.0" text="Expiry date" />
+                                                            <TableColumn fx:id="colExpiredInternalDocumentsCurrentStatus1" prefWidth="104.0" text="Current Status" />
+                                                            <TableColumn fx:id="colExpiredInternalDocumentsProcessFee1" prefWidth="114.0" text="Process Fee" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <Button fx:id="btnToBeExpiredCompanyInternalDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                         <font>
+                                                            <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children></AnchorPane>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </Pane>
+            <Button alignment="BOTTOM_CENTER" layoutX="7.0" layoutY="42.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="164.0" text="Employee Documents">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="BOTTOM_CENTER" layoutX="7.0" layoutY="114.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="164.0" text="Company Documents">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="BOTTOM_CENTER" layoutX="6.0" layoutY="185.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="164.0" text="External Documents">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button alignment="BOTTOM_CENTER" layoutX="6.0" layoutY="256.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="164.0" text="Reference Documents">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="66.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/employee-documents1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="64.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/company-documents.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="65.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/external-documents.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="64.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/reference-documents.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="8.0" layoutY="14.0" text="Expired Documents" textFill="#04e1ce">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnClose" alignment="BOTTOM_CENTER" layoutX="4.0" layoutY="499.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="170.0" text="CLOSE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="70.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/close.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

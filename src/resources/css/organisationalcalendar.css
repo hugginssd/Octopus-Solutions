@@ -1,0 +1,38 @@
+
+.mainFxmlClass {
+
+    -fx-background-color:#66ADCD;
+}
+#pane1{
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius:3px;
+    -fx-background-radius:3px;
+    -fx-background-color:#FFFFFF;
+}
+.table-view{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.button{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+    -fx-background-radius: 5px;
+    -fx-border-color:#FFFFFF;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+#btnConfirm{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+    -fx-background-radius: 5px;
+    -fx-border-color:#66ADCD;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;  
+}

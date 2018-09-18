@@ -1,0 +1,34 @@
+/*
+ * Empty Stylesheet file.
+ */
+.button{
+
+    -fx-background-color:#9436f3;
+    -fx-border-color:#FFFFFF;
+    -fx-border-width:2px;
+    -fx-border-radius: 2%;
+    -fx-appearance:push-button;
+    -fx-text-fill:#FFFFFF;
+
+
+}
+#gridPane{
+
+}
+#hbox{
+    -fx-border-color:#FFFFFF;
+}
+#vbox1{
+    -fx-border-color:#AB4642;
+}
+#vbox2{
+    -fx-border-color:#DC9656;
+}
+#click{
+    -fx-text-fill:#FFFFFF; 
+}
+.mainFxmlClass {
+    -fx-background-color:#062a4e;
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius:2%;
+}

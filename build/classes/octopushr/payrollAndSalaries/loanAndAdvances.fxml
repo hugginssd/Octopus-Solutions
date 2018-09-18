@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="704.0" prefWidth="1180.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.LoanAndAdvancesController">
+
+    <stylesheets>
+        <URL value="@/resources/css/loanandadvances.css" />
+    </stylesheets>
+    <children>
+        <Pane layoutX="3.0" layoutY="4.0" prefHeight="691.0" prefWidth="1172.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <Pane layoutX="3.0" layoutY="4.0" prefHeight="683.0" prefWidth="451.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5px;">
+                    <children>
+                        <Pane layoutX="7.0" layoutY="29.0" prefHeight="146.0" prefWidth="437.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5px;">
+                            <children>
+                                <ComboBox fx:id="cmbSelectDepartments" layoutX="7.0" layoutY="30.0" prefHeight="32.0" prefWidth="281.0" promptText="---Select Departments---" />
+                                <ComboBox fx:id="cmbSelectEmployee" layoutX="7.0" layoutY="91.0" prefHeight="32.0" prefWidth="281.0" promptText="---Select Employee---" />
+                                <Pane layoutX="300.0" layoutY="2.0" prefHeight="141.0" prefWidth="134.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5px;">
+                                    <children>
+                                        <ImageView fitHeight="131.0" fitWidth="123.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" smooth="false">
+                                            <image>
+                                                <Image url="@../../resources/icons/no-image.jpg" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </Pane>
+                        <TabPane layoutX="7.0" layoutY="179.0" prefHeight="500.0" prefWidth="437.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab fx:id="tab1" text="  Loans  ">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="472.0" prefWidth="437.0" style="-fx-border-color: FFFFFF;">
+                                            <children>
+                                                <TextField fx:id="txtLoanName" layoutX="106.0" layoutY="59.0" prefHeight="32.0" prefWidth="281.0" promptText="Loan Name">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtLoanAmount" layoutX="106.0" layoutY="103.0" prefHeight="32.0" prefWidth="281.0" promptText="Loan Amount">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <DatePicker fx:id="dtpSanctionedDate" layoutX="106.0" layoutY="147.0" prefHeight="32.0" prefWidth="281.0" promptText="Sanctioned Date" />
+                                                <TextField fx:id="txtTimePeriod" layoutX="106.0" layoutY="188.0" prefHeight="32.0" prefWidth="112.0" promptText="Time Period">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtRateOfInterest" layoutX="106.0" layoutY="227.0" prefHeight="32.0" prefWidth="112.0" promptText="Rate Of Interest">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <ComboBox fx:id="cmbSanctionedBy" layoutX="106.0" layoutY="267.0" prefHeight="32.0" prefWidth="281.0" promptText="---Sanctioned By---" />
+                                                <TextField fx:id="txtInstallmentAmountPerMonth" layoutX="106.0" layoutY="310.0" prefHeight="32.0" prefWidth="281.0" promptText="Installment Amount Per Month" style="-fx-border-color: #000000;">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label layoutX="229.0" layoutY="227.0" prefHeight="32.0" prefWidth="152.0" text="\%">
+                                                    <font>
+                                                        <Font name="Cambria" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="cmbMonths" layoutX="228.0" layoutY="188.0" prefHeight="32.0" prefWidth="155.0" promptText="Month(s)" />
+
+                                                <Button fx:id="btnApproveLoan" layoutX="106.0" layoutY="414.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="153.0" text="APPROVE LOAN">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                                <Button fx:id="btnAddNew" layoutX="277.0" layoutY="414.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="153.0" text="ADD NEW">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                                <Label layoutX="106.0" layoutY="366.0" prefHeight="16.0" prefWidth="178.0" text="Calculated Simple Interest" textFill="#00ffc8">
+
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <Text fill="#00ffc8" layoutX="3.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sanction New Loan">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="18.0" />
+
+                                                    </font>
+                                                </Text>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="  Advances  ">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF;">
+                                            <children>
+                                                <Text fill="#00ffc8" layoutX="3.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pay Advances">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                                                    </font>
+                                                </Text>
+                                                <TextField fx:id="txtAdvanceName" layoutX="111.0" layoutY="54.0" prefHeight="32.0" prefWidth="261.0" promptText="Advance Name">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextArea fx:id="txaPurpose" layoutX="111.0" layoutY="94.0" prefHeight="78.0" prefWidth="262.0" promptText="Purpose">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextArea>
+                                                <TextField fx:id="txtAdvanceAmount" layoutX="111.0" layoutY="180.0" prefHeight="32.0" prefWidth="262.0" promptText="Advance Amount">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <DatePicker fx:id="dtpSanctionedDate" layoutX="111.0" layoutY="219.0" prefHeight="32.0" prefWidth="263.0" promptText="Sanctioned Date" />
+                                                <ComboBox fx:id="cmbSanctionedBy" layoutX="111.0" layoutY="259.0" prefHeight="32.0" prefWidth="263.0" promptText="---Sanctioned By---" />
+                                                <TextField layoutX="111.0" layoutY="300.0" prefHeight="26.0" prefWidth="261.0" promptText="Return Amount Per Month" style="-fx-border-color: #00ffc8;">
+                                                    <font>
+                                                        <Font name="Cambria" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Button fx:id="btnPayAdvance" layoutX="111.0" layoutY="341.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" text="Pay Advance">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="12.0" />
+
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnAddNew" layoutX="230.0" layoutY="341.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="141.0" text="Add New">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                        <Label layoutX="6.0" layoutY="-1.0" prefHeight="32.0" prefWidth="219.0" text="Employee Selection" textFill="#00ffc8">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="22.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="455.0" layoutY="3.0" prefHeight="685.0" prefWidth="714.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5px; -fx-border-width: 2;">
+                    <children>
+                        <Pane layoutX="3.0" layoutY="3.0" prefHeight="329.0" prefWidth="708.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5px; -fx-border-width: 2;">
+
+                            <children>
+                                <TableView layoutX="8.0" layoutY="23.0" prefHeight="261.0" prefWidth="690.0">
+                                    <columns>
+                                        <TableColumn prefWidth="57.0" text="ID" />
+                                        <TableColumn prefWidth="308.0" text="Name" />
+                                        <TableColumn prefWidth="117.0" text="Amount" />
+                                        <TableColumn prefWidth="107.0" text="Expiry" />
+                                        <TableColumn prefWidth="99.0" text="Balance" />
+                                    </columns>
+                                </TableView>
+                                <Button fx:id="btnDownloadTransactionHistory" layoutX="399.0" layoutY="291.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="219.0" text="Download Transaction History">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="btnUpdate" layoutX="269.0" layoutY="291.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="123.0" text="Update">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <TextField fx:id="txtEnterEMIAmount" layoutX="8.0" layoutY="291.0" prefHeight="32.0" prefWidth="230.0" promptText="Enter EMI Amount">
+                                    <font>
+                                        <Font name="Cambria Bold Italic" size="12.0" />
+                                    </font>
+                                    <tooltip>
+                                        <Tooltip text="Enter EMI Amount" />
+                                    </tooltip>
+                                </TextField>
+                                <Text fill="#00ffc8" layoutX="586.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loan sanctioned">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="3.0" layoutY="333.0" prefHeight="349.0" prefWidth="708.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5px; -fx-border-width: 2;">
+                            <children>
+                                <TableView layoutX="14.0" layoutY="33.0" prefHeight="247.0" prefWidth="683.0">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" text="ID" />
+                                        <TableColumn prefWidth="406.0" text="Advance Name" />
+                                        <TableColumn prefWidth="96.0" text="Amount" />
+                                        <TableColumn prefWidth="105.0" text="Balance" />
+                                    </columns>
+                                </TableView>
+                                <TextField layoutX="14.0" layoutY="291.0" prefHeight="32.0" prefWidth="230.0" promptText="Recieve Advance Amount">
+                                    <font>
+                                        <Font name="Cambria Bold Italic" size="12.0" />
+                                    </font>
+                                    <tooltip>
+                                        <Tooltip text="Recieve Advance Amount" />
+                                    </tooltip>
+                                </TextField>
+                                <Button fx:id="btnUpdatee" layoutX="275.0" layoutY="291.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="123.0" text="Update">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="btnDownloadTransactionHistorya" layoutX="409.0" layoutY="291.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="205.0" text="Download Transaction History">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                                <Text fill="#00ffc8" layoutX="558.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Advance sanctioned">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

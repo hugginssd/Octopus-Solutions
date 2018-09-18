@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="535.0" prefWidth="671.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.performance.EmployeeMonthlyGoalAnalysisController">
+
+    <stylesheets>
+        <URL value="@/resources/css/employeemonthlygoalanalysis.css" />
+    </stylesheets>
+    <children>
+        <Pane fx:id="pane1" layoutX="6.0" layoutY="4.0" prefHeight="152.0" prefWidth="662.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+            <children>
+                <ComboBox fx:id="cmbSelectEmployee" layoutX="12.0" layoutY="83.0" prefHeight="31.0" prefWidth="219.0" promptText="---Select employee---" />
+                <Label layoutX="12.0" layoutY="5.0" prefHeight="21.0" prefWidth="304.0" text="Employee Monthly Goal Analysis" textFill="#14f8c7">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                    </font>
+                </Label>
+                <Hyperlink layoutX="561.0" layoutY="3.0" text="Know this form?" textFill="#14f8c7" underline="true">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Hyperlink>
+                <ComboBox fx:id="cmbSelectDepartment" layoutX="12.0" layoutY="46.0" prefHeight="31.0" prefWidth="219.0" promptText="---Select department---" />
+                <Pane fx:id="pane2" layoutX="273.0" layoutY="43.0" prefHeight="104.0" prefWidth="384.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                    <children>
+                        <ImageView fitHeight="88.0" fitWidth="89.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../../resources/icons/no-image.jpg" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lblEmployeeName" layoutX="102.0" layoutY="7.0" prefHeight="17.0" prefWidth="277.0" text="Employee Name" textFill="#14f8c7">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="102.0" layoutY="29.0" prefHeight="17.0" prefWidth="80.0" text="Employee ID:" textFill="#14f8c7">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+                        <Label layoutX="102.0" layoutY="53.0" prefHeight="17.0" prefWidth="71.0" text="Designation :" textFill="#14f8c7">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+                        <Label layoutX="102.0" layoutY="77.0" prefHeight="17.0" prefWidth="71.0" text="Department :" textFill="#14f8c7">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+                        <Label fx:id="lblEmployeeID" layoutX="181.0" layoutY="29.0" prefHeight="17.0" prefWidth="198.0" text="----------------" textFill="#14f8c7">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+                        <Label fx:id="lblDesignation" layoutX="181.0" layoutY="53.0" prefHeight="17.0" prefWidth="198.0" text="----------------" textFill="#14f8c7">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+                        <Label fx:id="lblDepartment" layoutX="181.0" layoutY="77.0" prefHeight="17.0" prefWidth="198.0" text="----------------" textFill="#14f8c7">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <Pane fx:id="pane3" layoutX="6.0" layoutY="159.0" prefHeight="369.0" prefWidth="662.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <ComboBox layoutX="233.0" layoutY="56.0" prefHeight="31.0" prefWidth="219.0" promptText="---Select total achieved goals---" />
+                <Label layoutX="190.0" layoutY="27.0" prefHeight="17.0" prefWidth="123.0" text="Total Effort Made (%) :" textFill="#14f8c7">
+
+                    <font>
+                        <Font name="System Bold Italic" size="11.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btnAdd" layoutX="462.0" layoutY="56.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="71.0" text="ADD" />
+                <ImageView fx:id="imgInfo" fitHeight="23.0" fitWidth="24.0" layoutX="532.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/icons/info.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="lblTotalAchievedGoals" layoutX="490.0" layoutY="27.0" prefHeight="17.0" prefWidth="42.0" text="-----" textFill="#14f8c7" />
+                <Label layoutX="352.0" layoutY="27.0" prefHeight="17.0" prefWidth="138.0" text="Total Achieved Goals (%) :" textFill="#14f8c7">
+                    <font>
+                        <Font name="System Bold Italic" size="11.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblTotalEffortMade" layoutX="312.0" layoutY="27.0" prefHeight="17.0" prefWidth="42.0" text="------" textFill="#14f8c7">
+
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="cmbSelectMonth" layoutX="8.0" layoutY="17.0" prefHeight="31.0" prefWidth="174.0" promptText="---Select month---" />
+                <ComboBox layoutX="8.0" layoutY="56.0" prefHeight="31.0" prefWidth="219.0" promptText="---Select total effort made---" />
+                <TableView layoutX="8.0" layoutY="100.0" prefHeight="260.0" prefWidth="646.0">
+                    <columns>
+                        <TableColumn prefWidth="51.0" text="ID" />
+                        <TableColumn prefWidth="597.0" text="Goal" />
+                    </columns>
+                </TableView>
+            <Button fx:id="btnClose" layoutX="536.0" layoutY="56.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="89.0" text="CLOSE" />
+
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

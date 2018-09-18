@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#pane{
+    -fx-border-color:#cccccc;
+    -fx-border-radius: 5px;
+}

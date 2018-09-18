@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="1617.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.organization.HrandAdminController">
+    <children>
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="1617.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <MenuBar prefHeight="34.0" prefWidth="1341.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu fx:id="file" mnemonicParsing="false" text="File">
+                            <items>
+                        <MenuItem mnemonicParsing="false" onAction="#forgotPassword" text="Forgot Password">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/forgot-password.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                        <MenuItem fx:id="newOrg" mnemonicParsing="false" onAction="#addOrganizationStage" text="New Organization">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/new-org.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                                <MenuItem fx:id="newUser" mnemonicParsing="false" onAction="#addNewUser" text="New Users">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/new-user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                                <MenuItem fx:id="viewUsers" mnemonicParsing="false" onAction="#viewUsers" text="View / Edit Users">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/view-users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                                <MenuItem fx:id="trails" mnemonicParsing="false" text="Trails">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/audit-trails.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                                <MenuItem fx:id="saveExit" mnemonicParsing="false" onAction="#closeMain" text="Save &amp; Exit">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/exit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                                <MenuItem fx:id="closeQuit" mnemonicParsing="false" onAction="#closeMain" text="Close">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/close.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu fx:id="homeMenu" mnemonicParsing="false" text="Home">
+                            <items>
+                                <MenuItem fx:id="addOrg" mnemonicParsing="false" onAction="#addOrganization" text="Organization" />
+                                <MenuItem fx:id="menuItemQuickRegistration" mnemonicParsing="false" onAction="#quickRegistration" text="Quick Registration">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/qiuck-registration.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                                <MenuItem fx:id="newEmp" mnemonicParsing="false" onAction="#addNewEmployee" text="New Employee" />
+                                <MenuItem fx:id="hrOutlook" mnemonicParsing="false" onAction="#hrOutlook" text="HR Outlook" />
+                                <MenuItem fx:id="empDoc" mnemonicParsing="false" onAction="#employeeDocuments" text="Employee Documents" />
+                                <MenuItem fx:id="comDoc" mnemonicParsing="false" onAction="#companyDocuments" text="Company Documents" />
+                                <MenuItem fx:id="empLeave" mnemonicParsing="false" onAction="#employeeLeaves" text="Employee Leaves" />
+                                <MenuItem fx:id="payroll" mnemonicParsing="false" onAction="#showPayrollStettings" text="Payroll" />
+                                <MenuItem fx:id="training" mnemonicParsing="false" onAction="#training" text="Training" />
+                                <MenuItem fx:id="recruit" mnemonicParsing="false" onAction="#recruitment" text="Recruitment" />
+                                <MenuItem fx:id="scheduleTrav" mnemonicParsing="false" onAction="#scheduleTravel" text="Schedule Travel" />
+                                <MenuItem fx:id="perform" mnemonicParsing="false" onAction="#performance" text="Performance" />
+                                <MenuItem fx:id="complNleg" mnemonicParsing="false" onAction="#showComplianceAndLegal" text="Compliance &amp; Legal" />
+                                <MenuItem fx:id="activateNow" mnemonicParsing="false" onAction="#activateNow" text="Activate Now" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="orgMenu" mnemonicParsing="false" text="Organization">
+                            <items>
+                        <MenuItem fx:id="newOrganization" mnemonicParsing="false" onAction="#newOrganization" text="New Organization" />
+
+                                <MenuItem fx:id="addViewOrg" mnemonicParsing="false" onAction="#addOrganization" text="Add/Edit/View Organisation Details" />
+                                <MenuItem fx:id="dep" mnemonicParsing="false" onAction="#addNewDepartment" text="Department" />
+                                <MenuItem fx:id="desig" mnemonicParsing="false" onAction="#addNewDesignation" text="Designation" />
+                                <MenuItem fx:id="benNfac" mnemonicParsing="false" onAction="#addBenefitsAndFacilities" text="Benefits and Facilities" />
+                                <MenuItem fx:id="calendar" mnemonicParsing="false" onAction="#organisationalCalendar" text="Calendar" />
+                                <MenuItem fx:id="empCal" mnemonicParsing="false" onAction="#employeeCalendar" text="Employee Calendar" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="empMenu" mnemonicParsing="false" text="Employees">
+                            <items>
+                        <MenuItem mnemonicParsing="false" onAction="#employeeProflie" text="Employee Profile" />
+
+                                <MenuItem fx:id="newEmpl" mnemonicParsing="false" onAction="#addNewEmployee" text="New Employee" />
+                                <MenuItem fx:id="empList" mnemonicParsing="false" onAction="#openEmployeeList" text="Employee List" />
+                                <MenuItem fx:id="uploadEmp" mnemonicParsing="false" onAction="#uploadEmployees" text="Upload Employees" />
+                                <MenuItem fx:id="addLeaveDetails" mnemonicParsing="false" onAction="#addViewLeaveDetails" text="Add/View Leave Details" />
+                                <MenuItem fx:id="depHist" mnemonicParsing="false" onAction="#departmentHistory" text="Department History" />
+                                <MenuItem fx:id="proHist" mnemonicParsing="false" onAction="#promotionsHistory" text="Promotions/History" />
+                                <MenuItem fx:id="doc" mnemonicParsing="false" onAction="#employeeDocuments" text="Documents" />
+                                <MenuItem fx:id="perf" mnemonicParsing="false" onAction="#performance" text="Performance" />
+                                <MenuItem fx:id="disc" mnemonicParsing="false" onAction="#employeeDisciplinary" text="Disciplinary" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="docMenu" mnemonicParsing="false" text="Documents">
+                            <items>
+                                <MenuItem fx:id="docTypes" mnemonicParsing="false" onAction="#showDocumentTypes" text="Document Types" />
+                                <MenuItem fx:id="empDocs" mnemonicParsing="false" onAction="#showEmployeeDocuments" text="Employee Documents" />
+                                <MenuItem fx:id="comDocs" mnemonicParsing="false" onAction="#showCompanyDocuments" text="Company Documents" />
+                                <MenuItem fx:id="exteDocs" mnemonicParsing="false" onAction="#showExternalDocuments" text="External Documents" />
+                                <MenuItem fx:id="refDocs" mnemonicParsing="false" onAction="#showReferenceDocuments" text="Reference Documents" />
+                                <MenuItem fx:id="expDocs" mnemonicParsing="false" onAction="#showExpiredDocuments" text="Expired Documents" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="perfMenu" mnemonicParsing="false" text="Performance">
+                            <items>
+                                <MenuItem fx:id="menuItemperfIntelligence" mnemonicParsing="false" onAction="#performance" text="Performance Intelligence" />
+                                <MenuItem fx:id="addGoal" mnemonicParsing="false" onAction="#addGoal" text="Add Goal" />
+                                <MenuItem fx:id="analyseGoalEffort" mnemonicParsing="false" onAction="#employeeMonthlyGoalAnalysis" text="Analyse Goal &amp; Effort" />
+                                <MenuItem fx:id="orgPerf" mnemonicParsing="false" text="Organization Performance" />
+                                <MenuItem fx:id="orgImprovement" mnemonicParsing="false" text="Organization Improvement" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="paySalaryMenu" mnemonicParsing="false" text="Payroll &amp; Salaries">
+                            <items>
+                                <MenuItem fx:id="paySettings" mnemonicParsing="false" onAction="#showPayrollSettings" text="Payroll Settings" />
+                                <MenuItem fx:id="payStruct" mnemonicParsing="false" onAction="#showPayrollStructure" text="Payroll Structure" />
+                                <MenuItem fx:id="paySal" mnemonicParsing="false" onAction="#showPayEmployeeSalary" text="Pay Salaries" />
+                                <MenuItem fx:id="wagesAndBilling" mnemonicParsing="false" onAction="#showEmployeeBilling" text="Wages and Billing" />
+                                <MenuItem fx:id="salHist" mnemonicParsing="false" onAction="#showEmployeeSalaryHistory" text="Salary History" />
+                                <MenuItem fx:id="loanAndAdvances" mnemonicParsing="false" onAction="#showLoanAndAdvances" text="Loan and Advances" />
+                                <MenuItem fx:id="bankSheet" mnemonicParsing="false" onAction="#showBankSheet" text="Bank Sheet" />
+                                <MenuItem fx:id="uploadPayrollAttendance" mnemonicParsing="false" text="Upload Payroll Attendance" />
+                                <MenuItem fx:id="advancePayroll" mnemonicParsing="false" onAction="#showPayrollStettings" text="Advance Payroll" />
+
+                            </items>
+                        </Menu>
+                        <Menu fx:id="attendanceMenu" mnemonicParsing="false" text="Attendance">
+                            <items>
+                                <MenuItem fx:id="empAttTimeSheet" mnemonicParsing="false" text="Employees Attendance Time Sheet" />
+                                <MenuItem fx:id="empAttendance" mnemonicParsing="false" text="Employee Attendance" />
+                                <MenuItem fx:id="orgCalAttendance" mnemonicParsing="false" text="Organization Calendar" />
+                                <MenuItem fx:id="empLeaveCal" mnemonicParsing="false" text="Employee Leave Calendar" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="leaveMenu" mnemonicParsing="false" text="Leave">
+                            <items>
+                                <MenuItem fx:id="punchApplyLeave" mnemonicParsing="false" onAction="#addOrPunchLeave" text="Punchy/Apply Leave" />
+                                <MenuItem fx:id="approveManageLeave" mnemonicParsing="false" onAction="#addOrPunchLeave" text="Approve/Manage Leave" />
+                                <MenuItem fx:id="leaveSettings" mnemonicParsing="false" onAction="#addSkills" text="Leave Settings" />
+                                <MenuItem fx:id="orgCalLeave" mnemonicParsing="false" onAction="#organisationalCalendar" text="Organization Calendar" />
+                                <MenuItem fx:id="empCalLeave" mnemonicParsing="false" onAction="#employeeCalendar" text="Employee Leave Calendar" />
+                                <MenuItem fx:id="empPerfLeave" mnemonicParsing="false" onAction="#performance" text="Employee Performance" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="trainingMenu" mnemonicParsing="false" text="Training">
+                            <items>
+                                <MenuItem fx:id="trainingItem" mnemonicParsing="false" onAction="#training" text="Training" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="recruitMenu" mnemonicParsing="false" text="Recruitment">
+                            <items>
+                                <MenuItem fx:id="recruitItem" mnemonicParsing="false" onAction="#recruitment" text="Recruitment" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="travelMenu" mnemonicParsing="false" text="Travel">
+                            <items>
+                                <MenuItem fx:id="travelschedule" mnemonicParsing="false" onAction="#scheduleTravel" text="Travel Schedule" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="reportsMenu" mnemonicParsing="false" text="Reports">
+                            <items>
+                                <MenuItem fx:id="deductionReport" mnemonicParsing="false" onAction="#showReports" text="Deduction Report" />
+                                <MenuItem fx:id="dueSalaryReport" mnemonicParsing="false" onAction="#showReports" text="Due Salary Report" />
+                                <MenuItem fx:id="netSalaryReport" mnemonicParsing="false" onAction="#showReports" text="Net Salary Report" />
+                                <MenuItem fx:id="employeeReport" mnemonicParsing="false" onAction="#showReports" text="Employee Report" />
+                                <MenuItem fx:id="headCountReport" mnemonicParsing="false" onAction="#showReports" text="Head Count Report" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="compAndLegalMenu" mnemonicParsing="false" text="Compliance &amp; Legal">
+                            <items>
+                                <MenuItem fx:id="compItem" mnemonicParsing="false" onAction="#showComplianceAndLegal" text="Compliance" />
+                                <MenuItem fx:id="legalItem" mnemonicParsing="false" onAction="#showLegal" text="Legal" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="congSettingsMenu" mnemonicParsing="false" text="Config &amp; Settings">
+                            <items>
+                                <MenuItem fx:id="securitySettings" mnemonicParsing="false" onAction="#showSecuritySettings" text="Security Settings" />
+                                <MenuItem fx:id="configEmail" mnemonicParsing="false" onAction="#showConfigureEmail" text="Configure Email" />
+                                <MenuItem fx:id="backupDatabase" mnemonicParsing="false" text="Backup Database" />
+                                <MenuItem fx:id="restoreDatabase" mnemonicParsing="false" text="Restore Database" />
+                                <MenuItem fx:id="emptyDatabase" mnemonicParsing="false" text="Empty Database" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="aboutHRandAdminMenu" mnemonicParsing="false" text="About HR &amp; Admin">
+                            <items>
+                                <MenuItem fx:id="licenseItem" mnemonicParsing="false" text="Licenses" />
+                                <MenuItem fx:id="activateNowItem" mnemonicParsing="false" onAction="#activateNow" text="Activate Now" />
+                            </items>
+                        </Menu>
+                        <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem fx:id="howItWorks" mnemonicParsing="false" text="How it Works?" />
+                                <MenuItem fx:id="aboutHRandAdminItem" mnemonicParsing="false" text="About HR &amp; Admin" />
+                                <MenuItem fx:id="termsAndConditions" mnemonicParsing="false" text="Terms &amp; Conditions" />
+                                <MenuItem fx:id="checkForUpdates" mnemonicParsing="false" text="Check for Updates" />
+                                <MenuItem fx:id="referralsItem" mnemonicParsing="false" text="Referrals" />
+                                <MenuItem fx:id="feedbackContactUs" mnemonicParsing="false" text="Feedback/Contact Us" />
+                                <MenuItem fx:id="faqItem" mnemonicParsing="false" text="FAQ" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <left>
+                <AnchorPane fx:id="anchorPane" prefHeight="821.0" prefWidth="1638.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Pane fx:id="Pane1" layoutX="955.0" layoutY="20.0" prefHeight="790.0" prefWidth="564.0">
+                            <children>
+                                <Label fx:id="lblSearchEmplyee" layoutX="14.0" layoutY="1.0" prefHeight="23.0" prefWidth="93.0" text="Employee Details" />
+                                <Separator layoutX="104.0" layoutY="15.0" prefHeight="4.0" prefWidth="435.0" />
+                                <ImageView fx:id="imageView" fitHeight="111.0" fitWidth="102.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="@../../resources/icons/no-image.jpg" />
+                                    </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                                </ImageView>
+                                <Label layoutX="123.0" layoutY="18.0" prefHeight="17.0" prefWidth="80.0" text="Employee Id:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                                <Label fx:id="lblEmployeeId" layoutX="201.0" layoutY="18.0" prefHeight="17.0" prefWidth="182.0" text="-----" />
+                                <Label fx:id="lblEmployeeName" layoutX="201.0" layoutY="37.0" prefHeight="21.0" prefWidth="187.0" text="---------------------" />
+                                <Label layoutX="124.0" layoutY="64.0" prefHeight="17.0" prefWidth="78.0" text="Designation:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                                <Label layoutX="124.0" layoutY="85.0" prefHeight="17.0" prefWidth="77.0" text="Department:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                                <Label layoutX="124.0" layoutY="108.0" prefHeight="17.0" prefWidth="77.0" text="Work Email :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                                <Label fx:id="lblDesignation" layoutX="201.0" layoutY="64.0" prefHeight="17.0" prefWidth="195.0" text="---------------" />
+                                <Label fx:id="lblDepartment" layoutX="201.0" layoutY="85.0" prefHeight="17.0" prefWidth="190.0" text="---------------" />
+                                <Label layoutX="201.0" layoutY="108.0" prefHeight="17.0" prefWidth="193.0" text="---------------" />
+                                <Button fx:id="btnUploadImage" layoutX="14.0" layoutY="137.0" mnemonicParsing="false" onAction="#loadImage" prefHeight="25.0" prefWidth="103.0" text="Upload Image" />
+                                <Button fx:id="btnSendNotifications" layoutX="124.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="Send Notifications" />
+                                <Button fx:id="btnViewEmployeeDetails" layoutX="374.0" layoutY="137.0" mnemonicParsing="false" onAction="#showDeactivateEmployees" prefHeight="25.0" prefWidth="150.0" text="View Employee Details" />
+                                <Button fx:id="btnAddNewEmployee" layoutX="398.0" layoutY="29.0" mnemonicParsing="false" onAction="#quickRegistration" prefHeight="25.0" prefWidth="126.0" text="Add New Employee" />
+                                <Pane layoutX="1.0" layoutY="169.0" prefHeight="621.0" prefWidth="535.0">
+                                    <children>
+                                        <Label layoutX="14.0" layoutY="6.0" prefHeight="22.0" prefWidth="102.0" text="Employee Analysis" />
+                                        <Separator layoutX="112.0" layoutY="21.0" prefHeight="3.0" prefWidth="419.0" />
+                                        <ComboBox fx:id="cmbSelectMonth" layoutX="28.0" layoutY="28.0" prefHeight="25.0" prefWidth="245.0" promptText="---Select month---" />
+                                        <Button fx:id="btnAddGoalAndEffect" layoutX="389.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Update Goal &amp; Effort" />
+                                        <Button fx:id="btnAddGoal" layoutX="297.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Add Goal" />
+                                        <Label layoutX="28.0" layoutY="59.0" prefHeight="24.0" prefWidth="70.0" text="Value Index">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="100.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/inform.png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="txtIndex" layoutX="120.0" layoutY="59.0" prefHeight="15.0" prefWidth="132.0" />
+                                        <Label fx:id="lblMedium" layoutX="253.0" layoutY="63.0" text="----" />
+                                        <Label layoutX="37.0" layoutY="102.0" prefHeight="17.0" prefWidth="56.0" text="Net Worth">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lblNetWorth" layoutX="120.0" layoutY="102.0" prefHeight="17.0" prefWidth="131.0" text="----------" />
+                                        <ImageView fx:id="imgInfo" fitHeight="16.0" fitWidth="18.0" layoutX="98.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/inform.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Label layoutX="293.0" layoutY="63.0" prefHeight="17.0" prefWidth="135.0" text="Expected Monthly Output">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="429.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/inform.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Label fx:id="lblExpectedMonthlyOutput" layoutX="448.0" layoutY="62.0" prefHeight="17.0" prefWidth="58.0" text="------------" />
+                                        <Label alignment="CENTER_RIGHT" layoutX="288.0" layoutY="102.0" prefHeight="20.0" prefWidth="138.0" text="Actual Monthly Output">
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fitHeight="18.0" fitWidth="17.0" layoutX="427.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/inform.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Label fx:id="lblActualMonthlyOutput" layoutX="448.0" layoutY="102.0" prefHeight="17.0" prefWidth="65.0" text="------------" />
+                                        <StackedBarChart fx:id="sbcPerformanceValueGraph" layoutX="1.0" layoutY="139.0" prefHeight="480.0" prefWidth="533.0" title="Last 3 months Performance Value Graph of Employee">
+                                            <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                        </StackedBarChart>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </Pane>
+                        <Pane fx:id="Pane2" layoutX="14.0" layoutY="18.0" prefHeight="795.0" prefWidth="937.0">
+                            <children>
+                                <ComboBox fx:id="cmbChangeOrganization" layoutX="6.0" layoutY="7.0" prefHeight="25.0" prefWidth="359.0" promptText="---Change Organization---" />
+                                <Label layoutX="401.0" layoutY="8.0" prefHeight="24.0" prefWidth="62.0" text="Share On">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fx:id="imgGooglePlus" fitHeight="24.0" fitWidth="35.0" layoutX="461.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../resources/icons/googlePlus.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="imgFacebook" fitHeight="31.0" fitWidth="30.0" layoutX="487.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../resources/icons/facebook.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="27.0" fitWidth="26.0" layoutX="515.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../resources/icons/twitter-squared.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="544.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../resources/icons/linkedin.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="lbSearchEmployee" layoutY="-12.0" prefHeight="18.0" prefWidth="93.0" text="Search Employee" />
+                                <Pane layoutX="6.0" layoutY="40.0" prefHeight="109.0" prefWidth="861.0">
+                                    <children>
+                                        <TabPane fx:id="tabPaneSearchEmployee" layoutX="3.0" layoutY="2.0" prefHeight="102.0" prefWidth="533.0" tabClosingPolicy="UNAVAILABLE">
+                                            <tabs>
+                                                <Tab fx:id="tabDepartment" text="Department">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="96.0" prefWidth="485.0">
+                                                            <children>
+                                                                <Pane fx:id="paneDepartment" prefHeight="83.0" prefWidth="485.0">
+                                                                    <children>
+                                                                        <ComboBox fx:id="cmbSearchDepartments" layoutX="3.0" layoutY="23.0" onAction="#loadDepartmentId" prefHeight="25.0" prefWidth="191.0" promptText="---Search Departments---" />
+                                                                        <ComboBox fx:id="cmbSelectEmployee" layoutX="247.0" layoutY="24.0" onAction="#loadEmployeeDetails" prefHeight="25.0" prefWidth="208.0" promptText="---Select Employee---" />
+                                                      <Label fx:id="lblDepartmentId" layoutX="99.0" layoutY="49.0" text="Label" />
+
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="tabEmpId" text="Emp. Id">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Pane fx:id="paneEmpId" layoutY="-2.0" prefHeight="76.0" prefWidth="485.0">
+                                                                    <children>
+                                                                        <TextField fx:id="txtEmployeeId" layoutX="7.0" layoutY="26.0" prefHeight="25.0" prefWidth="260.0" promptText="Employee Id" />
+                                                                        <Button fx:id="btnSearch" layoutX="274.0" layoutY="26.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Search" />
+                                                                        <Button fx:id="btnViewEmployee" layoutX="365.0" layoutY="26.0" mnemonicParsing="false" onAction="#viewEmployeeDetails" prefHeight="25.0" prefWidth="119.0" text="VIEW EMPLOYEE" />
+
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="tabName" text="Name">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Pane fx:id="paneName" layoutY="-1.0" prefHeight="116.0" prefWidth="597.0">
+                                                                    <children>
+                                                                        <Button fx:id="btnSearch1" layoutX="275.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Search" />
+                                                                        <Button fx:id="btnViewEmployee1" layoutX="364.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="VIEW EMPLOYEE" />
+                                                                    </children>
+                                                                </Pane>
+                                                                <TextField fx:id="txtEmployeeId1" layoutX="3.0" layoutY="22.0" prefHeight="25.0" prefWidth="260.0" promptText="Employee Id" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="tabLocation" text="Location">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Pane fx:id="paneLocation" layoutY="-2.0" prefHeight="74.0" prefWidth="486.0">
+                                                                    <children>
+                                                                        <ComboBox fx:id="cmbLocation" layoutX="8.0" layoutY="26.0" prefHeight="25.0" prefWidth="301.0" promptText="---Select Location---" />
+                                                                        <Button fx:id="btnViewAllEmployee" layoutX="317.0" layoutY="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" text="VIEW ALL EMPLOYEE" />
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="tabVerification" text="Verification">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Pane fx:id="paneVerification" layoutY="-2.0" prefHeight="75.0" prefWidth="484.0">
+                                                                    <children>
+                                                                        <Button fx:id="btnViewAllEmployes" layoutX="312.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="VIEW ALL EMPLOYEE" />
+                                                                        <ComboBox fx:id="btnSelectVerificationStatus" layoutX="3.0" layoutY="24.0" prefHeight="25.0" prefWidth="301.0" promptText="---Select Verification Status---" />
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="tabJobType" text="Job Type">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Pane fx:id="paneJobType" layoutX="-1.0" prefHeight="73.0" prefWidth="485.0">
+                                                                    <children>
+                                                                        <ComboBox fx:id="cmbSelectJobStatus" layoutX="14.0" layoutY="22.0" prefHeight="25.0" prefWidth="278.0" promptText="---Select Job Status---" />
+                                                                        <Button fx:id="btnViewAllEmployees" layoutX="299.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="179.0" text="VIEW ALL EMPLOYEE" />
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="tabActivation" text="Activation">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <Pane fx:id="paneActivation" layoutY="-2.0" prefHeight="117.0" prefWidth="599.0">
+                                                                    <children>
+                                                                        <Button fx:id="btnViewAllEmployeeActivation" layoutX="304.0" layoutY="34.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="VIEW ALL EMPLOYEE" />
+                                                                        <ComboBox fx:id="btnSelectActivationStatus" layoutX="8.0" layoutY="34.0" prefHeight="25.0" prefWidth="292.0" promptText="---Select Activation Status---" />
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab text="Work Shift">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <ComboBox fx:id="cmbSelectDepartment" layoutX="14.0" layoutY="24.0" prefHeight="25.0" prefWidth="236.0" promptText="---Select Department---" />
+                                                                <ComboBox fx:id="cmbSelectWorkShift" layoutX="261.0" layoutY="24.0" prefHeight="25.0" prefWidth="233.0" promptText="---Select Work Shift---" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                            </tabs>
+                                        </TabPane>
+                                        <Button fx:id="btnManageServer" alignment="BOTTOM_CENTER" layoutX="547.0" layoutY="20.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="95.0" text="MANAGE USER" textAlignment="CENTER" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                                        <Button fx:id="btnUserPermission" alignment="BOTTOM_CENTER" layoutX="647.0" layoutY="19.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="101.0" text="USER PERMISSIONS" textAlignment="CENTER" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                                        <Button fx:id="btnUserLog" alignment="BOTTOM_CENTER" layoutX="751.0" layoutY="20.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="96.0" text="USER LOG" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Button>
+                              <ImageView fitHeight="42.0" fitWidth="52.0" layoutX="570.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/manage-user.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="42.0" fitWidth="52.0" layoutX="676.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/user-permissions.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="42.0" fitWidth="52.0" layoutX="778.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/user-logs.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="paneTable" layoutX="10.0" layoutY="149.0" prefHeight="235.0" prefWidth="862.0">
+                                    <children>
+                                        <Button fx:id="btnNewEmployeeDetails" layoutX="2.0" layoutY="5.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="160.0" text="NEW EMPLOYEE DETAILS" />
+                                        <Button fx:id="btnSyncAttendance" layoutX="2.0" layoutY="43.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="160.0" text="SYNC ATTENDANCE" />
+                                        <Button fx:id="btnPayEmployeeSalary" layoutX="172.0" layoutY="43.0" mnemonicParsing="false" onAction="#showPayEmployeeSalary" prefHeight="28.0" prefWidth="160.0" text="PAY EMPLOYEE SALARY" />
+                                        <Button fx:id="btnEditEmployeeDetails" layoutX="172.0" layoutY="5.0" mnemonicParsing="false" onAction="#addNewEmployee" prefHeight="29.0" prefWidth="160.0" text="EDIT EMPLOYEE DETAILS" />
+                                        <Button fx:id="btnEmployeePayslip" layoutX="343.0" layoutY="43.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="160.0" text="EMPLOYEE PAYSLIP" />
+                                        <Button fx:id="btnViewDocuments" layoutX="343.0" layoutY="7.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="160.0" text="VIEW DOCUMENTS" />
+                                        <Button layoutX="510.0" layoutY="43.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="160.0" text="EXPORT TO EXCEL" />
+                                        <Button fx:id="btnViewEmployees" layoutX="510.0" layoutY="7.0" mnemonicParsing="false" onAction="#showEmployeeList" prefHeight="29.0" prefWidth="160.0" text="VIEW ALL EMPLOYEES" />
+                                        <Button fx:id="btnRefresh" layoutX="680.0" layoutY="43.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="82.0" text="REFRESH" />
+                                        <Button fx:id="btnDeactivateEmployee" layoutX="680.0" layoutY="7.0" mnemonicParsing="false" onAction="#showDeactivateEmployees" prefHeight="29.0" prefWidth="169.0" text="DEACTIVATE EMPLOYEE" />
+                                        <Button fx:id="btnDelete" layoutX="768.0" layoutY="43.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="82.0" text="DELETE" />
+                                        <TableView fx:id="tableView" layoutX="2.0" layoutY="74.0" prefHeight="157.0" prefWidth="848.0" />
+
+                                    </children>
+                                </Pane>
+                                <Pane layoutX="8.0" layoutY="388.0" prefHeight="406.0" prefWidth="868.0">
+                                    <children>
+                                        <Pane layoutX="494.0" layoutY="4.0" prefHeight="387.0" prefWidth="223.0">
+                                            <children>
+                                                <Label layoutY="3.0" prefHeight="41.0" prefWidth="224.0" text="Earning/ Saving of Your Organisation" textAlignment="CENTER" wrapText="true">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="13.0" layoutY="96.0" prefHeight="17.0" prefWidth="104.0" text="Total Experience:">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="lblTotalExperience" layoutX="113.0" layoutY="96.0" prefHeight="17.0" prefWidth="70.0" text="  ---------" />
+                                                <Label layoutX="32.0" layoutY="127.0" text="EMO">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="31.0" layoutY="160.0" text="AMO">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="33.0" layoutY="190.0" text="NSO">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="35.0" layoutY="221.0" text="PIO">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="16.0" layoutY="273.0" text="Total Cost Benefit">
+                                                    <font>
+                                                        <Font name="System Bold" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <ImageView fitHeight="21.0" fitWidth="18.0" layoutX="64.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/inform.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="64.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/inform.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="18.0" fitWidth="17.0" layoutX="64.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/inform.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="64.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/inform.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="22.0" fitWidth="19.0" layoutX="129.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/inform.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="16.0" layoutY="307.0" prefHeight="21.0" prefWidth="107.0" text="Label" textFill="#15dd33">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="90.0" layoutY="127.0" prefHeight="17.0" prefWidth="67.0" text="------------" />
+                                                <Label layoutX="90.0" layoutY="160.0" prefHeight="17.0" prefWidth="67.0" text="------------" />
+                                                <Label layoutX="90.0" layoutY="190.0" prefHeight="17.0" prefWidth="67.0" text="------------" />
+                                                <Label layoutX="87.0" layoutY="221.0" prefHeight="17.0" prefWidth="63.0" text="------------" />
+                                            </children>
+                                        </Pane>
+                                        <Button fx:id="btnPayroll" alignment="CENTER_RIGHT" layoutX="724.0" layoutY="5.0" mnemonicParsing="false" onAction="#payroll" prefHeight="44.0" prefWidth="125.0" text="PAYROLL" />
+                                        <Button fx:id="btnTravelling" alignment="CENTER_RIGHT" layoutX="723.0" layoutY="65.0" mnemonicParsing="false" onAction="#scheduleTravel" prefHeight="43.0" prefWidth="125.0" text="TRAVELLING" />
+                                        <Button fx:id="btnRecruitment" alignment="CENTER_RIGHT" layoutX="725.0" layoutY="121.0" mnemonicParsing="false" onAction="#recruitment" prefHeight="45.0" prefWidth="122.0" text="RECRUITMENT" />
+                                        <Button fx:id="btnCompliance" alignment="CENTER_RIGHT" layoutX="725.0" layoutY="186.0" mnemonicParsing="false" onAction="#showComplianceAndLegal" prefHeight="49.0" prefWidth="122.0" text="COMPLIANCE" />
+                                        <Button fx:id="btnTraining" alignment="CENTER_RIGHT" layoutX="725.0" layoutY="248.0" mnemonicParsing="false" onAction="#training" prefHeight="49.0" prefWidth="122.0" text="TRAINING" />
+                                        <Button fx:id="btnPerformance" alignment="CENTER_RIGHT" layoutX="725.0" layoutY="307.0" mnemonicParsing="false" onAction="#performance" prefHeight="50.0" prefWidth="122.0" text="PERFORMANCE" />
+                                        <AreaChart fx:id="areaChartOrg" layoutX="2.0" layoutY="2.0" onMouseMoved="#showShadowValue" prefHeight="407.0" prefWidth="498.0" title="Last 4 Years Performance Graph of Your Organisation">
+                                            <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis label="Monetary Value($k)" side="LEFT" />
+                                            </yAxis>
+                                        </AreaChart>
+                              <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="726.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/m-payroll.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="726.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/manage-travelling.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="727.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/recruitment.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="726.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/compliance.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="726.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/trainings.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="725.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/employee-performance.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </Pane>
+                        <Button fx:id="btnAddOrg" layoutX="366.0" layoutY="7.0" mnemonicParsing="false" onAction="#addOrganizationStage" prefHeight="17.0" prefWidth="31.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="18.0" onMouseClicked="#addOrganizationStage" onMouseEntered="#addOrganizationStage" onMousePressed="#addOrganizationStage" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+            </left>
+        </BorderPane>
+    </children>
+</AnchorPane>

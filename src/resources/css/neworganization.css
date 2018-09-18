@@ -1,0 +1,44 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#toolBar{
+    -fx-background-color: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    -fx-background-repeat: repeat;
+}
+#lblName{
+    -fx-font: Quicksand;
+    -fx-font-size:13pt;
+    -fx-text-fill: #FFFFFF;
+    
+}
+#toolBarCreateNew{
+    -fx-background-color: #92BBDE;
+}
+#lblCreateNew{
+    -fx-font-style:bold;
+    -fx-font-size:11pt;
+}
+#lblUseExistingOrganisation{
+   -fx-font-style:bold;
+    -fx-font-size:9pt; 
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color:#C6E7EF;
+}
+#toolBarExisting{
+  -fx-background-color: #92BBDE;  
+}
+#tblTreeTableExistingOrganisations .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color:#C6E7EF;
+}
+#btnCreateNew{
+    -fx-graphic: url("\resources\icons\blue_back.jpeg");
+}

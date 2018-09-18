@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="451.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="octopushr.organization.NewEventDetailsController">
+    <stylesheets>
+        <URL value="@/resources/css/neweventdetails.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="8.0" layoutY="8.0" prefHeight="516.0" prefWidth="449.0" styleClass="pane">
+         <children>
+            <Pane layoutX="8.0" layoutY="7.0" prefHeight="149.0" prefWidth="434.0" styleClass="pane">
+               <children>
+                  <DatePicker fx:id="dtpEventDate" layoutX="92.0" layoutY="7.0" onAction="#setDaY" prefHeight="31.0" prefWidth="254.0" />
+                  <TextField fx:id="txtDay" layoutX="92.0" layoutY="47.0" prefHeight="31.0" prefWidth="230.0" />
+                  <TextField fx:id="txtEventName" layoutX="92.0" layoutY="86.0" prefHeight="31.0" prefWidth="254.0" />
+                  <CheckBox fx:id="chkIsItHoliday" layoutX="92.0" layoutY="124.0" mnemonicParsing="false" text="Is it holiday?">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <Label layoutX="18.0" layoutY="14.0" text="Event Date :">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="57.0" layoutY="54.0" text="Day :">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="9.0" layoutY="93.0" text="Event Name :">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="8.0" layoutY="157.0" prefHeight="149.0" prefWidth="434.0" styleClass="pane">
+               <children>
+                  <Label layoutX="6.0" layoutY="57.0" prefHeight="38.0" prefWidth="77.0" text="Recurring Frequency :" wrapText="true">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cmbRecurringFrequency" layoutX="90.0" layoutY="61.0" prefHeight="31.0" prefWidth="223.0" promptText="None" />
+               </children>
+            </Pane>
+            <Pane layoutX="8.0" layoutY="308.0" prefHeight="149.0" prefWidth="434.0" styleClass="pane">
+               <children>
+                  <Label layoutX="7.0" layoutY="66.0" text="Event Color :">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="199.0" layoutY="65.0" text="Event Text Color :">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ColorPicker fx:id="colorEventColor" layoutX="155.0" layoutY="59.0" onAction="#showEventColor" prefHeight="25.0" prefWidth="29.0" />
+                  <ColorPicker fx:id="colorEventTextColor" layoutX="372.0" layoutY="60.0" onAction="#showEventTextColor" prefHeight="25.0" prefWidth="29.0" />
+                  <Button fx:id="btnEventColor" layoutX="85.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" />
+                  <Button fx:id="btnEventTextColor" layoutX="302.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" />
+               </children>
+            </Pane>
+            <Button fx:id="btnOk" layoutX="6.0" layoutY="470.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="103.0" text="OK">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCancel" layoutX="341.0" layoutY="470.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="31.0" prefWidth="103.0" text="CANCEL">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

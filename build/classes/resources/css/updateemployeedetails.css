@@ -1,0 +1,105 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-font-size:13px;
+
+    -fx-border-color:#a9a9a9;
+
+    -fx-background-color:#66ADCD; 
+}
+/*.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+
+}*/
+.button{
+    -fx-background-color:#ffffff;
+    -fx-background-radius: 5px;
+}
+
+/*.text-field:focused {
+    -fx-background-color: #a9a9a9 , #66ADCD , #66ADCD;
+    -fx-background-radius: 5px;
+
+}*/
+.anchor-pane{
+    -fx-backgroud-color:#66ADCD;
+}
+.tab-pane{
+    -fx-background-color:#66ADCD; 
+}
+.table-view{
+    -fx-font: Arial Rounded MT Bold;
+    -fx-font-size: 9pt;
+    -fx-font-style:Bold;
+}
+#btnAddd,#btnResett,#btnEdit,#btnDelete,#_btn_Add{
+    -fx-background-color:#ffffff;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #66ADCD;
+}
+#lblNote{
+    -fx-font:Californian FB;
+    -fx-font-size: 13px;
+    -fx-font-style:Bold;
+}
+.date-picker{
+    -fx-font: Arial Unicode MS;
+    -fx-font-size: 12px;
+    -fx-font-style:Regular;
+}
+#cellButton{
+    -fx-background-color:#ffffff;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #66ADCD;
+}
+/*
+   Find more details on JavaFX supported named colors at
+   http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#t...
+*/
+
+/* Colors of JavaFX pie chart slices. */
+.data0.chart-pie { -fx-pie-color: turquoise; }
+.data1.chart-pie { -fx-pie-color: aquamarine; }
+.data2.chart-pie { -fx-pie-color: cornflowerblue; }
+.data3.chart-pie { -fx-pie-color: blue; }
+.data4.chart-pie { -fx-pie-color: cadetblue; }
+.data5.chart-pie { -fx-pie-color: navy; }
+.data6.chart-pie { -fx-pie-color: deepskyblue; }
+.data7.chart-pie { -fx-pie-color: cyan; }
+.data8.chart-pie { -fx-pie-color: steelblue; }
+.data9.chart-pie { -fx-pie-color: teal; }
+.data10.chart-pie { -fx-pie-color: royalblue; }
+.data11.chart-pie { -fx-pie-color: dodgerblue; }
+
+/* Pie Chart legend background color and stroke. */
+.chart-legend { -fx-background-color: aquamarine;  }
+.chart-pie-label { /*this is what you need for labels*/
+    -fx-fill: aquamarine; 
+    -fx-font-size: 1em;
+}
+.chart-title
+{
+    -fx-font-family: "Arial Rounded MT Bold";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+
+
+}
+.button{
+    -fx-background-color:#ffffff;
+    -fx-border-color:#000000;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-border-color:#a9a9a9;
+
+}

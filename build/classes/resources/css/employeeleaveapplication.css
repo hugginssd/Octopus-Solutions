@@ -1,0 +1,17 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+    -fx-background-color:#66ADCD; 
+}
+.button{
+    -fx-background-color:#ffffff;
+    -fx-background-radius: 5px;
+}
+#tabApply{
+    -fx-font:Arial Rounded MT Bold;
+    -fx-font-size:12px;
+    -fx-font-style:Bold;
+}

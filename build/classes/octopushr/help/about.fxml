@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="730.0" prefWidth="955.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="octopushr.help.AboutController">
+
+    <stylesheets>
+        <URL value="@/resources/css/about.css" />
+    </stylesheets>
+    <children>
+        <WebView fx:id="webView" layoutX="-1.0" layoutY="1.0" prefHeight="724.0" prefWidth="955.0" />
+    </children>
+</AnchorPane>

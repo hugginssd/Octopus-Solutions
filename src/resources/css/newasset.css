@@ -1,0 +1,48 @@
+/*
+ * Empty Stylesheet file.
+ */
+#AnchorPane{
+    -fx-padding: 10%;
+}
+#assetDescription{
+    -fx-border-radius:2%;
+    -fx-border-width: 2%;
+    -fx-padding: 2%;
+}
+#assetImg{
+    -fx-border-radius:2%;
+    -fx-border-color:#AB4642;
+    -fx-border-width: 2%;
+}
+#gridPane{
+    -fx-alignment:TOP_RIGHT;
+    -fx-border-radius: 5%;
+    -fx-border-style: solid;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2px;
+    -fx-padding: 10%;
+}
+
+.mainFxmlClass {
+
+    -fx-background-color:#062a4e;
+    -fx-border-color: #FFFFFF;
+    -fx-border-radius: 4%;
+    -fx-border-width: 5px;
+}
+.root{
+
+    -fx-font-size: 10pt; 
+}
+.button{
+    -fx-background-color: linear-gradient(#DC9656, #AB4642);
+
+}
+.label{
+    -fx-text-fill:#e8e8e8;  
+}
+.textField{
+
+
+}
+

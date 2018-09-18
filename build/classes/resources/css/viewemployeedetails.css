@@ -1,0 +1,25 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+-fx-background-color:#66ADCD; 
+}
+.anchor-pane{
+    -fx-background-color:#66ADCD; 
+}
+/*.tab-pane{
+    -fx-background-color:#66ADCD; 
+}*/
+.pane{
+    -fx-background-color:#66ADCD; 
+}
+#topPane{
+   -fx-background-color:#66ADCD;  
+}
+#paneBack{
+    -fx-background-color:#0E3C55;  
+}
+#paneImage{
+    -fx-background-color:#66ADCD;
+}

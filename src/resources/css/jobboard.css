@@ -1,0 +1,202 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color:#66ADCD;
+
+}
+#pane1{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+}
+#pane2{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+}
+#pane3{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+}
+#pane4{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+    -fx-border-color:#999999;
+
+}
+#pane5{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#66ADCD;
+    -fx-background-radius: 7px;
+
+}
+#pane6{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#66ADCD;
+    -fx-background-radius: 5px;
+
+}
+#pane7{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#66ADCD;
+    -fx-background-radius: 5px;
+
+}
+#pane8{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+    -fx-border-color:#999999;
+
+}
+#pane9{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+    -fx-border-color:#999999;
+ 
+}
+#panee9{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+    -fx-border-color:#999999;
+
+}
+#pane10{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+
+}
+#pane11{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+
+    -fx-border-color:#999999;
+
+}
+#pane12{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+    -fx-border-color:#999999;
+
+}
+
+#pane{
+
+    -fx-border-radius: 5px;
+
+    -fx-border-color:#FFFFFF;
+    -fx-background-radius:5px;
+
+}
+#imageView{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 2px;
+
+}
+#label1,#label2,#lblReferals,#lblJobPosting{
+    -fx-background-color:#FFFFFF;
+    -fx-border-radius: 2px;
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.text-field{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.button{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+    -fx-background-radius: 5px;
+    -fx-border-color:#FFFFFF;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+.tab{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.text-area{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.combo-box{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.anchor-pane{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 5px;
+    -fx-border-color:#FFFFFF;
+}
+#btnDelete1,#btnAddProcessSteps,#btnDelete2,#btnDownloadResume,#btnDownloadAttachedDocuments,#btnSearch,#btnListAll{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+    -fx-background-radius: 5px;
+    -fx-border-color:#66ADCD;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+
+#label1{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 2px;
+}
+#label2{
+    -fx-background-color:#ffffff;
+    -fx-border-radius: 2px;
+    -fx-font:serif;
+}

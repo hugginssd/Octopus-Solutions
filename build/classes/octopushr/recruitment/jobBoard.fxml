@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="758.0" prefWidth="1326.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.recruitment.JobBoardController">
+    <stylesheets>
+        <URL value="@/resources/css/jobboard.css" />
+    </stylesheets>
+    <children>
+        <TabPane layoutX="2.0" prefHeight="758.0" prefWidth="1326.0" tabClosingPolicy="UNAVAILABLE">
+
+            <tabs>
+                <Tab text="Job &amp; Candidate">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="729.0" prefWidth="1315.0">
+                            <children>
+                                <TabPane layoutX="-2.0" layoutY="-1.0" prefHeight="735.0" prefWidth="1328.0" tabClosingPolicy="UNAVAILABLE">
+
+                                    <tabs>
+                                        <Tab text="Jobs">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="709.0" prefWidth="1321.0">
+                                                    <children>
+                                                        <Pane fx:id="pane1" layoutX="3.0" layoutY="13.0" prefHeight="675.0" prefWidth="1299.0">
+                                                            <children>
+                                                                <TextField fx:id="txtJobTitle" layoutX="4.0" layoutY="7.0" prefHeight="32.0" prefWidth="245.0" promptText="Job title" />
+                                                                <TextField fx:id="txtJobCode" layoutX="4.0" layoutY="51.0" prefHeight="30.0" prefWidth="244.0" promptText="Job code" />
+                                                                <TextField fx:id="txtLocation" layoutX="3.0" layoutY="92.0" prefHeight="30.0" prefWidth="245.0" promptText="Location" />
+                                                                <TextField fx:id="txtExperience" layoutX="3.0" layoutY="133.0" prefHeight="30.0" prefWidth="245.0" promptText="Experience" />
+                                                                <TextArea fx:id="txaQualification" layoutX="3.0" layoutY="173.0" prefHeight="121.0" prefWidth="245.0" promptText="Qualififcation" />
+                                                                <TextArea fx:id="txaSkills" layoutX="3.0" layoutY="300.0" prefHeight="120.0" prefWidth="244.0" promptText="Skills" />
+                                                                <TextField fx:id="txtJobType" layoutX="4.0" layoutY="425.0" prefHeight="30.0" prefWidth="243.0" promptText="Job Type" />
+                                                                <TextArea fx:id="txaDescription" layoutX="4.0" layoutY="460.0" prefHeight="106.0" prefWidth="244.0" promptText="Description" />
+                                                                <TextField fx:id="txtSalaryDetail" layoutX="3.0" layoutY="570.0" prefHeight="30.0" prefWidth="244.0" promptText="Salary Detail" />
+                                                                <TextField fx:id="txtDocument" layoutX="3.0" layoutY="607.0" prefHeight="30.0" prefWidth="244.0" promptText="Document" />
+                                                                <Button fx:id="btnAddNew" layoutX="147.0" layoutY="643.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="ADD NEW" />
+                                                                <Button fx:id="btnSaveJob" layoutX="3.0" layoutY="643.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="102.0" text="SAVE JOB" />
+                                                                <Pane fx:id="pane10" layoutX="252.0" layoutY="6.0" prefHeight="55.0" prefWidth="848.0">
+                                                                    <children>
+                                                                        <DatePicker fx:id="dtpJoiningDate" layoutX="14.0" layoutY="12.0" prefHeight="28.0" prefWidth="224.0" promptText="Joining Date" />
+                                                                        <DatePicker fx:id="dtpLastDateToApply" layoutX="250.0" layoutY="12.0" prefHeight="28.0" prefWidth="220.0" promptText="Last Date To Apply" />
+                                                                    </children>
+                                                                </Pane>
+                                                                <Pane layoutX="252.0" layoutY="73.0" prefHeight="597.0" prefWidth="1042.0">
+                                                                    <children>
+                                                                        <ComboBox fx:id="cmbFilterByJobStatus" layoutX="14.0" layoutY="8.0" prefHeight="31.0" prefWidth="221.0" promptText="---Filter By Job Status---" />
+                                                                        <TableView layoutX="14.0" layoutY="45.0" prefHeight="204.0" prefWidth="1028.0">
+                                                                            <columns>
+                                                                                <TableColumn prefWidth="56.0" text="ID" />
+                                                                                <TableColumn prefWidth="131.0" text="Job Title" />
+                                                                                <TableColumn prefWidth="128.0" text="JobCode" />
+                                                                                <TableColumn prefWidth="205.0" text="Location" />
+                                                                                <TableColumn prefWidth="280.0" text="Skills" />
+                                                                                <TableColumn prefWidth="118.0" text="Salary" />
+                                                                                <TableColumn prefWidth="109.0" text="Is Open?" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Button fx:id="btnDeleteJob" layoutX="14.0" layoutY="256.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="89.0" text="Delete Job" />
+                                                                        <Button fx:id="btnDownloadAttachedDocument" layoutX="111.0" layoutY="256.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="193.0" text="Download Attached Document" />
+                                                                        <Button layoutX="311.0" layoutY="256.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="137.0" text="Add Process Steps" />
+
+                                                                        <TableView layoutX="14.0" layoutY="317.0" prefHeight="248.0" prefWidth="1024.0">
+                                                                            <columns>
+                                                                                <TableColumn prefWidth="58.0" text="ID" />
+                                                                                <TableColumn prefWidth="269.0" text="Step" />
+                                                                                <TableColumn prefWidth="241.0" text="Date" />
+                                                                                <TableColumn prefWidth="209.0" text="Time" />
+                                                                                <TableColumn prefWidth="246.0" text="Venue" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Text layoutX="14.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Process Details" wrappingWidth="88.13671875">
+                                                                            <font>
+                                                                                <Font size="13.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Separator layoutX="98.0" layoutY="300.0" prefHeight="0.0" prefWidth="941.0" />
+                                                                        <Button fx:id="btnDelete" layoutX="14.0" layoutY="570.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="DELETE" />
+                                                                        <Button fx:id="btnClose" layoutX="122.0" layoutY="570.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="29.0" prefWidth="91.0" text="CLOSE" />
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </Pane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Add Candidates to Job">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="651.0" prefWidth="1321.0">
+                                                    <children>
+                                                        <Pane fx:id="pane11" layoutX="3.0" layoutY="14.0" prefHeight="650.0" prefWidth="1314.0">
+
+                                                            <children>
+                                                                <ComboBox layoutX="8.0" layoutY="14.0" prefHeight="30.0" prefWidth="209.0" promptText="---Job Title---" />
+                                                                <TextField fx:id="txtJobCode1" layoutX="7.0" layoutY="54.0" prefHeight="28.0" prefWidth="239.0" promptText="Job Code" />
+                                                                <TextField fx:id="txtName" layoutX="7.0" layoutY="87.0" prefHeight="28.0" prefWidth="238.0" promptText="Name" />
+                                                                <TextField fx:id="txtCandidateID" layoutX="7.0" layoutY="124.0" prefHeight="30.0" prefWidth="237.0" promptText="Candidate ID" />
+                                                                <TextArea fx:id="txaAddress" layoutX="7.0" layoutY="161.0" prefHeight="91.0" prefWidth="237.0" promptText="Address" />
+                                                                <TextField fx:id="txtContactNo" layoutX="7.0" layoutY="260.0" prefHeight="29.0" prefWidth="238.0" promptText="Contact No" />
+                                                                <TextField fx:id="txtResume" layoutX="6.0" layoutY="488.0" prefHeight="29.0" prefWidth="234.0" promptText="Resume" />
+                                                                <TextField fx:id="txtEmailID" layoutX="7.0" layoutY="300.0" prefHeight="29.0" prefWidth="237.0" promptText="Email ID" />
+                                                                <TextField fx:id="txtCurrentCTC" layoutX="7.0" layoutY="338.0" prefHeight="29.0" prefWidth="236.0" promptText="Current CTC" />
+                                                                <TextField fx:id="txtExpectedCTC" layoutX="7.0" layoutY="375.0" prefHeight="29.0" prefWidth="235.0" promptText="Expected CTC" />
+                                                                <TextField fx:id="txtNoticePeriod" layoutX="7.0" layoutY="414.0" prefHeight="30.0" prefWidth="234.0" promptText="Notice Period" />
+                                                                <TextField fx:id="txtProfileImage" layoutX="7.0" layoutY="452.0" prefHeight="29.0" prefWidth="233.0" promptText="Profile Image" />
+                                                                <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="219.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../resources/icons/add.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                                <Pane fx:id="pane2" layoutX="250.0" layoutY="15.0" prefHeight="141.0" prefWidth="139.0">
+                                                                    <children>
+                                                                        <ImageView fx:id="imageView" fitHeight="132.0" fitWidth="133.0" layoutX="3.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+
+                                                                                <Image url="@../../resources/icons/no-image.jpg" />
+
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </children>
+                                                                </Pane>
+
+                                                                <Pane fx:id="pane3" layoutX="401.0" layoutY="14.0" prefHeight="347.0" prefWidth="907.0">
+                                                                    <children>
+                                                                        <TableView layoutX="6.0" layoutY="14.0" prefHeight="283.0" prefWidth="891.0">
+                                                                            <columns>
+                                                                                <TableColumn prefWidth="75.0" text="ID" />
+                                                                                <TableColumn prefWidth="227.0" text="Step" />
+                                                                                <TableColumn prefWidth="148.0" text="Date" />
+                                                                                <TableColumn prefWidth="97.0" text="Time" />
+                                                                                <TableColumn prefWidth="173.0" text="Venue" />
+                                                                                <TableColumn prefWidth="87.0" text="Score" />
+                                                                                <TableColumn prefWidth="83.0" text="Qualified" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Button fx:id="btnDelete1" layoutX="6.0" layoutY="308.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="103.0" text="Delete" />
+                                                                        <Text fill="#ee1111" layoutX="118.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: To update and view double click on selected row">
+                                                                            <font>
+                                                                                <Font name="Arial Unicode MS" size="13.0" />
+
+                                                                            </font>
+                                                                        </Text>
+                                                                    </children>
+                                                                </Pane>
+                                                                <Text fx:id="label1" layoutX="407.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Process For Candidate" wrappingWidth="156.13671875">
+                                                                    <font>
+                                                                        <Font name="Arial Unicode MS" size="12.0" />
+                                                                    </font>
+                                                                </Text>
+                                                                <TextField fx:id="txtOtherDocuments" layoutX="6.0" layoutY="525.0" prefHeight="30.0" prefWidth="233.0" promptText="Other Documents" />
+                                                                <TextField fx:id="txtSource" layoutX="6.0" layoutY="563.0" prefHeight="28.0" prefWidth="234.0" promptText="Source" />
+                                                                <Pane fx:id="pane4" layoutX="250.0" layoutY="365.0" prefHeight="266.0" prefWidth="1057.0">
+                                                                    <children>
+                                                                        <ComboBox layoutX="29.0" layoutY="14.0" prefHeight="25.0" prefWidth="198.0" promptText="---Filter By Status---" />
+                                                                        <Text layoutX="241.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Candidate:">
+                                                                            <font>
+                                                                                <Font name="Arial Rounded MT Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Text layoutX="433.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Open Candidate:">
+                                                                            <font>
+                                                                                <Font name="Arial Rounded MT Bold" size="13.0" />
+
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Text layoutX="618.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Close Candidate:">
+                                                                            <font>
+                                                                                <Font name="Arial Rounded MT Bold" size="13.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                        <Label layoutX="344.0" layoutY="18.0" text="//========">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="12.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label layoutX="534.0" layoutY="18.0" text="//========">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="12.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <Label layoutX="722.0" layoutY="18.0" text="//========">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="12.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TableView layoutX="3.0" layoutY="43.0" prefHeight="188.0" prefWidth="1043.0">
+
+                                                                            <columns>
+                                                                                <TableColumn prefWidth="55.0" text="ID" />
+                                                                                <TableColumn prefWidth="339.0" text="Name" />
+                                                                                <TableColumn prefWidth="145.0" text="CandidateID" />
+                                                                                <TableColumn prefWidth="203.0" text="Contact" />
+                                                                                <TableColumn prefWidth="233.0" text="EmailID" />
+                                                                                <TableColumn minWidth="0.0" prefWidth="69.0" text="Is Open?" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Button fx:id="btnAddProcessSteps" layoutX="3.0" layoutY="233.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="135.0" text="Add Process Steps" />
+                                                                        <Button fx:id="btnDelete2" layoutX="143.0" layoutY="233.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="79.0" text="Delete" />
+                                                                        <Button fx:id="btnDownloadResume" layoutX="227.0" layoutY="233.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="133.0" text="Download Resume" />
+                                                                        <Button fx:id="btnDownloadAttachedDocuments" layoutX="369.0" layoutY="233.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="188.0" text="Attached Document Document" />
+                                                                        <Text fx:id="label2" layoutX="5.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Candidates">
+                                                                            <font>
+                                                                                <Font name="Arial Unicode MS" size="13.0" />
+                                                                            </font>
+                                                                        </Text>
+                                                                    </children>
+                                                                </Pane>
+                                                                <Button fx:id="btnSaveCandidateDetails" layoutX="6.0" layoutY="598.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="149.0" text="Save Candidate Details" />
+                                                                <Button fx:id="btnAddNew1" layoutX="159.0" layoutY="598.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" text="Add New" />
+                                                            </children>
+                                                        </Pane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Candidate Details">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Pane fx:id="pane12" layoutX="3.0" layoutY="14.0" prefHeight="670.0" prefWidth="1315.0">
+                                                            <children>    
+                                                                <ComboBox fx:id="cmbCandidateStatus" layoutX="22.0" layoutY="14.0" prefHeight="29.0" prefWidth="253.0" promptText="---Candidate Status---" />
+                                                                <TextField fx:id="txtNamee" layoutX="22.0" layoutY="85.0" prefHeight="28.0" prefWidth="253.0" promptText="Name" />
+                                                                <ComboBox fx:id="cmbCandidates" layoutX="22.0" layoutY="49.0" prefHeight="29.0" prefWidth="222.0" promptText="---Select Candidates---" />
+                                                                <ImageView fitHeight="28.0" fitWidth="30.0" layoutX="246.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../../resources/icons/add.png" />
+																	</image>
+                                                                </ImageView>
+                                                                <TextField fx:id="txtCandidateeID" layoutX="22.0" layoutY="121.0" prefHeight="27.0" prefWidth="252.0" promptText="Candidate ID" />
+                                                                <TextArea fx:id="txaAddresss" layoutX="22.0" layoutY="153.0" prefHeight="87.0" prefWidth="253.0" promptText="Address" />
+                                                                <TextField fx:id="txtContactNoo" layoutX="22.0" layoutY="249.0" prefHeight="28.0" prefWidth="251.0" promptText="Contact No" />
+                                                                <TextField fx:id="txtEmaiilID" layoutX="22.0" layoutY="288.0" prefHeight="29.0" prefWidth="250.0" promptText="Email ID" />
+                                                                <TextField fx:id="txtCurrenttCTC" layoutX="22.0" layoutY="325.0" prefHeight="31.0" prefWidth="250.0" promptText="Current CTC" />
+                                                                <TextField fx:id="txtExpecteddCTC" layoutX="22.0" layoutY="363.0" prefHeight="32.0" prefWidth="251.0" promptText="Expected CTC" />
+                                                                <TextField fx:id="txtNoticePeriodd" layoutX="22.0" layoutY="403.0" prefHeight="34.0" prefWidth="249.0" promptText="Notice Period" />
+                                                                <TextField fx:id="txtProfileImagee" layoutX="22.0" layoutY="446.0" prefHeight="36.0" prefWidth="249.0" promptText="Profile Image" />
+                                                                <TextField fx:id="txtResumee" layoutX="22.0" layoutY="491.0" prefHeight="37.0" prefWidth="249.0" promptText="Resume" />
+                                                                <TextField fx:id="txtOtherDucments" layoutX="23.0" layoutY="580.0" prefHeight="35.0" prefWidth="248.0" promptText="Other Documents" />
+                                                                <TextField fx:id="txtSourcee" layoutX="22.0" layoutY="535.0" prefHeight="36.0" prefWidth="249.0" promptText="Source" />
+                                                                <Button fx:id="btnUpdate" layoutX="170.0" layoutY="623.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" text="Update" />
+                                                                <Pane fx:id="pane7" layoutX="279.0" layoutY="13.0" prefHeight="135.0" prefWidth="135.0">
+                                                                    <children>
+                                                                        <ImageView fitHeight="129.0" fitWidth="129.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@../../resources/icons/no-image.jpg" />                          </image>
+                                                                        </ImageView>
+                                                                    </children>
+                                                                </Pane>
+                                                                <Button fx:id="btnAddProcessSteps" layoutX="421.0" layoutY="16.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" text="Add Process Steps" />
+                                                                <Button fx:id="btnDownloadResumee" layoutX="565.0" layoutY="17.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" text="Download Resume" />
+                                                                <Button layoutX="715.0" layoutY="16.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="192.0" text="Download Attached Document" />
+                                                                <Pane fx:id="pane8" layoutX="421.0" layoutY="64.0" prefHeight="78.0" prefWidth="487.0">
+                                                                    <children>
+                                                                        <ComboBox fx:id="cmbSelectStatus" layoutX="7.0" layoutY="39.0" prefHeight="31.0" prefWidth="236.0" promptText="---Select Status---" />
+                                                                        <Button fx:id="btnChangeStatus" layoutX="254.0" layoutY="40.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Change Status" />
+                                                                        <Label layoutX="6.0" layoutY="6.0" prefHeight="25.0" prefWidth="195.0" text="//==========">
+                                                                            <font>
+                                                                                <Font name="System Bold" size="12.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                    </children>
+                                                                </Pane>
+                                                                <Pane fx:id="pane9" layoutX="282.0" layoutY="153.0" prefHeight="171.0" prefWidth="1029.0">
+                                                                    <children>
+                                                                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="112.0" prefWidth="1008.0">
+                                                                            <columns>
+                                                                                <TableColumn prefWidth="75.0" text="ID" />
+                                                                                <TableColumn prefWidth="104.0" text="JobTitle" />
+                                                                                <TableColumn prefWidth="126.0" text="JobCode" />
+                                                                                <TableColumn prefWidth="206.0" text="Location" />
+                                                                                <TableColumn prefWidth="296.0" text="Skills" />
+                                                                                <TableColumn prefWidth="135.0" text="Salary" />
+                                                                                <TableColumn prefWidth="69.0" text="Is Open?" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Button fx:id="btnDownloadAttachDocument" layoutX="14.0" layoutY="132.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="184.0" text="Download Attached Document" />
+                                                                    </children>
+                                                                </Pane>
+                                                                <Pane fx:id="panee9" layoutX="280.0" layoutY="328.0" prefHeight="331.0" prefWidth="1031.0">
+                                                                    <children>
+                                                                        <TableView layoutX="11.0" layoutY="26.0" prefHeight="259.0" prefWidth="1015.0">
+                                                                            <columns>
+                                                                                <TableColumn prefWidth="75.0" text="ID" />
+                                                                                <TableColumn prefWidth="114.0" text="Step" />
+                                                                                <TableColumn prefWidth="153.0" text="Date" />
+                                                                                <TableColumn prefWidth="181.0" text="Time" />
+                                                                                <TableColumn prefWidth="227.0" text="Venue" />
+                                                                                <TableColumn prefWidth="154.0" text="Score" />
+                                                                                <TableColumn prefWidth="103.0" text="Qualified" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Button fx:id="btnDeletee" layoutX="11.0" layoutY="296.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" text="Delete" />
+                                                                        <Label layoutX="132.0" layoutY="299.0" prefHeight="26.0" prefWidth="351.0" text="Note: To update and view double click on selected row" textFill="#b22c2c">
+                                                                            <font>
+                                                                                <Font name="Arial Unicode MS" size="13.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                 
+                                                                    </children>
+                                                                </Pane>
+                                                            </children>
+                                                        </Pane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Referral Details">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Pane fx:id="pane5" layoutX="6.0" layoutY="7.0" prefHeight="708.0" prefWidth="1289.0">
+                                    <children>
+                                        <Text fx:id="lblReferals" layoutX="3.0" layoutY="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Referrals Details" wrappingWidth="122.13671875">
+                                            <font>
+                                                <Font name="Arial Unicode MS" size="13.0" />
+                                            </font>
+                                        </Text>
+                                        <Pane fx:id="pane6" layoutX="6.0" layoutY="23.0" prefHeight="65.0" prefWidth="1269.0">
+                                            <children>
+                                                <Text fx:id="lblJobPosting" fill="#140505" layoutX="14.0" layoutY="3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Posting Date">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="13.0" />
+                                                    </font>
+                                                </Text>
+                                                <DatePicker fx:id="dtpFrom" layoutX="24.0" layoutY="15.0" prefHeight="30.0" prefWidth="261.0" promptText="From" />
+                                                <DatePicker fx:id="dtpTo" layoutX="298.0" layoutY="15.0" prefHeight="30.0" prefWidth="236.0" promptText="To" />
+                                                <Button fx:id="btnSearch" layoutX="541.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Search">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnListAll" layoutX="645.0" layoutY="15.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="99.0" text="List All" />
+                                            </children>
+                                        </Pane>
+                                        <TableView layoutX="5.0" layoutY="99.0" prefHeight="605.0" prefWidth="1279.0">
+                                            <columns>
+                                                <TableColumn prefWidth="56.0" text="ID" />
+                                                <TableColumn prefWidth="94.0" text="Job Title" />
+                                                <TableColumn prefWidth="95.0" text="Name" />
+                                                <TableColumn prefWidth="84.0" text="CandidateID" />
+                                                <TableColumn prefWidth="128.0" text="Contact" />
+                                                <TableColumn prefWidth="143.0" text="EmailID" />
+                                                <TableColumn prefWidth="222.0" text="Source/Agency/Employee Name" />
+                                                <TableColumn prefWidth="156.0" text="Amount To Pay" />
+                                                <TableColumn prefWidth="206.0" text="Candidate Status" />
+                                                <TableColumn prefWidth="85.0" text="Update" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

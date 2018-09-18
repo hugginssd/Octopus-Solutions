@@ -1,0 +1,8 @@
+.mainFxmlClass {
+    -fx-background-color:#0099ff;
+
+}
+.menu-bar{
+    -fx-background-color: linear-gradient(#cccccc,#ffffff,#cccccc);
+    -fx-font-size:11pt;
+}

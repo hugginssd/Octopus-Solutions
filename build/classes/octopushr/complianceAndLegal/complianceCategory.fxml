@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="541.0" prefWidth="850.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="octopushr.complianceAndLegal.ComplianceCategoryController">
+
+    <stylesheets>
+        <URL value="@/resources/css/compliancecategory.css" />
+    </stylesheets>
+    <children>
+        <Pane layoutX="4.0" layoutY="5.0" prefHeight="531.0" prefWidth="846.0">
+            <children>
+                <Pane layoutX="14.0" layoutY="45.0" prefHeight="479.0" prefWidth="824.0">
+                    <children>
+                        <Pane layoutX="379.0" layoutY="4.0" prefHeight="468.0" prefWidth="433.0">
+                            <children>
+                                <Text layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Existing Compliance Category">
+                                    <font>
+                                        <Font name="Cambria Math" size="18.0" />
+                                    </font>
+                                </Text>
+                                <ListView layoutX="8.0" layoutY="38.0" prefHeight="366.0" prefWidth="418.0" />
+                                <Button fx:id="btnEdit" layoutX="8.0" layoutY="417.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="87.0" text="EDIT" />
+                                <Button fx:id="btnDelete" layoutX="120.0" layoutY="417.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="96.0" text="DELETE" />
+                            </children>
+                        </Pane>
+                        <Text layoutX="79.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Compliance Category">
+                            <font>
+                                <Font name="Cambria Math" size="18.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="txtCategoryName" layoutX="79.0" layoutY="71.0" prefHeight="35.0" prefWidth="281.0" promptText="Category Name" />
+                        <TextArea fx:id="txaDescription" layoutX="78.0" layoutY="111.0" prefHeight="296.0" prefWidth="281.0" promptText="Description" />
+                        <Button fx:id="btnSave" layoutX="79.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="96.0" text="SAVE" />
+                        <Button fx:id="btnCloseForm" layoutX="194.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="96.0" text="CLOSE FORM" />
+                    </children>
+                </Pane>
+                <Text layoutX="27.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compliance Category">
+                    <font>
+                        <Font name="Cambria Bold" size="24.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

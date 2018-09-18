@@ -1,0 +1,119 @@
+/*
+ * Empty Stylesheet file.
+ */
+#downloadMedia{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+#resetMedia{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+#playpauseMedia{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+#btnNext{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+#stopMedia{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;  
+}
+#fastfowardMedia{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%; 
+}
+#fastbackwardMedia{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+#btnBack{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;  
+}
+#btnReset{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;  
+}
+#btnAddIncident{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;  
+}
+#btnExitClose{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;       
+}
+#vbox{
+    -fx-border-color:#DC9656;
+}
+#buttonBarMedia2{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;  
+}
+#buttonBarMedia{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+#mediaView{
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+    -fx-background-color:#FFFFFF;
+}
+#imageView{
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+.button{
+
+}
+#btnSpace{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);  
+}
+#buttonBar{
+    -fx-background-color:linear-gradient(#9436f3,#FFFFFF,#9436f3);
+    -fx-border-radius:4%;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width:2%;
+}
+#gridPane{
+
+}
+.label{
+    -fx-text-fill: #FFFFFF;
+}
+.mainFxmlClass {
+
+    -fx-background-color:#062a4e;
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius:2%;
+}

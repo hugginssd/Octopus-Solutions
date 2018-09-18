@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="944.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.employees.EmployeeDepartmentDesignationController">
+
+    <stylesheets>
+        <URL value="@/resources/css/employeedepartmentdesignation.css" />
+    </stylesheets>
+    <children>
+        <Pane layoutX="14.0" layoutY="14.0" prefHeight="99.0" prefWidth="256.0">
+            <children>
+                <ComboBox fx:id="cmbFilterByDepartment" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="179.0" promptText="---Filter by department---" />
+                <ComboBox fx:id="cmbSelectEmployee" layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="179.0" promptText="---Select employee---" />
+                <ImageView fx:id="imgAddDepartment" fitHeight="25.0" fitWidth="22.0" layoutX="197.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="259.0" layoutY="14.0" prefHeight="295.0" prefWidth="678.0">
+            <children>
+                <ImageView fx:id="imgDesignation" fitHeight="125.0" fitWidth="119.0" layoutX="12.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/icons/no-image.jpg" />
+                    </image>
+                </ImageView>
+                <Label layoutX="145.0" layoutY="6.0" prefHeight="22.0" prefWidth="154.0" text="Employee Name">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="145.0" layoutY="41.0" prefHeight="17.0" prefWidth="75.0" text="Employee Id:" />
+                <Label layoutX="145.0" layoutY="72.0" prefHeight="17.0" prefWidth="75.0" text="Designation:" />
+                <Label layoutX="222.0" layoutY="42.0" prefHeight="17.0" prefWidth="62.0" text="------------" />
+                <Label layoutX="222.0" layoutY="72.0" prefHeight="17.0" prefWidth="62.0" text="------------" />
+                <Button fx:id="btnViewEmployeeDetails" layoutX="145.0" layoutY="91.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="154.0" text="VIEW EMPLOYEE DETAILS" />
+                <DatePicker fx:id="dtpDateFrom" layoutX="146.0" layoutY="195.0" prefHeight="31.0" prefWidth="206.0" promptText="Date from" />
+                <DatePicker fx:id="dtpDateTo" layoutX="145.0" layoutY="229.0" prefHeight="31.0" prefWidth="206.0" promptText="Date to" />
+                <CheckBox fx:id="chkCurrentDate" layoutX="357.0" layoutY="234.0" mnemonicParsing="false" text="Current">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </CheckBox>
+                <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="357.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="22.0" fitWidth="28.0" layoutX="356.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+                <ComboBox fx:id="cmbSelectDepartment" layoutX="145.0" layoutY="126.0" prefHeight="31.0" prefWidth="206.0" promptText="---Select department---" />
+                <ComboBox fx:id="cmbSelectDesignation" layoutX="146.0" layoutY="161.0" prefHeight="31.0" prefWidth="206.0" promptText="---Select designation---" />
+                <Button fx:id="btnSaveDetails" layoutX="241.0" layoutY="262.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" text="Save Details">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="251.0" layoutY="311.0" prefHeight="257.0" prefWidth="687.0">
+            <children>
+                <Separator layoutX="182.0" layoutY="13.0" prefHeight="4.0" prefWidth="499.0" />
+                <Label layoutX="2.0" layoutY="3.0" prefHeight="17.0" prefWidth="186.0" text="Department/Designation History">
+                    <font>
+                        <Font name="Book Antiqua" size="12.0" />
+                    </font>
+                </Label>
+                <TableView layoutX="8.0" layoutY="23.0" prefHeight="228.0" prefWidth="671.0">
+                    <columns>
+                        <TableColumn prefWidth="52.0" text="ID" />
+                        <TableColumn prefWidth="98.0" text="F.No" />
+                        <TableColumn prefWidth="160.0" text="Department" />
+                        <TableColumn prefWidth="87.0" text="Designation" />
+                        <TableColumn prefWidth="111.0" text="From" />
+                        <TableColumn prefWidth="106.0" text="To" />
+                        <TableColumn prefWidth="55.0" text="Delete" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

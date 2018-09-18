@@ -1,0 +1,1927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="878.0" prefWidth="1573.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.employees.UpdateEmployeeDetailsController">
+
+    <stylesheets>
+        <URL value="@/resources/css/updateemployeedetails.css" />
+    </stylesheets>
+    <children>
+        <VBox prefHeight="878.0" prefWidth="1605.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="985.0" spacing="5.0">
+                    <children>
+                        <ComboBox fx:id="cmbFilterByDepartments" onAction="#loadDepartmentId" prefHeight="28.0" prefWidth="195.0" promptText="Filter By Departments">
+
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </ComboBox>
+                        <ComboBox fx:id="cmbSelectEmployee" onAction="#loadEmployeeDetails" prefHeight="29.0" prefWidth="205.0" promptText="Select Employee">
+
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </ComboBox>
+                        <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Search">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                        <TextField fx:id="txtEmployeeID" prefHeight="30.0" prefWidth="216.0" promptText="Employee ID">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextField>
+                        <Button fx:id="btnSearch1" mnemonicParsing="false" prefHeight="29.0" prefWidth="70.0" text="Search">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                        <ImageView fx:id="imageViewSmall" fitHeight="60.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/icons/facebook-no-profile-picture.jpg" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lblLevel" alignment="TOP_LEFT" prefHeight="56.0" prefWidth="168.0" text="HR Manager" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+                        <Button fx:id="btnAddNewEmployee" mnemonicParsing="false" prefHeight="30.0" prefWidth="146.0" text="Add New Employee" />
+                        <Label prefHeight="17.0" prefWidth="162.0" />
+                        <Button fx:id="btnCloseWindow" mnemonicParsing="false" onAction="#exit" prefHeight="31.0" prefWidth="112.0" text="Close Window" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <TabPane tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="tabQuickDetails" text="Quick Details">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="537.0" prefWidth="1301.0">
+                                    <children>
+                                        <GridPane hgap="5.0" layoutX="14.0" layoutY="14.0" prefHeight="531.0" prefWidth="639.0" vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="232.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="48.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="18.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="334.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="349.0" text="  Employment Details" GridPane.columnSpan="4">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="18.0" prefWidth="295.0" text="Fields marked '   ' are mandatory" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtFirstname" prefHeight="25.0" prefWidth="295.0" promptText="FirstName" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtMiddlename" promptText="MiddleName" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtSurname" promptText="LastName" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtEmployeeIdq" prefHeight="30.0" prefWidth="230.0" promptText="Employee ID" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></TextField>
+                                                <ComboBox fx:id="cmbDesignation" prefHeight="25.0" prefWidth="233.0" promptText="---Select Designation---" GridPane.rowIndex="8" />
+                                                <ComboBox fx:id="cmbselectDepartment1" prefHeight="25.0" prefWidth="231.0" promptText="---Select Department---" GridPane.rowIndex="9" />
+                                                <TextField fx:id="txttotalExperience" prefHeight="32.0" prefWidth="230.0" promptText="Total Experience (Years)" GridPane.rowIndex="10">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtexperienceWithUs" prefHeight="32.0" prefWidth="230.0" promptText="Experience With Us (Years)" GridPane.rowIndex="11">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtMonthlySalary" prefHeight="32.0" prefWidth="230.0" promptText="Monthly Salary (Years)" GridPane.rowIndex="12">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></TextField>
+                                                <ImageView fitHeight="25.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <HBox prefHeight="16.0" prefWidth="223.0" spacing="10.0" GridPane.rowIndex="14">
+                                                    <children>
+                                                        <Label prefHeight="17.0" prefWidth="72.0" />
+                                                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateQuickDetails" prefHeight="25.0" prefWidth="67.0" text="Update" />
+                                                        <Button fx:id="btnReset" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Reset" />
+                                                    </children>
+                                                </HBox>
+                                                <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/info.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="27.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/info.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label text="Last Employee Id:" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font name="Californian FB" size="13.0" />
+                                       </font></Label>
+                                                <Label text="\$ (USD)" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Label>
+                                    <Label fx:id="lblDepartmentId" text="Label" GridPane.rowIndex="3" />
+                                    <Label fx:id="lblEmployeeId" prefHeight="17.0" prefWidth="44.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label fx:id="lblDepartmentId_" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <Label fx:id="lblDesignationId" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Label fx:id="lblLastEmployeeId" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                       <padding>
+                                          <Insets left="25.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="20.0" prefWidth="144.0" text="                      *" textFill="#eb1616" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Cambria Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="5.0" prefWidth="46.0" text="*" textFill="#d71010" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="Cambria Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="5.0" prefWidth="46.0" text="*" textFill="#d71010" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font name="Cambria Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="5.0" prefWidth="46.0" text="*" textFill="#d71010" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Cambria Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblsetEmployeeid" prefHeight="17.0" prefWidth="108.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+                                    <Label fx:id="lblbsetDepartment" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabEmployeeDetails" onSelectionChanged="#loadAllEmployeeDetails" text="Employee Details">
+
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="1605.0">
+                                    <children>
+                                        <GridPane hgap="5.0" layoutX="14.0" layoutY="3.0" prefHeight="722.0" prefWidth="1284.0" vgap="8.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.0" minWidth="10.0" prefWidth="284.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="630.0" minWidth="10.0" prefWidth="151.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="761.0" minWidth="10.0" prefWidth="254.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="594.0" minWidth="10.0" prefWidth="445.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="594.0" minWidth="10.0" prefWidth="209.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="31.0" minHeight="5.0" prefHeight="9.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label prefHeight="29.0" prefWidth="361.0" text="Update Employee's Employment Details" GridPane.columnSpan="2">
+                                                    <font>
+                                                        <Font name="Cambria Bold Italic" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label prefHeight="17.0" prefWidth="320.0" text="Fields marked '*' mandatory" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font name="Cambria Bold Italic" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtfirstname" prefHeight="32.0" prefWidth="268.0" promptText="Firstname" GridPane.rowIndex="3">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtmiddlename" prefHeight="31.0" prefWidth="268.0" promptText="Middlename" GridPane.rowIndex="4">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtlastname" prefHeight="30.0" prefWidth="268.0" promptText="Lastname" GridPane.rowIndex="5">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtemployeId" prefHeight="37.0" prefWidth="268.0" promptText="Employee ID" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <DatePicker fx:id="dtpbirthDate" prefHeight="34.0" prefWidth="179.0" promptText="Birth date" GridPane.rowIndex="6" />
+                                                <TextArea fx:id="txaidentificationDetails" prefHeight="200.0" prefWidth="200.0" promptText="Identification Details..." GridPane.rowIndex="8" GridPane.rowSpan="3">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextArea>
+                                                <ComboBox fx:id="cmbselectDesignation" prefHeight="31.0" prefWidth="173.0" promptText="---Select Designation---" GridPane.rowIndex="11" />
+                                                <ComboBox fx:id="cmbselectDepartment" prefHeight="32.0" prefWidth="174.0" promptText="---Select Department---" GridPane.rowIndex="12" />
+                                                <DatePicker fx:id="dtpJoiningDate" prefHeight="30.0" prefWidth="174.0" promptText="Joining Date" GridPane.rowIndex="13" />
+                                                <TextField fx:id="txtTotalExperience" prefHeight="30.0" prefWidth="268.0" promptText="Total Experience" GridPane.rowIndex="16">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtExperienceWithUs" prefHeight="30.0" prefWidth="268.0" promptText="Experience With Us" GridPane.rowIndex="17">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtmonthlySalary" prefHeight="37.0" prefWidth="268.0" promptText="Montly Salary" GridPane.rowIndex="18">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <ComboBox fx:id="cmbJobStatus" prefHeight="32.0" prefWidth="174.0" promptText="Job Status" GridPane.rowIndex="14" />
+                                                <ComboBox fx:id="cmbWorkShift" prefHeight="34.0" prefWidth="173.0" promptText="Work Shift" GridPane.rowIndex="15" />
+                                                <ComboBox fx:id="cmbverifiedEmployee" prefHeight="33.0" prefWidth="172.0" promptText="Verified Employee" GridPane.rowIndex="19" />
+                                                <ComboBox fx:id="cmbActivatedEmployee" prefHeight="43.0" prefWidth="173.0" promptText="Activated Employee" GridPane.rowIndex="20" />
+                                                <ImageView fx:id="imgUpdate" fitHeight="111.0" fitWidth="104.0" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/facebook-no-profile-picture.jpg" />
+                                                    </image>
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport>
+                                       <GridPane.margin>
+                                          <Insets bottom="10.0" left="13.0" />
+                                       </GridPane.margin>
+                                                </ImageView>
+                                                <Button fx:id="btnselectImage" mnemonicParsing="false" onAction="#loadImage" prefHeight="25.0" prefWidth="101.0" text="Select Image" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                    <GridPane.margin>
+                                                        <Insets left="15.0" top="5.0" />
+                                                    </GridPane.margin>
+                                                </Button>
+                                                <TextField fx:id="txtbankName" prefHeight="31.0" prefWidth="238.0" promptText="Bankname" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtaccountHolder" prefHeight="32.0" prefWidth="238.0" promptText="Account holder" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtaccountNumber" prefHeight="31.0" prefWidth="238.0" promptText="Account number" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.rowSpan="3" />
+                                                <TextArea fx:id="txaotherDetails" prefHeight="200.0" prefWidth="200.0" promptText="Other Details..." GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.rowSpan="3">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextArea>
+                                                <TextField fx:id="txtovertimeCostPerHour" prefHeight="37.0" prefWidth="238.0" promptText="Overtime Cost Per Hour" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txthourlyCostPerHour" prefHeight="33.0" prefWidth="238.0" promptText="Hourly Cost Per Hour" GridPane.columnIndex="2" GridPane.rowIndex="15">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <Group GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <HBox prefHeight="26.0" prefWidth="565.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                    <children>
+                                                        <ComboBox fx:id="cmbselectTimeSlot" prefHeight="31.0" prefWidth="180.0" promptText="Select Time Slot" />
+                                                        <ImageView fx:id="imgselectTimeSlot" fitHeight="26.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../resources/icons/add.png" />
+                                                <TextField fx:id="txtfirstname" promptText="Firstname" GridPane.rowIndex="3">
+                                                    <font>
+                                                        <Font name="Cambria Bold Italic" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtmiddlename" promptText="Middlename" GridPane.rowIndex="4">
+                                                    <font>
+                                                        <Font name="Cambria Bold Italic" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtlastname" promptText="Lastname" GridPane.rowIndex="5">
+                                                    <font>
+                                                        <Font name="Cambria Bold Italic" size="12.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txtemployeId" promptText="Employee ID" GridPane.rowIndex="7" />
+                                                <DatePicker fx:id="dtpbirthDate" prefHeight="25.0" prefWidth="179.0" promptText="Birth date" GridPane.rowIndex="6" />
+                                                <TextArea fx:id="txaidentificationDetails" prefHeight="200.0" prefWidth="200.0" promptText="Identification Details..." GridPane.rowIndex="8" GridPane.rowSpan="3" />
+                                                <ComboBox fx:id="cmbselectDesignation" prefHeight="25.0" prefWidth="173.0" promptText="---Select Designation---" GridPane.rowIndex="11" />
+                                                <ComboBox fx:id="cmbselectDepartment" prefHeight="25.0" prefWidth="174.0" promptText="---Select Department---" GridPane.rowIndex="12" />
+                                                <DatePicker fx:id="dtpJoiningDate" promptText="Joining Date" GridPane.rowIndex="13" />
+                                                <TextField fx:id="txtTotalExperience" promptText="Total Experience" GridPane.rowIndex="16" />
+                                                <TextField fx:id="txtExperienceWithUs" promptText="Experience With Us" GridPane.rowIndex="17" />
+                                                <TextField fx:id="txtmonthlySalary" promptText="Montly Salary" GridPane.rowIndex="18" />
+                                                <ComboBox fx:id="cmbJobStatus" prefHeight="25.0" prefWidth="174.0" promptText="Job Status" GridPane.rowIndex="14" />
+                                                <ComboBox fx:id="cmbWorkShift" prefHeight="25.0" prefWidth="173.0" promptText="Work Shift" GridPane.rowIndex="15" />
+                                                <ComboBox fx:id="cmbverifiedEmployee" prefHeight="25.0" prefWidth="172.0" promptText="Verified Employee" GridPane.rowIndex="19" />
+                                                <ComboBox fx:id="cmbActivatedEmployee" prefHeight="25.0" prefWidth="173.0" promptText="Activated Employee" GridPane.rowIndex="20" />
+                                                <ImageView fx:id="imgUpdate" fitHeight="132.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                    <image>
+                                                        <Image url="@../resources/icons/no-image.jpg" />
+                                                    </image>
+                                                </ImageView>
+                                                <Button fx:id="btnselectImage" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Select Image" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                    <GridPane.margin>
+                                                        <Insets left="15.0" />
+                                                    </GridPane.margin>
+                                                </Button>
+                                                <TextField fx:id="txtbankName" promptText="Bankname" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                                <TextField fx:id="txtaccountHolder" promptText="Account holder" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                                <TextField fx:id="txtaccountNumber" promptText="Account number" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                                <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.rowSpan="3" />
+                                                <TextArea fx:id="txaotherDetails" prefHeight="200.0" prefWidth="200.0" promptText="Other Details..." GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.rowSpan="3" />
+                                                <TextField fx:id="txtovertimeCostPerHour" promptText="Overtime Cost Per Hour" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                                                <TextField fx:id="txthourlyCostPerHour" promptText="Hourly Cost Per Hour" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+                                                <Group GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <HBox prefHeight="26.0" prefWidth="565.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                    <children>
+                                                        <ComboBox fx:id="cmbselectTimeSlot" prefHeight="25.0" prefWidth="180.0" promptText="Select Time Slot" />
+                                                        <ImageView fx:id="imgselectTimeSlot" fitHeight="26.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../resources/icons/add.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <Button fx:id="btnAllocate" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Allocate" />
+                                                    </children>
+                                                </HBox>
+                                                <FlowPane hgap="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                                    <children>
+                                                        <TextField fx:id="txtcurrentLocation" prefHeight="31.0" prefWidth="180.0" promptText="Current location">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font></TextField>
+                                                        <Label prefHeight="17.0" prefWidth="21.0" text="    " />
+                                                        <Button fx:id="btnsaveLocation" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Save" />
+                                                    </children>
+                                                </FlowPane>
+                                                <FlowPane hgap="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                                    <children>
+                                                        <ComboBox fx:id="cmbchangeOrganisation" prefHeight="32.0" prefWidth="180.0" promptText="---Change Organisation---" />
+                                                        <ImageView fx:id="imgchangeOrganisation" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../resources/icons/add.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <Button fx:id="btnchangeOrganisation" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Change" />
+                                                    </children>
+                                                </FlowPane>
+                                                <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="16">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/info.png" />
+
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="17">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/info.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label prefHeight="26.0" prefWidth="46.0" text="\$ (USD)" GridPane.columnIndex="1" GridPane.rowIndex="18">
+                                       <font>
+                                          <Font name="Cambria Bold Italic" size="12.0" />
+                                       </font></Label>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="20">
+                                                    <children>
+                                                        <Button fx:id="btnUpdatee" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#updateEmployeeDetails" prefHeight="34.0" prefWidth="66.0" text="Update" />
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabPersonal" onSelectionChanged="#loadPersonalDetails" text="Personal">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <GridPane hgap="5.0" layoutX="14.0" prefHeight="540.0" prefWidth="780.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="384.0" minWidth="10.0" prefWidth="45.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="523.0" minWidth="10.0" prefWidth="238.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="523.0" minWidth="0.0" prefWidth="88.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="523.0" minWidth="10.0" prefWidth="242.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="523.0" minWidth="10.0" prefWidth="184.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label alignment="BOTTOM_LEFT" prefHeight="35.0" prefWidth="262.0" text="Personal Details" GridPane.columnSpan="2">
+                                                    <font>
+                                                        <Font name="Batang" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtFathername" prefHeight="30.0" prefWidth="287.0" promptText="Father name" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtMothername" prefHeight="31.0" prefWidth="287.0" promptText="Mother name" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <ComboBox fx:id="cmbGender" prefHeight="29.0" prefWidth="134.0" promptText="Gender" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtBloodGroup" prefHeight="31.0" prefWidth="287.0" promptText="Blood Group" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <ComboBox fx:id="cmbMaritalStatus" prefHeight="31.0" prefWidth="163.0" promptText="---Marital Status---" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <ComboBox fx:id="cmbSelectReligion" prefHeight="30.0" prefWidth="165.0" promptText="---Select Religion---" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="txtLanguage" prefHeight="29.0" prefWidth="287.0" promptText="Language (Speak)" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtLanguageWrite" prefHeight="29.0" prefWidth="261.0" promptText="Language (Write)" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <ComboBox fx:id="cmbEthnicOrigin" prefHeight="30.0" prefWidth="167.0" promptText="---Ethnic Origin---" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                <Button fx:id="btnUpdat" mnemonicParsing="false" onAction="#updatePersonalDetails" prefHeight="30.0" prefWidth="102.0" text="Update" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                                                <ImageView fitHeight="25.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="29.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label prefHeight="24.0" prefWidth="163.0" text="Social Media Details" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtLinkedIn" prefHeight="30.0" prefWidth="239.0" promptText="Linked In" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtSkype" prefHeight="31.0" prefWidth="239.0" promptText="Skype" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtTwitter" prefHeight="33.0" prefWidth="239.0" promptText="Twitter" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtFacebook" prefHeight="32.0" prefWidth="239.0" promptText="Facebook" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabDependants" onCloseRequest="#onCloseRequest" onSelectionChanged="#loadDependents" text="Dependants">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <GridPane hgap="10.0" layoutX="14.0" layoutY="32.0" prefHeight="790.0" prefWidth="1605.0" vgap="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="351.0" minWidth="10.0" prefWidth="285.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="471.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="111.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="160.0" minHeight="3.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="183.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="218.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="183.0" minHeight="10.0" prefHeight="153.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label prefHeight="34.0" prefWidth="386.0" text="Dependants Details" textFill="#fcfcfc">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="19.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtDependantName" prefHeight="34.0" prefWidth="351.0" promptText="Dependant Name" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtRelationship" prefHeight="32.0" prefWidth="361.0" promptText="Relationship" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtNumberOfDependance" prefHeight="33.0" prefWidth="284.0" promptText="Age" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="285.0" spacing="10.0" GridPane.rowIndex="7">
+                                                    <children>
+                                                        <Label prefHeight="17.0" prefWidth="158.0" />
+                                                        <Button fx:id="btnAd" mnemonicParsing="false" onAction="#updateDependantsDetails" prefHeight="29.0" prefWidth="75.0" text="Add" />
+                                                        <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#refreshTableDependants" prefHeight="28.0" prefWidth="96.0" text="REFRESH" />
+                                                    </children>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <padding>
+                                          <Insets top="21.0" />
+                                       </padding>
+                                                </HBox>
+                                                <TitledPane fx:id="tblTableDetails" animated="false" prefHeight="259.0" prefWidth="600.0" text="Table Details" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="6">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <TableView fx:id="tableView" layoutX="1.0" onMouseClicked="#selectedDependant" prefHeight="232.0" prefWidth="595.0" tableMenuButtonVisible="true" />
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </TitledPane>
+                                    <TextArea fx:id="txaDependanceNotes" prefHeight="71.0" prefWidth="285.0" promptText="Dependance notes" wrapText="true" GridPane.rowIndex="5" GridPane.rowSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font>
+                                    </TextArea>
+                                            </children>
+                                 <padding>
+                                    <Insets left="6.0" />
+                                 </padding>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabContacts" onSelectionChanged="#loadContactsDetails" text="Contacts">
+
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="632.0" prefWidth="1301.0">
+                                    <children>
+                                        <VBox layoutX="27.0" layoutY="9.0" prefHeight="627.0" prefWidth="982.0" spacing="5.0">
+                                            <children>
+                                                <HBox prefHeight="570.0" prefWidth="996.0" spacing="10.0">
+                                                    <children>
+                                                        <TitledPane fx:id="tabContactsDetails" animated="false" prefHeight="571.0" prefWidth="438.0" text="Contacts Details">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="406.0">
+                                                                    <children>
+                                                                        <TextField fx:id="txtWorkPhone" layoutX="61.0" layoutY="23.0" prefHeight="30.0" prefWidth="280.0" promptText="Work phone">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtWorkEmail" layoutX="61.0" layoutY="74.0" prefHeight="30.0" prefWidth="280.0" promptText="Work email">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtHomePhone" layoutX="61.0" layoutY="121.0" prefHeight="30.0" prefWidth="280.0" promptText="Home phone">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtCellMobile" layoutX="61.0" layoutY="163.0" prefHeight="30.0" prefWidth="280.0" promptText="Cell mobile">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtPersonalEmail" layoutX="61.0" layoutY="213.0" prefHeight="30.0" prefWidth="280.0" promptText="Personal email">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtPersonname" layoutX="64.0" layoutY="282.0" prefHeight="30.0" prefWidth="280.0" promptText="Person name">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtRelationShip" layoutX="65.0" layoutY="325.0" prefHeight="30.0" prefWidth="280.0" promptText="Relationship">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtEmail" layoutX="65.0" layoutY="407.0" prefHeight="30.0" prefWidth="280.0" promptText="Email">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextField fx:id="txtHomePhon" layoutX="64.0" layoutY="368.0" prefHeight="30.0" prefWidth="280.0" promptText="Home phone">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <TextArea fx:id="txtEmergencyAddress" layoutX="66.0" layoutY="445.0" prefHeight="86.0" prefWidth="279.0" promptText="Emergency address...">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextArea>
+                                                                        <Label layoutX="45.0" layoutY="247.0" prefHeight="29.0" prefWidth="121.0" text="Emergency Contact">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="11.0" />
+                                                         </font></Label>
+                                                                        <Separator layoutX="146.0" layoutY="262.0" prefHeight="4.0" prefWidth="292.0" />
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                                        </TitledPane>
+                                                        <TitledPane animated="false" prefHeight="569.0" prefWidth="531.0" text="Address Details">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="9.0">
+                                                                    <children>
+
+                                                                        <Separator layoutX="149.0" layoutY="258.0" prefHeight="17.0" prefWidth="437.0" />
+                                                                        <Label layoutX="45.0" layoutY="256.0" prefHeight="17.0" prefWidth="109.0" text="Permanent Address">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="11.0" />
+                                                         </font></Label>
+                                                                        <TextArea fx:id="txtAddress" layoutX="108.0" layoutY="28.0" prefHeight="106.0" prefWidth="373.0" promptText="Address...">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextArea>
+                                                                        <TextField fx:id="txtState" layoutX="110.0" layoutY="144.0" prefHeight="30.0" prefWidth="280.0" promptText="State">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <ComboBox fx:id="cmbCountry" layoutX="109.0" layoutY="179.0" prefHeight="30.0" prefWidth="150.0" promptText="Country" />
+                                                                        <TextField fx:id="txtZipPinCode" layoutX="109.0" layoutY="215.0" prefHeight="30.0" prefWidth="280.0" promptText="Zip/Pin Code">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <Label layoutX="58.0" layoutY="2.0" prefHeight="17.0" prefWidth="137.0" text="Correspondence Address">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="11.0" />
+                                                         </font></Label>
+                                                                        <Separator layoutX="187.0" prefHeight="22.0" prefWidth="398.0" />
+                                                                        <CheckBox fx:id="chkSameAsCAddress" layoutX="63.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkBoxSameAsCorrespondenceAddress" onMouseClicked="#checkBoxSameAsCorrespondenceAddress" prefHeight="17.0" prefWidth="231.0" text="Same as Corresponce Address">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="11.0" />
+                                                         </font></CheckBox>
+                                                                        <TextArea fx:id="txtAddres" layoutX="108.0" layoutY="302.0" prefHeight="93.0" prefWidth="365.0" promptText="Address...">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextArea>
+                                                                        <TextField fx:id="txtStat" layoutX="109.0" layoutY="406.0" prefHeight="30.0" prefWidth="280.0" promptText="State">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                        <ComboBox fx:id="cmbCountr" layoutX="109.0" layoutY="441.0" prefHeight="30.0" prefWidth="150.0" promptText="Country" />
+                                                                        <TextField fx:id="txtZipPinCod" layoutX="109.0" layoutY="480.0" prefHeight="30.0" prefWidth="280.0" promptText="Zip/Pin Code">
+                                                         <font>
+                                                            <Font name="Arial Unicode MS" size="12.0" />
+                                                         </font></TextField>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                                        </TitledPane>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                          <Button fx:id="btnUpdateContactDetails" layoutX="1016.0" layoutY="9.0" mnemonicParsing="false" onAction="#updateContactsDetails" prefHeight="29.0" prefWidth="184.0" text="Update Contact Details">
+                                              <font>
+                                                  <Font size="13.0" />
+                                              </font>
+                                          </Button>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#loadQualificationDetails" text="Qualifications">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <SplitPane dividerPositions="0.42383419689119173" layoutX="14.0" layoutY="20.0" prefHeight="519.0" prefWidth="967.0">
+                                            <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <Separator layoutX="121.0" layoutY="27.0" prefHeight="2.0" prefWidth="285.0" />
+                                                        <Label layoutX="2.0" layoutY="18.0" prefHeight="19.0" prefWidth="121.0" text="Qualification Details">
+                                                            <font>
+                                                                <Font name="Arial Unicode MS" size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <ComboBox fx:id="cmbSelectEducationLevel" layoutX="121.0" layoutY="49.0" prefHeight="25.0" prefWidth="249.0" promptText="---Select education level---" />
+                                                        <TextArea fx:id="txtSchoolName" layoutX="121.0" layoutY="80.0" prefHeight="75.0" prefWidth="280.0" promptText="School name">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font></TextArea>
+                                                        <TextField fx:id="txtDegree" layoutX="121.0" layoutY="165.0" prefHeight="30.0" prefWidth="280.0" promptText="Degree">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font></TextField>
+                                                        <Button fx:id="btnAddd" layoutX="228.0" layoutY="246.0" mnemonicParsing="false" onAction="#insertQualificationDetails" prefHeight="25.0" prefWidth="66.0" text="Add" />
+                                                        <Button fx:id="btnResett" layoutX="320.0" layoutY="246.0" mnemonicParsing="false" onAction="#refreshInputControls" prefHeight="25.0" prefWidth="81.0" text="Reset" />
+                                                        <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="378.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../resources/icons/add.png" />
+                                                            </image>
+                                                        </ImageView>
+                                          <DatePicker fx:id="dtpCompletionYear" layoutX="122.0" layoutY="206.0" prefHeight="30.0" promptText="Completion year" showWeekNumbers="true" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+//<<<<<<< HEAD
+                                                        <TableView fx:id="tableQualifications" layoutX="3.0" layoutY="28.0" onMouseClicked="#showQualificationDetailsInFields" prefHeight="212.0" prefWidth="549.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="sno" prefWidth="54.0" text="S.No." />
+                                                                <TableColumn fx:id="educationalLevel" prefWidth="106.0" text="Education Level" />
+                                                                <TableColumn fx:id="school" prefWidth="124.0" text="School" />
+                                                                <TableColumn fx:id="degree" prefWidth="159.0" text="Degree" />
+                                                                <TableColumn fx:id="completionYear" prefWidth="105.0" text="Completion Year" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <Button fx:id="btnEdit" layoutX="3.0" layoutY="246.0" mnemonicParsing="false" onAction="#updateQualificationDetails" prefHeight="25.0" prefWidth="90.0" text="EDIT" />
+                                                        <Button fx:id="btnDelete" layoutX="108.0" layoutY="246.0" mnemonicParsing="false" onAction="#deleteWorkExperience" prefHeight="25.0" prefWidth="90.0" text="DELETE" />
+                                                        <Label fx:id="lblNote" layoutX="46.0" layoutY="306.0" prefHeight="38.0" prefWidth="489.0" text="First select a row from above table and then click Edit or Delete button to update education details" textFill="#da1818" wrapText="true">
+                                             <font>
+                                                <Font name="Californian FB" size="13.0" />
+                                             </font></Label>
+                                          <Label layoutY="308.0" text="NOTE:">
+                                             <font>
+                                                <Font name="Cambria Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                            </items>
+                                        </SplitPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#loadWorkExperienceDetails" text="Work Experience">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <HBox layoutX="14.0" layoutY="35.0" prefHeight="319.0" prefWidth="1509.0" spacing="15.0">
+                                            <children>
+                                                <Pane prefHeight="319.0" prefWidth="541.0">
+                                                    <children>
+                                                        <Separator layoutX="170.0" layoutY="24.0" prefHeight="4.0" prefWidth="364.0" />
+                                                        <Label layoutX="2.0" layoutY="14.0" prefHeight="19.0" prefWidth="171.0" text="Previous Working Experience">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <TextField fx:id="txtCompanyName" layoutX="26.0" layoutY="37.0" prefHeight="30.0" prefWidth="250.0" promptText="Company name">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font></TextField>
+                                                        <TextField fx:id="txtDesignation" layoutX="26.0" layoutY="73.0" prefHeight="30.0" prefWidth="250.0" promptText="Designation">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font></TextField>
+                                                        <TextArea fx:id="txaOtherDetails" layoutX="26.0" layoutY="194.0" prefHeight="83.0" prefWidth="250.0" promptText="Other details">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font></TextArea>
+                                                        <DatePicker fx:id="dtpFrom" layoutX="26.0" layoutY="117.0" prefHeight="30.0" promptText="From" />
+                                                        <DatePicker fx:id="dtpTo" layoutX="26.0" layoutY="156.0" prefHeight="30.0" promptText="To" />
+                                                        <Button fx:id="btn_Add" layoutX="377.0" layoutY="285.0" mnemonicParsing="false" onAction="#insertWorkExperienceDetails" prefHeight="25.0" prefWidth="66.0" text="Add" />
+                                                        <Button fx:id="btn_Refresh" layoutX="452.0" layoutY="285.0" mnemonicParsing="false" onAction="#refreshWorkExperienceInputControls" prefHeight="25.0" prefWidth="83.0" text="REFRESH" />
+                                          <TextArea fx:id="txaAddressOfEmployer" layoutX="285.0" layoutY="194.0" prefHeight="83.0" prefWidth="250.0" promptText="Address of employer">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font>
+                                          </TextArea>
+                                          <TextArea fx:id="txaReasonsForLeaving" layoutX="285.0" layoutY="106.0" prefHeight="83.0" prefWidth="250.0" promptText="Reasons for leaving">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font>
+                                          </TextArea>
+                                          <TextField fx:id="txtTelephone" layoutX="285.0" layoutY="73.0" prefHeight="30.0" prefWidth="250.0" promptText="Telephone">
+                                             <font>
+                                                <Font name="Arial Unicode MS" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label fx:id="lblId" layoutX="503.0" layoutY="44.0" text="Label" />
+                                                    </children>
+                                                </Pane>
+                                                <VBox prefHeight="319.0" prefWidth="974.0">
+                                                    <children>
+                                                        <TableView fx:id="tableWorkExperience" onMouseClicked="#showWorkExperienceDetailsInFields" prefHeight="334.0" prefWidth="883.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="id" prefWidth="34.0" text="#" />
+                                                                <TableColumn fx:id="companyName" prefWidth="230.0" text="Company Name" />
+                                                                <TableColumn fx:id="designation" prefWidth="127.0" text="Designation" />
+                                                                <TableColumn fx:id="from" prefWidth="89.0" text="From" />
+                                                                <TableColumn fx:id="to" prefWidth="87.0" text="To" />
+                                                                <TableColumn fx:id="otherDetails" prefWidth="120.0" text="Other Details" />
+                                                <TableColumn fx:id="colTelephone" prefWidth="77.0" text="Telephone" />
+                                                <TableColumn fx:id="colReasonsForLeaving" prefWidth="126.0" text="Reasons For Leaving" />
+                                                <TableColumn fx:id="colAddressOfEmployer" prefWidth="123.0" text="Address Of Employer" />
+                                                            </columns>
+                                                        </TableView>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                                            <children>
+                                                                <Button fx:id="btn_Edit" mnemonicParsing="false" onAction="#updateWorkExperienceDetails" prefHeight="25.0" prefWidth="114.0" text="EDIT" />
+                                                                <Button fx:id="btn_Delete" mnemonicParsing="false" onAction="#deleteWorkExperience" prefHeight="25.0" prefWidth="114.0" text="DELETE" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#loadSkillDetails" text="Skills">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <SplitPane dividerPositions="0.4664092664092664" layoutX="15.0" layoutY="15.0" prefHeight="593.0" prefWidth="1297.0">
+                                            <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <ComboBox fx:id="cmbSkills" layoutX="7.0" layoutY="41.0" onAction="#loadSkillId" prefHeight="25.0" prefWidth="139.0" promptText="---Skills---" />
+                                                        <ImageView fx:id="imgAddSkills" fitHeight="20.0" fitWidth="19.0" layoutX="147.0" layoutY="44.0" onMouseClicked="#addSkills" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../resources/icons/add.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <ComboBox fx:id="cmbLevel" layoutX="179.0" layoutY="41.0" prefHeight="25.0" prefWidth="139.0" promptText="---Level---" />
+                                                        <ComboBox fx:id="cmbExperience" layoutX="330.0" layoutY="41.0" prefHeight="25.0" prefWidth="104.0" promptText="---Years---" />
+                                                        <ComboBox fx:id="cmbMonths" layoutX="443.0" layoutY="41.0" prefHeight="25.0" prefWidth="94.0" promptText="Months" />
+                                                        <Button fx:id="_btn_Add" layoutX="545.0" layoutY="41.0" mnemonicParsing="false" onAction="#updateSkillsDetails" prefHeight="25.0" prefWidth="52.0" text="Add" />
+                                                        <Label layoutX="14.0" layoutY="16.0" prefHeight="17.0" prefWidth="66.0" text="Skills">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="179.0" layoutY="15.0" text="Level">
+
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label layoutX="330.0" layoutY="13.0" prefHeight="21.0" prefWidth="121.0" text="Experience">
+
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <TableView fx:id="tableNewSkills" layoutX="6.0" layoutY="76.0" onMouseClicked="#loadEmployeesWithSimilarSkills" prefHeight="200.0" prefWidth="592.0" />
+                                                        <PieChart fx:id="pieExperience" layoutX="6.0" layoutY="276.0" prefHeight="310.0" prefWidth="590.0" title="Skill Experience (In Years)" />
+                                          <Label fx:id="lblSkillId" layoutX="86.0" layoutY="15.0" text="Label" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                    <children>
+                                                        <Label layoutX="1.0" layoutY="14.0" prefHeight="17.0" prefWidth="146.0" text="Similar Skills Employees" />
+                                                        <Separator layoutX="137.0" layoutY="26.0" prefHeight="4.0" prefWidth="546.0" />
+                                                        <TableView fx:id="tableSimilarSkills" layoutX="14.0" layoutY="37.0" prefHeight="550.0" prefWidth="670.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="colName" prefWidth="183.0" text="Name" />
+                                                                <TableColumn fx:id="colEmployeeId" prefWidth="116.0" text="EmployeeID" />
+                                                                <TableColumn fx:id="colDesignation" prefWidth="171.0" text="Designation" />
+                                                                <TableColumn fx:id="colDepartment" prefWidth="199.0" text="Department" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </items>
+                                        </SplitPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#loadSubmittedDocumentDetails" text="Documents">
+
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Pane layoutX="14.0" layoutY="22.0" prefHeight="534.0" prefWidth="1106.0">
+                                            <children>
+                                                <Label layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="72.0" text="Documents">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Separator layoutX="79.0" layoutY="26.0" prefHeight="4.0" prefWidth="276.0" />
+                                                <ComboBox fx:id="cmbDocumentType" layoutX="79.0" layoutY="38.0" onAction="#selectDocumentId" prefHeight="25.0" prefWidth="253.0" promptText="Document type" />
+                                                <ImageView fx:id="imgAddDocumentType" fitHeight="28.0" fitWidth="22.0" layoutX="334.0" layoutY="40.0" onMouseClicked="#addDocumentType" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="79.0" layoutY="73.0" prefHeight="28.0" prefWidth="234.0" text="Document type category">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txtSelectDocument" layoutX="79.0" layoutY="99.0" onMouseClicked="#selectDocument" prefHeight="30.0" prefWidth="274.0" promptText="Select document">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <DatePicker fx:id="dtpSubmittedIssuedDate" layoutX="79.0" layoutY="136.0" prefHeight="31.0" prefWidth="253.0" promptText="Submitted/Issued date" />
+                                                <RadioButton fx:id="rdbOriginal" layoutX="79.0" layoutY="183.0" mnemonicParsing="false" text="Original">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></RadioButton>
+                                                <RadioButton fx:id="rdbDuplicate" layoutX="196.0" layoutY="183.0" mnemonicParsing="false" text="Duplicate">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></RadioButton>
+                                                <Label layoutX="8.0" layoutY="200.0" prefHeight="17.0" prefWidth="72.0" text="Expired date">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></Label>
+                                                <RadioButton fx:id="rdbYes" layoutX="79.0" layoutY="221.0" mnemonicParsing="false" text="Yes">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></RadioButton>
+                                                <RadioButton fx:id="rdbNo" layoutX="197.0" layoutY="221.0" mnemonicParsing="false" text="No">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="13.0" />
+                                       </font></RadioButton>
+                                                <DatePicker fx:id="dtpExpirationDate" layoutX="79.0" layoutY="255.0" prefHeight="30.0" prefWidth="246.0" promptText="Expiration date" />
+                                                <Separator layoutX="81.0" layoutY="211.0" prefHeight="3.0" prefWidth="264.0" />
+                                                <TabPane layoutX="366.0" layoutY="28.0" prefHeight="339.0" prefWidth="737.0" tabClosingPolicy="UNAVAILABLE">
+                                                    <tabs>
+                                                        <Tab fx:id="tabSubmittedDocuments" onSelectionChanged="#loadSubmittedDocumentDetails" text="Submitted documents">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                    <children>
+                                                                        <TableView fx:id="tableSubmittedDocuments" onMouseClicked="#reflectSubmittedDocuments" prefHeight="256.0" prefWidth="738.0">
+                                                                            <columns>
+                                                                                <TableColumn fx:id="colId" prefWidth="30.0" text="#" />
+                                                                                <TableColumn fx:id="colDocumentName" prefWidth="172.0" text="Document Name" />
+                                                                                <TableColumn fx:id="colDocumentType" minWidth="0.0" prefWidth="170.0" text="Document Type" />
+                                                                                <TableColumn fx:id="colSubmittedDate" prefWidth="123.0" text="Submitted Date" />
+                                                                                <TableColumn fx:id="colExpiredOn" prefWidth="139.0" text="Expired On" />
+                                                                                <TableColumn fx:id="colOriginalDuplicate" prefWidth="101.0" text="Duplicate" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Button fx:id="btnDeleteDocument" layoutX="1.0" layoutY="275.0" mnemonicParsing="false" onAction="#deleteDocument" prefHeight="25.0" prefWidth="146.0" text="DELETE DOCUMENT" />
+                                                                        <Button fx:id="btnEmailDocument" layoutX="156.0" layoutY="275.0" mnemonicParsing="false" onAction="#showEmailAttachment" prefHeight="25.0" prefWidth="156.0" text="EMAIL DOCUMENT" />
+
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+//<<<<<<< HEAD
+                                                        <Tab fx:id="tabIssuedDocuments" onSelectionChanged="#loadIssuedDocumentDetails" text="Issued documents">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                    <children>
+                                                                        <TableView fx:id="tableIssuedDocuments" onMouseClicked="#reflectIssuedDocuments" prefHeight="258.0" prefWidth="737.0">
+                                                                            <columns>
+                                                                                <TableColumn fx:id="colI" prefWidth="30.0" text="#" />
+                                                                                <TableColumn fx:id="colDocumentNam" prefWidth="170.0" text="Document Name" />
+                                                                                <TableColumn fx:id="colDocumentTyp" prefWidth="158.0" text="Document Type" />
+                                                                                <TableColumn fx:id="colSubmittedDat" prefWidth="127.0" text="Issued Date" />
+                                                                                <TableColumn fx:id="colExpiredO" prefWidth="132.0" text="Expired On" />
+                                                                                <TableColumn fx:id="colOriginalDuplicat" prefWidth="117.0" text="Duplicate" />
+                                                                            </columns>
+                                                                        </TableView>
+                                                                        <Button fx:id="_btnDeleteDocument" layoutX="2.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" text="DELETE DOCUMENT" />
+                                                                        <Button fx:id="_btnEmailDocument" layoutX="159.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="EMAIL DOCUMENT" />
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                    </tabs>
+                                                </TabPane>
+                                                <Button fx:id="_btnReset" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" onAction="#refreshDocumentControls" prefHeight="25.0" prefWidth="66.0" text="RESET" />
+                                                <Button fx:id="btnUpload" layoutX="78.0" layoutY="333.0" mnemonicParsing="false" onAction="#uploadDocuments" prefHeight="25.0" prefWidth="75.0" text="Upload" />
+                                    <Label fx:id="lblPath" layoutX="80.0" layoutY="294.0" prefHeight="28.0" prefWidth="245.0" text="Label" />
+                                    <Label fx:id="lblDocumentId" layoutX="299.0" layoutY="79.0" prefHeight="17.0" prefWidth="60.0" text="Label" />
+                                    <Label fx:id="lblSelectId" layoutX="299.0" layoutY="231.0" text="Label" />
+
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Attendance">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                              <SplitPane dividerPositions="0.4229569557080474" prefHeight="790.0" prefWidth="1605.0" style="-fx-background-color: #66ADCD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-border-color: FFFFFF; -fx-border-radius: 1; -fx-border-width: 2;">
+                                       <children>
+                                                    <DatePicker fx:id="cmbSelectYear" layoutX="302.0" layoutY="10.0" prefHeight="25.0" prefWidth="136.0" promptText="Select year" />
+                                                    <Hyperlink fx:id="hypUploadSheet" layoutX="442.0" layoutY="15.0" prefHeight="23.0" prefWidth="188.0" text="Upload Sheet For All Employees" textFill="#0a7c71" underline="true" AnchorPane.leftAnchor="442.0">
+                                                        <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                        </font>
+                                                    </Hyperlink>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="788.0" prefWidth="899.0" style="-fx-background-radius: 5; -fx-border-color: FFFFFF; -fx-border-radius: 1; -fx-border-width: 2;">
+                                       <children>
+                                          <Text fill="#0a7c71" layoutX="5.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How to generate and upload attendance time sheet" wrappingWidth="520.13671875">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                             </font></Text>
+                                                    <TableView layoutX="7.0" layoutY="22.0" prefHeight="234.0" prefWidth="757.0">
+                                                        <columns>
+                                                            <TableColumn prefWidth="155.0" text="Date" />
+                                                            <TableColumn prefWidth="82.0" text="Time In" />
+                                                            <TableColumn prefWidth="83.0" text="Time Out" />
+                                                            <TableColumn prefWidth="148.0" text="Work Hours" />
+                                                            <TableColumn prefWidth="144.0" text="Time Impact" />
+                                                            <TableColumn prefWidth="144.0" text="Financial Impact" />
+                                                        </columns>
+                                                    </TableView>
+                                          <Text fill="#0f6158" layoutX="14.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rule 1 :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="14.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rule 2 :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="14.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rule 3 :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="14.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rule 4 :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="14.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rule 5 :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="14.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rule 6 :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="14.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTE :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#00ffe1" layoutX="14.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTE :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_T1 stands for firstday of the month Time In">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_TO stands for firstday of the month Time Out">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Always download the monthly sheet by selecting the month from download attendance format">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Value should be in format of 8:00 AM">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For the company holiday and leaves mention 'H'">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For the absence of an employee mention 'A'">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please use 12 hour format">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="612.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Always use ':' as a seperator between hours and minutes">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Default entry is just for your help to fill proper data. You can just edit ity or delete it according to your real data.">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#00ffe1" layoutX="60.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALL FIELDS ARE MANDATORY">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Example :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="125.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_T1">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="125.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8:00 AM">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="216.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_TO">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="216.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9:00 PM">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="60.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Example :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="125.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_T1">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="125.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="216.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_TO">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="216.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="59.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Example :">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="124.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_T1">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="124.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="215.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I_TO">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#0f6158" layoutX="215.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <Label layoutX="7.0" layoutY="6.0" text="Month Name" textFill="#0a7c71">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="196.0" layoutY="6.0" text="Working Time Slot" textFill="#0a7c71">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="386.0" layoutY="6.0" text="09:00 - 5:00 Hrs" textFill="#0a7c71">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="688.0" layoutY="6.0" text="(08:00Hrs)" textFill="#0a7c71">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                                        <Label layoutX="8.0" layoutY="44.0" prefHeight="17.0" prefWidth="168.0" text="Download Attendance Sheet" textFill="#0a7c71">
+                                 <font>
+                                    <Font name="Cambria" size="13.0" />
+                                 </font></Label>
+                                        <Separator layoutX="176.0" layoutY="57.0" prefHeight="4.0" prefWidth="112.0" />
+                                        <ComboBox fx:id="cmbSelectMonth" layoutX="99.0" layoutY="68.0" prefHeight="25.0" prefWidth="189.0" promptText="---Select month---" />
+                                        <ComboBox fx:id="_cmbSelectMonth" layoutX="432.0" layoutY="68.0" prefHeight="25.0" prefWidth="197.0" promptText="---Select month---" />
+                                        <Label layoutX="326.0" layoutY="44.0" prefHeight="17.0" prefWidth="154.0" text="Upload Attendance Sheet" textFill="#0a7c71">
+                                 <font>
+                                    <Font name="Cambria" size="13.0" />
+                                 </font></Label>
+                                        <Separator layoutX="475.0" layoutY="58.0" prefHeight="3.0" prefWidth="153.0" />
+                                        <Button fx:id="btnDownloadAttSheet" layoutX="100.0" layoutY="101.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="188.0" text="Download Attendance Sheet">
+
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnUploadAttSheet" layoutX="434.0" layoutY="101.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="195.0" text="Upload Attendance Sheet">
+
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <PieChart layoutX="14.0" layoutY="178.0" prefHeight="442.0" prefWidth="616.0" title="Financial Impact For Year" />
+                                        <Label layoutX="40.0" layoutY="144.0" prefHeight="17.0" prefWidth="154.0" text="Net Monthly Time Impact:" textFill="#0a7c71">
+                                 <font>
+                                    <Font name="Cambria" size="12.0" />
+                                 </font></Label>
+                                        <Label layoutX="351.0" layoutY="147.0" prefHeight="17.0" prefWidth="161.0" text="Net Monthly Financial Impact:" textFill="#0a7c71">
+                                 <font>
+                                    <Font name="Cambria" size="12.0" />
+                                 </font></Label>
+                                        <Separator layoutX="179.0" layoutY="159.0" prefHeight="0.0" prefWidth="109.0" />
+                                        <Separator layoutX="511.0" layoutY="160.0" prefHeight="2.0" prefWidth="118.0" />
+                                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="8.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/red-arrow.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="320.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/red-arrow.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Leaves">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: FFFFFF; -fx-background-color: #66ADCD; -fx-border-width: 2;">
+                                    <children>
+                                        <Button fx:id="btnPunchLeave" alignment="BOTTOM_CENTER" layoutX="24.0" layoutY="19.0" mnemonicParsing="false" onAction="#showEmployeeLeaveApplication" prefHeight="56.0" prefWidth="121.0" text="Punch Leave">
+
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnApproveLeave" alignment="BOTTOM_CENTER" layoutX="175.0" layoutY="19.0" mnemonicParsing="false" onAction="#showApproveLeaveApplication" prefHeight="56.0" prefWidth="121.0" text="Approve Leave">
+
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnManageLeaveSettings" alignment="BOTTOM_CENTER" layoutX="321.0" layoutY="19.0" mnemonicParsing="false" onAction="#showEmployeeLeaveTypes" prefHeight="56.0" prefWidth="140.0" text="Manage Leave Settings">
+
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnManageLeave" alignment="BOTTOM_CENTER" layoutX="24.0" layoutY="96.0" mnemonicParsing="false" onAction="#showEmployeeLeaveApplication" prefHeight="56.0" prefWidth="121.0" text="Manage Leave">
+
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnViewCalendar" alignment="BOTTOM_CENTER" layoutX="175.0" layoutY="96.0" mnemonicParsing="false" onAction="#showEmployeeCalendar" prefHeight="56.0" prefWidth="121.0" text="View Calendar">
+
+                                            <font>
+                                                <Font name="System Bold" size="11.0" />
+                                            </font>
+                                        </Button>
+                                        <PieChart fx:id="pieLeave" layoutX="24.0" layoutY="164.0" prefHeight="400.0" prefWidth="442.0" title="Leave taken for year(Approved Status)" />
+                                        <DatePicker fx:id="dtpYear" layoutX="321.0" layoutY="126.0" prefHeight="25.0" prefWidth="141.0" promptText="Year" />
+                                        <Label layoutX="477.0" layoutY="23.0" prefHeight="18.0" prefWidth="171.0" text="Upcoming leave for employee">
+
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Separator layoutX="648.0" layoutY="36.0" prefHeight="2.0" prefWidth="646.0" />
+                                        <TableView fx:id="tblLeave" layoutX="648.0" layoutY="43.0" prefHeight="365.0" prefWidth="646.0">
+
+                                            <columns>
+                                                <TableColumn prefWidth="106.0" text="Leave Type" />
+                                                <TableColumn prefWidth="85.0" text="Leave From" />
+                                                <TableColumn prefWidth="110.0" text="Leave Till" />
+                                                <TableColumn prefWidth="115.0" text="No. of Leaves" />
+                                                <TableColumn prefWidth="84.0" text="Status" />
+                                                <TableColumn prefWidth="75.0" text="Approve" />
+                                                <TableColumn prefWidth="75.0" text="Reject" />
+                                            </columns>
+                                        </TableView>
+
+                                        <Button fx:id="btnCancelLeave" layoutX="1199.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Cancel Leave">
+
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+
+                                        <ComboBox fx:id="cmbFilterByStatus" layoutX="1034.0" layoutY="7.0" prefWidth="150.0" promptText="Filter by status" />
+                                        <DatePicker fx:id="_dtpYear" layoutX="846.0" layoutY="7.0" promptText="Year" />
+                              <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="61.0" layoutY="20.0" onMouseClicked="#showEmployeeLeaveApplication" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/leave.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="216.0" layoutY="19.0" onMouseClicked="#showEmployeeLeaveApplication" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/approve.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="372.0" layoutY="19.0" onMouseClicked="#showEmployeeLeaveTypes" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/settings.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="61.0" layoutY="96.0" onMouseClicked="#showEmployeeLeaveApplication" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/manage.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="216.0" layoutY="96.0" onDragDetected="#showEmployeeCalendar" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/view-calendar.png" />
+                                 </image>
+                              </ImageView>
+
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Payroll">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="354.0" prefWidth="672.0" style="-fx-background-radius: 5; -fx-border-color: FFFFFF; -fx-border-width: 2; -fx-background-color: #66ADCD; -fx-border-radius: 5;">
+                                            <children>
+                                                <Button fx:id="btnPaySalary" alignment="BOTTOM_CENTER" layoutX="21.0" layoutY="28.0" mnemonicParsing="false" onAction="#showPayrollSettings" prefHeight="60.0" prefWidth="149.0" text="Pay Salary">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnWagesAndBilling" alignment="BOTTOM_CENTER" layoutX="21.0" layoutY="100.0" mnemonicParsing="false" onAction="#showEmployeeBilling" prefHeight="60.0" prefWidth="149.0" text="Wages and Billing">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnSalaryStructure" alignment="BOTTOM_CENTER" layoutX="21.0" layoutY="171.0" mnemonicParsing="false" onAction="#showPayrollSettings" prefHeight="60.0" prefWidth="149.0" text="Salary Structure">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnPromotion" alignment="BOTTOM_CENTER" layoutX="183.0" layoutY="172.0" mnemonicParsing="false" onAction="#showEmployeeDepartmentDesignationOverview" prefHeight="60.0" prefWidth="149.0" text="Promotion">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnLeaveAndAdvance" alignment="BOTTOM_CENTER" layoutX="183.0" layoutY="101.0" mnemonicParsing="false" onAction="#showLoanAndAdvances" prefHeight="60.0" prefWidth="149.0" text="Loan and Advances">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnBankSheet" alignment="BOTTOM_CENTER" layoutX="183.0" layoutY="29.0" mnemonicParsing="false" onAction="#showPayrollSettings" prefHeight="60.0" prefWidth="149.0" text="Bank Sheet">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnAttendanceSync" alignment="BOTTOM_CENTER" layoutX="345.0" layoutY="28.0" mnemonicParsing="false" onAction="#showPayrollSettings" prefHeight="60.0" prefWidth="149.0" text="Attendance Sync">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnReports" alignment="BOTTOM_CENTER" layoutX="345.0" layoutY="100.0" mnemonicParsing="false" onAction="#showOctopusReports" prefHeight="60.0" prefWidth="149.0" text="Reports">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnAppraisal" alignment="BOTTOM_CENTER" layoutX="507.0" layoutY="100.0" mnemonicParsing="false" onAction="#showPayrollSettings" prefHeight="60.0" prefWidth="149.0" text="Appraisal">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnPaySlipSalaryHistory" alignment="BOTTOM_CENTER" layoutX="507.0" layoutY="27.0" mnemonicParsing="false" onAction="#showPayrollSettings" prefHeight="60.0" prefWidth="149.0" text="Pay Slip/Salary History">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="75.0" layoutY="29.0" onMouseClicked="#showPayrollSettings" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/salary1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="237.0" layoutY="30.0" onMouseClicked="#showPayrollSettings" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/bank.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="399.0" layoutY="30.0" onMouseClicked="#showPayrollSettings" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/attendance1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="561.0" layoutY="29.0" onDragDetected="#showPayrollSettings" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/payslip.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="75.0" layoutY="101.0" onMouseClicked="#showEmployeeBilling" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/billing.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="231.0" layoutY="103.0" onMouseClicked="#showLoanAndAdvances" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/leave.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="399.0" layoutY="101.0" onMouseClicked="#showOctopusReports" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/reports.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="561.0" layoutY="101.0" onMouseClicked="#showPayrollSettings" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/assessment_48.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="75.0" layoutY="173.0" onMouseClicked="#showPayrollSettings" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/salary-structure.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="237.0" layoutY="172.0" onMouseClicked="#showEmployeeDepartmentDesignationOverview" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/promotion.png" />
+                                       </image>
+                                    </ImageView>
+
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Perfomance Intelligence">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="613.0" prefWidth="522.0">
+                                            <children>
+                                                <Label layoutX="14.0" layoutY="12.0" prefHeight="22.0" prefWidth="99.0" text="Employee Analysis" />
+                                                <Separator layoutX="114.0" layoutY="29.0" prefHeight="3.0" prefWidth="404.0" />
+                                                <ComboBox fx:id="_cmbSelectEmployee" layoutX="114.0" layoutY="46.0" prefHeight="25.0" prefWidth="209.0" promptText="---Select employee---" />
+                                                <Button fx:id="btnAddGoal" layoutX="365.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="96.0" text="Add Goal">
+                                                    <font>
+                                                        <Font name="Arial Bold" size="11.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="btnUpdateGoalAndeEffort" alignment="BOTTOM_CENTER" layoutX="365.0" layoutY="79.0" mnemonicParsing="false" onAction="#updatePerformanceIntelligenceDetails" prefHeight="60.0" prefWidth="96.0" text="Update Goal">
+
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                                <TextField layoutX="135.0" layoutY="76.0" prefHeight="9.0" prefWidth="149.0" />
+                                                <ImageView fitHeight="22.0" fitWidth="29.0" layoutX="105.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/info.png" />
+
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="284.0" layoutY="84.0" prefHeight="17.0" prefWidth="41.0" text=":" />
+                                                <Label layoutX="106.0" layoutY="109.0" prefHeight="22.0" prefWidth="109.0" text="Net Worth (USD) $">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="291.0" layoutY="112.0" prefHeight="17.0" prefWidth="43.0" text=" 0.00" />
+                                                <Label layoutX="105.0" layoutY="141.0" prefHeight="17.0" prefWidth="149.0" text="Expected Monthly Output">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="293.0" layoutY="141.0" text="0.00" />
+                                                <Label layoutX="106.0" layoutY="179.0" text="Actual Monthly Output">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Separator layoutX="102.0" layoutY="167.0" prefHeight="3.0" prefWidth="360.0" />
+                                                <Label layoutX="290.0" layoutY="179.0" text="0.00" />
+                                                <Hyperlink fx:id="hypKnowWhy" layoutX="365.0" layoutY="176.0" text="Know why?" underline="true">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Hyperlink>
+                                                <Hyperlink fx:id="hypCheckSolution" layoutX="366.0" layoutY="199.0" text="Check Solution" underline="true">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Hyperlink>
+                                                <BarChart layoutY="248.0" prefHeight="363.0" prefWidth="521.0" title="Last 3 months Performance Value Graph of Employee">
+                                                    <xAxis>
+                                                        <CategoryAxis side="BOTTOM" />
+                                                    </xAxis>
+                                                    <yAxis>
+                                                        <NumberAxis side="LEFT" />
+                                                    </yAxis>
+                                                </BarChart>
+                                                <ImageView fitHeight="22.0" fitWidth="27.0" layoutX="64.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/redDown.png" />
+
+                                                    </image>
+                                                </ImageView>
+                                                <Label fx:id="lblLossOrProfit" layoutX="99.0" layoutY="225.0" prefHeight="17.0" prefWidth="52.0">
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="180.0" layoutY="225.0" prefHeight="14.0" prefWidth="96.0" text="Label" />
+
+                                    <ImageView fitHeight="42.0" fitWidth="47.0" layoutX="390.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/update.png" />
+                                       </image>
+                                    </ImageView>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Disciplinary">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Button fx:id="btnViewGrievance" layoutX="871.0" layoutY="44.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="121.0" text="Delete Grievance">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <TableView layoutX="21.0" layoutY="87.0" prefHeight="463.0" prefWidth="971.0">
+                                            <columns>
+                                                <TableColumn prefWidth="49.0" text="ID" />
+                                                <TableColumn prefWidth="102.0" text="F.No" />
+                                                <TableColumn prefWidth="123.0" text="Reported By" />
+                                                <TableColumn prefWidth="74.0" text="Designation" />
+                                                <TableColumn prefWidth="102.0" text="Department" />
+                                                <TableColumn prefWidth="113.0" text="Grievance Type" />
+                                                <TableColumn prefWidth="140.0" text="Reported Date" />
+                                                <TableColumn prefWidth="267.0" text="Grievance Details" />
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="btnAddGrievance" layoutX="501.0" layoutY="44.0" mnemonicParsing="false" onAction="#showEmployeeGrievances" prefHeight="25.0" prefWidth="109.0" text="Add Grievance">
+
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="btnEditGrievance" layoutX="627.0" layoutY="44.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Edit Grievance">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="_btnViewGrievance" layoutX="743.0" layoutY="44.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="View Grievance">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <Separator layoutX="22.0" layoutY="80.0" prefHeight="1.0" prefWidth="969.0" AnchorPane.bottomAnchor="709.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="614.0" AnchorPane.topAnchor="80.0" />
+
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Training">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Button alignment="BOTTOM_CENTER" layoutX="43.0" layoutY="25.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="131.0" text="Manage Training">
+                                            <font>
+                                                <Font name="Calibri" size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <Button alignment="BOTTOM_CENTER" layoutX="188.0" layoutY="25.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="131.0" text="Assign Training">
+                                            <font>
+                                                <Font name="Calibri" size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <TableView layoutX="335.0" layoutY="25.0" prefHeight="410.0" prefWidth="829.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="ID" />
+                                                <TableColumn prefWidth="98.0" text="Training Name" />
+                                                <TableColumn prefWidth="127.0" text="Trainer/Guide" />
+                                                <TableColumn prefWidth="110.0" text="Fee/Cost" />
+                                                <TableColumn prefWidth="104.0" text="PaidByCompany" />
+                                                <TableColumn prefWidth="105.0" text="StartDate" />
+                                                <TableColumn prefWidth="111.0" text="EndDate" />
+                                                <TableColumn prefWidth="97.0" text="LastDate" />
+                                            </columns>
+                                        </TableView>
+                              <ImageView fitHeight="42.0" fitWidth="46.0" layoutX="86.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/manage-training.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="42.0" fitWidth="46.0" layoutX="231.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/assign-training.png" />
+                                 </image>
+                              </ImageView>
+
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Travel">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Button alignment="BOTTOM_CENTER" layoutX="37.0" layoutY="28.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="127.0" text="Manage Travelling">
+                                            <font>
+                                                <Font name="Calibri" size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <TableView layoutX="173.0" layoutY="28.0" prefHeight="385.0" prefWidth="816.0">
+                                            <columns>
+                                                <TableColumn prefWidth="50.0" text="ID" />
+                                                <TableColumn prefWidth="119.0" text="Destination" />
+                                                <TableColumn prefWidth="99.0" text="DepartureDate" />
+                                                <TableColumn prefWidth="89.0" text="ReturnDate" />
+                                                <TableColumn prefWidth="102.0" text="TotalPassenger" />
+                                                <TableColumn prefWidth="87.0" text="SponserBy" />
+                                                <TableColumn prefWidth="56.0" text="Budget" />
+                                                <TableColumn prefWidth="101.0" text="Purpose" />
+                                                <TableColumn prefWidth="110.0" text="View" />
+                                            </columns>
+                                        </TableView>
+                              <ImageView fitHeight="38.0" fitWidth="49.0" layoutX="76.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/manage-travelling.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Facilities">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="25.0" layoutY="24.0" prefHeight="28.0" prefWidth="53.0" text="Facilities">
+                                            <font>
+                                                <Font name="Calibri" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Separator layoutX="71.0" layoutY="43.0" prefHeight="3.0" prefWidth="892.0" />
+                                        <Separator layoutX="71.0" layoutY="62.0" prefHeight="4.0" prefWidth="794.0" />
+                                        <ComboBox layoutX="71.0" layoutY="78.0" prefHeight="25.0" prefWidth="223.0" />
+                                        <ImageView fitHeight="22.0" fitWidth="27.0" layoutX="301.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/add.png" />
+                                            </image>
+                                        </ImageView>
+                                        <DatePicker layoutX="71.0" layoutY="113.0" />
+                                        <TextArea layoutX="71.0" layoutY="150.0" prefHeight="161.0" prefWidth="255.0" />
+                                        <Button fx:id="_btnAdd" layoutX="240.0" layoutY="318.0" mnemonicParsing="false" onAction="#updateFacilities" prefHeight="25.0" prefWidth="87.0" text="Add" />
+
+                                        <TableView layoutX="369.0" layoutY="78.0" prefHeight="233.0" prefWidth="597.0">
+                                            <columns>
+                                                <TableColumn prefWidth="56.0" text="ID" />
+                                                <TableColumn prefWidth="202.0" text="Facility" />
+                                                <TableColumn prefWidth="125.0" text="Date From" />
+                                                <TableColumn prefWidth="119.0" text="Date To" />
+                                                <TableColumn prefWidth="94.0" text="Delete" />
+                                            </columns>
+                                        </TableView>
+                                        <Label layoutX="369.0" layoutY="318.0" prefHeight="22.0" prefWidth="35.0" text="NOTE:" />
+                                        <Label layoutX="413.0" layoutY="322.0" prefHeight="17.0" prefWidth="417.0" text="To save facility, please select Facility" />
+                                        <Label layoutX="864.0" layoutY="55.0" prefHeight="17.0" prefWidth="101.0" text="Employee Facilities" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Medical Details">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TextField fx:id="txtDoctorsName" layoutX="214.0" layoutY="60.0" prefHeight="29.0" prefWidth="232.0" promptText="Doctor's name" />
+                                        <TextField fx:id="txtDoctorsContact" layoutX="214.0" layoutY="101.0" prefHeight="28.0" prefWidth="232.0" promptText="Doctor's contact" />
+                                        <TextArea fx:id="txaDoctorsAddress" layoutX="214.0" layoutY="143.0" prefHeight="99.0" prefWidth="339.0" promptText="Doctor's address" />
+                                        <ImageView fitHeight="85.0" fitWidth="100.0" layoutX="453.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/icons/medical-aid-icon.jpg" />
+
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="txtSelectMedicalCertificate" layoutX="214.0" layoutY="252.0" prefHeight="30.0" prefWidth="339.0" promptText="Select medical certificate" />
+                                        <TextArea fx:id="txaOtherMedicalDetails" layoutX="214.0" layoutY="287.0" prefHeight="111.0" prefWidth="339.0" promptText="Other Medical Details" />
+                                        <Button fx:id="btnViewMedicalCertificate" layoutX="559.0" layoutY="253.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="VIEW MEDICAL CERTIFICATE" />
+
+                                        <Button fx:id="_btnUpdate" layoutX="214.0" layoutY="408.0" mnemonicParsing="false" onAction="#updateMedicalDetails" prefHeight="25.0" prefWidth="109.0" text="Update">
+
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <Separator layoutX="212.0" layoutY="39.0" prefHeight="0.0" prefWidth="342.0" />
+                                        <Label layoutX="124.0" layoutY="25.0" prefHeight="19.0" prefWidth="95.0" text="Medical Details">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Compliance">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView layoutX="32.0" layoutY="44.0" prefHeight="510.0" prefWidth="971.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="ID" />
+                                                <TableColumn prefWidth="380.0" text="Compliance" />
+                                                <TableColumn prefWidth="129.0" text="Compliant" />
+                                                <TableColumn prefWidth="128.0" text="Compliance FulFill" />
+                                                <TableColumn prefWidth="138.0" text="Date Till" />
+                                                <TableColumn prefWidth="120.0" text="Manage Training" />
+                                            </columns>
+                                        </TableView>
+                                        <Button alignment="BOTTOM_CENTER" layoutX="1012.0" layoutY="44.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="146.0" text="Manage Compliance">
+
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Button>
+                              <ImageView fitHeight="43.0" fitWidth="46.0" layoutX="1066.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/manage-compliance.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Other Details">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="21.0" layoutY="33.0" prefHeight="20.0" prefWidth="85.0" text="Other Details">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Separator layoutX="103.0" layoutY="47.0" prefHeight="5.0" prefWidth="926.0" />
+                                        <TextField fx:id="txtTitle" layoutX="103.0" layoutY="70.0" prefHeight="25.0" prefWidth="189.0" promptText="Title" />
+                                        <TextArea fx:id="txaDetail" layoutX="104.0" layoutY="107.0" prefHeight="128.0" prefWidth="221.0" promptText="Details" />
+                                        <RadioButton fx:id="_rdbYes" layoutX="106.0" layoutY="265.0" mnemonicParsing="false" text="Yes" />
+                                        <RadioButton fx:id="_rdbNo" layoutX="223.0" layoutY="265.0" mnemonicParsing="false" text="No" />
+                                        <Separator layoutX="198.0" layoutY="247.0" prefHeight="8.0" prefWidth="128.0" />
+                                        <Label layoutX="103.0" layoutY="241.0" prefHeight="17.0" prefWidth="101.0" text="Expiry Date(If any)" />
+                                        <DatePicker fx:id="dtpExpiryDate" layoutX="101.0" layoutY="294.0" promptText="Expiry date" />
+                                        <Button fx:id="btn_Reset" layoutX="247.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Reset" />
+                                        <Button fx:id="_btn_Add_" layoutX="164.0" layoutY="336.0" mnemonicParsing="false" onAction="#updateOtherDetails" prefHeight="25.0" prefWidth="60.0" text="Add" />
+
+                                        <ComboBox fx:id="_cmbChooseMonthAndYear" layoutX="345.0" layoutY="68.0" prefHeight="25.0" prefWidth="207.0" promptText="---Choose Month And Year---" />
+                                        <TableView layoutX="346.0" layoutY="107.0" prefHeight="213.0" prefWidth="687.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="Title" />
+                                                <TableColumn prefWidth="474.0" text="Detail" />
+                                                <TableColumn prefWidth="137.0" text="Expire Date" />
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="_btnEdit" layoutX="345.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="EDIT" />
+                                        <Button fx:id="_btnDelete" layoutX="436.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="DELETE" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

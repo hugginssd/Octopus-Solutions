@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorRoot" prefHeight="429.0" prefWidth="289.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.file.LoginController">
+
+    <stylesheets>
+        <URL value="@/resources/css/login.css" />
+    </stylesheets>
+    <children>
+      <VBox fx:id="vbox" prefHeight="464.0" prefWidth="307.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="2.0" left="5.0" right="2.0" top="5.0" />
+         </padding>
+      </VBox>
+      <Pane fx:id="paneSignIn" prefHeight="464.0" prefWidth="305.0">
+         <children>
+            <Label layoutX="108.0" layoutY="87.0" text="Sign In" textFill="#3fa3b5">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="28.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsername" layoutX="37.0" layoutY="229.0" prefHeight="33.0" prefWidth="244.0" promptText="Enter username" text="mafiguhuggins@gmail.com">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label fx:id="labelSwitch" layoutX="42.0" layoutY="342.0" prefHeight="17.0" prefWidth="181.0" text="Switching on Current Session..." textFill="#bf7676" visible="false">
+               <font>
+                  <Font name="Arabic Typesetting" size="19.0" />
+               </font>
+            </Label>
+            <ProgressIndicator fx:id="progressIndicator" layoutX="240.0" layoutY="342.0" prefHeight="33.0" prefWidth="29.0" progress="0.0" visible="false" />
+              <Button fx:id="btnSignIn" layoutX="34.0" layoutY="349.0" mnemonicParsing="false" onAction="#userSignin" prefHeight="33.0" prefWidth="244.0" text="SIGN IN" />
+            <Label layoutX="20.0" layoutY="142.0" prefHeight="40.0" prefWidth="269.0" text="Welcome to Octopus" textFill="#1a81db">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="401.0" text="Forgot Password?" textFill="#1b23cd">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="75.0" fitWidth="123.0" layoutX="113.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/icons/octopuslogo..png" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="txtPassword" layoutX="36.0" layoutY="287.0" prefHeight="33.0" prefWidth="244.0" promptText="Enter your password" text="123456">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </Pane>
+        <!--      <ImageView fx:id="imgUser" fitHeight="100.0" fitWidth="109.0" layoutX="5.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+              <Image url="@../resources/icons/facebook-no-profile-picture.jpg" />
+           </image>
+        </ImageView>-->
+    </children>
+</AnchorPane>

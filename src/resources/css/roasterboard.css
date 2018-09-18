@@ -1,0 +1,101 @@
+.mainFxmlClass {
+    -fx-font-size:12px;
+    -fx-background-color:linear-gradient(#ffffff,#ccffff);
+}
+.root{
+    -fx-background-color:#66ccff;
+    -fx-font-size: 11pt; 
+}
+.button{
+
+    -fx-font-size:9pt;
+}
+.text-field{
+    -fx-font-size:9pt; 
+}
+#lblContractName{
+    -fx-font-size:10pt;
+    -fx-font-style:bold;
+    -fx-border-style:solid;
+    -fx-border-radius:5px;
+    -fx-border-color:#000000;
+}
+#pane{
+    -fx-border-color:#ffffff;
+}
+#anchorPane{
+    -fx-font-size: 11pt;
+}
+.anchorPane{
+    -fx-font-size: 11pt;
+}
+#tabPaneWeek{
+    -fx-font-size: 9pt; 
+    -fx-border-color:#cccccc;
+}
+#tabPaneEmployees{
+    -fx-font-size: 9pt; 
+    -fx-border-color:#cccccc;
+}
+#tabPaneFreePosts{
+    -fx-font-size: 9pt; 
+    -fx-border-color:#cccccc;
+}
+#tabSystemDashboard{
+    -fx-font-size: 9pt;
+    -fx-border-color:#cccccc;
+}
+#tab2SystemMessage{
+    -fx-font-size: 9pt;
+    -fx-border-color:#cccccc;
+}
+#tab1SystemMessage{
+    -fx-font-size: 9pt; 
+    -fx-border-color:#cccccc;
+}
+.label{
+
+    -fx-font-size: 11pt;
+}
+#lblDays{
+    -fx-font-size: 9pt;
+    -fx-border-radius:5px;
+}
+#textField{
+    -fx-border-radius:20;
+}
+#button{
+    -fx-border-radius:20;
+}
+.context-menu{
+    -fx-background-color:linear-gradient(green, yellow,red);
+    -fx-border-radius:5px;
+}
+#lblSite1{
+    -fx-font-size:10pt;
+}
+#lblSite2{
+    -fx-font-size:10pt;
+}
+
+#lblSite3{
+    -fx-font-size:10pt;
+}
+#lblSite4{
+    -fx-font-size:10pt;
+}
+
+
+#lblName1{
+    -fx-font-size:10pt;
+}
+
+#lblName2{
+    -fx-font-size:10pt;
+}
+#lblName3{
+    -fx-font-size:10pt;
+}
+#lblName4{
+    -fx-font-size:10pt;
+}

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="788.0" prefWidth="1526.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.travel.ScheduleTravelController">
+    <stylesheets>
+        <URL value="@/resources/css/scheduletravel.css" />
+    </stylesheets>
+    <children>
+        <ComboBox fx:id="cmbSelectDepartment" layoutX="7.0" layoutY="14.0" prefHeight="28.0" prefWidth="223.0" promptText="---Select Department---" />
+        <ComboBox fx:id="cmbSelectEmployee" layoutX="255.0" layoutY="14.0" prefHeight="28.0" prefWidth="223.0" promptText="---Select Employe---" />
+        <TabPane layoutX="7.0" layoutY="49.0" prefHeight="722.0" prefWidth="1512.0" tabClosingPolicy="UNAVAILABLE">
+
+            <tabs>
+                <Tab text="Travelling Schedule">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Pane fx:id="pane18" layoutX="4.0" layoutY="5.0" prefHeight="191.0" prefWidth="1504.0">
+                                    <children>
+                                        <Pane fx:id="pane1" layoutX="3.0" layoutY="6.0" prefHeight="180.0" prefWidth="461.0">
+                                            <children>
+                                                <ImageView fitHeight="152.0" fitWidth="154.0" layoutX="6.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../resources/icons/no-image.jpg" />
+                                                    </image>
+                                                </ImageView>
+                                                <Text layoutX="8.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Co-ordinator">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                                                    </font>
+                                                </Text>
+                                                <Label layoutX="169.0" layoutY="38.0" prefHeight="17.0" prefWidth="141.0" text="Label">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="15.0" />
+                                       </font></Label>
+                                                <Text layoutX="169.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Id:">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="13.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text layoutX="169.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation:">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="13.0" />
+                                                    </font>
+                                                </Text>
+                                                <Text layoutX="169.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department:">
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+                                                </Text>
+                                                <Label layoutX="254.0" layoutY="71.0" prefHeight="17.0" prefWidth="191.0" text="Label">
+                                                    <font>
+
+                                                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="254.0" layoutY="111.0" prefHeight="17.0" prefWidth="187.0" text="Label">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="13.0" />
+
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="254.0" layoutY="157.0" prefHeight="19.0" prefWidth="201.0" text="Label">
+                                                    <font>
+                                                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane fx:id="pane13" layoutX="468.0" layoutY="6.0" prefHeight="181.0" prefWidth="1031.0">
+                                            <children>
+                                                <DatePicker fx:id="dtpDepartureDate" layoutX="5.0" layoutY="3.0" prefHeight="28.0" prefWidth="255.0" promptText="Departure Date" />
+                                                <DatePicker fx:id="dtpReturnDate" layoutX="268.0" layoutY="3.0" prefHeight="28.0" prefWidth="282.0" promptText="Return Date" />
+                                                <TextField fx:id="txtTotalPassengers" layoutX="558.0" layoutY="3.0" prefHeight="28.0" prefWidth="251.0" promptText="Total Passengers">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtDestination" layoutX="5.0" layoutY="36.0" prefHeight="28.0" prefWidth="254.0" promptText="Destination">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField layoutX="311.0" layoutY="36.0" prefHeight="28.0" prefWidth="238.0" promptText="Sponsored By">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextField fx:id="txtEstimatedBudget" layoutX="558.0" layoutY="37.0" prefHeight="28.0" prefWidth="251.0" promptText="Estimated Budget">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextField>
+                                                <TextArea fx:id="txaPurpose" layoutX="5.0" layoutY="67.0" prefHeight="111.0" prefWidth="546.0" promptText="Purpose">
+                                       <font>
+                                          <Font name="Arial Unicode MS" size="12.0" />
+                                       </font></TextArea>
+                                                <Button fx:id="btnSaveDetails" layoutX="558.0" layoutY="67.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="120.0" text="SAVE DETAILS">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                                <Button fx:id="btnAddNewSchedule" layoutX="558.0" layoutY="104.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="ADD NEW DETAILS">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                                <Button fx:id="btnCancel" layoutX="558.0" layoutY="143.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="34.0" prefWidth="121.0" text="CANCEL">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="pane14" layoutX="4.0" layoutY="208.0" prefHeight="475.0" prefWidth="1503.0">
+                                    <children>
+                                        <TabPane layoutX="4.0" layoutY="6.0" prefHeight="169.0" prefWidth="1496.0" tabClosingPolicy="UNAVAILABLE">
+                                            <tabs>
+                                                <Tab text="  Transport     ">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <TableView prefHeight="139.0" prefWidth="1496.0">
+                                                                    <columns>
+                                                                        <TableColumn prefWidth="75.0" text="ID" />
+                                                                        <TableColumn prefWidth="75.0" text="Mode" />
+                                                                        <TableColumn prefWidth="75.0" text="From" />
+                                                                        <TableColumn prefWidth="91.0" text="To" />
+                                                                        <TableColumn prefWidth="112.0" text="DepartureDate" />
+                                                                        <TableColumn prefWidth="95.0" text="DepartureTime" />
+                                                                        <TableColumn prefWidth="167.0" text="ArrivalDate" />
+                                                                        <TableColumn prefWidth="137.0" text="ArrivalTime" />
+                                                                        <TableColumn prefWidth="112.0" text="Fare" />
+                                                                        <TableColumn prefWidth="128.0" text="Paid Amount" />
+                                                                        <TableColumn prefWidth="105.0" text="BalanceAmount" />
+                                                                        <TableColumn prefWidth="158.0" text="Train/Vehicle/Flight No." />
+                                                                        <TableColumn minWidth="8.0" prefWidth="163.0" text="Contact No." />
+                                                                    </columns>
+                                                                </TableView>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab text="Accommodation">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                            <children>
+                                                                <TableView prefHeight="140.0" prefWidth="1496.0">
+                                                                    <columns>
+                                                                        <TableColumn prefWidth="75.0" text="ID" />
+                                                                        <TableColumn prefWidth="75.0" text="Venue" />
+                                                                        <TableColumn prefWidth="75.0" text="Facility" />
+                                                                        <TableColumn prefWidth="75.0" text="Address" />
+                                                                        <TableColumn prefWidth="75.0" text="Check In Date" />
+                                                                        <TableColumn prefWidth="75.0" text="Check In Time" />
+                                                                        <TableColumn prefWidth="75.0" text="Checkout Date" />
+                                                                        <TableColumn prefWidth="75.0" text="CheckoutTime" />
+                                                                        <TableColumn prefWidth="75.0" text="Price" />
+                                                                        <TableColumn prefWidth="75.0" text="PaidAmount" />
+                                                                        <TableColumn prefWidth="75.0" text="Balance" />
+                                                                        <TableColumn prefWidth="75.0" text="PaymentStatus" />
+                                                                        <TableColumn prefWidth="75.0" text="ContactNo." />
+                                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                                    </columns>
+                                                                </TableView>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                            </tabs>
+                                        </TabPane>
+                                        <Pane fx:id="pane15" layoutX="3.0" layoutY="181.0" prefHeight="290.0" prefWidth="464.0">
+                                            <children>
+                                                <Button fx:id="btnAddFromEmployee" layoutX="4.0" layoutY="8.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="138.0" text="Add From Employee">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                                <Button fx:id="btnAddOther" layoutX="152.0" layoutY="8.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="109.0" text="Add Other">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                                <TableView layoutX="3.0" layoutY="40.0" prefHeight="247.0" prefWidth="458.0">
+                                                    <columns>
+                                                        <TableColumn prefWidth="75.0" text="ID" />
+                                                        <TableColumn prefWidth="133.00003051757812" text="Name" />
+                                                        <TableColumn prefWidth="155.0" text="Relation" />
+                                                        <TableColumn minWidth="0.0" prefWidth="94.0" text="Age" />
+                                                    </columns>
+                                                </TableView>
+                                                <Label alignment="CENTER_RIGHT" layoutX="271.0" layoutY="11.0" prefHeight="22.0" prefWidth="193.0" text="Passenger's Details">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="14.0" />
+
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane fx:id="pane16" layoutX="470.0" layoutY="181.0" prefHeight="290.0" prefWidth="373.0">
+                                            <children>
+                                                <TableView layoutX="2.0" layoutY="40.0" prefHeight="247.0" prefWidth="370.0">
+                                                    <columns>
+                                                        <TableColumn prefWidth="75.0" text="ID" />
+                                                        <TableColumn prefWidth="196.0" text="CheckItem" />
+                                                        <TableColumn prefWidth="98.0" text="Remove" />
+                                                    </columns>
+                                                </TableView>
+                                                <Label alignment="CENTER_RIGHT" layoutX="210.0" layoutY="14.0" prefHeight="17.0" prefWidth="156.0" text="Check List">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="14.0" />
+
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane fx:id="pane17" layoutX="847.0" layoutY="181.0" prefHeight="290.0" prefWidth="654.0">
+                                            <children>
+                                                <Button fx:id="btnDelete" layoutX="4.0" layoutY="8.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" text="Delete">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font></Button>
+                                                <TableView layoutX="3.0" layoutY="39.0" prefHeight="247.0" prefWidth="649.0">
+                                                    <columns>
+                                                        <TableColumn prefWidth="75.0" text="ID" />
+                                                        <TableColumn prefWidth="75.0" text="Destination" />
+                                                        <TableColumn prefWidth="75.0" text="DepartureDate" />
+                                                        <TableColumn prefWidth="75.0" text="ReturnDate" />
+                                                        <TableColumn prefWidth="75.0" text="TotalPassenger" />
+                                                        <TableColumn prefWidth="75.0" text="SponsorBy" />
+                                                        <TableColumn prefWidth="75.0" text="Budget" />
+                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                        <TableColumn prefWidth="75.0" text="Column X" />
+                                                    </columns>
+                                                </TableView>
+                                                <Label layoutX="113.0" layoutY="14.0" prefHeight="17.0" prefWidth="288.0" text="Note: Double click at any row to show all detail" textFill="#861616">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="12.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" layoutX="525.0" layoutY="14.0" prefHeight="17.0" prefWidth="128.0" text="Travelling History">
+                                                    <font>
+                                                        <Font name="Arial Unicode MS" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="btnGenerateReport" layoutX="1374.0" layoutY="13.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Generate Report">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="lblScheduleTravel" layoutX="495.0" layoutY="8.0" prefHeight="28.0" prefWidth="876.0" text="Schedule Travel" textFill="#f5f3f3">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Label>
+        <Button fx:id="btnGenerateReport" layoutX="1380.0" layoutY="13.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Generate Report" />
+    </children>
+</AnchorPane>

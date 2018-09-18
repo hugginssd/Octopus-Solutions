@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="587.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.organization.NewDepartmentController">
+     <stylesheets>
+        <URL value="@/resources/css/newdepartment.css" />
+    </stylesheets>
+    <children>
+        <VBox layoutX="3.0" layoutY="4.0" prefHeight="398.0" prefWidth="253.0">
+            <children>
+                <Label prefHeight="34.0" prefWidth="258.0" text="Add New Department" textFill="#f8f8f8">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Label>
+                <HBox prefHeight="33.0" prefWidth="253.0" />
+                <Label prefHeight="30.0" prefWidth="211.0" text="   Fields marked '*' are mandatory" textFill="#d01515">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
+            </Label>
+                <HBox prefHeight="43.0" prefWidth="253.0">
+                    <children>
+                        <TextField fx:id="txtId" prefHeight="34.0" prefWidth="252.0" promptText="Id">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font>
+
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox prefHeight="35.0" prefWidth="248.0">
+                    <children>
+
+                        <TextField fx:id="txtDepartment" prefHeight="37.0" prefWidth="248.0" promptText="e.g Research Department">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></TextField>
+
+                    </children>
+                    <VBox.margin>
+                        <Insets left="5.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="21.0" prefWidth="338.0" />
+                <HBox prefHeight="32.0" prefWidth="253.0" spacing="5.0">
+                    <children>
+
+                        <Label prefHeight="27.0" prefWidth="70.0" />
+                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addNewDepartment" prefHeight="33.0" prefWidth="67.0" text="ADD" />
+                        <Button fx:id="btnCloseForm" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="32.0" prefWidth="105.0" text="CLOSE FORM" />
+
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <VBox layoutX="273.0" layoutY="3.0" prefHeight="409.0" prefWidth="287.0" spacing="5.0">
+            <children>
+
+                <Label prefHeight="32.0" prefWidth="200.0" text="Existing Departments" textFill="#f8f7f7">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                    </font>
+                </Label>
+                <ListView fx:id="lstvDepartments" editable="true" onMouseClicked="#shoInReasearchField" prefHeight="329.0" prefWidth="287.0" />
+                <HBox prefHeight="45.0" prefWidth="287.0" spacing="5.0">
+                    <children>
+                        <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#updateDepartment" prefHeight="30.0" prefWidth="39.0" text="EDIT" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteDepartment" prefHeight="30.0" prefWidth="77.0" text="DELETE" />
+                        <Button fx:id="btnAddNew" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="ADD NEW" />
+
+                <Label prefHeight="32.0" prefWidth="200.0" text="Existing Departments">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

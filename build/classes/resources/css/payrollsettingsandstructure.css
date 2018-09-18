@@ -1,0 +1,47 @@
+#AnchorPane{
+   -fx-background-color:#0E3C55;
+}
+#anchorPaneSettings{
+    -fx-background-color:#0E3C55;
+}
+#btnPaySalary,#btnBankSheet,#btnAttendanceSync,#btnPayslipSalaryHistory,#btnWagesAndBilling,#btnLoanAndAdvance,#btnReports{
+    -fx-background-color:#ffffff;
+    -fx-background-style:flat;
+    -fx-background-radius: 5px;
+}
+#btnAdd,#btnCloseForm,#btnDelete,#btnAddNew{
+    -fx-border-color:#66ADCD;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+#lblPayrollSettings{
+ -fx-background-color:#66ADCD;
+ -fx-background-radius: 3px;   
+}
+#paneButtons,#paneSettings{
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius: 5px; 
+    -fx-background-color:#66ADCD;
+    -fx-border-width:1pt;
+    -fx-background-radius: 5px;
+}
+#pane2,#pane1{
+    -fx-border-color:#66ADCD;
+    -fx-border-radius: 3px; 
+    -fx-border-width:1pt;
+}
+#tabPayrollAttribute,#tabPayrollStructure{
+    -fx-font-family:Arial Rounded MT Bold;
+    -fx-font-style:Regular;
+
+    -fx-background-color:#0099ff;
+}
+#pane1{
+    -fx-border-color:#000000;
+}
+#pane2{
+    -fx-border-color:#000000;
+
+}

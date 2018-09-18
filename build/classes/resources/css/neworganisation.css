@@ -1,0 +1,36 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+-fx-background-color:#66ADCD; 
+}
+.tool-bar{
+    -fx-background-color: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    -fx-background-repeat: repeat;
+}
+.pane{
+    -fx-background-color:#66ADCD; 
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-background-radius: 3px;
+    -fx-border-width:1pt;
+}
+#pane1,#pane2,#pane3,#pane4,#pane5,#pane6{
+  -fx-background-color:#66ADCD; 
+    -fx-border-color:#FFFFFF;
+    -fx-border-radius: 3px; 
+    -fx-background-radius: 3px;
+    -fx-border-width:1pt;  
+}
+.combo-box{
+    -fx-font-family:Arial Unicode MS;
+    -fx-font-style:Regular;
+    -fx-font-size:9pt;
+}
+.button{
+    -fx-background-radius:3px;
+    -fx-border-radius:3px;
+    -fx-border-color:#FFFFFF;
+    -fx-background-color:#FFFFFF;
+}

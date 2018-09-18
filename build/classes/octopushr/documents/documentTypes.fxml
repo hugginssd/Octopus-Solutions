@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="781.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.documents.DocumentTypesController">
+    <stylesheets>
+        <URL value="@/resources/css/documenttypes.css" />
+    </stylesheets>
+   <children>
+      <GridPane hgap="3.0" prefHeight="435.0" prefWidth="781.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="400.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane fx:id="pane3" prefHeight="372.0" prefWidth="771.0" style="-fx-border-color: FFFFFF;" GridPane.columnSpan="2">
+               <children>
+                  <Pane fx:id="pane1" layoutX="2.0" layoutY="2.0" prefHeight="375.0" prefWidth="380.0" style="-fx-border-color: FFFFFF;">
+                     <children>
+                        <Label layoutX="29.0" layoutY="31.0" text="Document Types" textFill="#04e1ce">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDocumentType" layoutX="28.0" layoutY="88.0" prefHeight="28.0" prefWidth="328.0" promptText="Document type">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Text fill="#69d4ee" layoutX="29.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[Document name must be a valid folder name" wrappingWidth="328.0000028461218">
+                           <font>
+                              <Font name="Bell MT Bold" size="11.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#69d4ee" layoutX="29.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="And special characters are not allowed here.]">
+                           <font>
+                              <Font name="Bell MT Bold" size="11.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="btnAdd" layoutX="176.0" layoutY="342.0" mnemonicParsing="false" onAction="#addDocumentType" prefHeight="28.0" prefWidth="57.0" text="ADD" />
+                        <Button fx:id="btnClose" layoutX="287.0" layoutY="342.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="28.0" prefWidth="69.0" text="CLOSE" />
+                        <RadioButton fx:id="rdIssued" layoutX="29.0" layoutY="179.0" mnemonicParsing="false" onAction="#checkCheckBox" prefHeight="17.0" prefWidth="157.0" text="Issued to employee" textFill="#1fd3fc">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rdSubmit" layoutX="29.0" layoutY="221.0" mnemonicParsing="false" onAction="#checkCheckBox" prefHeight="17.0" prefWidth="157.0" text="Submitted by employee" textFill="#1fd3fc">
+                           <font>
+                              <Font name="Arial Unicode MS" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <Label fx:id="lblDocumentId" layoutX="297.0" layoutY="61.0" prefHeight="22.0" prefWidth="57.0" text="Label" textFill="#1e9e93">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblId" layoutX="312.0" layoutY="162.0" text="Label" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pane2" layoutX="385.0" layoutY="2.0" prefHeight="375.0" prefWidth="383.0" style="-fx-border-color: FFFFFF;">
+                     <children>
+                        <Label layoutX="2.0" layoutY="34.0" text="Existing Documents" textFill="#04e1ce">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableDocuments" layoutX="3.0" layoutY="69.0" onMouseClicked="#showInLabel" prefHeight="269.0" prefWidth="368.0">
+                          <columns>
+                            <TableColumn fx:id="colSno" prefWidth="75.0" text="S. No." />
+                            <TableColumn fx:id="colDocumentType" prefWidth="195.0" text="Document Types" />
+                              <TableColumn fx:id="colCategory" prefWidth="97.0" text="Submitted" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnEdit" layoutX="2.0" layoutY="342.0" mnemonicParsing="false" onAction="#updateDocumentType" prefHeight="28.0" prefWidth="57.0" text="EDIT">
+                           <font>
+                              <Font name="Arial Unicode MS" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnAddNew" layoutX="127.0" layoutY="342.0" mnemonicParsing="false" onAction="#refreshControls" text="ADD NEW">
+                           <font>
+                              <Font name="Arial Unicode MS" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </children>
+</AnchorPane>

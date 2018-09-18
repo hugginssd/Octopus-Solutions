@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+//<<<<<<< HEAD
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="654.0" prefWidth="1234.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.documents.EmployeeDocumentsController">
+    <stylesheets>
+        <URL value="@/resources/css/employeedocuments.css" />
+    </stylesheets>
+    <children>
+        <Button fx:id="btnExternalDocuments" alignment="BOTTOM_CENTER" layoutX="18.0" layoutY="54.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="External Documents">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Label layoutX="19.0" layoutY="14.0" prefHeight="32.0" prefWidth="219.0" text="Employee Documents" textFill="#00ffc8">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="20.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="263.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/icons/intentLight.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="287.0" layoutY="23.0" prefHeight="17.0" prefWidth="100.0" text="Know this form..." textFill="#00ffc8">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="12.0" />
+            </font>
+        </Label>
+        <Button alignment="BOTTOM_CENTER" layoutX="18.0" layoutY="122.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Company Documents">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnExpiredDocuments" alignment="BOTTOM_CENTER" layoutX="18.0" layoutY="189.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Expired Documents">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnReferenceDocuments" alignment="BOTTOM_CENTER" layoutX="18.0" layoutY="258.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="150.0" text="Reference Documents">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Pane layoutX="179.0" layoutY="58.0" prefHeight="240.0" prefWidth="394.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <Label layoutX="22.0" layoutY="6.0" prefHeight="25.0" prefWidth="150.0" text="View Employee Documents" textFill="#00ffc8">
+                    <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+
+                    </font>
+                </Label>
+                <Separator layoutX="169.0" layoutY="22.0" prefHeight="0.0" prefWidth="219.0" />
+                <ComboBox fx:id="cmbSelectDepartment" layoutX="169.0" layoutY="44.0" prefHeight="25.0" prefWidth="189.0" promptText="---Select department---" />
+                <ComboBox fx:id="cmbSelectEmployee" layoutX="169.0" layoutY="75.0" prefHeight="25.0" prefWidth="189.0" promptText="---Select employee---" />
+                <ComboBox fx:id="cmbAllDocumentTypes" layoutX="169.0" layoutY="107.0" prefHeight="25.0" prefWidth="189.0" promptText="---All document types---" />
+                <Label fx:id="lblDocumentTypeCategory" layoutX="169.0" layoutY="142.0" prefHeight="25.0" prefWidth="189.0" text="Document type category" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <ImageView fx:id="imgAddDepartment" fitHeight="25.0" fitWidth="25.0" layoutX="363.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="imageViewSelectEmployee" fitHeight="25.0" fitWidth="25.0" layoutX="363.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="imageViewAllDocumentTypes" fitHeight="25.0" fitWidth="25.0" layoutX="363.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="179.0" layoutY="299.0" prefHeight="124.0" prefWidth="394.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <ImageView fitHeight="105.0" fitWidth="100.0" layoutX="8.0" layoutY="9.0" pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="@../../resources/icons/no-image.jpg" />
+                    </image>
+                </ImageView>
+                <Label fx:id="lblEmployeeName" layoutX="114.0" layoutY="6.0" prefHeight="25.0" prefWidth="136.0" text="Employee Name" textFill="#00ffc8">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="114.0" layoutY="42.0" prefHeight="17.0" prefWidth="77.0" text="Employee Id:" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <Label layoutX="114.0" layoutY="69.0" prefHeight="17.0" prefWidth="77.0" text="Designation :" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <Label layoutX="114.0" layoutY="93.0" prefHeight="17.0" prefWidth="77.0" text="Department :" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <Label fx:id="lblEmployeeId" layoutX="188.0" layoutY="42.0" prefHeight="17.0" prefWidth="159.0" text="--------" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <Label fx:id="lblDesignation" layoutX="186.0" layoutY="69.0" prefHeight="17.0" prefWidth="159.0" text="---------" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <Label fx:id="lblDepartment" layoutX="187.0" layoutY="93.0" prefHeight="17.0" prefWidth="159.0" text="---------" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+            </children>
+        </Pane>
+        <Pane layoutX="574.0" layoutY="57.0" prefHeight="268.0" prefWidth="652.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="159.0" text="Upload Employee Documents" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <Separator layoutX="173.0" layoutY="21.0" prefHeight="3.0" prefWidth="473.0" />
+                <ComboBox fx:id="cmbSelectDocumentType" layoutX="173.0" layoutY="40.0" prefHeight="25.0" prefWidth="198.0" promptText="---Select document type---" />
+                <Label fx:id="lblDocumentTypeCategory" layoutX="173.0" layoutY="72.0" prefHeight="25.0" prefWidth="198.0" text="Document Type Category" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font></Label>
+                <TextField fx:id="txtSelectDocument" layoutX="173.0" layoutY="104.0" prefHeight="25.0" prefWidth="198.0" promptText="Select document" />
+                <DatePicker fx:id="dtpSubmitteddate" layoutX="173.0" layoutY="139.0" prefHeight="25.0" prefWidth="198.0" promptText="Submitted/Issue date" />
+                <ToggleButton fx:id="toggleDuplicate" layoutX="173.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Original/Duplicate">
+                    <font>
+                        <Font name="Arial Unicode MS" size="10.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton fx:id="tglbExpiryDate" layoutX="280.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Expiry Date">
+                    <font>
+                        <Font name="Arial Unicode MS" size="10.0" />
+                    </font>
+                </ToggleButton>
+                <DatePicker fx:id="dtpExpireydate" layoutX="372.0" layoutY="200.0" prefHeight="25.0" prefWidth="198.0" />
+                <Button fx:id="btnReset" layoutX="294.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Reset">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnUpload" layoutX="219.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Upload">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                    </font>
+                </Button>
+                <ImageView fx:id="imageViewSelectDocumentType" fitHeight="25.0" fitWidth="25.0" layoutX="376.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+            <RadioButton fx:id="rdbYes" layoutX="173.0" layoutY="207.0" mnemonicParsing="false" text="Yes" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="rdbNo" layoutX="278.0" layoutY="207.0" mnemonicParsing="false" text="No" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font>
+            </RadioButton>
+            </children>
+        </Pane>
+        <Pane layoutX="574.0" layoutY="326.0" prefHeight="323.0" prefWidth="652.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+                <TabPane layoutX="5.0" layoutY="4.0" prefHeight="316.0" prefWidth="643.0" tabClosingPolicy="UNAVAILABLE">
+        <Pane layoutX="174.0" layoutY="297.0" prefHeight="124.0" prefWidth="400.0">
+            <children>
+                <ImageView fitHeight="114.0" fitWidth="100.0" layoutX="8.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/icons/no-image.jpg" />
+                    </image>
+                </ImageView>
+                <Label layoutX="114.0" layoutY="6.0" prefHeight="25.0" prefWidth="136.0" text="Employee Name">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="114.0" layoutY="42.0" prefHeight="17.0" prefWidth="70.0" text="Employee Id:" />
+                <Label layoutX="114.0" layoutY="69.0" prefHeight="17.0" prefWidth="70.0" text="Designation :" />
+                <Label layoutX="114.0" layoutY="93.0" prefHeight="17.0" prefWidth="77.0" text="Department :" />
+                <Label layoutX="184.0" layoutY="42.0" prefHeight="17.0" prefWidth="91.0" text="--------" />
+                <Label layoutX="182.0" layoutY="69.0" text="---------" />
+                <Label layoutX="183.0" layoutY="93.0" prefHeight="17.0" prefWidth="50.0" text="---------" />
+            </children>
+        </Pane>
+        <Pane layoutX="574.0" layoutY="57.0" prefHeight="268.0" prefWidth="652.0">
+            <children>
+                <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="159.0" text="Upload Employee Documents" />
+                <Separator layoutX="173.0" layoutY="21.0" prefHeight="3.0" prefWidth="473.0" />
+                <ComboBox fx:id="cmbSelectDocumentType" layoutX="173.0" layoutY="40.0" prefHeight="25.0" prefWidth="198.0" promptText="---Select document type---" />
+                <Label layoutX="173.0" layoutY="69.0" prefHeight="25.0" prefWidth="198.0" text="Label" />
+                <TextField fx:id="txtSelectDocument" layoutX="173.0" layoutY="104.0" prefHeight="25.0" prefWidth="198.0" promptText="Select document" />
+                <DatePicker layoutX="173.0" layoutY="139.0" prefHeight="25.0" prefWidth="198.0" promptText="Submitted/Issue date" />
+                <ToggleButton layoutX="173.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Original/Duplicate">
+                    <font>
+                        <Font size="9.0" />
+                    </font>
+                </ToggleButton>
+                <ToggleButton fx:id="tglbExpiryDate" layoutX="281.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Expiry Date">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </ToggleButton>
+                <DatePicker layoutX="173.0" layoutY="205.0" prefHeight="25.0" prefWidth="198.0" />
+                <Button fx:id="btnReset" layoutX="294.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Reset">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnUpload" layoutX="219.0" layoutY="235.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="70.0" text="Upload">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="381.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../resources/icons/add.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="568.0" layoutY="327.0" prefHeight="323.0" prefWidth="652.0">
+            <children>
+                <TabPane layoutX="4.0" layoutY="4.0" prefHeight="316.0" prefWidth="643.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="tabSubmittedDocuments" text="Submitted Documents">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="tableSubmittedDocuments" layoutX="1.0" layoutY="1.0" prefHeight="285.0" prefWidth="643.0">
+
+                                            <columns>
+                                                <TableColumn prefWidth="230.0" text="Document Name" />
+                                                <TableColumn prefWidth="119.0" text="Document Type" />
+                                                <TableColumn prefWidth="77.0" text="Submit Date" />
+                                                <TableColumn prefWidth="116.0" text="Original/Duplicate" />
+                                                <TableColumn prefWidth="99.0" text="Emailed" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabIssuedDocuments" text="Issued Documents">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="tableIssuedDocuments" layoutY="1.0" prefHeight="286.0" prefWidth="643.0">
+                                            <columns>
+                                                <TableColumn prefWidth="188.0" text="Document Name" />
+                                                <TableColumn prefWidth="147.0" text="Document Type" />
+                                                <TableColumn prefWidth="133.0" text="Issue Date" />
+                                                <TableColumn prefWidth="111.0" text="Original/Duplicate" />
+                                                <TableColumn prefWidth="62.0" text="Emailed" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="tabInternalDocuments" text="Internal Documents">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                                    <children>
+                                        <Label layoutY="6.0" prefHeight="17.0" prefWidth="63.0" text="Expiry Date" />
+                                        <Separator layoutX="60.0" layoutY="19.0" prefHeight="3.0" prefWidth="583.0" />
+                                        <DatePicker fx:id="dtpDateTo" layoutX="368.0" layoutY="26.0" promptText="Date to" />
+                                        <DatePicker fx:id="dtpDateFrom" layoutX="178.0" layoutY="26.0" promptText="Date from" />
+                                        <Button fx:id="btnSearch" layoutX="552.0" layoutY="23.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="91.0" text="Search">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Button>
+                                        <TableView fx:id="tblInternalDocuments" layoutX="14.0" layoutY="54.0" prefHeight="200.0" prefWidth="628.0">
+                                            <columns>
+                                                <TableColumn prefWidth="44.0" text="ID" />
+                                                <TableColumn prefWidth="89.0" text="F.No" />
+                                                <TableColumn prefWidth="75.0" text="Name" />
+                                                <TableColumn prefWidth="88.0" text="Title" />
+                                                <TableColumn prefWidth="104.0" text="Document Type" />
+                                                <TableColumn prefWidth="122.0" text="Submitted" />
+                                                <TableColumn prefWidth="105.0" text="Authority" />
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="btnAddNew" layoutX="489.0" layoutY="258.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="ADD NEW">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Button>
+                                        <Button fx:id="btnDelete" layoutX="399.0" layoutY="258.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="DELETE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Button>
+                                        <Button fx:id="btnViewDetail" layoutX="293.0" layoutY="258.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="VIEW DETAIL">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Button>
+                                        <Button fx:id="btnEdit" layoutX="203.0" layoutY="258.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="EDIT">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Button>
+                                        <Button fx:id="btnListAll" layoutX="110.0" layoutY="258.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="LIST ALL">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Button>
+                                <Button fx:id="btnClose" layoutX="571.0" layoutY="258.0" mnemonicParsing="false" onAction="#setClose" prefHeight="25.0" prefWidth="70.0" text="CLOSE">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </Pane>
+        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="69.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/icons/operations.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="38.0" fitWidth="43.0" layoutX="69.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/icons/company-documents.png" />
+
+            </image>
+        </ImageView>
+        <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/icons/document-icon.png" />
+
+            </image>
+        </ImageView>
+        <ImageView fitHeight="38.0" fitWidth="50.0" layoutX="68.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/icons/leave-a-message.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

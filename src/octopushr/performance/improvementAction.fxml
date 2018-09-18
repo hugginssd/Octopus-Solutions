@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="1058.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.performance.ImprovementActionController">
+    <stylesheets>
+        <URL value="@/resources/css/improvementaction.css" />
+    </stylesheets>
+    <children>
+        <Pane prefHeight="572.0" prefWidth="1006.0">
+            <children>
+                <Text fill="#04e1ce" layoutX="15.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Employees count on Intelligence Sequence is being implemented. Contitnue use of Intelligence Sequence Performance will increase the productivity and save cost gradually." wrappingWidth="987.29150390625">
+
+                    <font>
+                        <Font name="Cambria Bold Italic" size="13.0" />
+                    </font>
+                </Text>
+                <DatePicker layoutX="13.0" layoutY="44.0" prefHeight="32.0" prefWidth="239.0" />
+                <AreaChart layoutX="12.0" layoutY="79.0" prefHeight="488.0" prefWidth="785.0" title="Full Analysis">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" />
+                    </yAxis>
+                </AreaChart>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

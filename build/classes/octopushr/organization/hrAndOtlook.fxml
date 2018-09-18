@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" 
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.organization.HrAndOtlookController">
+
+    <stylesheets>
+        <URL value="@/resources/css/hrandotlook.css"/>
+    </stylesheets>
+    <children>
+        <TableView layoutX="14.0" layoutY="36.0" prefHeight="315.0" prefWidth="626.0">
+            <columns>
+                <TableColumn prefWidth="531.0" text="Things to look at" />
+                <TableColumn minWidth="0.0" prefWidth="94.0" text="View" />
+            </columns>
+        </TableView>
+        <LineChart layoutX="14.0" layoutY="406.0" prefHeight="329.0" prefWidth="626.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+        </LineChart>
+        <ComboBox fx:id="cmbMonth" layoutX="14.0" layoutY="368.0" prefWidth="150.0" promptText="---Select month---" />
+        <Text layoutX="191.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily HR Outlook">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Label fx:id="lbldateToday" layoutX="14.0" layoutY="10.0" prefHeight="25.0" prefWidth="121.0" text="Label">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="171.0" layoutY="367.0" prefHeight="25.0" prefWidth="157.0" text="Total financial improvement:" />
+        <Label fx:id="lblTFI" layoutX="330.0" layoutY="372.0" prefHeight="17.0" prefWidth="78.0" />
+        <Label layoutX="408.0" layoutY="372.0" prefHeight="17.0" prefWidth="100.0" text="Cumulative score:" />
+        <Label layoutX="508.0" layoutY="372.0" prefHeight="17.0" prefWidth="78.0" />
+    </children>
+</AnchorPane>

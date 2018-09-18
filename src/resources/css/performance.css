@@ -1,0 +1,34 @@
+.root{
+
+    -fx-background-color:#66ADCD; 
+
+    -fx-background-color:#006699;
+
+    -fx-font-size: 10pt; 
+}
+.button{
+    -fx-background-color:#0099ff;
+}
+.menu-bar{
+
+    -fx-background-color: linear-gradient(#cccccc,#ffffff,#cccccc);
+    -fx-font-size:11pt;
+
+    -fx-font-size: 11pt;
+
+}
+#pane1{
+    -fx-border-color:#999999;
+    -fx-border-radius:5px;
+
+}
+#pane2{
+    -fx-border-color:#cccccc;
+    -fx-border-radius:5px;
+
+}
+#pane3{
+    -fx-border-color:#cccccc;
+    -fx-border-radius:5px;
+
+}

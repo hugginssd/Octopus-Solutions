@@ -1,0 +1,22 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+     -fx-background-color:#66ADCD;  
+}
+.button{
+    -fx-background-color:#ffffff;
+    -fx-background-style:flat;
+    -fx-background-radius: 5px;
+}
+#btnListAll,#btnEdit,#btnViewDetail,#btnDelete,#btnAddNew,#btnClose{
+     -fx-background-color:#ffffff;
+    -fx-background-style:flat;
+    -fx-background-radius: 5px;
+    -fx-border-color:#66ADCD;
+    -fx-border-radius:5px;
+}
+
+
