@@ -17,68 +17,89 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="857.0" prefWidth="1435.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.training.TrainingController">
+<AnchorPane id="AnchorPane" prefHeight="842.0" prefWidth="1441.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.training.TrainingController">
     <stylesheets>
         <URL value="@/resources/css/training.css" />
     </stylesheets>
     <children>
-        <TabPane fx:id="tabPane" layoutY="-2.0" prefHeight="860.0" prefWidth="1441.0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="tabPane" layoutY="-2.0" prefHeight="851.0" prefWidth="1441.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
                 <Tab fx:id="tabTraining" text="Training">
                     <content>
-                        <AnchorPane fx:id="anchorPaneTraining" minHeight="0.0" minWidth="0.0" prefHeight="826.0" prefWidth="1435.0" style="-fx-background-color: #66ADCD;">
+                        <AnchorPane fx:id="anchorPaneTraining" minHeight="0.0" minWidth="0.0" prefHeight="826.0" prefWidth="1435.0" style="-fx-background-color: #66ADCD; -fx-border-color: FFFFFF;">
                             <children>
-                        <Pane fx:id="pane3" layoutX="7.0" layoutY="3.0" prefHeight="815.0" prefWidth="1426.0" />
-                                <Pane fx:id="pane1" layoutX="13.0" layoutY="10.0" prefHeight="799.0" prefWidth="359.0">
+                        <Pane fx:id="pane3" layoutX="3.0" layoutY="3.0" prefHeight="815.0" prefWidth="1438.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;" />
+                                <Pane fx:id="pane1" layoutX="6.0" layoutY="6.0" prefHeight="809.0" prefWidth="359.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                                     <children>
                                         <TextField fx:id="txtTrainingName" layoutX="10.0" layoutY="10.0" prefHeight="29.0" prefWidth="337.0" promptText="Training name" />
-                                        <TextArea layoutX="10.0" layoutY="50.0" prefHeight="113.0" prefWidth="336.0" />
-                                        <TextField fx:id="txtTrainerNameGuide" layoutX="10.0" layoutY="171.0" prefHeight="31.0" prefWidth="339.0" promptText="Trainer name guide" />
-                                        <TextField fx:id="txtFeeCost" layoutX="10.0" layoutY="208.0" prefHeight="30.0" prefWidth="339.0" promptText="Fee / Cost" />
-                                        <RadioButton layoutX="10.0" layoutY="247.0" mnemonicParsing="false" text="Yes">
+                                        <TextArea fx:id="txtDescription" layoutX="10.0" layoutY="50.0" prefHeight="113.0" prefWidth="336.0" promptText="Description">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextArea>
+                                        <TextField fx:id="txtTrainerNameGuide" layoutX="10.0" layoutY="171.0" prefHeight="31.0" prefWidth="339.0" promptText="Trainer name guide">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextField>
+                                        <TextField fx:id="txtFeeCost" layoutX="10.0" layoutY="208.0" prefHeight="30.0" prefWidth="339.0" promptText="Fee / Cost">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextField>
+                                        <RadioButton layoutX="10.0" layoutY="247.0" mnemonicParsing="false" text="Yes" textFill="#00ffc8">
                                  <font>
                                     <Font name="Arial Unicode MS" size="12.0" />
                                  </font></RadioButton>
-                                        <RadioButton layoutX="307.0" layoutY="247.0" mnemonicParsing="false" text="No">
+                                        <RadioButton layoutX="307.0" layoutY="247.0" mnemonicParsing="false" text="No" textFill="#00ffc8">
                                  <font>
                                     <Font name="Arial Unicode MS" size="12.0" />
                                  </font></RadioButton>
-                                        <TextArea fx:id="txaEligibility" layoutX="8.0" layoutY="272.0" prefHeight="112.0" prefWidth="340.0" promptText="Eligibility" />
-                                        <TextArea fx:id="txaReferenceURLs" layoutX="8.0" layoutY="396.0" prefHeight="118.0" prefWidth="341.0" promptText="Reference URLs" />
+                                        <TextArea fx:id="txaEligibility" layoutX="8.0" layoutY="272.0" prefHeight="112.0" prefWidth="340.0" promptText="Eligibility">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextArea>
+                                        <TextArea fx:id="txaReferenceURLs" layoutX="8.0" layoutY="396.0" prefHeight="118.0" prefWidth="341.0" promptText="Reference URLs">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextArea>
                                         <ComboBox fx:id="cmbNatureOfTraining" layoutX="7.0" layoutY="523.0" prefHeight="30.0" prefWidth="342.0" promptText="Nature of training" />
-                                        <TextArea fx:id="txaAwardsRewards" layoutX="7.0" layoutY="560.0" prefHeight="129.0" prefWidth="342.0" promptText="Awards / Rewards" />
-                                        <RadioButton layoutX="6.0" layoutY="699.0" mnemonicParsing="false" text="Yes">
+                                        <TextArea fx:id="txaAwardsRewards" layoutX="7.0" layoutY="560.0" prefHeight="129.0" prefWidth="342.0" promptText="Awards / Rewards">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextArea>
+                                        <RadioButton layoutX="6.0" layoutY="699.0" mnemonicParsing="false" text="Yes" textFill="#00ffc8">
                                  <font>
                                     <Font name="Arial Unicode MS" size="12.0" />
                                  </font></RadioButton>
-                                        <RadioButton layoutX="312.0" layoutY="699.0" mnemonicParsing="false" text="No">
+                                        <RadioButton layoutX="312.0" layoutY="699.0" mnemonicParsing="false" text="No" textFill="#00ffc8">
                                  <font>
                                     <Font name="Arial Unicode MS" size="12.0" />
                                  </font></RadioButton>
-                                        <Text layoutX="70.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                    Paid By Company" wrappingWidth="224.13671875">
+                                        <Text fill="#00ffc8" layoutX="70.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                    Paid By Company" wrappingWidth="224.13671875">
                                  <font>
                                     <Font name="Arial Unicode MS" size="12.0" />
                                  </font></Text>
-                                        <Text layoutX="63.0" layoutY="713.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                   Affect Compensation" wrappingWidth="235.13671875">
+                                        <Text fill="#00ffc8" layoutX="63.0" layoutY="713.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                   Affect Compensation" wrappingWidth="235.13671875">
                                  <font>
                                     <Font name="Arial Unicode MS" size="12.0" />
                                  </font></Text>
-                                        <TextField fx:id="txtDocument" layoutX="7.0" layoutY="723.0" prefHeight="30.0" prefWidth="343.0" promptText="Document" />
+                                        <TextField fx:id="txtDocument" layoutX="7.0" layoutY="723.0" prefHeight="30.0" prefWidth="343.0" promptText="Document">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></TextField>
                                         <Button fx:id="btnAddNew" layoutX="247.0" layoutY="761.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="102.0" text="ADD NEW" />
                                         <Button fx:id="btnSchedule" layoutX="124.0" layoutY="761.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="107.0" text="SCHEDULE" />
                                         <Button fx:id="btnCancel" layoutX="7.0" layoutY="761.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="30.0" prefWidth="101.0" text="CANCEL" />
                                     </children>
                                 </Pane>
-                                <Pane fx:id="pane2" layoutX="378.0" layoutY="10.0" prefHeight="799.0" prefWidth="1050.0">
+                                <Pane fx:id="pane2" layoutX="366.0" layoutY="6.0" prefHeight="809.0" prefWidth="1072.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                                     <children>
                                         <DatePicker fx:id="dtpStartDate" layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="223.0" promptText="Start date" />
                                         <DatePicker fx:id="dtpEndDate" layoutX="268.0" layoutY="14.0" prefHeight="28.0" prefWidth="232.0" promptText="End date" />
                                         <DatePicker fx:id="dtpLastDate" layoutX="512.0" layoutY="13.0" prefHeight="29.0" prefWidth="234.0" promptText="Last date" />
                                         <Separator layoutX="129.0" layoutY="63.0" prefHeight="2.0" prefWidth="912.0" />
 
-                                        <Text layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduled Trainings" wrappingWidth="119.13671875">
+                                        <Text fill="#00ffc8" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scheduled Trainings" wrappingWidth="119.13671875">
                                             <font>
-                                                <Font size="13.0" />
+                                                <Font name="Arial Unicode MS" size="12.0" />
                                             </font>
                                         </Text>
 
@@ -94,17 +115,23 @@
                                                 <TableColumn prefWidth="114.0" text="LastDate" />
                                             </columns>
                                         </TableView>
-                                        <Button fx:id="btnDelete" layoutX="14.0" layoutY="306.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="Delete" />
-                                        <Button fx:id="btnDownloadAttachedDocument" layoutX="129.0" layoutY="306.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="185.0" text="Download Attached Document" />
+                                        <Button fx:id="btnDelete" layoutX="14.0" layoutY="306.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="Delete">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></Button>
+                                        <Button fx:id="btnDownloadAttachedDocument" layoutX="129.0" layoutY="306.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="185.0" text="Download Attached Document">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></Button>
                                         <Text fill="#d30d0d" layoutX="318.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: To add trainee please select any training" wrappingWidth="317.13671875">
                                             <font>
-                                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                                <Font name="Arial Rounded MT Bold" size="12.0" />
                                             </font>
                                         </Text>
                                         <Separator layoutX="87.0" layoutY="353.0" prefHeight="4.0" prefWidth="952.0" />
-                                        <Text layoutX="14.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participants" wrappingWidth="79.13671875">
+                                        <Text fill="#00ffc8" layoutX="14.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participants" wrappingWidth="79.13671875">
                                             <font>
-                                                <Font size="14.0" />
+                                                <Font name="Arial Unicode MS" size="12.0" />
                                             </font>
                                         </Text>
                                         <TabPane layoutX="13.0" layoutY="362.0" prefHeight="427.0" prefWidth="1026.0" tabClosingPolicy="UNAVAILABLE">
@@ -113,8 +140,14 @@
                                                     <content>
                                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="1087.0" style="-fx-background-color: #FFFFFF;">
                                                             <children>
-                                                                <Button fx:id="btnAddEmployee" layoutX="1.0" layoutY="9.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Add Employee" />
-                                                                <Button fx:id="btnDownloadParticipant" layoutX="119.0" layoutY="8.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="181.0" text="Download Participant" />
+                                                                <Button fx:id="btnAddEmployee" layoutX="1.0" layoutY="9.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Add Employee">
+                                                   <font>
+                                                      <Font name="Arial Unicode MS" size="12.0" />
+                                                   </font></Button>
+                                                                <Button fx:id="btnDownloadParticipant" layoutX="119.0" layoutY="8.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="181.0" text="Download Participant">
+                                                   <font>
+                                                      <Font name="Arial Unicode MS" size="12.0" />
+                                                   </font></Button>
                                                                 <TableView layoutX="1.0" layoutY="45.0" prefHeight="350.0" prefWidth="1024.0">
                                                                     <columns>
                                                                         <TableColumn prefWidth="75.0" text="ID" />

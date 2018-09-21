@@ -16,7 +16,7 @@
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem fx:id="itemClose" mnemonicParsing="false" text="Close" />
+                        <MenuItem fx:id="itemClose" mnemonicParsing="false" onAction="#closeThisStage" text="Close" />
 
                     </items>
                 </Menu>
@@ -85,7 +85,7 @@
                         <MenuItem fx:id="itemLeaveDashboard" mnemonicParsing="false" text="Dashboard" />
                         <MenuItem fx:id="itemPunchApplyleave" mnemonicParsing="false" text="Punch/Apply Leave" />
                         <MenuItem fx:id="itemApproveleave" mnemonicParsing="false" text="Approve/Manage Leave" />
-                        <MenuItem fx:id="itemOrganisationCalendar" mnemonicParsing="false" text="Organisation Calendar" />
+                        <MenuItem fx:id="itemOrganisationCalendar_" mnemonicParsing="false" text="Organisation Calendar" />
                         <MenuItem fx:id="itemEmployeeLeaveCalendar" mnemonicParsing="false" text="Employee Leave Calendar" />
                     </items>
                 </Menu>

@@ -15,9 +15,6 @@
     -fx-font-size:9pt;
 }
 .button{
-    -fx-font-family:Arial Rounded MT Bold;
-    -fx-font-style:Regular;
-    -fx-font-size:9pt;
     -fx-background-radius: 5px;
     -fx-border-color:#FFFFFF;
     -fx-background-style:flat;
@@ -26,9 +23,6 @@
     -fx-background-color:#FFFFFF;
 }
 #btnConfirm{
-    -fx-font-family:Arial Rounded MT Bold;
-    -fx-font-style:Regular;
-    -fx-font-size:9pt;
     -fx-background-radius: 5px;
     -fx-border-color:#66ADCD;
     -fx-background-style:flat;

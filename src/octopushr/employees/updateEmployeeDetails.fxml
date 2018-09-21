@@ -37,15 +37,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="878.0" prefWidth="1573.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.employees.UpdateEmployeeDetailsController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="878.0" prefWidth="1573.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.employees.UpdateEmployeeDetailsController">
 
     <stylesheets>
         <URL value="@/resources/css/updateemployeedetails.css" />
     </stylesheets>
-    <children>
-        <VBox prefHeight="878.0" prefWidth="1605.0">
-            <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="985.0" spacing="5.0">
+    <VBox prefHeight="878.0" prefWidth="1605.0">
+       <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="985.0" spacing="5.0">
                     <children>
                         <ComboBox fx:id="cmbFilterByDepartments" onAction="#loadDepartmentId" prefHeight="28.0" prefWidth="195.0" promptText="Filter By Departments">
 
@@ -94,11 +93,13 @@
                         <Insets left="10.0" />
                     </padding>
                 </HBox>
+    </children>
+    <children>
                 <TabPane tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                         <Tab fx:id="tabQuickDetails" text="Quick Details">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="537.0" prefWidth="1301.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="537.0" prefWidth="1301.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <GridPane hgap="5.0" layoutX="14.0" layoutY="14.0" prefHeight="531.0" prefWidth="639.0" vgap="10.0">
                                             <columnConstraints>
@@ -125,12 +126,12 @@
                                     <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                             <children>
-                                                <Label prefHeight="25.0" prefWidth="349.0" text="  Employment Details" GridPane.columnSpan="4">
+                                                <Label prefHeight="25.0" prefWidth="349.0" text="  Employment Details" textFill="#00ffc8" GridPane.columnSpan="4">
                                                     <font>
                                                         <Font name="Arial Rounded MT Bold" size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="18.0" prefWidth="295.0" text="Fields marked '   ' are mandatory" GridPane.rowIndex="2">
+                                                <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="18.0" prefWidth="295.0" text="Fields marked '  ' are mandatory" textFill="#00ffc8" GridPane.rowIndex="2">
                                                     <font>
                                                         <Font name="Arial Unicode MS" size="12.0" />
                                                     </font>
@@ -178,8 +179,8 @@
                                                 <HBox prefHeight="16.0" prefWidth="223.0" spacing="10.0" GridPane.rowIndex="14">
                                                     <children>
                                                         <Label prefHeight="17.0" prefWidth="72.0" />
-                                                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateQuickDetails" prefHeight="25.0" prefWidth="67.0" text="Update" />
-                                                        <Button fx:id="btnReset" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Reset" />
+                                                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateQuickDetails" prefHeight="25.0" prefWidth="67.0" text="UPDATE" />
+                                                        <Button fx:id="btnReset" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="RESET" />
                                                     </children>
                                                 </HBox>
                                                 <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="10">
@@ -192,7 +193,7 @@
                                                         <Image url="@../../resources/icons/info.png" />
                                                     </image>
                                                 </ImageView>
-                                                <Label text="Last Employee Id:" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7">
+                                                <Label text="Last Employee Id:" textFill="#00ffc8" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7">
                                        <font>
                                           <Font name="Californian FB" size="13.0" />
                                        </font></Label>
@@ -209,7 +210,7 @@
                                           <Insets left="25.0" />
                                        </padding>
                                     </Label>
-                                    <Label prefHeight="20.0" prefWidth="144.0" text="                      *" textFill="#eb1616" GridPane.rowIndex="2">
+                                    <Label prefHeight="20.0" prefWidth="144.0" text="                     *" textFill="#eb1616" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Cambria Bold Italic" size="17.0" />
                                        </font>
@@ -240,7 +241,7 @@
                         <Tab fx:id="tabEmployeeDetails" onSelectionChanged="#loadAllEmployeeDetails" text="Employee Details">
 
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="1605.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="750.0" prefWidth="1605.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <GridPane hgap="5.0" layoutX="14.0" layoutY="3.0" prefHeight="722.0" prefWidth="1284.0" vgap="8.0">
                                             <columnConstraints>
@@ -274,14 +275,14 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                             <children>
-                                                <Label prefHeight="29.0" prefWidth="361.0" text="Update Employee's Employment Details" GridPane.columnSpan="2">
+                                                <Label prefHeight="29.0" prefWidth="361.0" text="Update Employee's Employment Details" textFill="#00ffc8" GridPane.columnSpan="2">
                                                     <font>
-                                                        <Font name="Cambria Bold Italic" size="18.0" />
+                                                        <Font name="Arial Rounded MT Bold" size="18.0" />
                                                     </font>
                                                 </Label>
-                                                <Label prefHeight="17.0" prefWidth="320.0" text="Fields marked '*' mandatory" GridPane.rowIndex="1">
+                                                <Label prefHeight="17.0" prefWidth="320.0" text="Fields marked    mandatory" textFill="#00ffc8" GridPane.rowIndex="1">
                                                     <font>
-                                                        <Font name="Cambria Bold Italic" size="12.0" />
+                                                        <Font name="Arial Unicode MS" size="11.0" />
                                                     </font>
                                                 </Label>
                                                 <TextField fx:id="txtfirstname" prefHeight="32.0" prefWidth="268.0" promptText="Firstname" GridPane.rowIndex="3">
@@ -375,64 +376,17 @@
                                                         <ImageView fx:id="imgselectTimeSlot" fitHeight="26.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
                                                                 <Image url="@../../resources/icons/add.png" />
-                                                <TextField fx:id="txtfirstname" promptText="Firstname" GridPane.rowIndex="3">
-                                                    <font>
-                                                        <Font name="Cambria Bold Italic" size="12.0" />
-                                                    </font>
-                                                </TextField>
-                                                <TextField fx:id="txtmiddlename" promptText="Middlename" GridPane.rowIndex="4">
-                                                    <font>
-                                                        <Font name="Cambria Bold Italic" size="12.0" />
-                                                    </font>
-                                                </TextField>
-                                                <TextField fx:id="txtlastname" promptText="Lastname" GridPane.rowIndex="5">
-                                                    <font>
-                                                        <Font name="Cambria Bold Italic" size="12.0" />
-                                                    </font>
-                                                </TextField>
-                                                <TextField fx:id="txtemployeId" promptText="Employee ID" GridPane.rowIndex="7" />
-                                                <DatePicker fx:id="dtpbirthDate" prefHeight="25.0" prefWidth="179.0" promptText="Birth date" GridPane.rowIndex="6" />
-                                                <TextArea fx:id="txaidentificationDetails" prefHeight="200.0" prefWidth="200.0" promptText="Identification Details..." GridPane.rowIndex="8" GridPane.rowSpan="3" />
-                                                <ComboBox fx:id="cmbselectDesignation" prefHeight="25.0" prefWidth="173.0" promptText="---Select Designation---" GridPane.rowIndex="11" />
-                                                <ComboBox fx:id="cmbselectDepartment" prefHeight="25.0" prefWidth="174.0" promptText="---Select Department---" GridPane.rowIndex="12" />
-                                                <DatePicker fx:id="dtpJoiningDate" promptText="Joining Date" GridPane.rowIndex="13" />
-                                                <TextField fx:id="txtTotalExperience" promptText="Total Experience" GridPane.rowIndex="16" />
-                                                <TextField fx:id="txtExperienceWithUs" promptText="Experience With Us" GridPane.rowIndex="17" />
-                                                <TextField fx:id="txtmonthlySalary" promptText="Montly Salary" GridPane.rowIndex="18" />
-                                                <ComboBox fx:id="cmbJobStatus" prefHeight="25.0" prefWidth="174.0" promptText="Job Status" GridPane.rowIndex="14" />
-                                                <ComboBox fx:id="cmbWorkShift" prefHeight="25.0" prefWidth="173.0" promptText="Work Shift" GridPane.rowIndex="15" />
-                                                <ComboBox fx:id="cmbverifiedEmployee" prefHeight="25.0" prefWidth="172.0" promptText="Verified Employee" GridPane.rowIndex="19" />
-                                                <ComboBox fx:id="cmbActivatedEmployee" prefHeight="25.0" prefWidth="173.0" promptText="Activated Employee" GridPane.rowIndex="20" />
-                                                <ImageView fx:id="imgUpdate" fitHeight="132.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                                    <image>
-                                                        <Image url="@../resources/icons/no-image.jpg" />
-                                                    </image>
-                                                </ImageView>
-                                                <Button fx:id="btnselectImage" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Select Image" GridPane.columnIndex="1" GridPane.rowIndex="8">
-                                                    <GridPane.margin>
-                                                        <Insets left="15.0" />
-                                                    </GridPane.margin>
-                                                </Button>
-                                                <TextField fx:id="txtbankName" promptText="Bankname" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                                                <TextField fx:id="txtaccountHolder" promptText="Account holder" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                                                <TextField fx:id="txtaccountNumber" promptText="Account number" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                                                <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.rowSpan="3" />
-                                                <TextArea fx:id="txaotherDetails" prefHeight="200.0" prefWidth="200.0" promptText="Other Details..." GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.rowSpan="3" />
-                                                <TextField fx:id="txtovertimeCostPerHour" promptText="Overtime Cost Per Hour" GridPane.columnIndex="2" GridPane.rowIndex="14" />
-                                                <TextField fx:id="txthourlyCostPerHour" promptText="Hourly Cost Per Hour" GridPane.columnIndex="2" GridPane.rowIndex="15" />
-                                                <Group GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                                                <HBox prefHeight="26.0" prefWidth="565.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                                    <children>
-                                                        <ComboBox fx:id="cmbselectTimeSlot" prefHeight="25.0" prefWidth="180.0" promptText="Select Time Slot" />
-                                                        <ImageView fx:id="imgselectTimeSlot" fitHeight="26.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                                            <image>
-                                                                <Image url="@../resources/icons/add.png" />
-                                                            </image>
+                                                            </image> 
                                                         </ImageView>
-                                                        <Button fx:id="btnAllocate" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Allocate" />
                                                     </children>
                                                 </HBox>
-                                                <FlowPane hgap="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                           
+                                                <HBox prefHeight="26.0" prefWidth="565.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                   <children>
+                                                    <Button fx:id="btnAllocate" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Allocate" />
+                                                   </children>
+                                                </HBox>
+                                                   <FlowPane hgap="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                                     <children>
                                                         <TextField fx:id="txtcurrentLocation" prefHeight="31.0" prefWidth="180.0" promptText="Current location">
                                              <font>
@@ -464,24 +418,29 @@
                                                         <Image url="@../../resources/icons/info.png" />
                                                     </image>
                                                 </ImageView>
-                                                <Label prefHeight="26.0" prefWidth="46.0" text="\$ (USD)" GridPane.columnIndex="1" GridPane.rowIndex="18">
+                                                <Label prefHeight="26.0" prefWidth="46.0" text="\$ (USD)" textFill="#00ffc8" GridPane.columnIndex="1" GridPane.rowIndex="18">
                                        <font>
-                                          <Font name="Cambria Bold Italic" size="12.0" />
+                                          <Font name="Arial Rounded MT Bold" size="11.0" />
                                        </font></Label>
                                                 <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="20">
                                                     <children>
-                                                        <Button fx:id="btnUpdatee" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#updateEmployeeDetails" prefHeight="34.0" prefWidth="66.0" text="Update" />
+                                                        <Button fx:id="btnUpdatee" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#updateEmployeeDetails" prefHeight="34.0" prefWidth="66.0" text="UPDATE" />
                                                     </children>
                                                 </HBox>
+                                 <Label prefHeight="16.0" prefWidth="170.0" text="                      *" textFill="#f20202" GridPane.rowIndex="1">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="13.0" />
+                                    </font>
+                                 </Label>
                                             </children>
-                                        </GridPane>
+                                        </GridPane>    
                                     </children>
                                 </AnchorPane>
                             </content>
-                        </Tab>
+                        </Tab>       
                         <Tab fx:id="tabPersonal" onSelectionChanged="#loadPersonalDetails" text="Personal">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <GridPane hgap="5.0" layoutX="14.0" prefHeight="540.0" prefWidth="780.0">
                                             <columnConstraints>
@@ -508,9 +467,9 @@
                                                 <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                             <children>
-                                                <Label alignment="BOTTOM_LEFT" prefHeight="35.0" prefWidth="262.0" text="Personal Details" GridPane.columnSpan="2">
+                                                <Label alignment="BOTTOM_LEFT" prefHeight="35.0" prefWidth="262.0" text="Personal Details" textFill="#00ffc8" GridPane.columnSpan="2">
                                                     <font>
-                                                        <Font name="Batang" size="18.0" />
+                                                        <Font name="Arial Rounded MT Bold" size="18.0" />
                                                     </font>
                                                 </Label>
                                                 <TextField fx:id="txtFathername" prefHeight="30.0" prefWidth="287.0" promptText="Father name" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -548,9 +507,9 @@
                                                         <Image url="@../../resources/icons/add.png" />
                                                     </image>
                                                 </ImageView>
-                                                <Label prefHeight="24.0" prefWidth="163.0" text="Social Media Details" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                <Label prefHeight="24.0" prefWidth="163.0" text="Social Media Details" textFill="#00ffc8" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                                     <font>
-                                                        <Font size="14.0" />
+                                                        <Font name="Arial Rounded MT Bold" size="14.0" />
                                                     </font>
                                                 </Label>
                                                 <TextField fx:id="txtLinkedIn" prefHeight="30.0" prefWidth="239.0" promptText="Linked In" GridPane.columnIndex="3" GridPane.rowIndex="2">
@@ -577,7 +536,7 @@
                         </Tab>
                         <Tab fx:id="tabDependants" onCloseRequest="#onCloseRequest" onSelectionChanged="#loadDependents" text="Dependants">
                             <content>
-                                <AnchorPane>
+                                <AnchorPane style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <GridPane hgap="10.0" layoutX="14.0" layoutY="32.0" prefHeight="790.0" prefWidth="1605.0" vgap="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columnConstraints>
@@ -599,7 +558,7 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                             <children>
-                                                <Label prefHeight="34.0" prefWidth="386.0" text="Dependants Details" textFill="#fcfcfc">
+                                                <Label prefHeight="34.0" prefWidth="386.0" text="Dependants Details" textFill="#00ffc8">
                                                     <font>
                                                         <Font name="Arial Rounded MT Bold" size="19.0" />
                                                     </font>
@@ -658,7 +617,7 @@
                         <Tab fx:id="tabContacts" onSelectionChanged="#loadContactsDetails" text="Contacts">
 
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="632.0" prefWidth="1301.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="632.0" prefWidth="1301.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <VBox layoutX="27.0" layoutY="9.0" prefHeight="627.0" prefWidth="982.0" spacing="5.0">
                                             <children>
@@ -768,9 +727,9 @@
                                                                     </children>
                                                                 </AnchorPane>
                                                             </content>
-                                             <font>
-                                                <Font name="Arial Rounded MT Bold" size="11.0" />
-                                             </font>
+                                                                <font>
+                                                                   <Font name="Arial Rounded MT Bold" size="11.0" />
+                                                                </font>
                                                         </TitledPane>
                                                     </children>
                                                 </HBox>
@@ -787,7 +746,7 @@
                         </Tab>
                         <Tab onSelectionChanged="#loadQualificationDetails" text="Qualifications">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <SplitPane dividerPositions="0.42383419689119173" layoutX="14.0" layoutY="20.0" prefHeight="519.0" prefWidth="967.0">
                                             <items>
@@ -815,12 +774,11 @@
                                                                 <Image url="@../../resources/icons/add.png" />
                                                             </image>
                                                         </ImageView>
-                                          <DatePicker fx:id="dtpCompletionYear" layoutX="122.0" layoutY="206.0" prefHeight="30.0" promptText="Completion year" showWeekNumbers="true" />
+                                                        <DatePicker fx:id="dtpCompletionYear" layoutX="122.0" layoutY="206.0" prefHeight="30.0" promptText="Completion year" showWeekNumbers="true" />
                                                     </children>
                                                 </AnchorPane>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                                     <children>
-//<<<<<<< HEAD
                                                         <TableView fx:id="tableQualifications" layoutX="3.0" layoutY="28.0" onMouseClicked="#showQualificationDetailsInFields" prefHeight="212.0" prefWidth="549.0">
                                                             <columns>
                                                                 <TableColumn fx:id="sno" prefWidth="54.0" text="S.No." />
@@ -851,16 +809,16 @@
                         </Tab>
                         <Tab onSelectionChanged="#loadWorkExperienceDetails" text="Work Experience">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <HBox layoutX="14.0" layoutY="35.0" prefHeight="319.0" prefWidth="1509.0" spacing="15.0">
                                             <children>
                                                 <Pane prefHeight="319.0" prefWidth="541.0">
                                                     <children>
-                                                        <Separator layoutX="170.0" layoutY="24.0" prefHeight="4.0" prefWidth="364.0" />
-                                                        <Label layoutX="2.0" layoutY="14.0" prefHeight="19.0" prefWidth="171.0" text="Previous Working Experience">
+                                                        <Separator layoutX="188.0" layoutY="26.0" prefHeight="3.0" prefWidth="346.0" />
+                                                        <Label layoutX="2.0" layoutY="14.0" prefHeight="19.0" prefWidth="197.0" text="Previous Working Experience" textFill="#00ffc8">
                                                             <font>
-                                                                <Font size="13.0" />
+                                                                <Font name="Arial Rounded MT Bold" size="13.0" />
                                                             </font>
                                                         </Label>
                                                         <TextField fx:id="txtCompanyName" layoutX="26.0" layoutY="37.0" prefHeight="30.0" prefWidth="250.0" promptText="Company name">
@@ -872,9 +830,10 @@
                                                 <Font name="Arial Unicode MS" size="12.0" />
                                              </font></TextField>
                                                         <TextArea fx:id="txaOtherDetails" layoutX="26.0" layoutY="194.0" prefHeight="83.0" prefWidth="250.0" promptText="Other details">
-                                             <font>
-                                                <Font name="Arial Unicode MS" size="12.0" />
-                                             </font></TextArea>
+                                                            <font>
+                                                               <Font name="Arial Unicode MS" size="12.0" />
+                                                            </font>
+                                                        </TextArea>
                                                         <DatePicker fx:id="dtpFrom" layoutX="26.0" layoutY="117.0" prefHeight="30.0" promptText="From" />
                                                         <DatePicker fx:id="dtpTo" layoutX="26.0" layoutY="156.0" prefHeight="30.0" promptText="To" />
                                                         <Button fx:id="btn_Add" layoutX="377.0" layoutY="285.0" mnemonicParsing="false" onAction="#insertWorkExperienceDetails" prefHeight="25.0" prefWidth="66.0" text="Add" />
@@ -907,9 +866,9 @@
                                                                 <TableColumn fx:id="from" prefWidth="89.0" text="From" />
                                                                 <TableColumn fx:id="to" prefWidth="87.0" text="To" />
                                                                 <TableColumn fx:id="otherDetails" prefWidth="120.0" text="Other Details" />
-                                                <TableColumn fx:id="colTelephone" prefWidth="77.0" text="Telephone" />
-                                                <TableColumn fx:id="colReasonsForLeaving" prefWidth="126.0" text="Reasons For Leaving" />
-                                                <TableColumn fx:id="colAddressOfEmployer" prefWidth="123.0" text="Address Of Employer" />
+                                                                <TableColumn fx:id="colTelephone" prefWidth="77.0" text="Telephone" />
+                                                                <TableColumn fx:id="colReasonsForLeaving" prefWidth="126.0" text="Reasons For Leaving" />
+                                                                <TableColumn fx:id="colAddressOfEmployer" prefWidth="123.0" text="Address Of Employer" />
                                                             </columns>
                                                         </TableView>
                                                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -928,7 +887,7 @@
                         </Tab>
                         <Tab onSelectionChanged="#loadSkillDetails" text="Skills">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <SplitPane dividerPositions="0.4664092664092664" layoutX="15.0" layoutY="15.0" prefHeight="593.0" prefWidth="1297.0">
                                             <items>
@@ -950,20 +909,18 @@
                                                             </font>
                                                         </Label>
                                                         <Label layoutX="179.0" layoutY="15.0" text="Level">
-
                                                             <font>
                                                                 <Font name="System Bold" size="12.0" />
                                                             </font>
                                                         </Label>
                                                         <Label layoutX="330.0" layoutY="13.0" prefHeight="21.0" prefWidth="121.0" text="Experience">
-
                                                             <font>
                                                                 <Font name="System Bold" size="12.0" />
                                                             </font>
                                                         </Label>
                                                         <TableView fx:id="tableNewSkills" layoutX="6.0" layoutY="76.0" onMouseClicked="#loadEmployeesWithSimilarSkills" prefHeight="200.0" prefWidth="592.0" />
                                                         <PieChart fx:id="pieExperience" layoutX="6.0" layoutY="276.0" prefHeight="310.0" prefWidth="590.0" title="Skill Experience (In Years)" />
-                                          <Label fx:id="lblSkillId" layoutX="86.0" layoutY="15.0" text="Label" />
+                                                        <Label fx:id="lblSkillId" layoutX="86.0" layoutY="15.0" text="Label" />
                                                     </children>
                                                 </AnchorPane>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -987,15 +944,14 @@
                             </content>
                         </Tab>
                         <Tab onSelectionChanged="#loadSubmittedDocumentDetails" text="Documents">
-
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
-                                        <Pane layoutX="14.0" layoutY="22.0" prefHeight="534.0" prefWidth="1106.0">
+                                        <Pane layoutX="7.0" layoutY="8.0" prefHeight="555.0" prefWidth="1120.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
                                             <children>
-                                                <Label layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="72.0" text="Documents">
+                                                <Label layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="72.0" text="Documents" textFill="#00ffc8">
                                                     <font>
-                                                        <Font name="Arial Unicode MS" size="13.0" />
+                                                        <Font name="Arial Rounded MT Bold" size="12.0" />
                                                     </font>
                                                 </Label>
                                                 <Separator layoutX="79.0" layoutY="26.0" prefHeight="4.0" prefWidth="276.0" />
@@ -1005,7 +961,7 @@
                                                         <Image url="@../../resources/icons/add.png" />
                                                     </image>
                                                 </ImageView>
-                                                <Label layoutX="79.0" layoutY="73.0" prefHeight="28.0" prefWidth="234.0" text="Document type category">
+                                                <Label layoutX="79.0" layoutY="73.0" prefHeight="28.0" prefWidth="234.0" text="Document type category" textFill="#00ffc8">
                                                     <font>
                                                         <Font name="Arial Unicode MS" size="13.0" />
                                                     </font>
@@ -1015,25 +971,25 @@
                                           <Font name="Arial Unicode MS" size="12.0" />
                                        </font></TextField>
                                                 <DatePicker fx:id="dtpSubmittedIssuedDate" layoutX="79.0" layoutY="136.0" prefHeight="31.0" prefWidth="253.0" promptText="Submitted/Issued date" />
-                                                <RadioButton fx:id="rdbOriginal" layoutX="79.0" layoutY="183.0" mnemonicParsing="false" text="Original">
+                                                <RadioButton fx:id="rdbOriginal" layoutX="79.0" layoutY="183.0" mnemonicParsing="false" text="Original" textFill="#00ffc8">
                                        <font>
-                                          <Font name="Arial Unicode MS" size="13.0" />
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
                                        </font></RadioButton>
-                                                <RadioButton fx:id="rdbDuplicate" layoutX="196.0" layoutY="183.0" mnemonicParsing="false" text="Duplicate">
+                                                <RadioButton fx:id="rdbDuplicate" layoutX="196.0" layoutY="183.0" mnemonicParsing="false" text="Duplicate" textFill="#00ffc8">
                                        <font>
-                                          <Font name="Arial Unicode MS" size="13.0" />
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
                                        </font></RadioButton>
-                                                <Label layoutX="8.0" layoutY="200.0" prefHeight="17.0" prefWidth="72.0" text="Expired date">
+                                                <Label layoutX="6.0" layoutY="200.0" prefHeight="17.0" prefWidth="77.0" text="Expired date" textFill="#00ffc8">
                                        <font>
-                                          <Font name="Arial Unicode MS" size="12.0" />
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
                                        </font></Label>
-                                                <RadioButton fx:id="rdbYes" layoutX="79.0" layoutY="221.0" mnemonicParsing="false" text="Yes">
+                                                <RadioButton fx:id="rdbYes" layoutX="79.0" layoutY="221.0" mnemonicParsing="false" text="Yes" textFill="#00ffc8">
                                        <font>
-                                          <Font name="Arial Unicode MS" size="13.0" />
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
                                        </font></RadioButton>
-                                                <RadioButton fx:id="rdbNo" layoutX="197.0" layoutY="221.0" mnemonicParsing="false" text="No">
+                                                <RadioButton fx:id="rdbNo" layoutX="197.0" layoutY="221.0" mnemonicParsing="false" text="No" textFill="#00ffc8">
                                        <font>
-                                          <Font name="Arial Unicode MS" size="13.0" />
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
                                        </font></RadioButton>
                                                 <DatePicker fx:id="dtpExpirationDate" layoutX="79.0" layoutY="255.0" prefHeight="30.0" prefWidth="246.0" promptText="Expiration date" />
                                                 <Separator layoutX="81.0" layoutY="211.0" prefHeight="3.0" prefWidth="264.0" />
@@ -1060,7 +1016,6 @@
                                                                 </AnchorPane>
                                                             </content>
                                                         </Tab>
-//<<<<<<< HEAD
                                                         <Tab fx:id="tabIssuedDocuments" onSelectionChanged="#loadIssuedDocumentDetails" text="Issued documents">
                                                             <content>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -1084,8 +1039,11 @@
                                                     </tabs>
                                                 </TabPane>
                                                 <Button fx:id="_btnReset" layoutX="176.0" layoutY="333.0" mnemonicParsing="false" onAction="#refreshDocumentControls" prefHeight="25.0" prefWidth="66.0" text="RESET" />
-                                                <Button fx:id="btnUpload" layoutX="78.0" layoutY="333.0" mnemonicParsing="false" onAction="#uploadDocuments" prefHeight="25.0" prefWidth="75.0" text="Upload" />
-                                    <Label fx:id="lblPath" layoutX="80.0" layoutY="294.0" prefHeight="28.0" prefWidth="245.0" text="Label" />
+                                                <Button fx:id="btnUpload" layoutX="78.0" layoutY="333.0" mnemonicParsing="false" onAction="#uploadDocuments" prefHeight="25.0" prefWidth="75.0" text="UPLOAD" />
+                                    <Label fx:id="lblPath" layoutX="80.0" layoutY="294.0" prefHeight="28.0" prefWidth="245.0" text="Label" textFill="#00ffc8">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="12.0" />
+                                    </font></Label>
                                     <Label fx:id="lblDocumentId" layoutX="299.0" layoutY="79.0" prefHeight="17.0" prefWidth="60.0" text="Label" />
                                     <Label fx:id="lblSelectId" layoutX="299.0" layoutY="231.0" text="Label" />
 
@@ -1099,7 +1057,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                              <SplitPane dividerPositions="0.4229569557080474" prefHeight="790.0" prefWidth="1605.0" style="-fx-background-color: #66ADCD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <SplitPane dividerPositions="0.4229569557080474" layoutY="-1.0" prefHeight="790.0" prefWidth="1605.0" style="-fx-background-color: #66ADCD;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-border-color: FFFFFF; -fx-border-radius: 1; -fx-border-width: 2;">
                                        <children>
@@ -1462,7 +1420,7 @@
                         </Tab>
                         <Tab text="Payroll">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <Pane layoutX="14.0" layoutY="14.0" prefHeight="354.0" prefWidth="672.0" style="-fx-background-radius: 5; -fx-border-color: FFFFFF; -fx-border-width: 2; -fx-background-color: #66ADCD; -fx-border-radius: 5;">
                                             <children>
@@ -1584,7 +1542,7 @@
                         </Tab>
                         <Tab text="Perfomance Intelligence">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <Pane layoutX="14.0" layoutY="14.0" prefHeight="613.0" prefWidth="522.0">
                                             <children>
@@ -1673,7 +1631,7 @@
                         </Tab>
                         <Tab text="Disciplinary">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <Button fx:id="btnViewGrievance" layoutX="871.0" layoutY="44.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="121.0" text="Delete Grievance">
                                             <font>
@@ -1716,7 +1674,7 @@
                         </Tab>
                         <Tab text="Training">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <Button alignment="BOTTOM_CENTER" layoutX="43.0" layoutY="25.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="131.0" text="Manage Training">
                                             <font>
@@ -1757,7 +1715,7 @@
                         </Tab>
                         <Tab text="Travel">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <Button alignment="BOTTOM_CENTER" layoutX="37.0" layoutY="28.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="127.0" text="Manage Travelling">
                                             <font>
@@ -1788,7 +1746,7 @@
                         </Tab>
                         <Tab text="Facilities">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <Label layoutX="25.0" layoutY="24.0" prefHeight="28.0" prefWidth="53.0" text="Facilities">
                                             <font>
@@ -1825,7 +1783,7 @@
                         </Tab>
                         <Tab text="Medical Details">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <TextField fx:id="txtDoctorsName" layoutX="214.0" layoutY="60.0" prefHeight="29.0" prefWidth="232.0" promptText="Doctor's name" />
                                         <TextField fx:id="txtDoctorsContact" layoutX="214.0" layoutY="101.0" prefHeight="28.0" prefWidth="232.0" promptText="Doctor's contact" />
@@ -1841,7 +1799,6 @@
                                         <Button fx:id="btnViewMedicalCertificate" layoutX="559.0" layoutY="253.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="VIEW MEDICAL CERTIFICATE" />
 
                                         <Button fx:id="_btnUpdate" layoutX="214.0" layoutY="408.0" mnemonicParsing="false" onAction="#updateMedicalDetails" prefHeight="25.0" prefWidth="109.0" text="Update">
-
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
@@ -1858,7 +1815,7 @@
                         </Tab>
                         <Tab text="Compliance">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <TableView layoutX="32.0" layoutY="44.0" prefHeight="510.0" prefWidth="971.0">
                                             <columns>
@@ -1871,7 +1828,6 @@
                                             </columns>
                                         </TableView>
                                         <Button alignment="BOTTOM_CENTER" layoutX="1012.0" layoutY="44.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="146.0" text="Manage Compliance">
-
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>
@@ -1887,7 +1843,7 @@
                         </Tab>
                         <Tab text="Other Details">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2;">
                                     <children>
                                         <Label layoutX="21.0" layoutY="33.0" prefHeight="20.0" prefWidth="85.0" text="Other Details">
                                             <font>
@@ -1921,7 +1877,6 @@
                         </Tab>
                     </tabs>
                 </TabPane>
-            </children>
-        </VBox>
     </children>
+    </VBox>
 </AnchorPane>

@@ -42,13 +42,13 @@
     -fx-border-radius: 3px; 
     -fx-border-width:1pt;
 }
-#lblScheduleTravel{
+/*#lblScheduleTravel{
  -fx-background-color:#66ADCD;
  -fx-background-radius: 3px; 
  -fx-border-color:#FFFFFF;
  -fx-border-width:1pt;
  -fx-border-radius:3px;
-}
+}*/
 #anchorPane{
    -fx-background-color:#0E3C55;
  -fx-background-radius: 3px;  

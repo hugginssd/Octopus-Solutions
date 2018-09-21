@@ -132,7 +132,7 @@
                         <Font name="Cambria Italic" size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="lblDesignation" layoutX="121.0" layoutY="212.0" text="---------------------">
+                <Label fx:id="lblDesignation_" layoutX="121.0" layoutY="212.0" text="---------------------">
                     <font>
                         <Font name="Cambria Italic" size="14.0" />
                     </font>
@@ -234,7 +234,7 @@
                         <Font name="Cambria Italic" size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="lblDepartment" layoutX="504.0" layoutY="212.0" text="--------------">
+                <Label fx:id="lblDepartment_" layoutX="504.0" layoutY="212.0" text="--------------">
                     <font>
                         <Font name="Cambria Italic" size="14.0" />
                     </font>

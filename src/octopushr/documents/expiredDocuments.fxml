@@ -36,14 +36,14 @@
                                                    <children>
                                                       <TableView fx:id="tableExpiredEmployeeSubmittedDocuments" layoutX="1.0" layoutY="1.0" prefHeight="407.0" prefWidth="908.0">
                                                         <columns>
-                                                          <TableColumn fx:id="colEmployeeIdExpiredIssued" prefWidth="82.0" text="Employee ID" />
+                                                          <TableColumn fx:id="colEmployeeIdExpiredSubmittedDocuments" prefWidth="82.0" text="Employee ID" />
                                                           <TableColumn fx:id="colNameExpiredSubmittedDocuments" prefWidth="293.0" text="Name" />
                                                             <TableColumn fx:id="colDocumentExpiredSubmittedDocuments" prefWidth="248.0" text="Document" />
                                                             <TableColumn fx:id="colSubmitDateExpiredSubmittedDocuments" prefWidth="168.0" text="Submit Date" />
                                                             <TableColumn fx:id="colExpiryDateExpiredSubmittedDocuments" prefWidth="114.0" text="Expiry Date" />
                                                         </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnExpiredSubmittedDocumentsDownload" layoutX="2.0" layoutY="409.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnExpiredSubmittedDocumentsDownload" layoutX="2.0" layoutY="409.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>
@@ -65,7 +65,7 @@
                                                             <TableColumn fx:id="colExpiryDateExpiredIssuedDocuments" prefWidth="114.0" text="Expiry Date" />
                                                          </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnExpiredIssuedDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnExpiredIssuedDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>
@@ -82,15 +82,15 @@
                                                          <columns>
                                                             <TableColumn fx:id="colExpiredEmployeeInternalDocumentsSno" prefWidth="62.0" text="S.No." />
                                                             <TableColumn fx:id="colNameExpiredEmployeeInternalDocuments" prefWidth="176.0" text="Name" />
-                                                            <TableColumn fx:id="colDocumentExpiredSubmittedDocuments" prefWidth="81.0" text="Employee ID" />
+                                                            <TableColumn fx:id="colDocumentExpiredInternalDocuments" prefWidth="81.0" text="Employee ID" />
                                                             <TableColumn fx:id="colExpiredDocumentsEmployeeInternalDocuments" prefWidth="114.0" text="Title" />
                                                             <TableColumn fx:id="colDocumentTypeExpiredEmployeeInternalDocuments" prefWidth="164.0" text="Document Type" />
-                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="92.0" text="Authority" />
-                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="104.0" text="Submitted on" />
-                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="114.0" text="Expiry Date" />
+                                                            <TableColumn fx:id="colExpiredInternalAuthorityDocuments" prefWidth="92.0" text="Authority" />
+                                                            <TableColumn fx:id="colExpiredInternalSubmittedOnDocuments" prefWidth="104.0" text="Submitted on" />
+                                                            <TableColumn fx:id="colExpiredInternalExpiryDateDocuments" prefWidth="114.0" text="Expiry Date" />
                                                          </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnExpiredEmployeeInternalDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnExpiredEmployeeInternalDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>
@@ -115,7 +115,7 @@
                                                             <TableColumn fx:id="colExpiredInternalDocumentsProcessFee" prefWidth="114.0" text="Process Fee" />
                                                          </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnExpiredCompanyInternalDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnExpiredCompanyInternalDocumentsDownload" layoutX="2.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>
@@ -148,7 +148,7 @@
                                                             <TableColumn fx:id="colExpiryDateExpiredSubmittedDocuments1" prefWidth="114.0" text="Expiry Date" />
                                                          </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnToBeExpiredSubmittedDocumentsDownload" layoutX="1.0" layoutY="409.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnToBeExpiredSubmittedDocumentsDownload" layoutX="1.0" layoutY="409.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>
@@ -170,7 +170,7 @@
                                                             <TableColumn fx:id="colExpiryDateToBeExpiredIssuedDocuments" prefWidth="114.0" text="Expiry Date" />
                                                          </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnToBeExpiredIssuedDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnToBeExpiredIssuedDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>
@@ -191,11 +191,11 @@
                                                             <TableColumn fx:id="colExpiredDocumentsEmployeeInternalDocuments1" prefWidth="114.0" text="Title" />
                                                             <TableColumn fx:id="colDocumentTypeExpiredEmployeeInternalDocuments1" prefWidth="164.0" text="Document Type" />
                                                             <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="92.0" text="Authority" />
-                                                            <TableColumn fx:id="colExpiredInternalDocuments" prefWidth="104.0" text="Submitted on" />
+                                                            <TableColumn fx:id="colExpiredInternalSubmittedonDocuments" prefWidth="104.0" text="Submitted on" />
                                                             <TableColumn fx:id="colExpiredInternalDocuments1" prefWidth="114.0" text="Expiry Date" />
                                                          </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnToBeExpiredEmployeeInternalDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnToBeExpiredEmployeeInternalDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>
@@ -219,7 +219,7 @@
                                                             <TableColumn fx:id="colExpiredInternalDocumentsProcessFee1" prefWidth="114.0" text="Process Fee" />
                                                          </columns>
                                                       </TableView>
-                                                      <Button fx:id="btnToBeExpiredCompanyInternalDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Download">
+                                                      <Button fx:id="btnToBeExpiredCompanyInternalDocumentsDownload" layoutX="1.0" layoutY="408.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" styleClass="download" text="Download">
                                                          <font>
                                                             <Font name="Arial Rounded MT Bold" size="12.0" />
                                                          </font>

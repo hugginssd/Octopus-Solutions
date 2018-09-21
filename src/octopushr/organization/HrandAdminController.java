@@ -102,8 +102,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxTableCell;
 //=======
@@ -114,25 +112,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 //<<<<<<< HEAD
 import javafx.util.Callback;
-import javax.imageio.ImageIO;
 import octopushr.Connexion;
-import octopushr.Functions;
 import octopushr.employees.UpdateEmployeeDetailsController;
 //=======
 import javax.imageio.ImageIO;
 import octopushr.Functions;
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
 
 public class HrandAdminController implements Initializable {
 
@@ -993,7 +982,6 @@ public class HrandAdminController implements Initializable {
         scene.getStylesheets().add("/resources/css/addgoal.css");
         stage.setTitle("Add Goal");
         stage.setResizable(false);
-        stage.setAlwaysOnTop(true);
         stage.centerOnScreen();
         stage.setWidth(650);
         stage.setHeight(550);
@@ -1184,6 +1172,8 @@ public class HrandAdminController implements Initializable {
         stage.setTitle("Schedule Travel");
         stage.setResizable(false);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
+        stage.setFullScreenExitHint("Press Esc to exit Travel Schedule View");
         stage.getIcons().add(new Image("/resources/icons/manage-travelling.png"));
         stage.setWidth(1550);
         stage.setHeight(795);
@@ -1202,6 +1192,8 @@ public class HrandAdminController implements Initializable {
         stage.setTitle("Octopus Reports");
         stage.setResizable(false);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
+        stage.setFullScreenExitHint("Press Esc to exit Octopus Report Centre");
         stage.setWidth(1000);
         stage.setHeight(720);
         stage.setScene(scene);
@@ -1430,6 +1422,8 @@ public class HrandAdminController implements Initializable {
         stage.centerOnScreen();
         stage.setWidth(1300);
         stage.setHeight(750);
+        stage.setFullScreen(true);
+        stage.setFullScreenExitHint("Press Esc to exit Pay Centre full screen");
         stage.getIcons().add(new Image("/resources/icons/payrol.png"));
         stage.setScene(scene);
         stage.setResizable(false);
@@ -1458,7 +1452,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void uploadEmployees() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/uploadEmployees.fxml"));
         Scene scene = new Scene(root, 825, 700);
         scene.getStylesheets().add("/resources/css/uploademployees.css");
@@ -1474,7 +1467,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void addViewLeaveDetails() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/leave/addViewLeaveDetails.fxml"));
         Scene scene = new Scene(root, 825, 700);
         scene.getStylesheets().add("/resources/css/addviewleavedetails.css");
@@ -1490,7 +1482,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void departmentHistory() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/organization/departmentHistory.fxml"));
         Scene scene = new Scene(root, 1000, 800);
         scene.getStylesheets().add("/resources/css/departmenthistory.css");
@@ -1506,7 +1497,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void promotionsHistory() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/performance/promotionsHistory.fxml"));
         Scene scene = new Scene(root, 1000, 800);
         scene.getStylesheets().add("/resources/css/promotionshistory.css");
@@ -1522,7 +1512,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void employeePerformance() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/performance/performance.fxml"));
         Scene scene = new Scene(root, 1000, 800);
         scene.getStylesheets().add("/resources/css/performance.css");
@@ -1538,7 +1527,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void employeeDisciplinary() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/performance/disciplinary.fxml"));
         Scene scene = new Scene(root, 1000, 800);
         scene.getStylesheets().add("/resources/css/disciplinary.css");
@@ -1571,7 +1559,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void addNewDesignation() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/designation.fxml"));
         Scene scene = new Scene(root, 320, 420);
         scene.getStylesheets().add("/resources/css/designation.css");
@@ -1588,7 +1575,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void addBenefitsAndFacilities() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/organization/benefitsAndFacilities.fxml"));
         Scene scene = new Scene(root, 715, 400);
         scene.getStylesheets().add("/resources/css/benefitsandfacilities.css");
@@ -1605,14 +1591,15 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void organisationalCalendar() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/organization/organisationalCalendar.fxml"));
-        Scene scene = new Scene(root, 1350, 650);
+        Scene scene = new Scene(root,1380,840);
         scene.getStylesheets().add("/resources/css/organisationalcalendar.css");
         stage.setTitle("Organisational Calendar");
         stage.setResizable(false);
         stage.getIcons().add(new Image("/resources/icons/facilities.png"));
         stage.centerOnScreen();
+        stage.setFullScreen(true);
+        stage.setFullScreenExitHint("Press Esc to exit Organisation Calendar View");
         stage.setScene(scene);
         stage.show();
     }
@@ -1620,16 +1607,14 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void employeeCalendar() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/employeeCalendar.fxml"));
-        Scene scene = new Scene(root, 1755, 800);
+        Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/employeecalendar.css");
         stage.setTitle("Employee Calendar");
-        stage.setAlwaysOnTop(true);
         stage.setResizable(false);
+        stage.setFullScreen(true);
+        stage.setFullScreenExitHint("Press Esc to exit Employee Leave Calendar View");
         stage.centerOnScreen();
-        stage.setWidth(1755);
-        stage.setHeight(800);
         stage.setScene(scene);
         stage.show();
     }
@@ -1638,7 +1623,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void addOrPunchLeave() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/leave/employeeLeaveApplication.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/employeeleaveapplication.css");
@@ -1649,7 +1633,6 @@ public class HrandAdminController implements Initializable {
         stage.show();
     }
 
-//<<<<<<< HEAD
     @FXML
     public void addSkills() throws IOException {
         stage = new Stage();
@@ -1663,15 +1646,11 @@ public class HrandAdminController implements Initializable {
         stage.showAndWait();
     }
 
-//=======
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
     //CONFIG_AND_SETTINGS
     @FXML
     public void showSecuritySettings() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/configAndSettings/securitySettings.fxml"));
-
         Scene scene = new Scene(root, 1000, 500);
         scene.getStylesheets().add("/resources/css/securitysettings.css");
         stage.setTitle("Security Settings");
@@ -1687,7 +1666,6 @@ public class HrandAdminController implements Initializable {
     @FXML
     public void showConfigureEmail() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/configAndSettings/configureEmail.fxml"));
         Scene scene = new Scene(root, 1000, 700);
         scene.getStylesheets().add("/resources/css/configureemail.css");
@@ -1715,28 +1693,25 @@ public class HrandAdminController implements Initializable {
 //MAIN_STAGE
     public void showDeactivateEmployees() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/viewEmployeeDetails.fxml"));
-        Scene scene = new Scene(root, 1700, 1035);
+        Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/viewemployeedetails.css");
         stage.setTitle("View Employee Details");
-        stage.setAlwaysOnTop(true);
         stage.setResizable(false);
         stage.centerOnScreen();
+        stage.setFullScreen(true);
         stage.setWidth(1700);
-        stage.setHeight(1035);
+        stage.setHeight(900);
         stage.setScene(scene);
         stage.show();
     }
 
     public void showEmployeeList() throws IOException {
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/employeeList.fxml"));
-        Scene scene = new Scene(root, 795, 510);
+        Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/employeelist.css");
         stage.setTitle("Employee List");
-        stage.setAlwaysOnTop(true);
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.setWidth(795);
@@ -1748,7 +1723,6 @@ public class HrandAdminController implements Initializable {
     public void addNewUser() throws IOException {
 
         stage = new Stage();
-//<<<<<<< HEAD
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/file/addUser.fxml"));
         Scene scene = new Scene(root, 690, 400);
         scene.getStylesheets().add("/resources/css/adduser.css");
@@ -1763,7 +1737,6 @@ public class HrandAdminController implements Initializable {
 
     }
 
-//<<<<<<< HEAD
     public void viewUsers() throws IOException {
 
         stage = new Stage();
@@ -1781,8 +1754,6 @@ public class HrandAdminController implements Initializable {
 
     }
 
-//=======
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -2614,19 +2585,19 @@ public class HrandAdminController implements Initializable {
         columns.add(colEmpID);
 
         final TableColumn<HrandadminConstructor, Boolean> colName = new TableColumn<>("NAME");
-        colName.setCellValueFactory(new PropertyValueFactory<HrandadminConstructor, Boolean>("name"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colName.setMinWidth(150);
         columns.add(colName);
         final TableColumn<HrandadminConstructor, Boolean> colDesignation = new TableColumn<>("DESIGNATION");
-        colDesignation.setCellValueFactory(new PropertyValueFactory<HrandadminConstructor, Boolean>("designation"));
+        colDesignation.setCellValueFactory(new PropertyValueFactory<>("designation"));
         colDesignation.setMinWidth(157);
         columns.add(colDesignation);
         final TableColumn<HrandadminConstructor, Boolean> colDepartment = new TableColumn<>("DEPARTMENT");
-        colDepartment.setCellValueFactory(new PropertyValueFactory<HrandadminConstructor, Boolean>("department"));
+        colDepartment.setCellValueFactory(new PropertyValueFactory<>("department"));
         colDepartment.setMinWidth(150);
         columns.add(colDepartment);
         final TableColumn<HrandadminConstructor, Boolean> colVerify = new TableColumn<>("VERIFY");
-        colVerify.setCellValueFactory(new PropertyValueFactory<HrandadminConstructor, Boolean>("verify"));
+        colVerify.setCellValueFactory(new PropertyValueFactory<>("verify"));
         colVerify.setCellFactory(new Callback<TableColumn<HrandadminConstructor, Boolean>, TableCell<HrandadminConstructor, Boolean>>() {
             @Override
             public TableCell<HrandadminConstructor, Boolean> call(TableColumn<HrandadminConstructor, Boolean> param) {
@@ -2635,16 +2606,30 @@ public class HrandAdminController implements Initializable {
         });
         columns.add(colVerify);
         final TableColumn<HrandadminConstructor, Boolean> colActive = new TableColumn<>("ACTIVE");
-        colActive.setCellValueFactory(new PropertyValueFactory<HrandadminConstructor, Boolean>("active"));
+        colActive.setCellValueFactory(new PropertyValueFactory<>("active"));
         columns.add(colActive);
         final TableColumn<HrandadminConstructor, Boolean> colLocation = new TableColumn<>("LOCATION");
-        colLocation.setCellValueFactory(new PropertyValueFactory<HrandadminConstructor, Boolean>("location"));
+        colLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
         colLocation.setMinWidth(150);
         columns.add(colLocation);
     }
 
     @FXML
     public void viewEmployeeDetails() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/viewEmployeeDetails.fxml"));
+        Scene scene = new Scene(root, 1452, 800);
+        scene.getStylesheets().add("/resources/css/viewemployeedetails.css");
+        stage.setTitle("View Employee Details");
+        stage.setAlwaysOnTop(false);
+        //stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
+
+    @FXML
+    public void showEmployeeAttendance() throws IOException {
         stage = new Stage();
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/viewEmployeeDetails.fxml"));
         Scene scene = new Scene(root, 1452, 800);
@@ -2688,93 +2673,21 @@ public class HrandAdminController implements Initializable {
         stage.showAndWait();
     }
 
-//=======
-//        try {
-//            //LOADING TABLEVIEW
-//            loadtableMain();
-//        } catch (IOException ex) {
-//           // Logger.getLogger(HrandAdminController.class.getName()).log(Level.SEVERE, null, ex);
-//            System.err.print("METHOD WAS NOT LOADED");
-//                  
-//        }
-}
+    @FXML
+    public void showEmployeeAttendanceSheet() throws IOException {
 
-//
-//class LoadMain {
-//
-//    private String empID;
-//    private String name;
-//    private String designation;
-//    private String department;
-//    private String verify;
-//    private String active;
-//    private String location;
-//
-//    public LoadMain(String empID, String name, String designation, String department, String verify, String active, String location) {
-//        this.empID=empID;
-//        this.name=name;
-//        this.designation=designation;
-//        this.department=department;
-//        this.verify=verify;
-//        this.active=active;
-//        this.location=location;
-//        
-//    }
-//    public String getEmpID() {
-//        return empID;
-//    }
-//
-//    public void setEmpID(String empID) {
-//        this.empID = empID;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getDesignation() {
-//        return designation;
-//    }
-//
-//    public void setDesignation(String designation) {
-//        this.designation = designation;
-//    }
-//
-//    public String getDepartment() {
-//        return department;
-//    }
-//
-//    public void setDepartment(String department) {
-//        this.department = department;
-//    }
-//
-//    public String getVerify() {
-//        return verify;
-//    }
-//
-//    public void setVerify(String verify) {
-//        this.verify = verify;
-//    }
-//
-//    public String getActive() {
-//        return active;
-//    }
-//
-//    public void setActive(String active) {
-//        this.active = active;
-//    }
-//
-//    public String getLocation() {
-//        return location;
-//    }
-//
-//    public void setLocation(String location) {
-//        this.location = location;
-//    }
-//
-//}
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/attendance/employeeAttendanceSheet.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/employeeattendancesheet.css");
+        stage.setTitle("Employee Attendance Sheet");
+        stage.setAlwaysOnTop(false);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/employee-profile.png")));
+        stage.setResizable(false);
+        stage.setWidth(1085);
+        stage.setHeight(400);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.showAndWait();
+    }
+}

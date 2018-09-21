@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.calendarfx.view.MonthSheetView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.organization.OrganisationalCalendarController">
+<AnchorPane id="AnchorPane" prefHeight="859.0" prefWidth="1706.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="octopushr.organization.OrganisationalCalendarController">
     <stylesheets>
-        <URL value="@/resources/css/organisationalcalendar.css"/>
+        <URL value="@/resources/css/organisationalcalendar.css" />
     </stylesheets>
+   <children>
+      <StackPane layoutX="1.0" layoutY="2.0" prefHeight="820.0" prefWidth="1706.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <MonthSheetView />
+                  <HBox prefHeight="206.0" prefWidth="1703.0">
+                     <children>
+                        <TableView fx:id="tblCalendar" prefHeight="131.0" prefWidth="248.0" />
+                        <VBox prefHeight="44.0" prefWidth="258.0" spacing="3.0">
+                           <children>
+                              <Spinner fx:id="spYear" prefHeight="30.0" prefWidth="176.0" />
+                              <ComboBox fx:id="cmbActivateNow" prefHeight="30.0" prefWidth="175.0" promptText="Status" />
+                              <Button mnemonicParsing="false" onAction="#addNewEventDetails" prefHeight="30.0" prefWidth="175.0" text="Add Event">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnActivateNow" mnemonicParsing="false" prefHeight="30.0" prefWidth="175.0" text="Activate Now">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="3.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="3.0" top="3.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
 </AnchorPane>

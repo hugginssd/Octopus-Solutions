@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="397.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="octopushr.documents.EmailAttachmentDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="397.0" prefWidth="600.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.documents.EmailAttachmentDocumentController">
     <stylesheets>
         <URL value="@/resources/css/emailattachmentdocument.css" />
     </stylesheets>

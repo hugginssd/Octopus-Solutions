@@ -1,110 +1,190 @@
 package octopushr.employees;
 
 import java.net.URL;
-//<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import octopushr.Connexion;
+import octopushr.Functions;
 
 public class ViewEmployeeDetailsController implements Initializable {
 
-  
     @FXML
-    ObservableList<ViewEmployeeDetails> data;
-    
+    private Pane paneBack;
+
     @FXML
-    TableView<ViewEmployeeDetails> tableView;
-    
+    private Pane topPane;
+
+    @FXML
+    private Pane paneImage;
+
+    @FXML
+    private Label lblemployeeName;
+
+    @FXML
+    private Button btnEditEmployeeDetails;
+
+    @FXML
+    private Button btnDeactivateEmployee;
+
+    @FXML
+    private Label lblName;
+
+    @FXML
+    private Label lblRelationship;
+
+    @FXML
+    private Label lblHomePhone;
+
+    @FXML
+    private Label lblEmail;
+
+    @FXML
+    private ComboBox<?> cmbDepartment;
+
+    @FXML
+    private ComboBox<?> cmbEmployee;
+
+    @FXML
+    private Label lblEmployeeName;
+
+    @FXML
+    private Label lblEmployeeId;
+
+    @FXML
+    private Label lblBirthDate;
+
+    @FXML
+    private Label lblDesignation;
+
+    @FXML
+    private Label lblDepartment;
+
+    @FXML
+    private Label lblJoiningDate;
+
+    @FXML
+    private Label lblJobStatus;
+
+    @FXML
+    private Label lblWorkShift;
+
+    @FXML
+    private Label lblEmployeeStatus;
+
+    @FXML
+    private Label lblIdentificationDetails;
+
+    @FXML
+    private Label lblVerifiedEmployee;
+
+    @FXML
+    private Label lblBankname;
+
+    @FXML
+    private Label lblAccountholder;
+
+    @FXML
+    private Label lblAccountnumber;
+
+    @FXML
+    private Label lblOtherBankDetails;
+
+    @FXML
+    private Label lblHourlyCostPerHour;
+
+    @FXML
+    private Label lblOvertimeCostPerHour;
+
+    @FXML
+    private Label lblFatherName;
+
+    @FXML
+    private Label lblMotherName;
+
+    @FXML
+    private Label lblGender;
+
+    @FXML
+    private Label lblBloodGroup;
+
+    @FXML
+    private Label lblMaritalStatus;
+
+    @FXML
+    private Label lblReligion;
+
+    @FXML
+    private Label lblLanguageSpeak;
+
+    @FXML
+    private Label lblLanguageWriten;
+
+    @FXML
+    private Label lblEthnicOrigin;
+
+    @FXML
+    private Label lblTwitter;
+
+    @FXML
+    private Label lblSkype;
+
+    @FXML
+    private Label lblFacebook;
+
+    @FXML
+    private Label lblLinkedIn;
+
+    @FXML
+    private Label lblWorkPhone;
+
+    @FXML
+    private Label lblWorkEmail;
+
+    @FXML
+    private Label lblCellPhone;
+
+    @FXML
+    private Label lblPersonalEmail;
+
+    @FXML
+    private Label lblCorrespondenceAddress;
+
+    @FXML
+    private Label lblPermanentAddress;
+
     Connection connection;
     Connexion connexion;
     Statement st;
     PreparedStatement pst;
     ResultSet rs;
+    Functions functions = new Functions();
+    Alert alert;
+    String employeeName = "Michael Ryan";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
-//<<<<<<< HEAD
-    
-//    @FXML
-//    public void loadViewEmployeeDetails() throws SQLException, ClassNotFoundException{
-//    connection = connexion.getConnetion();
-//    
-//    //employee id
-//    TableColumn colEmployeeId = new TableColumn("Employee ID");
-//    colEmployeeId.setCellValueFactory(new PropertyValueFactory("employeeid"));
-//    
-//    //name
-//    TableColumn colName = new TableColumn("Name"); 
-//    colName.setCellValueFactory(new PropertyValueFactory("name"));
-//    
-//    //designation
-//    TableColumn colDesignation = new TableColumn("Designation");
-//    colDesignation.setCellValueFactory(new PropertyValueFactory("designation"));
-//    
-//    //department
-//    TableColumn colDepartment = new TableColumn("Department");
-//    colDepartment.setCellValueFactory(new PropertyValueFactory("department"));
-//    
-//    //verify
-//    TableColumn colVerify = new TableColumn("Verify");
-//    colVerify.setCellValueFactory(new PropertyValueFactory("verify"));
-//    
-//            
-//    //active
-//    TableColumn colActive = new TableColumn("Active");
-//    colActive.setCellValueFactory(new PropertyValueFactory("Active"));
-//            
-//    //location
-//    TableColumn colLocation = new TableColumn("Location");
-//    colLocation.setCellValueFactory(new PropertyValueFactory("location"));
-//    
-//    
-//    pst = connection.prepareStatement("SELECT `employeeid`, CONCAT(`firstname`,' ',`surname`) AS `employee`,`active`,`verified`,"+
-//                                      "`branchname`,`designation`,`departmentname` "+
-//                                      " FROM `tblguards` "+
-//                                      " INNER JOIN `tblcompanybranches` "+
-//                                      " ON `tblguards`.`branchid` = `tblcompanybranches`.`branchid` "+
-//                                      " INNER JOIN `tbldesignation` "+
-//                                      " ON `tblguards`.`designationid` = `tbldesignation`.`designationid` "+
-//                                      " INNER JOIN `tbldepartments` "+
-//                                      " ON `tblguards`.`departmentid` = `tbldepartments`.`departmentid`");
-//    rs = pst.executeQuery();
-//    tableView.getColumns().addAll(colEmployeeId,colName,colDesignation,colDepartment,colVerify,colActive,colLocation);
-//    colName.setSortable(false);
-//    colDesignation.setSortable(false);
-//    colDepartment.setSortable(false);
-//    colVerify.setSortable(false);
-//    colActive.setSortable(false);
-//    colLocation.setSortable(false);
-//    while(rs.next()){
-//        data.addAll(new ViewEmployeeDetails(rs.getString("employeeid"),rs.getString("employee"),
-//                                            rs.getString("designation"),rs.getString("departmentname"),
-//                                            rs.getString("verified"),rs.getString("active"),
-//                                            rs.getString("branchname")));
-//        
-//        tableView.setItems(data);
-//        
-//    }
-//    pst.close();
-//    rs.close();
-//    
-//    
-//    
-//    
-//    
-//    }
-//    
-    
-//=======
 
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
+    @FXML
+    public void closeThisStage(Event event) {
+        functions.closeWindow(event);
+    }
+
+    @FXML
+    public void deactivateEmployee() {
+        functions.alertSuccessful(alert, "Do you want to deactivate " + lblemployeeName.getText().toUpperCase() + "?");
+
+    }
 }

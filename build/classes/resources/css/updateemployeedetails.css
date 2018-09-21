@@ -95,7 +95,6 @@
 }
 .button{
     -fx-background-color:#ffffff;
-    -fx-border-color:#000000;
 }
 
 .text-field:focused {

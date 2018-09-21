@@ -108,8 +108,9 @@ public class LoginController implements Initializable {
           user = rs.getString("email");
           password = rs.getString("password");
           if(checkUser.equals(user)&& checkPass.equals(password)){
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/octopushr/organization/hrandAdmin.fxml"));
-            anchorRoot.getChildren().addAll(pane);
+           // AnchorPane pane = FXMLLoader.load(getClass().getResource("/octopushr/organization/hrandAdmin.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/octopushr/dashboard/mainDashboard.fxml"));
+           anchorRoot.getChildren().addAll(pane);
             anchorRoot.setMinHeight(900);
             anchorRoot.getStylesheets().addAll("/resources/css/hrandadmin.css");
           }

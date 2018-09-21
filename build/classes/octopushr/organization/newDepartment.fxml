@@ -11,20 +11,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="587.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.organization.NewDepartmentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="587.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.organization.NewDepartmentController">
      <stylesheets>
         <URL value="@/resources/css/newdepartment.css" />
     </stylesheets>
     <children>
         <VBox layoutX="3.0" layoutY="4.0" prefHeight="398.0" prefWidth="253.0">
             <children>
-                <Label prefHeight="34.0" prefWidth="258.0" text="Add New Department" textFill="#f8f8f8">
+                <Label prefHeight="34.0" prefWidth="258.0" text="Add New Department" textFill="#00ffc8">
                     <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                     </font>
                 </Label>
                 <HBox prefHeight="33.0" prefWidth="253.0" />
-                <Label prefHeight="30.0" prefWidth="211.0" text="   Fields marked '*' are mandatory" textFill="#d01515">
+                <Label prefHeight="30.0" prefWidth="211.0" text="   Fields marked    are mandatory" textFill="#00ffc8">
                <font>
                   <Font name="Arial Rounded MT Bold" size="12.0" />
                </font>
@@ -61,8 +61,14 @@
                     <children>
 
                         <Label prefHeight="27.0" prefWidth="70.0" />
-                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addNewDepartment" prefHeight="33.0" prefWidth="67.0" text="ADD" />
-                        <Button fx:id="btnCloseForm" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="32.0" prefWidth="105.0" text="CLOSE FORM" />
+                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addNewDepartment" prefHeight="33.0" prefWidth="67.0" text="ADD">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                        <Button fx:id="btnCloseForm" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="32.0" prefWidth="105.0" text="CLOSE FORM">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
 
                     </children>
                 </HBox>
@@ -70,28 +76,38 @@
         </VBox>
         <VBox layoutX="273.0" layoutY="3.0" prefHeight="409.0" prefWidth="287.0" spacing="5.0">
             <children>
+            <Label />
 
-                <Label prefHeight="32.0" prefWidth="200.0" text="Existing Departments" textFill="#f8f7f7">
+                <Label alignment="BOTTOM_LEFT" prefHeight="38.0" prefWidth="171.0" text="Existing Departments" textFill="#00ffc8">
                     <font>
-                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
                     </font>
                 </Label>
                 <ListView fx:id="lstvDepartments" editable="true" onMouseClicked="#shoInReasearchField" prefHeight="329.0" prefWidth="287.0" />
                 <HBox prefHeight="45.0" prefWidth="287.0" spacing="5.0">
                     <children>
-                        <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#updateDepartment" prefHeight="30.0" prefWidth="39.0" text="EDIT" />
-                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteDepartment" prefHeight="30.0" prefWidth="77.0" text="DELETE" />
-                        <Button fx:id="btnAddNew" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="ADD NEW" />
-
-                <Label prefHeight="32.0" prefWidth="200.0" text="Existing Departments">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Label>
+                        <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#updateDepartment" prefHeight="30.0" prefWidth="75.0" text="EDIT">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteDepartment" prefHeight="30.0" prefWidth="77.0" text="DELETE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                        <Button fx:id="btnAddNew" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="ADD NEW">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
 
                     </children>
                 </HBox>
             </children>
         </VBox>
+
+    <Label layoutX="169.0" layoutY="502.0" prefHeight="32.0" prefWidth="125.0" text="Existing Departments">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
     </children>
 </AnchorPane>

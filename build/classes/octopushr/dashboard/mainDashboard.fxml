@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="838.0" prefWidth="1489.0" style="-fx-background-color: #1980C1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.dashboard.MainDashboardController">
+    <stylesheets>
+        <URL value="@/resources/css/maindashboard.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="838.0" prefWidth="1325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar prefHeight="34.0" prefWidth="1341.0" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu fx:id="file" mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#forgotPassword" text="Forgot Password">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/forgot-password.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="newOrg" mnemonicParsing="false" onAction="#addOrganizationStage" text="New Organization">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/new-org.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="newUser" mnemonicParsing="false" onAction="#addNewUser" text="New Users">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/new-user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="viewUsers" mnemonicParsing="false" onAction="#viewUsers" text="View / Edit Users">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/view-users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="trails" mnemonicParsing="false" text="Trails">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/audit-trails.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="saveExit" mnemonicParsing="false" onAction="#closeMain" text="Save &amp; Exit">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/exit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="closeQuit" mnemonicParsing="false" onAction="#closeMain" text="Close">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/close.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                  <Menu fx:id="homeMenu" mnemonicParsing="false" text="Home">
+                     <items>
+                        <MenuItem fx:id="addOrg" mnemonicParsing="false" onAction="#addOrganization" text="Organization" />
+                        <MenuItem fx:id="menuItemQuickRegistration" mnemonicParsing="false" onAction="#quickRegistration" text="Quick Registration">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/icons/qiuck-registration.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="newEmp" mnemonicParsing="false" onAction="#addNewEmployee" text="New Employee" />
+                        <MenuItem fx:id="hrOutlook" mnemonicParsing="false" onAction="#hrOutlook" text="HR Outlook" />
+                        <MenuItem fx:id="empDoc" mnemonicParsing="false" onAction="#employeeDocuments" text="Employee Documents" />
+                        <MenuItem fx:id="comDoc" mnemonicParsing="false" onAction="#companyDocuments" text="Company Documents" />
+                        <MenuItem fx:id="empLeave" mnemonicParsing="false" onAction="#employeeLeaves" text="Employee Leaves" />
+                        <MenuItem fx:id="payroll" mnemonicParsing="false" onAction="#showPayrollStettings" text="Payroll" />
+                        <MenuItem fx:id="training" mnemonicParsing="false" onAction="#training" text="Training" />
+                        <MenuItem fx:id="recruit" mnemonicParsing="false" onAction="#recruitment" text="Recruitment" />
+                        <MenuItem fx:id="scheduleTrav" mnemonicParsing="false" onAction="#scheduleTravel" text="Schedule Travel" />
+                        <MenuItem fx:id="perform" mnemonicParsing="false" onAction="#performance" text="Performance" />
+                        <MenuItem fx:id="complNleg" mnemonicParsing="false" onAction="#showComplianceAndLegal" text="Compliance &amp; Legal" />
+                        <MenuItem fx:id="activateNow" mnemonicParsing="false" onAction="#activateNow" text="Activate Now" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="orgMenu" mnemonicParsing="false" text="Organization">
+                     <items>
+                        <MenuItem fx:id="newOrganization" mnemonicParsing="false" onAction="#newOrganization" text="New Organization" />
+                        <MenuItem fx:id="addViewOrg" mnemonicParsing="false" onAction="#addOrganization" text="Add/Edit/View Organisation Details" />
+                        <MenuItem fx:id="dep" mnemonicParsing="false" onAction="#addNewDepartment" text="Department" />
+                        <MenuItem fx:id="desig" mnemonicParsing="false" onAction="#addNewDesignation" text="Designation" />
+                        <MenuItem fx:id="benNfac" mnemonicParsing="false" onAction="#addBenefitsAndFacilities" text="Benefits and Facilities" />
+                        <MenuItem fx:id="calendar" mnemonicParsing="false" onAction="#organisationalCalendar" text="Calendar" />
+                        <MenuItem fx:id="empCal" mnemonicParsing="false" onAction="#employeeCalendar" text="Employee Calendar" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="empMenu" mnemonicParsing="false" text="Employees">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#employeeProflie" text="Employee Profile" />
+                        <MenuItem fx:id="newEmpl" mnemonicParsing="false" onAction="#addNewEmployee" text="New Employee" />
+                        <MenuItem fx:id="empList" mnemonicParsing="false" onAction="#openEmployeeList" text="Employee List" />
+                        <MenuItem fx:id="uploadEmp" mnemonicParsing="false" onAction="#uploadEmployees" text="Upload Employees" />
+                        <MenuItem fx:id="addLeaveDetails" mnemonicParsing="false" onAction="#addViewLeaveDetails" text="Add/View Leave Details" />
+                        <MenuItem fx:id="depHist" mnemonicParsing="false" onAction="#departmentHistory" text="Department History" />
+                        <MenuItem fx:id="proHist" mnemonicParsing="false" onAction="#promotionsHistory" text="Promotions/History" />
+                        <MenuItem fx:id="doc" mnemonicParsing="false" onAction="#employeeDocuments" text="Documents" />
+                        <MenuItem fx:id="perf" mnemonicParsing="false" onAction="#performance" text="Performance" />
+                        <MenuItem fx:id="disc" mnemonicParsing="false" onAction="#employeeDisciplinary" text="Disciplinary" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="docMenu" mnemonicParsing="false" text="Documents">
+                     <items>
+                        <MenuItem fx:id="docTypes" mnemonicParsing="false" onAction="#showDocumentTypes" text="Document Types" />
+                        <MenuItem fx:id="empDocs" mnemonicParsing="false" onAction="#showEmployeeDocuments" text="Employee Documents" />
+                        <MenuItem fx:id="comDocs" mnemonicParsing="false" onAction="#showCompanyDocuments" text="Company Documents" />
+                        <MenuItem fx:id="exteDocs" mnemonicParsing="false" onAction="#showExternalDocuments" text="External Documents" />
+                        <MenuItem fx:id="refDocs" mnemonicParsing="false" onAction="#showReferenceDocuments" text="Reference Documents" />
+                        <MenuItem fx:id="expDocs" mnemonicParsing="false" onAction="#showExpiredDocuments" text="Expired Documents" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="perfMenu" mnemonicParsing="false" text="Performance">
+                     <items>
+                        <MenuItem fx:id="menuItemperfIntelligence" mnemonicParsing="false" onAction="#performance" text="Performance Intelligence" />
+                        <MenuItem fx:id="addGoal" mnemonicParsing="false" onAction="#addGoal" text="Add Goal" />
+                        <MenuItem fx:id="analyseGoalEffort" mnemonicParsing="false" onAction="#employeeMonthlyGoalAnalysis" text="Analyse Goal &amp; Effort" />
+                        <MenuItem fx:id="orgPerf" mnemonicParsing="false" onAction="#viewPerformance" text="Organization Performance" />
+                        <MenuItem fx:id="orgImprovement" mnemonicParsing="false" onAction="#improvementAction" text="Organization Improvement" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="paySalaryMenu" mnemonicParsing="false" text="Payroll &amp; Salaries">
+                     <items>
+                        <MenuItem fx:id="paySettings" mnemonicParsing="false" onAction="#showPayrollSettings" text="Payroll Settings" />
+                        <MenuItem fx:id="payStruct" mnemonicParsing="false" onAction="#showPayrollStructure" text="Payroll Structure" />
+                        <MenuItem fx:id="paySal" mnemonicParsing="false" onAction="#showPayEmployeeSalary" text="Pay Salaries" />
+                        <MenuItem fx:id="wagesAndBilling" mnemonicParsing="false" onAction="#showEmployeeBilling" text="Wages and Billing" />
+                        <MenuItem fx:id="salHist" mnemonicParsing="false" onAction="#showEmployeeSalaryHistory" text="Salary History" />
+                        <MenuItem fx:id="loanAndAdvances" mnemonicParsing="false" onAction="#showLoanAndAdvances" text="Loan and Advances" />
+                        <MenuItem fx:id="bankSheet" mnemonicParsing="false" onAction="#showBankSheet" text="Bank Sheet" />
+                        <MenuItem fx:id="uploadPayrollAttendance" mnemonicParsing="false" text="Upload Payroll Attendance" />
+                        <MenuItem fx:id="advancePayroll" mnemonicParsing="false" onAction="#showPayrollStettings" text="Advance Payroll" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="attendanceMenu" mnemonicParsing="false" text="Attendance">
+                     <items>
+                        <MenuItem fx:id="empAttTimeSheet" mnemonicParsing="false" onAction="#showEmployeeAttendanceSheet" text="Employees Attendance Time Sheet" />
+                        <MenuItem fx:id="empAttendance" mnemonicParsing="false" onAction="#addNewEmployee" text="Employee Attendance" />
+                        <MenuItem fx:id="orgCalAttendance" mnemonicParsing="false" onAction="#organisationalCalendar" text="Organization Calendar" />
+                        <MenuItem fx:id="empLeaveCal" mnemonicParsing="false" onAction="#employeeCalendar" text="Employee Leave Calendar" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="leaveMenu" mnemonicParsing="false" text="Leave">
+                     <items>
+                        <MenuItem fx:id="punchApplyLeave" mnemonicParsing="false" onAction="#addOrPunchLeave" text="Punchy/Apply Leave" />
+                        <MenuItem fx:id="approveManageLeave" mnemonicParsing="false" onAction="#addOrPunchLeave" text="Approve/Manage Leave" />
+                        <MenuItem fx:id="leaveSettings" mnemonicParsing="false" onAction="#addSkills" text="Leave Settings" />
+                        <MenuItem fx:id="orgCalLeave" mnemonicParsing="false" onAction="#organisationalCalendar" text="Organization Calendar" />
+                        <MenuItem fx:id="empCalLeave" mnemonicParsing="false" onAction="#employeeCalendar" text="Employee Leave Calendar" />
+                        <MenuItem fx:id="empPerfLeave" mnemonicParsing="false" onAction="#performance" text="Employee Performance" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="trainingMenu" mnemonicParsing="false" text="Training">
+                     <items>
+                        <MenuItem fx:id="trainingItem" mnemonicParsing="false" onAction="#training" text="Training" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="recruitMenu" mnemonicParsing="false" text="Recruitment">
+                     <items>
+                        <MenuItem fx:id="recruitItem" mnemonicParsing="false" onAction="#recruitment" text="Recruitment" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="travelMenu" mnemonicParsing="false" text="Travel">
+                     <items>
+                        <MenuItem fx:id="travelschedule" mnemonicParsing="false" onAction="#scheduleTravel" text="Travel Schedule" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="reportsMenu" mnemonicParsing="false" text="Reports">
+                     <items>
+                        <MenuItem fx:id="deductionReport" mnemonicParsing="false" onAction="#showReports" text="Deduction Report" />
+                        <MenuItem fx:id="dueSalaryReport" mnemonicParsing="false" onAction="#showReports" text="Due Salary Report" />
+                        <MenuItem fx:id="netSalaryReport" mnemonicParsing="false" onAction="#showReports" text="Net Salary Report" />
+                        <MenuItem fx:id="employeeReport" mnemonicParsing="false" onAction="#showReports" text="Employee Report" />
+                        <MenuItem fx:id="headCountReport" mnemonicParsing="false" onAction="#showReports" text="Head Count Report" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="compAndLegalMenu" mnemonicParsing="false" text="Compliance &amp; Legal">
+                     <items>
+                        <MenuItem fx:id="compItem" mnemonicParsing="false" onAction="#showComplianceAndLegal" text="Compliance" />
+                        <MenuItem fx:id="legalItem" mnemonicParsing="false" onAction="#showLegal" text="Legal" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="congSettingsMenu" mnemonicParsing="false" text="Config &amp; Settings">
+                     <items>
+                        <MenuItem fx:id="securitySettings" mnemonicParsing="false" onAction="#showSecuritySettings" text="Security Settings" />
+                        <MenuItem fx:id="configEmail" mnemonicParsing="false" onAction="#showConfigureEmail" text="Configure Email" />
+                        <MenuItem fx:id="backupDatabase" mnemonicParsing="false" text="Backup Database" />
+                        <MenuItem fx:id="restoreDatabase" mnemonicParsing="false" text="Restore Database" />
+                        <MenuItem fx:id="emptyDatabase" mnemonicParsing="false" text="Empty Database" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="aboutHRandAdminMenu" mnemonicParsing="false" text="About HR &amp; Admin">
+                     <items>
+                        <MenuItem fx:id="licenseItem" mnemonicParsing="false" text="Licenses" />
+                        <MenuItem fx:id="activateNowItem" mnemonicParsing="false" onAction="#activateNow" text="Activate Now" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="howItWorks" mnemonicParsing="false" text="How it Works?" />
+                        <MenuItem fx:id="aboutHRandAdminItem" mnemonicParsing="false" text="About HR &amp; Admin" />
+                        <MenuItem fx:id="termsAndConditions" mnemonicParsing="false" text="Terms &amp; Conditions" />
+                        <MenuItem fx:id="checkForUpdates" mnemonicParsing="false" text="Check for Updates" />
+                        <MenuItem fx:id="referralsItem" mnemonicParsing="false" text="Referrals" />
+                        <MenuItem fx:id="feedbackContactUs" mnemonicParsing="false" text="Feedback/Contact Us" />
+                        <MenuItem fx:id="faqItem" mnemonicParsing="false" text="FAQ" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <HBox prefHeight="70.0" prefWidth="1325.0">
+                           <children>
+                              <Label fx:id="lblAdminDashboard" prefHeight="63.0" prefWidth="13254.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5; -fx-text-fill: #1980C1;" text="Admin Dashboard  - Yearly Analysis">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <children>
+                              <LineChart fx:id="lineChart1" prefHeight="225.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                              <LineChart fx:id="lineChart2" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                              <LineChart fx:id="lineChart3" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                              <LineChart fx:id="lineChart4" prefHeight="225.0" prefWidth="381.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="110.0" prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <children>
+                              <AreaChart fx:id="areaChart1" prefHeight="225.0" prefWidth="363.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                              <AreaChart fx:id="areaChart2" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                              <AreaChart fx:id="areaChart3" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                              <AreaChart fx:id="areaChart4" prefHeight="225.0" prefWidth="382.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="309.0" prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
+                           <children>
+                              <PieChart fx:id="pieChart1" legendSide="RIGHT" onMouseMoved="#onMouseMoved" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Attendance" />
+                              <PieChart fx:id="pieChart2" legendSide="RIGHT" prefHeight="190.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Leave" />
+                              <PieChart fx:id="pieChart3" legendSide="RIGHT" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Training" />
+                              <PieChart fx:id="pieChart4" legendSide="LEFT" prefHeight="225.0" prefWidth="382.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Schedule &amp; Travel" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </HBox>
+                        <ToolBar fx:id="toolBar" prefHeight="28.0" prefWidth="1484.0">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin></ToolBar>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

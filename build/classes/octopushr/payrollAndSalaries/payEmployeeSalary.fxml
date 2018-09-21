@@ -24,7 +24,6 @@
         <URL value="@/resources/css/payemployeesalary.css" />
     </stylesheets>
     <children>
-//<<<<<<< HEAD
         <Pane fx:id="paneMain" layoutX="6.0" layoutY="7.0" prefHeight="795.0" prefWidth="1350.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
             <children>
                 <Pane fx:id="pane1" layoutX="4.0" layoutY="4.0" prefHeight="128.0" prefWidth="537.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
@@ -310,7 +309,7 @@
                                 <Font name="Cambria Bold Italic" size="14.0" />
                             </font>
                         </Text>
-                        <Pane fx:id="pane5" layoutX="3.0" layoutY="409.0" prefHeight="193.0" prefWidth="797.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                        <Pane fx:id="pane5_" layoutX="3.0" layoutY="409.0" prefHeight="193.0" prefWidth="797.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
 
                             <children>
                                 <TableView layoutX="7.0" layoutY="17.0" prefHeight="173.0" prefWidth="786.0">

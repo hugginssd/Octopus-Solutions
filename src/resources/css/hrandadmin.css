@@ -7,13 +7,11 @@
     -fx-background-radius: 5px;
     -fx-font-size: 9pt; 
 }
-.button{
 
-    -fx-background-color:#ffffff;
-    -fx-border-color:#000000;
-    -fx-background-style:flat;
+.deactivate{
+    -fx-border-color: #ff0000;
+    -fx-border-radius: 5px;
 }
-
 .pane{
     -fx-border-color:#3333ff;
     -fx-border-style:solid;
@@ -32,12 +30,12 @@
     -fx-background-color:#3399ff;  
 }
 
-#lbSearchEmployee{
+/*#lbSearchEmployee{
     -fx-background-color:#3399ff; 
-}
+}*/
 .menu-bar{
     -fx-background-color: linear-gradient(#cccccc,#ffffff,#cccccc);
-    -fx-font-size:11pt;
+    -fx-font-size:10pt;
 }
 .tab-pane{
     -fx-background-color: #ffffff;

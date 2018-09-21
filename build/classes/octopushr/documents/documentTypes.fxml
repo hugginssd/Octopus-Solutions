@@ -76,7 +76,7 @@
                   </Pane>
                   <Pane fx:id="pane2" layoutX="385.0" layoutY="2.0" prefHeight="375.0" prefWidth="383.0" style="-fx-border-color: FFFFFF;">
                      <children>
-                        <Label layoutX="2.0" layoutY="34.0" text="Existing Documents" textFill="#04e1ce">
+                        <Label layoutX="2.0" layoutY="34.0" text="Existing Documents" textFill="#01ffe5">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>

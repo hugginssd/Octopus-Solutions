@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-//<<<<<<< HEAD
 <?import com.calendarfx.view.CalendarHeaderView?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
@@ -22,14 +21,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="1317.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.complianceAndLegal.ComplianceAndLegalController">
+<AnchorPane id="AnchorPane" prefHeight="655.0" prefWidth="1317.0" style="-fx-background-color: #66ADCD; -fx-border-color: FFFFFF; -fx-border-width: 1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.complianceAndLegal.ComplianceAndLegalController">
     <stylesheets>
         <URL value="@/resources/css/complianceandlegal.css" />
     </stylesheets>
     <children>
-        <Pane fx:id="pane1" layoutX="5.0" layoutY="3.0" prefHeight="605.0" prefWidth="739.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+        <Pane fx:id="pane1" layoutX="4.0" layoutY="3.0" prefHeight="604.0" prefWidth="737.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
             <children>
-                <Pane fx:id="pane2" layoutX="3.0" layoutY="36.0" prefHeight="84.0" prefWidth="733.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                <Pane fx:id="pane2" layoutX="2.0" layoutY="36.0" prefHeight="84.0" prefWidth="733.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                     <children>
                         <TextField fx:id="txtComplianceno" layoutX="14.0" layoutY="30.0" prefHeight="30.0" prefWidth="229.0" promptText="Compliance No.">
                      <font>
@@ -48,7 +47,7 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane fx:id="pane3" layoutX="3.0" layoutY="121.0" prefHeight="481.0" prefWidth="733.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                <Pane fx:id="pane3" layoutX="2.0" layoutY="121.0" prefHeight="481.0" prefWidth="733.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                     <children>
                         <TextArea fx:id="txaComplianceDescription" layoutX="14.0" layoutY="14.0" prefHeight="103.0" prefWidth="297.0" promptText="Compliance description">
                      <font>
@@ -82,7 +81,7 @@
                                 <Image url="@../../resources/icons/add.png" />
                             </image>
                         </ImageView>
-                        <Pane fx:id="pane4" layoutX="333.0" layoutY="3.0" prefHeight="253.0" prefWidth="397.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                        <Pane fx:id="pane4" layoutX="333.0" layoutY="3.0" prefHeight="253.0" prefWidth="397.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                             <children>
                                 <TextArea fx:id="txaNoncomplianceactions" layoutX="11.0" layoutY="74.0" prefHeight="158.0" prefWidth="350.0" promptText="Non-compliance actions">
                            <font>
@@ -94,12 +93,12 @@
                            </font></TextField>
                                 <Text fill="#00ffc8" layoutX="256.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non- Compliance">
                                     <font>
-                                        <Font name="Cambria Bold Italic" size="15.0" />
+                                        <Font name="Arial Rounded MT Bold" size="12.0" />
                                     </font>
                                 </Text>
                             </children>
                         </Pane>
-                        <Pane fx:id="pane5" layoutX="334.0" layoutY="257.0" prefHeight="222.0" prefWidth="397.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                        <Pane fx:id="pane5" layoutX="334.0" layoutY="257.0" prefHeight="222.0" prefWidth="397.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                             <children>
                                 <TextField fx:id="txtWebsites" layoutX="14.0" layoutY="24.0" prefHeight="30.0" prefWidth="350.0" promptText="Websites">
                            <font>
@@ -113,31 +112,31 @@
                            <font>
                               <Font name="Arial Unicode MS" size="12.0" />
                            </font></TextField>
-                                <Text fill="#00ffc8" layoutX="82.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afirmative Action Compliance Resources">
+                                <Text fill="#00ffc8" layoutX="124.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afirmative Action Compliance Resources">
                                     <font>
-                                        <Font name="Cambria Bold Italic" size="15.0" />
+                                        <Font name="Arial Rounded MT Bold" size="12.0" />
                                     </font>
                                 </Text>
                             </children>
                         </Pane>
                     </children>
                 </Pane>
-                <Text fill="#00ffc8" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compliance Details">
+                <Text fill="#00ffc8" layoutX="7.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compliance Details">
                     <font>
-                        <Font name="Cambria Bold Italic" size="24.0" />
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
                     </font>
                 </Text>
             </children>
         </Pane>
-        <Pane fx:id="pane6" layoutX="744.0" layoutY="3.0" prefHeight="605.0" prefWidth="558.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+        <Pane fx:id="pane6" layoutX="742.0" layoutY="3.0" prefHeight="604.0" prefWidth="556.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
             <children>
-                <Pane fx:id="pane8" layoutX="3.0" layoutY="3.0" prefHeight="200.0" prefWidth="552.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                <Pane fx:id="pane8" layoutX="2.0" layoutY="2.0" prefHeight="200.0" prefWidth="552.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                     <children>
                         <TabPane layoutX="5.0" layoutY="29.0" prefHeight="131.0" prefWidth="538.0" tabClosingPolicy="UNAVAILABLE">
                             <tabs>
                                 <Tab fx:id="tab1" text="  By Name   ">
                                     <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF;">
                                             <children>
                                                 <TextField fx:id="txtComplianceName" layoutX="18.0" layoutY="39.0" prefHeight="30.0" prefWidth="251.0" promptText="Compliance Name">
                                        <font>
@@ -149,7 +148,7 @@
                                 </Tab>
                                 <Tab fx:id="tab2" text="  By Compliance No.">
                                     <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: FFFFFF;">
                                             <children>
                                                 <TextField fx:id="txtComplianceNo" layoutX="22.0" layoutY="39.0" prefHeight="30.0" prefWidth="248.0" promptText="Compliance no">
                                        <font>
@@ -161,22 +160,22 @@
                                 </Tab>
                             </tabs>
                         </TabPane>
-                        <Text fill="#00ffc8" layoutX="405.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Compliance">
+                        <Text fill="#00ffc8" layoutX="429.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Compliance">
                             <font>
-                                <Font name="Cambria Bold Italic" size="15.0" />
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
                             </font>
                         </Text>
-                        <Button fx:id="btnRemoveFilter" layoutX="431.0" layoutY="164.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="106.0" text="Remove Filter">
+                        <Button fx:id="btnRemoveFilter" layoutX="438.0" layoutY="164.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="106.0" text="Remove Filter">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
                      </font></Button>
                     </children>
                 </Pane>
-                <Pane fx:id="pane7" layoutX="3.0" layoutY="204.0" prefHeight="398.0" prefWidth="552.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                <Pane fx:id="pane7" layoutX="2.0" layoutY="203.0" prefHeight="398.0" prefWidth="552.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5;">
                     <children>
-                        <Text fill="#00ffc8" layoutX="456.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compliance">
+                        <Text fill="#00ffc8" layoutX="472.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compliance">
                             <font>
-                                <Font name="Cambria Bold Italic" size="15.0" />
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
                             </font>
                         </Text>
                         <TableView layoutX="14.0" layoutY="22.0" prefHeight="273.0" prefWidth="529.0">

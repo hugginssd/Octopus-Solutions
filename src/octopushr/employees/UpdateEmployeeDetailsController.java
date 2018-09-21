@@ -451,7 +451,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
 
         try {
             st = connection.createStatement();
-            rs = st.executeQuery("SELECT DISTINCT `id`, `department_id`, `emp_id`, `departmentname` FROM `tbldepartment` ORDER BY `departmentname`");
+            rs = st.executeQuery("SELECT DISTINCT `id`, `department_id`, `emp_id`, `departmentname` FROM `tbldepartments` ORDER BY `departmentname`");
             while (rs.next()) {
                 cmbselectDepartment.getItems().addAll(rs.getString(4));
             }
@@ -613,7 +613,6 @@ public class UpdateEmployeeDetailsController implements Initializable {
             functions.alertWarning(alert, "There are records");
 
             //  pst = connection.prepareStatement("INSERT INTO `tblbankdetails`(`id`, `bank_id`, `bankname`, `bankbranch`, `useredit`, `lastmachinetoedit`, `datecreated`, `lastdateedited`, `timecreated`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])");
-
         }
 
         //UPDATE
@@ -1901,6 +1900,42 @@ public class UpdateEmployeeDetailsController implements Initializable {
     }
 
     //showEmployeeLeaveApplication
+    @FXML
+    public void showEmployeeLeaveApplication() {
+
+    }
+
+    @FXML
+    public void showApproveLeaveApplication() {
+
+    }
+
+    @FXML
+    public void showEmployeeLeaveTypes() {
+
+    }
+
+    @FXML
+    public void showEmployeeCalendar() {
+
+    }
+
+    @FXML
+    public void showEmployeeDepartmentDesignationOverview(){
+    
+    }
+    
+    @FXML
+    public void showOctopusReports(){
+    
+    
+    }
+    
+    @FXML
+    public void showEmployeeGrievances(){
+    
+    
+    }
     @FXML
     public void showLoanAndAdvances() throws IOException {
         stage = new Stage();

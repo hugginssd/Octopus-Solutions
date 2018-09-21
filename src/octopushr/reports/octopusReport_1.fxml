@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="anchorPane" prefHeight="714.0" prefWidth="1002.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.OctopusReportController">
+<AnchorPane id="anchorPane" prefHeight="714.0" prefWidth="1002.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.reports.OctopusReportController">
     <stylesheets>
         <URL value="@/resources/css/octopusreport.css" />
     </stylesheets>

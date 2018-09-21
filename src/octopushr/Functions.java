@@ -363,7 +363,6 @@ public class Functions {
 
         st.close();
         rs.close();
-//<<<<<<< HEAD
         return a - 1;
 
     }
