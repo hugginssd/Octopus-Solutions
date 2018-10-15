@@ -239,4 +239,33 @@ public class EmployeeDocumentsController implements Initializable {
 //        functions.loadEmployeeProfile(lblEmployeeId.getText(),employeename, lblDesignation.getText(), lblDepartment.getText());
 //        lblEmployeeName.setText(employeename);
     }
+
+    @FXML
+    public void loadDocumentTypeID() throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `id`, `documentid`, `documenttype`, `submittedtoemployee` "
+                + " FROM `tblemployeedocuments` "
+                + " WHERE `documenttype` = ?");
+        // ObservableList observableList = FXCollections.observableArrayList();
+        pst.setString(1, cmbSelectDocumentType.getSelectionModel().getSelectedItem().toString());
+        rs = pst.executeQuery();
+        while (rs.next()) {
+            lblDocumentTypeCategory_.setText(rs.getString("documentid"));
+        }
+        
+    }
+      @FXML
+    public void loadEmployeeDocumentTypeID() throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `id`, `documentid`, `documenttype`, `submittedtoemployee` "
+                + " FROM `tblemployeedocuments` "
+                + " WHERE `documenttype` = ?");
+        // ObservableList observableList = FXCollections.observableArrayList();
+        pst.setString(1, cmbAllDocumentTypes.getSelectionModel().getSelectedItem().toString());
+        rs = pst.executeQuery();
+        while (rs.next()) {
+            lblDocumentTypeCategory.setText(rs.getString("documentid"));
+        }
+        
+    }
 }

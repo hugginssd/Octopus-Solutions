@@ -260,8 +260,8 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -344,10 +344,6 @@
                                                         <Insets left="15.0" top="5.0" />
                                                     </GridPane.margin>
                                                 </Button>
-                                                <TextField fx:id="txtbankName" prefHeight="31.0" prefWidth="238.0" promptText="Bankname" GridPane.columnIndex="2" GridPane.rowIndex="8">
-                                       <font>
-                                          <Font name="Arial Unicode MS" size="12.0" />
-                                       </font></TextField>
                                                 <TextField fx:id="txtaccountHolder" prefHeight="32.0" prefWidth="238.0" promptText="Account holder" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                        <font>
                                           <Font name="Arial Unicode MS" size="12.0" />
@@ -430,6 +426,38 @@
                                  <Label prefHeight="16.0" prefWidth="170.0" text="                      *" textFill="#f20202" GridPane.rowIndex="1">
                                     <font>
                                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="lblDesignationIdDetails" text="Label" textFill="#00ffc8" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="lblDepartmentIdDetails" text="Label" textFill="#00ffc8" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <HBox prefHeight="36.0" prefWidth="238.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                    <children>
+                                       <ComboBox fx:id="cmbSelectBankName" prefHeight="28.0" prefWidth="213.0" promptText="Select Bank Name">
+                                          <HBox.margin>
+                                             <Insets top="1.0" />
+                                          </HBox.margin>
+                                       </ComboBox>
+                                       <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@../../resources/icons/add.png" />
+                                          </image>
+                                       </ImageView>
+                                    </children>
+                                    <GridPane.margin>
+                                       <Insets />
+                                    </GridPane.margin>
+                                 </HBox>
+                                 <Label fx:id="lblBankId" text="Label" textFill="#00ffc8" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                                    <font>
+                                       <Font name="Arial Rounded MT Bold" size="12.0" />
                                     </font>
                                  </Label>
                                             </children>

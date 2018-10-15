@@ -123,7 +123,6 @@ import jxl.format.UnderlineStyle;
 import jxl.format.VerticalAlignment;
 import jxl.read.biff.BiffException;
 import jxl.write.WritableCellFormat;
-import jxl.write.Alignment;
 import jxl.write.WritableFont;
 import jxl.write.WritableFont.FontName;
 import jxl.write.WritableSheet;
@@ -141,7 +140,6 @@ import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMultipart;
-import static javax.swing.text.StyleConstants.Alignment;
 import jxl.format.Border;
 import jxl.write.Label;
 //import sun.plugin2.message.transport.Transport;
@@ -153,7 +151,7 @@ import jxl.write.Label;
  */
 //ALL_SYSTEM_FUNCTIONS_ARE_DECLARED_HERE
 public class Functions {
-
+    
     Connexion connexion = new Connexion();
     Connection connection;
     Statement st;
@@ -161,10 +159,12 @@ public class Functions {
     ResultSet rs;
 //<<<<<<< HEAD
     Stage stage;
-
+    
+    Label label;
+    
     @FXML
     public ObservableList dataDepartments = FXCollections.observableArrayList();
-
+    
     ImageView imageView = new ImageView();
     Alert alert;
     String password = "0782326160Ht";
@@ -175,16 +175,16 @@ public class Functions {
     // //=======//=======//=======//=======//=======//=======//=======//=======//=======//=========
     private static final Map<Integer, Colour> colorValueMap;
     private static final Map<String, Colour> colorNameMap;
-
+    
     static {
         colorValueMap = new HashMap<>();
         colorNameMap = new HashMap<>();
-
+        
         for (Colour color : Colour.getAllColours()) {
             RGB rgb = color.getDefaultRGB();
             int valueKey = (rgb.getRed() << 16) + (rgb.getGreen() << 8) + rgb.getBlue();
             String nameKey = color.getDescription();
-
+            
             colorValueMap.put(valueKey, color);
             colorNameMap.put(nameKey, color);
         }
@@ -214,9 +214,9 @@ public class Functions {
         pst.setString(1, empId);
         rs = pst.executeQuery();
         return rs.next() != true;
-
+        
     }
-
+    
     public void showConfirmation(AlertType alertType, String headerText, String title, String update, String message) {
         alert = new Alert(alertType);
         alert.setTitle(title);
@@ -225,43 +225,43 @@ public class Functions {
         alert.setHeaderText(headerText);
         alert.setContentText(message);
         alert.showAndWait();
-
+        
     }
-
+    
     public String getLoggedInUser(String object) {
-
+        
         return object;
     }
-
+    
     @FXML
 //<<<<<<< HEAD
     public void sendMail(String username, String password, String memberName) throws javax.mail.MessagingException {
         Properties props = System.getProperties();
         String host = "mail";
         String from = "mafiguhuggins@gmail.com";
-
+        
         props.put("mail.smtp.host", "888");
         props.put("mail.smtp.connectiontimeout", "3000");
         props.put("mail.smtp.timeout", "3000");
         Session session = Session.getDefaultInstance(props, null);
         MimeMessage mimeMessage = new MimeMessage(session);
-
+        
         mimeMessage.setFrom(new InternetAddress(from));
         mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
         mimeMessage.setSubject("Password Recovery! Confirmation email");
         mimeMessage.setText("Hi " + memberName + " \n\nYour password is " + password + "\nRegards" + from);
         Transport.send(mimeMessage);
-
+        
         alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText(null);
         alert.setContentText("Hi " + memberName + " \n\nYour password is " + password + "\nRegards" + from);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-
+            
         }
-
+        
     }
-
+    
     @FXML
     public void sendAttachment(final String username, final String password, String mailId, String from, String to, String subject, String textBody, String filePath, String fileName) throws SQLException, ClassNotFoundException, UnknownHostException, AddressException, MessagingException {
         //final String username = "mafiguhuggins@gmail.com";
@@ -281,7 +281,7 @@ public class Functions {
         props.put("mail.smtp.starttls.enable", true);
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
-
+        
         Session session;
         session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
@@ -290,20 +290,20 @@ public class Functions {
                 return new PasswordAuthentication(username, password);
             }
         });
-
+        
         try {
-
+            
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(to));
             message.setSubject(subject);
             message.setText(textBody);
-
+            
             MimeBodyPart messageBodyPart = new MimeBodyPart();
-
+            
             Multipart multipart = new MimeMultipart();
-
+            
             messageBodyPart = new MimeBodyPart();
             // String filePath = "C:\\OctopusHR Documents\\APPOINTMENT LETTER\\CARD.pdf";
             //String fileName = "CARD.pdf";
@@ -311,13 +311,13 @@ public class Functions {
             messageBodyPart.setDataHandler(new DataHandler(source));
             messageBodyPart.setFileName(fileName);
             multipart.addBodyPart(messageBodyPart);
-
+            
             message.setContent(multipart);
-
+            
             System.out.println("Sending");
-
+            
             Transport.send(message);
-
+            
             System.out.println("Done");
             connection = connexion.getConnetion();
             pst = connection.prepareStatement("INSERT INTO `tblemaildocs`(`emailid`, `efrom`, `eto`, `subject`, `filename`,"
@@ -336,12 +336,12 @@ public class Functions {
             pst.setString(11, Inet4Address.getLocalHost().getHostName());
             pst.execute();
             alertSuccessful(alert, "Successfully send");
-
+            
         } catch (MessagingException e) {
             alertError(alert, e.toString());
         }
     }
-
+    
     @FXML
     public void closeWindow(Event event) {
         alert = new Alert(AlertType.CONFIRMATION);
@@ -352,42 +352,42 @@ public class Functions {
             ((Node) (event.getSource())).getScene().getWindow().hide();
         }
     }
-
+    
     public int getRowCount(String table) throws SQLException, ClassNotFoundException {
         int a = 0;
         connection = connexion.getConnetion();
         st = connection.createStatement();
         rs = st.executeQuery("SELECT count(*) FROM " + table);
         while (rs.next()) {
-
+            
             a = rs.getRow();
         }
-
+        
         st.close();
         rs.close();
         return a - 1;
-
+        
     }
-
+    
     public int getLastId(String column, String table) throws SQLException, ClassNotFoundException {
         int i = 0;
         connection = connexion.getConnetion();
         st = connection.createStatement();
         rs = st.executeQuery("SELECT MAX(" + column + ") AS id FROM " + table);
-
+        
         while (rs.next()) {
             i = rs.getInt("id");
         }
-
+        
         st.close();
         rs.close();
         return i + 1;
     }
-
+    
     public static String toTitleCase(String input) {
         StringBuilder titleCase = new StringBuilder();
         boolean nextTitleCase = true;
-
+        
         for (char c : input.toCharArray()) {
             if (Character.isSpaceChar(c)) {
                 nextTitleCase = true;
@@ -395,46 +395,46 @@ public class Functions {
                 c = Character.toTitleCase(c);
                 nextTitleCase = false;
             }
-
+            
             titleCase.append(c);
         }
-
+        
         return titleCase.toString();
     }
-
+    
     public void alertSuccessful(Alert alert, String message) {
         alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-
+        
     }
-
+    
     public void alertError(Alert alert, String message) {
         alert = new Alert(AlertType.ERROR);
         alert.setHeaderText(null);
         alert.setTitle("Error");
         alert.setContentText(message);
         alert.showAndWait();
-
+        
     }
-
+    
     public void alertWarning(Alert alert, String message) {
         alert = new Alert(AlertType.WARNING);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-
+        
     }
-
+    
     public void alertInformation(Alert alert, String message) {
         alert = new Alert(AlertType.INFORMATION);
         alert.setHeaderText("Information");
         alert.setContentText(message);
         alert.showAndWait();
-
+        
     }
-
+    
     public ObservableList loadDepartments() throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         st = connection.createStatement();
@@ -444,9 +444,9 @@ public class Functions {
             observableList.add(rs.getString("departmentname"));
         }
         return observableList;
-
+        
     }
-
+    
     public ObservableList loadEmployees(String param1) throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         pst = connection.prepareStatement("SELECT `id`, `employeeid`,CONCAT(`firstname`,' ', `middlename`,' ',`surname`)AS employeename  FROM `tblguards` WHERE `departmentid`=?");
@@ -457,9 +457,9 @@ public class Functions {
             observableList.add(rs.getString("employeename"));
         }
         return observableList;
-
+        
     }
-
+    
     public ObservableList loadDepartmentId(ComboBox departmentName) throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         pst = connection.prepareStatement("SELECT DISTINCT `departmentid`,`departmentname` FROM `tbldepartments` WHERE `departmentname`= ? ORDER BY `departmentname`");
@@ -470,9 +470,9 @@ public class Functions {
             observableList.add(rs.getString("departmentid"));
         }
         return observableList;
-
+        
     }
-
+    
     public ObservableList loadDocumentTypes() throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         st = connection.createStatement();
@@ -483,9 +483,9 @@ public class Functions {
             observableList.add(rs.getString("documenttype"));
         }
         return observableList;
-
+        
     }
-
+    
     public void loadEmployeeProfile(String employeeid, String employeename, String designation, String department) throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         pst = connection.prepareStatement("SELECT `tblguards`.`id`, `employeeid`, CONCAT(`firstname`,' ',`middlename`,' ',`surname`) AS employeename, `gender`, `dateofbirth`, `placeofbirth`, `gradeid`, `idno`, `healthnotes`, `married`, `active`, `verified`, `tbldesignation`.`designation` AS designation, `tbldepartments`.`departmentname` AS department"
@@ -502,12 +502,12 @@ public class Functions {
             employeename = rs.getString("employeename");
             designation = rs.getString("designation");
             department = rs.getString("department");
-            System.out.println("\nProfile loaded\n"+employeename+" "+designation+" "+department);
+            System.out.println("\nProfile loaded\n" + employeename + " " + designation + " " + department);
         }
-
+        
     }
-
-    public void loadEmployeeId(String employeeid,ObservableList name) throws SQLException, ClassNotFoundException {
+    
+    public void loadEmployeeId(String employeeid, ObservableList name) throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         pst = connection.prepareStatement("SELECT `tblguards`.`id`, `employeeid`, CONCAT(`firstname`, ,`middlename`, ,`surname`) AS employeename, `gender`, `dateofbirth`, `placeofbirth`, `gradeid`, `idno`, `healthnotes`, `married`, `active`, `verified`, `tbldesignation`.`designation` AS designation, `tbldepartments`.`departmentname` AS department"
                 + "FROM `tblguards` "
@@ -521,21 +521,23 @@ public class Functions {
         while (rs.next()) {
             employeeid = rs.getString("employeeid");
         }
-
+        
     }
-
     
-//SELECT
-    //    `tblguards`.`id`,`employeeid`, `firstname`,
-    //    `middlename`, `surname`,`gender`,`dateofbirth`,
-    //    `appearancenotes`, `idno`, `married`, `active`, `verified`, `bankid`, `bankbranchid`, `branchid`,           			`tblguards`.`designationid`,`tblguards`.`departmentid` FROM
-    //    `tblguards`
-    //INNER JOIN `tbldesignation`
-    //ON `tbldesignation`.`designationid` = `tblguards`.`designationid`
-    //INNER JOIN `tbldepartments` 
-    //ON `tbldepartments`.`departmentid` = `tblguards`.`departmentid`
-    //WHERE
-    //    `tblguards`.`departmentid` = 'DPT01' 
+    public void loadDocumentTypeId(ComboBox observableList) throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `id`, `documentid`, `documenttype`, `submittedtoemployee` "
+                + " FROM `tblemployeedocuments` "
+                + " WHERE `documenttype` = ?");
+        // ObservableList observableList = FXCollections.observableArrayList();
+        pst.setString(1, observableList.toString());
+        rs = pst.executeQuery();
+        while (rs.next()) {
+            label.setString(rs.getString("documentid"));
+            
+        }
+    }
+    
     public void createExcel() {
         try {
             WritableWorkbook wb = Workbook.createWorkbook(new File("employeelist.xls"));
@@ -549,7 +551,7 @@ public class Functions {
             Logger.getLogger(Functions.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     public void writeExcel(TableView tableView, ViewEmployeeDetails viewEmployeeDetails) {
         try {
             int size = tableView.getItems().size();
@@ -558,17 +560,17 @@ public class Functions {
                     alertInformation(alert, "No employee in the table.\nTo download employee sheet you should have at least on employee in the table.");
                     break;
                 default:
-
+                    
                     Workbook wb = Workbook.getWorkbook(new File("employeelist.xls"));
                     WritableWorkbook copy = Workbook.createWorkbook(new File("employeelist.xls"), wb);
                     WritableSheet copySheet = copy.getSheet(0);
                     jxl.Cell header = copySheet.getCell(0, 0);
-
+                    
                     WritableCellFormat cellFormat = new WritableCellFormat(Functions.ARIAL_ROUNDED_MT_BOLD);
                     WritableCellFormat cellFormat1 = new WritableCellFormat(Functions.ARIAL_ROUNDED_MT_BOLD_HEADER);
                     WritableCellFormat cellFormatContent = new WritableCellFormat(Functions.ARIAL_ROUNDED_MT_BOLD_CONTENT);
                     WritableCellFormat cellFormatContentLine = new WritableCellFormat(Functions.ARIAL_ROUNDED_MT_BOLD_HEADER);
-
+                    
                     cellFormat.setBackground(Colour.SKY_BLUE);
                     cellFormat.setShrinkToFit(true);
                     cellFormat.setAlignment(jxl.format.Alignment.CENTRE);
@@ -584,9 +586,9 @@ public class Functions {
                     Label label5 = new Label(4, 4, "VERIFIED", cellFormat);
                     Label label6 = new Label(5, 4, "ACTIVE", cellFormat);
                     Label label7 = new Label(6, 4, "LOCATION", cellFormat);
-
+                    
                     cellFormat1.setBackground(Colour.SKY_BLUE);
-
+                    
                     Label labelHeaderColor1 = new Label(0, 0, "            ", cellFormat1);
                     Label labelHeaderColor2 = new Label(1, 0, "           ", cellFormat1);
                     Label labelHeaderColor3 = new Label(2, 0, "Employee List", cellFormat1);
@@ -594,7 +596,7 @@ public class Functions {
                     Label labelHeaderColor5 = new Label(4, 0, "               ", cellFormat1);
                     Label labelHeaderColor6 = new Label(5, 0, "               ", cellFormat1);
                     Label labelHeaderColor7 = new Label(6, 0, "              ", cellFormat1);
-
+                    
                     copySheet.addCell(label1);
                     copySheet.addCell(label2);
                     copySheet.addCell(label3);
@@ -616,11 +618,11 @@ public class Functions {
                     ArrayList<String> values = new ArrayList<>();
                     ObservableList<TableColumn> columns = tableView.getColumns();
                     for (Object tableRow : tableView.getItems()) {
-
+                        
                         for (TableColumn column : columns) {
-
+                            
                             values.add(String.valueOf((String) column.getCellObservableValue(tableRow).getValue().toString()));
-
+                            
                             CellView cv = copySheet.getColumnView(0);
                             int highest = 10;
                             cv.setSize((highest + ((highest / 2) + (highest / 4))) * 256);
@@ -632,7 +634,7 @@ public class Functions {
                             copySheet.setColumnView(5, cv);
                             copySheet.setColumnView(6, cv);
                         }
-
+                        
                         Label labelRow1 = new Label(0, row, values.get(0).toUpperCase(), cellFormatContent);
                         Label labelRow2 = new Label(1, row, values.get(1).toUpperCase(), cellFormatContent);
                         Label labelRow3 = new Label(2, row, values.get(2).toUpperCase(), cellFormatContent);
@@ -640,7 +642,7 @@ public class Functions {
                         Label labelRow5 = new Label(4, row, values.get(4).toUpperCase(), cellFormatContent);
                         Label labelRow6 = new Label(5, row, values.get(5).toUpperCase(), cellFormatContent);
                         Label labelRow7 = new Label(6, row, values.get(6).toUpperCase(), cellFormatContent);
-
+                        
                         copySheet.addCell(labelRow1);
                         copySheet.addCell(labelRow2);
                         copySheet.addCell(labelRow3);
@@ -666,14 +668,14 @@ public class Functions {
             alertSuccessful(alert, ex.toString());
             Logger.getLogger(Functions.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
+    
     private void sheetAutoFitColumns(WritableSheet sheet) {
         for (int i = 0; i < sheet.getColumns(); i++) {
             jxl.Cell[] cells = sheet.getColumn(i);
             int longestStrLen = -1;
-
+            
             if (cells.length == 0) {
                 continue;
             }
@@ -698,16 +700,16 @@ public class Functions {
             if (longestStrLen > 500) {
                 longestStrLen = 255;
             }
-
+            
             CellView cv = sheet.getColumnView(i);
             //cv.setSize(longestStrLen * 256 + 100); /* Every character is 256 units wide, so scale it. */
             cv.setAutosize(true);
             sheet.setColumnView(i, cv);
         }
     }
-
+    
     private void setImage(WritableSheet s) throws MalformedURLException, IOException, WriteException {
-
+        
         BufferedImage input = ImageIO.read(new URL("http://example.com/image.jpg"));
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(input, "PNG", baos);
@@ -721,49 +723,49 @@ public class Functions {
             int underline) {
         UnderlineStyle underlineStyle = UnderlineStyle.getStyle(underline);
         FontName font = WritableFont.createFont(name);
-
+        
         if (bold) {
             return new WritableFont(font, size, WritableFont.BOLD, italic, underlineStyle, color);
         } else {
             return new WritableFont(font, size, WritableFont.NO_BOLD, italic, underlineStyle, color);
         }
     }
-
+    
     public static WritableFont create(String name, int size, int color, boolean bold, boolean italic, int underline) {
         return create(name, size, lookupColor(color), bold, italic, underline);
     }
-
+    
     public static WritableFont create(String name, int size, String color, boolean bold, boolean italic,
             int underline) {
         return create(name, size, lookupColor(color.toLowerCase()), bold, italic, underline);
     }
-
+    
     public static WritableFont create(String fontName, int size, int color) {
         return create(fontName, size, color, false, false, NO_UNDERLINE);
     }
-
+    
     public static WritableFont create(String fontName, int size, String color) {
         return create(fontName, size, color, false, false, NO_UNDERLINE);
     }
-
+    
     public static WritableFont create(String fontName, int size) {
         return create(fontName, size, 0x000000);
     }
-
+    
     public static WritableFont create(String fontName) {
         return create(fontName, WritableFont.DEFAULT_POINT_SIZE);
     }
-
+    
     public static Colour lookupColor(int value) {
         return colorValueMap.containsKey(value) ? colorValueMap.get(value) : Colour.AUTOMATIC;
     }
-
+    
     public static Colour lookupColor(String value) {
         return colorNameMap.containsKey(value) ? colorNameMap.get(value) : Colour.AUTOMATIC;
     }
-
+    
     public void loadImageView(ImageView imageView) {
-
+        
         FileChooser fileChooser = new FileChooser();
 
         //Set extension filter
@@ -773,7 +775,7 @@ public class Functions {
 
         //Show open file dialog
         File file = fileChooser.showOpenDialog(null);
-
+        
         try {
             BufferedImage bufferedImage = ImageIO.read(file);
             Image image = SwingFXUtils.toFXImage(bufferedImage, null);
@@ -788,16 +790,16 @@ public class Functions {
         }
         imageView.minHeight(102);
         imageView.minWidth(102);
-
+        
     }
-
+    
     public void saveImage(Stage stage, ImageView imageView, String employeeid) throws SQLException, ClassNotFoundException {
         FileChooser fc = new FileChooser();
         FileChooser.ExtensionFilter ext1 = new FileChooser.ExtensionFilter("JPG files(*.jpg)", "*.JPG");
         FileChooser.ExtensionFilter ext2 = new FileChooser.ExtensionFilter("PNG files(*.png)", "*.PNG");
         fc.getExtensionFilters().addAll(ext1, ext2);
         File file = fc.showOpenDialog(stage);
-
+        
         BufferedImage bf;
         try {
             bf = ImageIO.read(file);
@@ -817,7 +819,7 @@ public class Functions {
             alertError(alert, ex.toString());
         }
     }
-
+    
     public void retrieveImage(ImageView imageView, ResultSet result) throws SQLException, IOException {
         //get blob
         Blob blob = result.getBlob("picture");
@@ -837,18 +839,18 @@ public class Functions {
         Image image1 = SwingFXUtils.toFXImage(image, null);
         imageView.setImage(image1);
         System.out.println("image set\n\n");
-
+        
     }
-
+    
     public void loadFile(String fileName) {
-
+        
         FileChooser chooseFile = new FileChooser();
         chooseFile.setTitle("Select document name");
         chooseFile.showOpenDialog(this.stage);
         fileName = chooseFile.getInitialFileName();
-
+        
     }
-
+    
     public void selectDocument(String applicationFile, String path) {
         String fileName;
         JFileChooser chooser = new JFileChooser();
@@ -856,7 +858,7 @@ public class Functions {
         chooser.setDialogTitle("Select document name");
         chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         chooser.setAcceptAllFileFilterUsed(false);
-
+        
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             fileName = chooser.getSelectedFile().getName();
             applicationFile = fileName;
@@ -867,5 +869,5 @@ public class Functions {
             System.out.println("No Selection ");
         }
     }
-
+    
 }

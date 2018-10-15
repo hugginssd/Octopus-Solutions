@@ -60,6 +60,7 @@ package octopushr.employees;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.net.InetAddress;
 //=======
 import java.net.URL;
@@ -130,13 +131,10 @@ public class UpdateEmployeeDetailsController implements Initializable {
     private TextField txtmiddlename;
 
     @FXML
-    private TextField txtlastname;
+    private TextField txtlastname, txtemployeId;
 
     @FXML
     private DatePicker dtpbirthDate;
-
-    @FXML
-    private TextField txtemployeId;
 
     @FXML
 //<<<<<<< HEAD
@@ -247,7 +245,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
     private ComboBox cmbSelectEmployee, cmbGender, cmbEthnicOrigin, cmbDocumentType;
 
     @FXML
-    private Label lblDepartmentId, lblId, lblSelectId, lblDocumentId, lblPath, lblSkillId, lblEmployeeId, lblFirstname, lblMiddlename, lblDesignationId, lblLastEmployeeId, lblLevel, lblsetEmployeeid, lblbsetDepartment;
+    private Label lblDepartmentId, lblDesignationIdDetails, lblDepartmentIdDetails, lblBankId, lblId, lblSelectId, lblDocumentId, lblPath, lblSkillId, lblEmployeeId, lblFirstname, lblMiddlename, lblDesignationId, lblLastEmployeeId, lblLevel, lblsetEmployeeid, lblbsetDepartment;
 
     @FXML
     private PieChart pieLeave;
@@ -453,10 +451,10 @@ public class UpdateEmployeeDetailsController implements Initializable {
             st = connection.createStatement();
             rs = st.executeQuery("SELECT DISTINCT `id`, `departmentid`, `departmentname` FROM `tbldepartments` ORDER BY `departmentname`");
             while (rs.next()) {
-                cmbselectDepartment.getItems().addAll(rs.getString(4));
+                cmbselectDepartment.getItems().addAll(rs.getString(3));
             }
 
-            rs = st.executeQuery("SELECT DISTINCT `id`, `designation_id`, `designation` FROM `tbldesignation` ORDER BY `designation`");
+            rs = st.executeQuery("SELECT DISTINCT `id`, `designationid`, `designation` FROM `tbldesignation` ORDER BY `designation`");
             try {
                 while (rs.next()) {
                     cmbselectDesignation.getItems().addAll(rs.getString(3));
@@ -548,82 +546,41 @@ public class UpdateEmployeeDetailsController implements Initializable {
     }
 
     @FXML
-    public void updateEmployeeDetails() throws SQLException, UnknownHostException {
-        //tblemployee
-        //UPDATE
-        System.out.println("Method invoked");
-        if (txtfirstname == null || txtfirstname.getText().equals(" ") == true) {
-            System.out.println("  If else");
-//<<<<<<< HEAD
-            alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Null");
-            alert.setHeaderText("Warning");
-            alert.setContentText("Please make sure all input values are valid");
-            alert.showAndWait();
-        }
-
-        pst = connection.prepareStatement("UPDATE `tblemployee` SET `id`=?,`emp_id`=?,`fname`=?,`sname`=?,`lname`=?,`dob`=?,`gender`=?,`useredit`=?,"
-                + "`lastmachinetoedit`=?,`datecreated`=?,`lastdateedited`=?,`timecreated`=? WHERE emp_id=?");
-        System.out.println("LOADED THE PST");
-        pst.setString(1, txtemployeId.getText());
-        pst.setString(2, txtemployeId.getText());
-        pst.setString(3, txtfirstname.getText());
-        pst.setString(4, txtmiddlename.getText());
-        pst.setString(5, txtlastname.getText());
-        //System.out.print(Date.valueOf(dtpbirthDate.getValue().toString().toUpperCase()));
-        pst.setString(6, ((TextField) dtpbirthDate.getEditor()).getText());// dtpbirthDate.getValue().getDayOfMonth() + "-" + dtpbirthDate.getValue().getMonthValue() + "-" + dtpbirthDate.getValue().getYear());
-        pst.setString(7, null);
-        pst.setString(8, "huggins".toUpperCase());
-        pst.setString(9, java.net.InetAddress.getLocalHost().getHostName());
-        pst.setDate(10, java.sql.Date.valueOf(LocalDate.now()));
-        pst.setDate(11, java.sql.Date.valueOf(LocalDate.now()));
-        pst.setTime(12, java.sql.Time.valueOf(LocalTime.now()));
-        pst.setString(13, txtemployeId.getText());
-        System.out.println("LOADED THE PARAMETERS");
-        pst.executeUpdate();
-        System.out.println("EXECUTED THE PST");
-//<<<<<<< HEAD
-        functions.alertSuccessful(alert, "The record " + txtemployeId.getText() + " was updated");
-//=======
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Record");
-        alert.setHeaderText("Update");
-        alert.setContentText("The record " + txtemployeId.getText() + " was updated");
-        alert.showAndWait();
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
-
-        //tblemployementdetails
-        //UPDATE
-        // pst =connection.prepareStatement("");
-        //INSERT if not there
-        //tblworkrates
-        //UPDATE
-        //INSERT IF NOT THERE
-        //tblaccdetails
-        st = null;
-        rs = null;
-        st = connection.createStatement();
-        rs = st.executeQuery("SELECT * FROM `tblaccountdetails` WHERE empid='" + txtemployeId.getText() + "'");
-        System.out.println("QUERY EXECUTED");
-        if (rs.first()) {
-//<<<<<<< HEAD
-            functions.alertWarning(alert, "There is no record");
+    public void updateEmployeeDetails() throws SQLException, UnknownHostException, ClassNotFoundException {
+        if (txtemployeId.getText().isEmpty()) {
+            functions.alertInformation(alert, "Unknown error\n" + "Error performing request\n" + "Please make sure all your input data is valid");
             return;
-        } else {
-            functions.alertWarning(alert, "There are records");
-
-            //  pst = connection.prepareStatement("INSERT INTO `tblbankdetails`(`id`, `bank_id`, `bankname`, `bankbranch`, `useredit`, `lastmachinetoedit`, `datecreated`, `lastdateedited`, `timecreated`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])");
         }
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("UPDATE `tblguards` SET `firstname`=?,`middlename`=?,`surname`=?,"
+                + "`dateofbirth`=?,`appearancenotes`=?,"
+                + "`active`=?,`verified`=?,"
+                + "`bankid`=?,`designationid`=?,`departmentid`=?,"
+                + "`datestarted`=CURDATE(),"
+                + "`lastdatemodified`=CURDATE(),`lastusermodified`=?,"
+                + "`lastmachinemodifedon`=? WHERE `employeeid`=?");
+        pst.setString(1, txtfirstname.getText().toUpperCase());
+        pst.setString(2, txtmiddlename.getText().toUpperCase());
+        pst.setString(3, txtlastname.getText().toUpperCase());
+//        pst.setString(4, (TextField) dtpbirthDate.getValue().getYear() + "-" + dtpbirthDate.getValue().getMonthValue() + "-" + dtpbirthDate.getValue().getDayOfMonth());
+        pst.setString(5, txaidentificationDetails.getText().toUpperCase());
+        pst.setInt(6, cmbActivatedEmployee.getSelectionModel().getSelectedIndex());
+        pst.setInt(7, cmbverifiedEmployee.getSelectionModel().getSelectedIndex());
+        pst.setString(8, lblBankId.getText());
+        pst.setString(9, lblDesignationIdDetails.getText());
+        pst.setString(10, lblDepartmentIdDetails.getText());
+        pst.setString(11, Inet4Address.getLocalHost().getHostName());
+        pst.setString(12, Inet4Address.getLocalHost().getHostName());
+        pst.setString(13, cmbSelectEmployee.getSelectionModel().getSelectedItem().toString());
+        pst.execute();
+        functions.alertInformation(alert, "Successfully saved");
 
-        //UPDATE
-        //INSERT IF NOT THERE
     }
 
     @FXML
     public void exit(Event event) {
         functions.closeWindow(event);
     }
-//<<<<<<< HEAD
 
     @FXML
     public void setText(String department, String employeeid) {
@@ -732,30 +689,9 @@ public class UpdateEmployeeDetailsController implements Initializable {
     }
 
     @FXML
-    public void loadImage() {
-        FileChooser fileChooser = new FileChooser();
+    public void loadImage() throws SQLException, ClassNotFoundException {
 
-        //Set extension filter
-        FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
-        FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
-        FileChooser.ExtensionFilter extFilterJPEG = new FileChooser.ExtensionFilter("JPEG files (*.jpeg)", "*.JPEG");
-        fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG, extFilterJPEG);
-
-        //Show open file dialog
-        File file = fileChooser.showOpenDialog(null);
-
-        try {
-            BufferedImage bufferedImage = ImageIO.read(file);
-            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
-            imgUpdate.getId();
-            imgUpdate.setImage(image);
-            ScrollPane scrollPane = new ScrollPane();
-            scrollPane.setContent(null);
-            scrollPane.setContent(imgUpdate);
-        } catch (IOException ex) {
-            // System.err.println(ex.toString());
-            imgUpdate.setImage(new Image("/resources/icons/no-image.jpg"));
-        }
+        functions.saveImage(stage, imgUpdate, cmbSelectEmployee.getSelectionModel().getSelectedItem().toString());
     }
 
     //load
@@ -1479,7 +1415,6 @@ public class UpdateEmployeeDetailsController implements Initializable {
                 + "`middlename`=?,`surname`=?,`designationid`=?,`departmentid`=?,"
                 + "`lastdatemodified`=?,`lastusermodified`=?,"
                 + "`lastmachinemodifedon`=? WHERE `employeeid`=?");
-        // pst.setString(1, null);
         pst.setString(1, cmbSelectEmployee.getSelectionModel().getSelectedItem().toString().trim());
         pst.setString(2, txtFirstname.getText().toUpperCase().trim());
         pst.setString(3, txtMiddlename.getText().toUpperCase().trim());
@@ -1921,21 +1856,20 @@ public class UpdateEmployeeDetailsController implements Initializable {
     }
 
     @FXML
-    public void showEmployeeDepartmentDesignationOverview(){
-    
+    public void showEmployeeDepartmentDesignationOverview() {
+
     }
-    
+
     @FXML
-    public void showOctopusReports(){
-    
-    
+    public void showOctopusReports() {
+
     }
-    
+
     @FXML
-    public void showEmployeeGrievances(){
-    
-    
+    public void showEmployeeGrievances() {
+
     }
+
     @FXML
     public void showLoanAndAdvances() throws IOException {
         stage = new Stage();
