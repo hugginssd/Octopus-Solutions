@@ -73,6 +73,22 @@ public class SubmitIssuedDocuments {
     private Date expiryDate;
     private String duplicate;
 
+    //INTERNAL DOCUMENTS
+    private int _id;
+    private String employeeno;
+    private String name;
+    private String title;
+    private String documenttype;
+    private Boolean submitted;
+    private String authority;
+
+    //SUBMITTED EMPLOYEE DOCUMENTS
+    private String _documentName;
+    private String _documentType;
+    private Date _submittedDate;
+    private Boolean _duplicate;
+    private Boolean emailed;
+
     public SubmitIssuedDocuments(int id, String documentName, String documentType, Date submittedDate, Date expiryDate, String duplicate) {
         this.id = id;
         this.documentName = documentName;
@@ -80,6 +96,121 @@ public class SubmitIssuedDocuments {
         this.submittedDate = submittedDate;
         this.expiryDate = expiryDate;
         this.duplicate = duplicate;
+    }
+
+    public SubmitIssuedDocuments(int _id, String employeeno, String name, String title, String documenttype, Boolean submitted, String authority) {
+        this._id = _id;
+        this.employeeno = employeeno;
+        this.name = name;
+        this.title = title;
+        this.documenttype = documenttype;
+        this.submitted = submitted;
+        this.authority = authority;
+    }
+
+    public SubmitIssuedDocuments(String _documentName, String _documentType, Date _submittedDate, Boolean _duplicate, Boolean emailed) {
+        this._documentName = _documentName;
+        this._documentType = _documentType;
+        this._submittedDate = _submittedDate;
+        this._duplicate = _duplicate;
+        this.emailed = emailed;
+    }
+
+    public String get_DocumentName() {
+        return _documentName;
+    }
+
+    public void set_DocumentName(String documentName) {
+        this._documentName = documentName;
+    }
+
+    public String get_DocumentType() {
+        return _documentType;
+    }
+
+    public void set_DocumentType(String documentType) {
+        this._documentType = documentType;
+    }
+
+    public Date get_SubmittedDate() {
+        return _submittedDate;
+    }
+
+    public void set_SubmittedDate(Date submittedDate) {
+        this._submittedDate = submittedDate;
+    }
+
+    public Boolean get_Duplicate() {
+        return _duplicate;
+    }
+
+    public void set_Duplicate(Boolean duplicate) {
+        this._duplicate = duplicate;
+    }
+
+    public Boolean getEmailed() {
+        return emailed;
+    }
+
+    public void setEmailed(Boolean emailed) {
+        this.emailed = emailed;
+    }
+
+    //INTERNAL DOCUMENTS
+    public int get_Id() {
+        return _id;
+    }
+
+    public void set_Id(int _id) {
+        this._id = _id;
+    }
+
+    public String getEmployeeno() {
+        return employeeno;
+    }
+
+    public void setEmployeeno(String employeeno) {
+        this.employeeno = employeeno;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDocumenttype() {
+        return documenttype;
+    }
+
+    public void setDocumenttype(String documenttype) {
+        this.documenttype = documenttype;
+    }
+
+    public Boolean getSubmitted() {
+        return submitted;
+    }
+
+    public void setSubmitted(Boolean submitted) {
+        this.submitted = submitted;
+    }
+
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
 
     public int getId() {

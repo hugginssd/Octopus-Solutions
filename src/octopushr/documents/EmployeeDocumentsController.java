@@ -252,9 +252,10 @@ public class EmployeeDocumentsController implements Initializable {
         while (rs.next()) {
             lblDocumentTypeCategory_.setText(rs.getString("documentid"));
         }
-        
+
     }
-      @FXML
+
+    @FXML
     public void loadEmployeeDocumentTypeID() throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         pst = connection.prepareStatement("SELECT `id`, `documentid`, `documenttype`, `submittedtoemployee` "
@@ -266,6 +267,18 @@ public class EmployeeDocumentsController implements Initializable {
         while (rs.next()) {
             lblDocumentTypeCategory.setText(rs.getString("documentid"));
         }
+
+    }
+
+    @FXML
+    public void loadEmployeeSubmittedDocuments() throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("");
+        
+        
+        
+        
+        
         
     }
 }

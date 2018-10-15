@@ -213,7 +213,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <TableView fx:id="tableIssuedDocuments" layoutY="1.0" prefHeight="286.0" prefWidth="643.0">
+                                        <TableView fx:id="tableIssuedDocuments" prefHeight="286.0" prefWidth="643.0">
                                             <columns>
                                                 <TableColumn prefWidth="188.0" text="Document Name" />
                                                 <TableColumn prefWidth="147.0" text="Document Type" />
@@ -230,13 +230,16 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                                     <children>
-                                        <Label layoutY="6.0" prefHeight="17.0" prefWidth="63.0" text="Expiry Date" />
-                                        <Separator layoutX="60.0" layoutY="19.0" prefHeight="3.0" prefWidth="583.0" />
+                                        <Label layoutX="1.0" layoutY="6.0" prefHeight="17.0" prefWidth="63.0" text="Expiry Date">
+                                 <font>
+                                    <Font name="Arial Unicode MS" size="12.0" />
+                                 </font></Label>
+                                        <Separator layoutX="64.0" layoutY="15.0" prefHeight="3.0" prefWidth="578.0" />
                                         <DatePicker fx:id="dtpDateTo" layoutX="368.0" layoutY="26.0" promptText="Date to" />
                                         <DatePicker fx:id="dtpDateFrom" layoutX="178.0" layoutY="26.0" promptText="Date from" />
                                         <Button fx:id="btnSearch" layoutX="552.0" layoutY="23.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="91.0" text="Search">
                                             <font>
-                                                <Font size="13.0" />
+                                                <Font name="Arial Unicode MS" size="13.0" />
                                             </font>
                                         </Button>
                                         <TableView fx:id="tblInternalDocuments" layoutX="14.0" layoutY="54.0" prefHeight="200.0" prefWidth="628.0">

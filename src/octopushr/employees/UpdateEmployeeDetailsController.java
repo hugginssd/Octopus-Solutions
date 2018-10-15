@@ -562,7 +562,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
         pst.setString(1, txtfirstname.getText().toUpperCase());
         pst.setString(2, txtmiddlename.getText().toUpperCase());
         pst.setString(3, txtlastname.getText().toUpperCase());
-//        pst.setString(4, (TextField) dtpbirthDate.getValue().getYear() + "-" + dtpbirthDate.getValue().getMonthValue() + "-" + dtpbirthDate.getValue().getDayOfMonth());
+       // pst.setString(4, (TextField)dtpbirthDate.getValue().getYear() + "-" + dtpbirthDate.getValue().getMonthValue() + "-" + dtpbirthDate.getValue().getDayOfMonth());
         pst.setString(5, txaidentificationDetails.getText().toUpperCase());
         pst.setInt(6, cmbActivatedEmployee.getSelectionModel().getSelectedIndex());
         pst.setInt(7, cmbverifiedEmployee.getSelectionModel().getSelectedIndex());
