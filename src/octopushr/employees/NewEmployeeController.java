@@ -58,6 +58,7 @@ package octopushr.employees;
 
 import java.io.IOException;
 import static java.lang.System.out;
+import java.net.Inet4Address;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.sql.Connection;
@@ -115,10 +116,9 @@ public class NewEmployeeController implements Initializable {
     @FXML
     private TextField txtlastemployeeID;
 
-   // @FXML
+    // @FXML
     //private TextField txtfirstName;
 ////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
-
     @FXML
     private TextField txtmiddleName;
 
@@ -134,7 +134,7 @@ public class NewEmployeeController implements Initializable {
 
     @FXML
     ComboBox cmbselectDepartment;
-    
+
     @FXML
     ComboBox cmbGender;
 //=======
@@ -162,10 +162,10 @@ public class NewEmployeeController implements Initializable {
 
     @FXML
     Label lblDesignationId;
-    
+
     @FXML
     Label lblDepartmentId;
-    
+
     @FXML
     Stage stage;
 
@@ -179,7 +179,6 @@ public class NewEmployeeController implements Initializable {
 //    Stage stage;
 //
 //    Connexion connexion = new Connexion();
-
 //>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
     Statement st;
     PreparedStatement pst;
@@ -194,75 +193,71 @@ public class NewEmployeeController implements Initializable {
 //<<<<<<< HEAD
             lblDesignationId.setVisible(false);
             lblDepartmentId.setVisible(false);
-           //connection = connexion.getConnetion();
-           txtlastEmployeeID.setEditable(false);
-           txtemployeeID.setEditable(false);
-           txtlastEmployeeID.setText(""+functions.getRowCount("tblguards")+1);
-           cmbGender.getItems().addAll("MALE","FEMALE");
-           txtemployeeID.setText("EMP00"+functions.getLastId("id", "tblguards"));
+            //connection = connexion.getConnetion();
+            txtlastEmployeeID.setEditable(false);
+            txtemployeeID.setEditable(false);
+            txtlastEmployeeID.setText("" + functions.getRowCount("tblguards") + 1);
+            cmbGender.getItems().addAll("MALE", "FEMALE");
+            txtemployeeID.setText("EMP00" + functions.getLastId("id", "tblguards"));
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(NewEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
         }
-                
+
         try {
             //Load comboboxes
-          loadDesignationAndDepartment();
+            loadDesignationAndDepartment();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(NewEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
+
     @FXML
     public void loadDesignationAndDepartment() throws ClassNotFoundException, SQLException {
 
-        
-            connection = connexion.getConnetion();
-            st = connection.createStatement();
-            rs = st.executeQuery("SELECT`id`, `departmentid`,`departmentname` FROM `tbldepartments` ORDER BY `id`");
-            while (rs.next()) {
-                cmbselectDepartment.getItems().addAll(rs.getString("departmentname"));
-            }
-            st.close();
-            rs.close();
-            
-        
-            
-            st = connection.createStatement();
-            rs = st.executeQuery("SELECT `id`, `designationid`, `designation` FROM `tbldesignation` ORDER BY `id`");
-            while (rs.next()) {
-                    cmbselectDesignation.getItems().addAll(rs.getString("designation"));
-                }
-            st.close();
-            rs.close();
+        connection = connexion.getConnetion();
+        st = connection.createStatement();
+        rs = st.executeQuery("SELECT`id`, `departmentid`,`departmentname` FROM `tbldepartments` ORDER BY `id`");
+        while (rs.next()) {
+            cmbselectDepartment.getItems().addAll(rs.getString("departmentname"));
+        }
+        st.close();
+        rs.close();
+
+        st = connection.createStatement();
+        rs = st.executeQuery("SELECT `id`, `designationid`, `designation` FROM `tbldesignation` ORDER BY `id`");
+        while (rs.next()) {
+            cmbselectDesignation.getItems().addAll(rs.getString("designation"));
+        }
+        st.close();
+        rs.close();
     }
 
     @FXML
     public void saveQuickDetails() throws SQLException, UnknownHostException, InterruptedException, ClassNotFoundException {
 
         //validateTextboxes();
-        if( txtfirstName.getText().isEmpty()){
+        if (txtfirstName.getText().isEmpty()) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("First name cannot be empty");
             alert.showAndWait();
             return;
         }
-        if( txtmiddleName.getText().isEmpty()){
+        if (txtmiddleName.getText().isEmpty()) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Middle name cannot be empty");
             alert.showAndWait();
             return;
         }
-        if( txtlastName.getText().isEmpty()){
+        if (txtlastName.getText().isEmpty()) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Last name cannot be empty");
             alert.showAndWait();
             return;
         }
-        if(cmbGender.equals("---Select Gender---")){
+        if (cmbGender.equals("---Select Gender---")) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Last name cannot be empty");
@@ -271,129 +266,53 @@ public class NewEmployeeController implements Initializable {
         }
         //insert workexperience
         insertInWorkExperience();
-        
-        try{
+
         connection = connexion.getConnetion();
-        pst = connection.prepareStatement("INSERT INTO `tblguards`(`id`, `employeeid`, `firstname`, `middlename`, `surname`, `gender`,"+
-                                          " `dateofbirth`, `idno`,`designationid`,`departmentid`, `datecreated`, `usercreated`, `machinecreatedon`,"+
-                                          " `lastdatemodified`, `lastusermodified`, `lastmachinemodifedon`)"+
-                                          " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        pst = connection.prepareStatement("INSERT INTO `tblguards`(`id`, `employeeid`, `firstname`, `middlename`, `surname`, `gender`,"
+                + " `dateofbirth`, `idno`,`designationid`,`departmentid`, `datecreated`, `usercreated`, `machinecreatedon`,"
+                + " `lastdatemodified`, `lastusermodified`, `lastmachinemodifedon`)"
+                + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         pst.setString(1, null);
         pst.setString(2, txtemployeeID.getText().toUpperCase());
         pst.setString(3, txtfirstName.getText().toUpperCase());
         pst.setString(4, txtmiddleName.getText().toUpperCase());
         pst.setString(5, txtlastName.getText().toUpperCase());
         pst.setString(6, cmbGender.getSelectionModel().getSelectedItem().toString().toUpperCase());
-        pst.setString(7, dtpbirthDate.getValue().getYear()+"-"+dtpbirthDate.getValue().getMonthValue()+"-"+dtpbirthDate.getValue().getDayOfMonth());
+        pst.setString(7, dtpbirthDate.getValue().getYear() + "-" + dtpbirthDate.getValue().getMonthValue() + "-" + dtpbirthDate.getValue().getDayOfMonth());
         pst.setString(8, txtidNumber.getText().toUpperCase());
         pst.setString(9, lblDesignationId.getText().trim().toUpperCase());
         pst.setString(10, lblDepartmentId.getText().trim().toUpperCase());
         pst.setDate(11, java.sql.Date.valueOf(LocalDate.now()));
         pst.setString(12, java.net.InetAddress.getLocalHost().getHostName().toUpperCase()); //usercreated
-        pst.setString(13,  java.net.InetAddress.getLocalHost().getHostName().toUpperCase()); //machinecreatedon
+        pst.setString(13, java.net.InetAddress.getLocalHost().getHostName().toUpperCase()); //machinecreatedon
         pst.setDate(14, java.sql.Date.valueOf(LocalDate.now()));
         pst.setString(15, java.net.InetAddress.getLocalHost().getHostName().toUpperCase()); //lastusermodified
         pst.setString(16, java.net.InetAddress.getLocalHost().getHostName().toUpperCase()); //lastmachinemodifiedon
-//=======
+        pst.execute();
+        functions.alertSuccessful(alert, "Successfully saved");
 
-            connection = connexion.getConnetion();
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(NewEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        try {
-            int numRows;
-            st = connection.createStatement();
-            rs = st.executeQuery("SELECT COUNT(id) AS number FROM tblemployee");
-            while (rs.next()) {
-                numRows = rs.getRow();
-                System.err.println("Number of rows: " + numRows);
-            }
-            // System.err.println("Number of rows: " + numRows);
-        } catch (SQLException ex) {
-            Logger.getLogger(NewEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
         //Load comboboxes
         loadDesignationAndDepartment();
+        txtlastEmployeeID.setText("" + functions.getLastId("id", "tblguards"));
+        txtemployeeID.setText("EMP00" + functions.getLastId("id", "tblguards"));
+        resetControls();
     }
 
-//    @FXML
-//    public void loadDesignationAndDepartment() {
-//
-//        try {
-//            st = connection.createStatement();
-//            rs = st.executeQuery("SELECT DISTINCT `id`, `department_id`, `emp_id`, `departmentname` FROM `tbldepartment` ORDER BY `departmentname`");
-//            while (rs.next()) {
-//                cmbselectDepartment.getItems().addAll(rs.getString(4));
-//            }
-//
-//            rs = st.executeQuery("SELECT DISTINCT `id`, `designation_id`, `designation` FROM `tbldesignation` ORDER BY `designation`");
-//            try {
-//                while (rs.next()) {
-//                    cmbselectDesignation.getItems().addAll(rs.getString(3));
-//                }
-//                // 
-//            } catch (SQLException ex) {
-//                Logger.getLogger(NewEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(NewEmployeeController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//    }
-
-//    @FXML
-//    public void saveQuickDetails() throws SQLException, UnknownHostException, InterruptedException {
-//
-//        validateTextboxes();
-//
-//        pst = connection.prepareStatement("INSERT INTO `tblemployee`(`id`, `emp_id`, `fname`, `sname`, `lname`, "
-//                + "`dob`, `gender`, `useredit`, `lastmachinetoedit`, `datecreated`,"
-//                + " `lastdateedited`, `timecreated`) VALUES "
-//                + "(?,?,?,?,?,?,?,?,?,?,?,?)");
-//        pst.setString(1, null);
-//        pst.setString(2, txtemployeeID.getText());
-//        pst.setString(3, txtfirstName.getText());
-//        pst.setString(4, txtmiddleName.getText());
-//        pst.setString(5, txtlastName.getText());
-//        pst.setString(6, ((TextField) dtpbirthDate.getEditor()).getText());
-//        pst.setString(7, null);
-//        pst.setString(8, "huggins".toUpperCase());
-//        pst.setString(9, java.net.InetAddress.getLocalHost().getHostName().toUpperCase());
-//        pst.setDate(10, java.sql.Date.valueOf(LocalDate.now()));
-//        pst.setDate(11, java.sql.Date.valueOf(LocalDate.now()));
-//        pst.setTime(12, java.sql.Time.valueOf(LocalTime.now()));
-////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
-//        //JOptionPane.showConfirmDialog(Message.JAVA_ENC_VERSION, "", "", null);
-//        System.out.println("Now executing...");
-//        pst.execute();
-//        System.out.println("Done executing...");
-//        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//        alert.setTitle("Confirmation");
-////<<<<<<< HEAD
-//        alert.setHeaderText(null);
-//        alert.setContentText("Record was successfully saved!");
-//        alert.showAndWait();
-//        Optional<ButtonType> result = alert.showAndWait();
-//        if(result.get()==ButtonType.OK){
-//           txtlastEmployeeID.clear();
-//           txtemployeeID.clear();
-//           txtlastEmployeeID.setText(""+functions.getRowCount("tblguards")+1);
-//           txtemployeeID.setText("EMP00"+functions.getLastId("id", "tblguards"));
-//           txtfirstName.clear();
-//           txtmiddleName.clear();
-//           txtlastName.clear();
-//           dtpbirthDate.setValue(null);
-//           txtidNumber.clear();
-//           txttotalExperience.clear();
-//           txtexperienceWithUs.clear();
-//           txtmonthlySalary.clear();
-//           cmbselectDesignation.selectionModelProperty().setValue("---Select Designation---");
-//           cmbselectDepartment.selectionModelProperty().setValue("---Select Department---");
-//           cmbGender.selectionModelProperty().setValue("---Select Gender---");
-//        }
-//    }
-//    
+    
+    @FXML
+    public void resetControls(){
+        txtfirstName.clear();
+        txtmiddleName.clear();
+        txtlastName.clear();
+        dtpbirthDate.setValue(null);
+        txtidNumber.clear();
+        txttotalExperience.clear();
+        txtexperienceWithUs.clear();
+        txtmonthlySalary.clear();
+        cmbselectDesignation.selectionModelProperty().setValue("---Select Designation---");
+        cmbselectDepartment.selectionModelProperty().setValue("---Select Department---");
+        cmbGender.selectionModelProperty().setValue("---Select Gender---");
+    }
     @FXML
     public void validateTextboxes() {
         if (txtemployeeID.getText().isEmpty()) {
@@ -403,26 +322,13 @@ public class NewEmployeeController implements Initializable {
             alerttextboxes.setContentText("Please fill in the input details");
             alerttextboxes.showAndWait();
             System.out.println("EMPLOYEE ID EMPTY");
-          //  return;
+            //  return;
 //=======
-        alert.setContentText("Record was successfully saved!");
-        alert.showAndWait();
+            alert.setContentText("Record was successfully saved!");
+            alert.showAndWait();
 
+        }
     }
-    }
-
-//    @FXML
-//    public void validateTextboxes() {
-//        if (txtemployeeID.getText() == null) {
-//            Alert alerttextboxes = new Alert(Alert.AlertType.WARNING);
-//            alerttextboxes.setTitle("Null");
-//            alerttextboxes.setContentText("Please fill in the input details");
-//            alerttextboxes.showAndWait();
-//            System.out.println("EMPLOYEE ID EMPTY");
-//            txtemployeeID.getCursor();
-////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
-//        }
-//    }
 
     @FXML
     public void validateIdNumber() {
@@ -481,53 +387,59 @@ public class NewEmployeeController implements Initializable {
 
     }
 //<<<<<<< HEAD
-    
-    @FXML
-    public void loadSelectedDesignationId() throws SQLException, ClassNotFoundException{
-    
-    connection = connexion.getConnetion();
-    pst = connection.prepareStatement("SELECT `designationid` FROM `tbldesignation` WHERE `designation`=?");
-    pst.setString(1, cmbselectDesignation.getSelectionModel().getSelectedItem().toString());
-    rs = pst.executeQuery();
-    while(rs.next()){
-    lblDesignationId.setText(rs.getString("designationid"));
-    }
-    pst.close();
-    rs.close();
-    }
-    
-    @FXML
-    public void loadSelectedDepartmentId() throws SQLException, ClassNotFoundException{
-    connection = connexion.getConnetion();
-    pst = connection.prepareStatement("SELECT `departmentid` FROM `tbldepartments` WHERE `departmentname`=?");
-    pst.setString(1, cmbselectDepartment.getSelectionModel().getSelectedItem().toString());
-    rs = pst.executeQuery();
-    while(rs.next()){
-    lblDepartmentId.setText(rs.getString("departmentid"));
-    }
-    pst.close();
-    rs.close();
-    }
-    
-    
 
-public void insertInWorkExperience() throws SQLException, ClassNotFoundException{
-    //INSERT INTO `tblworkexperience`(`id`, `employeeid`, `nameofemployer`, `addressofemployer`, `telephonenumber`, `datefrom`,"
-    //" `dateto`, `title`, `totalexperience`, `experiencewithus`, `monthlysalary`, `monthlyincome`, `reasonforleaving`, `notes`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13],[value-14])
-    connection = connexion.getConnetion();
-    pst = connection.prepareStatement("INSERT INTO `tblworkexperience`(`id`, `employeeid`, `datefrom`," +
-                                      " `title`,`totalexperience`, `experiencewithus`, `monthlysalary`)"+
-                                      " VALUES (?,?,?,?,?,?,?)");
-    pst.setString(1, null);
-    pst.setString(2, txtemployeeID.getText().toUpperCase().trim());
-    pst.setDate(3,java.sql.Date.valueOf(LocalDate.now()));
-    pst.setString(4, cmbselectDesignation.getSelectionModel().getSelectedItem().toString());
-    pst.setDouble(5, Double.parseDouble(txttotalExperience.getText().trim()));
-    pst.setDouble(6, Double.parseDouble(txtexperienceWithUs.getText().trim()));
-    pst.setDouble(7, Double.parseDouble(txtmonthlySalary.getText().trim()));
-    pst.execute();
+    @FXML
+    public void loadSelectedDesignationId() throws SQLException, ClassNotFoundException {
+
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `designationid` FROM `tbldesignation` WHERE `designation`=?");
+        pst.setString(1, cmbselectDesignation.getSelectionModel().getSelectedItem().toString());
+        rs = pst.executeQuery();
+        while (rs.next()) {
+            lblDesignationId.setText(rs.getString("designationid"));
+        }
+        pst.close();
+        rs.close();
+    }
+
+    @FXML
+    public void loadSelectedDepartmentId() throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `departmentid` FROM `tbldepartments` WHERE `departmentname`=?");
+        pst.setString(1, cmbselectDepartment.getSelectionModel().getSelectedItem().toString());
+        rs = pst.executeQuery();
+        while (rs.next()) {
+            lblDepartmentId.setText(rs.getString("departmentid"));
+        }
+        pst.close();
+        rs.close();
+    }
+
+    public void insertInWorkExperience() throws SQLException, ClassNotFoundException, UnknownHostException {
+        //INSERT INTO `tblworkexperience`(`id`, `employeeid`, `nameofemployer`, `addressofemployer`, `telephonenumber`, `datefrom`,"
+        //" `dateto`, `title`, `totalexperience`, `experiencewithus`, `monthlysalary`, `monthlyincome`, `reasonforleaving`, `notes`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13],[value-14])
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("INSERT INTO `tblworkexperience`(`employeeid`, `datefrom`,"
+                + " `title`,`totalexperience`, `experiencewithus`, `monthlysalary`,"
+                + "`datecreated`, `usercreated`, `machinecreatedon`, `lastdatemodified`,"
+                + " `lastmachinemodifiedon`, `deleted`)"
+                + " VALUES (?,?,?,?,?,?,CURDATE(),?,?,CURDATE(),?,?)");
+        // pst.setString(1, null);
+        pst.setString(1, txtemployeeID.getText().toUpperCase().trim());
+        pst.setDate(2, java.sql.Date.valueOf(LocalDate.now()));
+        pst.setString(3, cmbselectDesignation.getSelectionModel().getSelectedItem().toString());
+        pst.setDouble(4, Double.parseDouble(txttotalExperience.getText().trim()));
+        pst.setDouble(5, Double.parseDouble(txtexperienceWithUs.getText().trim()));
+        pst.setDouble(6, Double.parseDouble(txtmonthlySalary.getText().trim()));
+        pst.setString(7, Inet4Address.getLocalHost().getHostName());
+        pst.setString(8, Inet4Address.getLocalHost().getHostName());
+        pst.setString(9, Inet4Address.getLocalHost().getHostName());
+        pst.setBoolean(10, false);
+        pst.execute();
+        functions.alertSuccessful(alert, "Work experience successfully created");
         System.out.println("Inserted experience");
     }
+//`datecreated`, `usercreated`, `machinecreatedon`, `lastdatemodified`, `lastmachinemodifiedon`, `deleted`
 //=======
 //>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
 }

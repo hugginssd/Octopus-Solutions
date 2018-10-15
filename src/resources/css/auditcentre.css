@@ -1,0 +1,14 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.menu-bar{
+    -fx-font-size:10pt;
+    -fx-background-color: linear-gradient(#cccccc,#ffffff,#cccccc);
+}
+.titled-pane{
+        -fx-font-size:10pt; 
+}

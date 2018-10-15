@@ -15,7 +15,7 @@ public class Connexion {
 
     public Connection getConnetion() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/octopus", "root", "");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/octopus", "root", "");
         System.err.println("CONNECTED SUCCESSFULLY " + i);
         i++;
 

@@ -58,7 +58,6 @@
  */
 package octopushr.dashboard;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import static java.lang.System.out;
 import java.net.URL;
@@ -66,6 +65,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,8 +74,6 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -419,7 +418,7 @@ public class MainDashboardController implements Initializable {
     private MenuItem faqItem;
 
     @FXML
-    private Label lblAdminDashboard;
+    private Label lblAdminDashboard, lblDate;
 
     @FXML
     private LineChart<?, ?> lineChart1;
@@ -551,8 +550,7 @@ public class MainDashboardController implements Initializable {
     }
 
     @FXML
-    public void addNewEmployee() {
-        try {
+    public void addNewEmployee() throws IOException {
             stage = new Stage();
             Pane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/updateEmployeeDetails.fxml"));
             Scene scene = new Scene(root, 1700, 840);
@@ -562,9 +560,7 @@ public class MainDashboardController implements Initializable {
             stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(MainDashboardController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
 //>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
     }
 
@@ -852,6 +848,7 @@ public class MainDashboardController implements Initializable {
     }
 
 //DOCUMENTS_TYPES
+    @FXML
     public void showEmployeeDocuments(ActionEvent e) throws IOException {
         stage = new Stage();
         Pane root = FXMLLoader.load(getClass().getResource("/octopushr/documents/employeeDocuments.fxml"));
@@ -866,6 +863,7 @@ public class MainDashboardController implements Initializable {
         stage.show();
     }
 
+    @FXML
     public void showDocumentTypes(ActionEvent e) throws IOException {
         stage = new Stage();
         Pane root = FXMLLoader.load(getClass().getResource("/octopushr/documents/documentTypes.fxml"));
@@ -880,6 +878,7 @@ public class MainDashboardController implements Initializable {
         stage.show();
     }
 
+    @FXML
     public void showExternalDocuments(ActionEvent e) throws IOException {
         stage = new Stage();
         Pane root = FXMLLoader.load(getClass().getResource("/octopushr/documents/externalDocuments.fxml"));
@@ -894,6 +893,7 @@ public class MainDashboardController implements Initializable {
         stage.show();
     }
 
+    @FXML
     public void showCompanyDocuments(ActionEvent e) throws IOException {
         stage = new Stage();
         Pane root = FXMLLoader.load(getClass().getResource("/octopushr/documents/companyDocuments.fxml"));
@@ -909,6 +909,7 @@ public class MainDashboardController implements Initializable {
         stage.show();
     }
 
+    @FXML
     public void showReferenceDocuments(ActionEvent e) throws IOException {
         stage = new Stage();
         Pane root = FXMLLoader.load(getClass().getResource("/octopushr/documents/referenceDocuments.fxml"));
@@ -924,6 +925,7 @@ public class MainDashboardController implements Initializable {
         stage.show();
     }
 
+    @FXML
     public void showExpiredDocuments(ActionEvent e) throws IOException {
         stage = new Stage();
         Pane root = FXMLLoader.load(getClass().getResource("/octopushr/documents/expiredDocuments.fxml"));
@@ -1038,9 +1040,9 @@ public class MainDashboardController implements Initializable {
         scene.getStylesheets().add("/resources/css/payrollsettings.css");
         stage.setTitle("Payroll Centre");
         stage.centerOnScreen();
-        stage.setWidth(1300);
-        stage.setHeight(750);
-        stage.setFullScreen(true);
+        stage.setWidth(1450);
+        stage.setHeight(875);
+        //stage.setFullScreen(true);
         stage.setFullScreenExitHint("Press Esc to exit Pay Centre full screen");
         stage.getIcons().add(new Image("/resources/icons/payrol.png"));
         stage.setScene(scene);
@@ -1309,6 +1311,7 @@ public class MainDashboardController implements Initializable {
     }
 
 //MAIN_STAGE
+    @FXML
     public void showDeactivateEmployees() throws IOException {
         stage = new Stage();
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/viewEmployeeDetails.fxml"));
@@ -1324,6 +1327,7 @@ public class MainDashboardController implements Initializable {
         stage.show();
     }
 
+    @FXML
     public void showEmployeeList() throws IOException {
         stage = new Stage();
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/employeeList.fxml"));
@@ -1338,6 +1342,7 @@ public class MainDashboardController implements Initializable {
         stage.show();
     }
 
+    @FXML
     public void addNewUser() throws IOException {
 
         stage = new Stage();
@@ -1355,18 +1360,18 @@ public class MainDashboardController implements Initializable {
 
     }
 
+    @FXML
     public void viewUsers() throws IOException {
 
         stage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/file/viewUsers.fxml"));
-        Scene scene = new Scene(root, 610, 430);
-        scene.getStylesheets().add("/resources/css/viewusers.css");
-        stage.setTitle("View Users");
-        stage.setAlwaysOnTop(false);
-        stage.setResizable(false);
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/audittrails/auditcentre.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/auditcentre.css");
+        stage.setTitle("Audit Centre");
+//        stage.setResizable(false);
         stage.centerOnScreen();
-        stage.setWidth(610);
-        stage.setHeight(430);
+        stage.setWidth(1300);
+        stage.setHeight(830);
         stage.setScene(scene);
         stage.showAndWait();
 
@@ -1374,7 +1379,10 @@ public class MainDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now)); //2016/11/16 12:08:43
+        lblDate.setText(String.valueOf(dtf.format(now)));
         lblAdminDashboard.setText("Admin Dashboard \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMonthly Analysis");
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("On-time", 75),

@@ -33,13 +33,14 @@
 /*#lbSearchEmployee{
     -fx-background-color:#3399ff; 
 }*/
-.menu-bar{
-    -fx-background-color: linear-gradient(#cccccc,#ffffff,#cccccc);
-    -fx-font-size:10pt;
-}
+
 .tab-pane{
     -fx-background-color: #ffffff;
 
+}
+.menu-bar{
+    -fx-background-color: linear-gradient(#cccccc,#ffffff,#cccccc);
+    -fx-font-size:10pt;
 }
 #btnAddOrg{
     -fx-background-color:#ffffff;

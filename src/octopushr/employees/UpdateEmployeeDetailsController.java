@@ -451,7 +451,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
 
         try {
             st = connection.createStatement();
-            rs = st.executeQuery("SELECT DISTINCT `id`, `department_id`, `emp_id`, `departmentname` FROM `tbldepartments` ORDER BY `departmentname`");
+            rs = st.executeQuery("SELECT DISTINCT `id`, `departmentid`, `departmentname` FROM `tbldepartments` ORDER BY `departmentname`");
             while (rs.next()) {
                 cmbselectDepartment.getItems().addAll(rs.getString(4));
             }

@@ -1414,21 +1414,21 @@ public class HrandAdminController implements Initializable {
 
     @FXML
     public void showPayrollStettings() throws IOException {
-        stage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payrollSettings.fxml"));
-        Scene scene = new Scene(root, 1300, 750);
-        scene.getStylesheets().add("/resources/css/payrollsettings.css");
-        stage.setTitle("Payroll Centre");
-        stage.centerOnScreen();
-        stage.setWidth(1300);
-        stage.setHeight(750);
-        stage.setFullScreen(true);
-        stage.setFullScreenExitHint("Press Esc to exit Pay Centre full screen");
-        stage.getIcons().add(new Image("/resources/icons/payrol.png"));
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setIconified(false);
-        stage.show();
+//        stage = new Stage();
+//        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payrollSettings.fxml"));
+//        Scene scene = new Scene(root, 1300, 750);
+//        scene.getStylesheets().add("/resources/css/payrollsettings.css");
+//        stage.setTitle("Payroll Centre");
+//        stage.centerOnScreen();
+//        stage.setWidth(1300);
+//        stage.setHeight(750);
+//        stage.setFullScreen(true);
+//        stage.setFullScreenExitHint("Press Esc to exit Pay Centre full screen");
+//        stage.getIcons().add(new Image("/resources/icons/payrol.png"));
+//        stage.setScene(scene);
+//        stage.setResizable(false);
+//        stage.setIconified(false);
+//        stage.show();
 
     }
 

@@ -101,6 +101,7 @@ import javafx.scene.control.Alert;
 //<<<<<<< HEAD
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
@@ -215,6 +216,7 @@ public class Functions {
         return rs.next() != true;
 
     }
+
     public void showConfirmation(AlertType alertType, String headerText, String title, String update, String message) {
         alert = new Alert(alertType);
         alert.setTitle(title);
@@ -249,7 +251,7 @@ public class Functions {
         mimeMessage.setSubject("Password Recovery! Confirmation email");
         mimeMessage.setText("Hi " + memberName + " \n\nYour password is " + password + "\nRegards" + from);
         Transport.send(mimeMessage);
-        
+
         alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText(null);
         alert.setContentText("Hi " + memberName + " \n\nYour password is " + password + "\nRegards" + from);
@@ -433,18 +435,107 @@ public class Functions {
 
     }
 
-    public void loadDepartments(String sql, String departmentName, Object object) throws SQLException, ClassNotFoundException {
+    public ObservableList loadDepartments() throws SQLException, ClassNotFoundException {
         connection = connexion.getConnetion();
         st = connection.createStatement();
-        rs = st.executeQuery(sql);
+        rs = st.executeQuery("SELECT DISTINCT `departmentid`,`departmentname` FROM `tbldepartments` ORDER BY `departmentname`");
+        ObservableList observableList = FXCollections.observableArrayList();
         while (rs.next()) {
-            //object = rs.getString(departmentName));
-            object.equals(rs.getString(departmentName));
+            observableList.add(rs.getString("departmentname"));
         }
-        st.close();
-        rs.close();
+        return observableList;
+
     }
 
+    public ObservableList loadEmployees(String param1) throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `id`, `employeeid`,CONCAT(`firstname`,' ', `middlename`,' ',`surname`)AS employeename  FROM `tblguards` WHERE `departmentid`=?");
+        pst.setString(1, param1);
+        rs = pst.executeQuery();
+        ObservableList observableList = FXCollections.observableArrayList();
+        while (rs.next()) {
+            observableList.add(rs.getString("employeename"));
+        }
+        return observableList;
+
+    }
+
+    public ObservableList loadDepartmentId(ComboBox departmentName) throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT DISTINCT `departmentid`,`departmentname` FROM `tbldepartments` WHERE `departmentname`= ? ORDER BY `departmentname`");
+        pst.setString(1, departmentName.getSelectionModel().getSelectedItem().toString());
+        rs = pst.executeQuery();
+        ObservableList observableList = FXCollections.observableArrayList();
+        while (rs.next()) {
+            observableList.add(rs.getString("departmentid"));
+        }
+        return observableList;
+
+    }
+
+    public ObservableList loadDocumentTypes() throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        st = connection.createStatement();
+        rs = st.executeQuery("SELECT `id`, `documentid`, `documenttype`, `submittedtoemployee`, `datecreated`, `usercreated`, `machinecreatedon`, `lastdatemodified`, `lastmachinemodifiedon` "
+                + " FROM `tblemployeedocuments` ");
+        ObservableList observableList = FXCollections.observableArrayList();
+        while (rs.next()) {
+            observableList.add(rs.getString("documenttype"));
+        }
+        return observableList;
+
+    }
+
+    public void loadEmployeeProfile(String employeeid, String employeename, String designation, String department) throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `tblguards`.`id`, `employeeid`, CONCAT(`firstname`,' ',`middlename`,' ',`surname`) AS employeename, `gender`, `dateofbirth`, `placeofbirth`, `gradeid`, `idno`, `healthnotes`, `married`, `active`, `verified`, `tbldesignation`.`designation` AS designation, `tbldepartments`.`departmentname` AS department"
+                + " FROM `tblguards`"
+                + " INNER JOIN `tbldesignation`"
+                + " ON `tbldesignation`.`designationid` = `tblguards`.`designationid`"
+                + " INNER JOIN `tbldepartments`"
+                + " ON `tbldepartments`.`departmentid` = `tblguards`.`departmentid`"
+                + " WHERE `tblguards`.`employeeid` = ?");
+        pst.setString(1, employeeid);
+        rs = pst.executeQuery();
+        System.out.println("\nProfile loading\n");
+        while (rs.next()) {
+            employeename = rs.getString("employeename");
+            designation = rs.getString("designation");
+            department = rs.getString("department");
+            System.out.println("\nProfile loaded\n"+employeename+" "+designation+" "+department);
+        }
+
+    }
+
+    public void loadEmployeeId(String employeeid,ObservableList name) throws SQLException, ClassNotFoundException {
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `tblguards`.`id`, `employeeid`, CONCAT(`firstname`, ,`middlename`, ,`surname`) AS employeename, `gender`, `dateofbirth`, `placeofbirth`, `gradeid`, `idno`, `healthnotes`, `married`, `active`, `verified`, `tbldesignation`.`designation` AS designation, `tbldepartments`.`departmentname` AS department"
+                + "FROM `tblguards` "
+                + "INNER JOIN `tbldesignation`"
+                + "ON `tbldesignation`.`designationid` = `tblguards`.`designationid`"
+                + "INNER JOIN `tbldepartments`"
+                + "ON `tbldepartments`.`departmentid` = `tblguards`.`departmentid`"
+                + "WHERE CONCAT(`firstname`, ,`middlename`, ,`surname`) = ?");
+        pst.setString(1, name.toString());
+        rs = pst.executeQuery();
+        while (rs.next()) {
+            employeeid = rs.getString("employeeid");
+        }
+
+    }
+
+    
+//SELECT
+    //    `tblguards`.`id`,`employeeid`, `firstname`,
+    //    `middlename`, `surname`,`gender`,`dateofbirth`,
+    //    `appearancenotes`, `idno`, `married`, `active`, `verified`, `bankid`, `bankbranchid`, `branchid`,           			`tblguards`.`designationid`,`tblguards`.`departmentid` FROM
+    //    `tblguards`
+    //INNER JOIN `tbldesignation`
+    //ON `tbldesignation`.`designationid` = `tblguards`.`designationid`
+    //INNER JOIN `tbldepartments` 
+    //ON `tbldepartments`.`departmentid` = `tblguards`.`departmentid`
+    //WHERE
+    //    `tblguards`.`departmentid` = 'DPT01' 
     public void createExcel() {
         try {
             WritableWorkbook wb = Workbook.createWorkbook(new File("employeelist.xls"));
@@ -756,17 +847,6 @@ public class Functions {
         chooseFile.showOpenDialog(this.stage);
         fileName = chooseFile.getInitialFileName();
 
-    }
-
-    public ObservableList loadDepartments() throws SQLException, ClassNotFoundException {
-        connection = connexion.getConnetion();
-        pst = connection.prepareStatement("SELECT `id`, `departmentid`, `departmentname`"
-                + " FROM `tbldepartments`");
-        rs = pst.executeQuery();
-        while (rs.next()) {
-            dataDepartments.add(rs.getString("departmentname"));
-        }
-        return dataDepartments.sorted();
     }
 
     public void selectDocument(String applicationFile, String path) {

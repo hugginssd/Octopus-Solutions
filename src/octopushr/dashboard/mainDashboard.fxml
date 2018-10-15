@@ -68,6 +68,7 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Audit " />
                         <MenuItem fx:id="trails" mnemonicParsing="false" text="Trails">
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -366,7 +367,29 @@
                         <ToolBar fx:id="toolBar" prefHeight="28.0" prefWidth="1484.0">
                            <VBox.margin>
                               <Insets left="5.0" />
-                           </VBox.margin></ToolBar>
+                           </VBox.margin>
+                           <items>
+                              <Label text="LoggeIn As :" textFill="#1980c1">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblDeveloper" text="Developer" textFill="#1980c1">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="1172.0" text="Today :" textFill="#1980c1">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblDate" text="Label" textFill="#1980c1">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </items></ToolBar>
                      </children>
                   </VBox>
                </children>
