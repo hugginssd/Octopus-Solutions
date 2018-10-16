@@ -309,6 +309,7 @@ public class NewEmployeeController implements Initializable {
         txttotalExperience.clear();
         txtexperienceWithUs.clear();
         txtmonthlySalary.clear();
+        cmbselectDesignation.setValue(null);
         cmbselectDesignation.selectionModelProperty().setValue("---Select Designation---");
         cmbselectDepartment.selectionModelProperty().setValue("---Select Department---");
         cmbGender.selectionModelProperty().setValue("---Select Gender---");
@@ -338,7 +339,7 @@ public class NewEmployeeController implements Initializable {
 //        }
 //=======
         if (!txtidNumber.toString().startsWith("-", 3)) {
-            txtidNumber.clear();
+            //txtidNumber.clear();
         }
 //>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
     }

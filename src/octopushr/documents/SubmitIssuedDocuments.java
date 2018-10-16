@@ -83,10 +83,10 @@ public class SubmitIssuedDocuments {
     private String authority;
 
     //SUBMITTED EMPLOYEE DOCUMENTS
-    private String _documentName;
-    private String _documentType;
-    private Date _submittedDate;
-    private Boolean _duplicate;
+    private String DocumentName;
+    private String DocumentType;
+    private Date SubmittedDate;
+    private Boolean dDuplicate;
     private Boolean emailed;
 
     public SubmitIssuedDocuments(int id, String documentName, String documentType, Date submittedDate, Date expiryDate, String duplicate) {
@@ -108,44 +108,44 @@ public class SubmitIssuedDocuments {
         this.authority = authority;
     }
 
-    public SubmitIssuedDocuments(String _documentName, String _documentType, Date _submittedDate, Boolean _duplicate, Boolean emailed) {
-        this._documentName = _documentName;
-        this._documentType = _documentType;
-        this._submittedDate = _submittedDate;
-        this._duplicate = _duplicate;
+    public SubmitIssuedDocuments(String DocumentName, String DocumentType, Date SubmittedDate, Boolean Duplicate, Boolean emailed) {
+        this.DocumentName = DocumentName;
+        this.DocumentType = DocumentType;
+        this.SubmittedDate = SubmittedDate;
+        this.dDuplicate = Duplicate;
         this.emailed = emailed;
     }
 
-    public String get_DocumentName() {
-        return _documentName;
+    public String getdDocumentName() {
+        return DocumentName;
     }
 
-    public void set_DocumentName(String documentName) {
-        this._documentName = documentName;
+    public void setdDocumentName(String documentName) {
+        this.DocumentName = documentName;
     }
 
-    public String get_DocumentType() {
-        return _documentType;
+    public String getdDocumentType() {
+        return DocumentType;
     }
 
-    public void set_DocumentType(String documentType) {
-        this._documentType = documentType;
+    public void setdDocumentType(String documentType) {
+        this.DocumentType = documentType;
     }
 
-    public Date get_SubmittedDate() {
-        return _submittedDate;
+    public Date getsSubmittedDate() {
+        return SubmittedDate;
     }
 
-    public void set_SubmittedDate(Date submittedDate) {
-        this._submittedDate = submittedDate;
+    public void setsSubmittedDate(Date submittedDate) {
+        this.SubmittedDate = submittedDate;
     }
 
-    public Boolean get_Duplicate() {
-        return _duplicate;
+    public Boolean getdDuplicate() {
+        return dDuplicate;
     }
 
-    public void set_Duplicate(Boolean duplicate) {
-        this._duplicate = duplicate;
+    public void setdDuplicate(Boolean Duplicate) {
+        this.dDuplicate = Duplicate;
     }
 
     public Boolean getEmailed() {
@@ -254,7 +254,7 @@ public class SubmitIssuedDocuments {
     }
 
     public String getDuplicate() {
-        return duplicate.toUpperCase();
+        return duplicate;
     }
 
     public void setDuplicate(String duplicate) {

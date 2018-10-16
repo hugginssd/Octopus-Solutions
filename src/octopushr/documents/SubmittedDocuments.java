@@ -58,13 +58,67 @@
  */
 package octopushr.documents;
 
+import java.sql.Date;
+
 /**
  *
  * @author user
  */
 public class SubmittedDocuments {
-    
-    
+    private String DocumentName;
+    private String DocumentType;
+    private Date SubmittedDate;
+    private Boolean Duplicate;
+    private Boolean emailed;
+
+    public SubmittedDocuments(String documentName, String documentType, Date submittedDate, Boolean duplicate, Boolean emailed) {
+        this.DocumentName = documentName;
+        this.DocumentType = documentType;
+        this.SubmittedDate = submittedDate;
+        this.Duplicate = duplicate;
+        this.emailed = emailed;
+    }
+
+    public String getDocumentName() {
+        return DocumentName;
+    }
+
+    public void setDocumentName(String documentName) {
+        this.DocumentName = documentName;
+    }
+
+    public String getDocumentType() {
+        return DocumentType;
+    }
+
+    public void setDocumentType(String documentType) {
+        this.DocumentType = documentType;
+    }
+
+    public Date getSubmittedDate() {
+        return SubmittedDate;
+    }
+
+    public void setSubmittedDate(Date submittedDate) {
+        this.SubmittedDate = submittedDate;
+    }
+
+    public Boolean getDuplicate() {
+        return Duplicate;
+    }
+
+    public void setDuplicate(Boolean duplicate) {
+        this.Duplicate = duplicate;
+    }
+
+    public Boolean getEmailed() {
+        return emailed;
+    }
+
+    public void setEmailed(Boolean emailed) {
+        this.emailed = emailed;
+    }
+
     
     
 }

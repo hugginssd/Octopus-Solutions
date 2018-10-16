@@ -1,5 +1,6 @@
 package octopushr.documents;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,18 +20,20 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import octopushr.Connexion;
 import octopushr.Functions;
+import octopushr.employees.Skills;
 
 public class EmployeeDocumentsController implements Initializable {
 
-    @FXML
-    private Button btnCloseWindow;
     @FXML
     private Button btnExternalDocuments;
 
@@ -44,13 +47,13 @@ public class EmployeeDocumentsController implements Initializable {
     private Button btnReferenceDocuments;
 
     @FXML
-    private ComboBox cmbSelectDepartment;
+    private ComboBox<?> cmbSelectDepartment;
 
     @FXML
-    private ComboBox cmbSelectEmployee;
+    private ComboBox<?> cmbSelectEmployee;
 
     @FXML
-    private ComboBox cmbAllDocumentTypes;
+    private ComboBox<?> cmbAllDocumentTypes;
 
     @FXML
     private Label lblDocumentTypeCategory;
@@ -65,10 +68,16 @@ public class EmployeeDocumentsController implements Initializable {
     private ImageView imageViewAllDocumentTypes;
 
     @FXML
+    private Label lblDepartmentId;
+
+    @FXML
+    private Label lblEmployeeid;
+
+    @FXML
     private Label lblEmployeeName;
 
     @FXML
-    private Label lblEmployeeId, lblEmployeeid;
+    private Label lblEmployeeId;
 
     @FXML
     private Label lblDesignation;
@@ -104,6 +113,9 @@ public class EmployeeDocumentsController implements Initializable {
     private ImageView imageViewSelectDocumentType;
 
     @FXML
+    private ImageView imageView;
+
+    @FXML
     private RadioButton rdbYes;
 
     @FXML
@@ -113,7 +125,7 @@ public class EmployeeDocumentsController implements Initializable {
     private Tab tabSubmittedDocuments;
 
     @FXML
-    private TableView<?> tableSubmittedDocuments;
+    private TableView<SubmittedDocuments> tableSubmittedDocuments;
 
     @FXML
     private Tab tabIssuedDocuments;
@@ -155,7 +167,10 @@ public class EmployeeDocumentsController implements Initializable {
     private Button btnClose;
 
     @FXML
-    private Label lblDepartmentId;
+    private ObservableList<TableColumn<SubmittedDocuments, ?>> columns;
+
+    @FXML
+    private ObservableList<SubmittedDocuments> dataSubmitIssuedDocuments = FXCollections.observableArrayList();
 
     Functions functions = new Functions();
     Connexion connexion = new Connexion();
@@ -168,8 +183,11 @@ public class EmployeeDocumentsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            //cmbSelectDepartment.getItems().removeAll(cmbSelectDepartment.getItems());
             cmbSelectDepartment.getItems().addAll(functions.loadDepartments());
             loadDocumentTypes();
+            setSubmittedColumns();
+            loadEmployeeSubmittedDocuments();
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(EmployeeDocumentsController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -177,10 +195,8 @@ public class EmployeeDocumentsController implements Initializable {
 
     @FXML
     public void setClose() {
-
-        Stage stage = (Stage) btnCloseWindow.getScene().getWindow();
+        Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
-
     }
 
     @FXML
@@ -193,6 +209,7 @@ public class EmployeeDocumentsController implements Initializable {
         while (rs.next()) {
             lblDepartmentId.setText(rs.getString("departmentid"));
         }
+        cmbSelectEmployee.getItems().removeAll(cmbSelectEmployee.getItems());
         cmbSelectEmployee.getItems().addAll(functions.loadEmployees(lblDepartmentId.getText()));
     }
 
@@ -203,7 +220,7 @@ public class EmployeeDocumentsController implements Initializable {
     }
 
     @FXML
-    public void loadProfile() throws SQLException, ClassNotFoundException {
+    public void loadProfile() throws SQLException, ClassNotFoundException, IOException {
         connection = connexion.getConnetion();
         pst = connection.prepareStatement("SELECT `tblguards`.`id`, `employeeid`, `firstname`,`middlename`,`surname`, `gender`,"
                 + " `dateofbirth`, `placeofbirth`, `gradeid`, `idno`, `healthnotes`, `married`, `active`, `verified`,"
@@ -220,7 +237,7 @@ public class EmployeeDocumentsController implements Initializable {
             lblEmployeeId.setText(rs.getString("employeeid"));
         }
         pst.clearParameters();
-        pst = connection.prepareStatement("SELECT `tblguards`.`id`, `employeeid`, CONCAT(`firstname`,' ',`middlename`,' ',`surname`) AS employeename, `gender`, `dateofbirth`, `placeofbirth`, `gradeid`, `idno`, `healthnotes`, `married`, `active`, `verified`, `tbldesignation`.`designation` AS designation, `tbldepartments`.`departmentname` AS department"
+        pst = connection.prepareStatement("SELECT `tblguards`.`id`, `employeeid`, CONCAT(`firstname`,' ',`middlename`,' ',`surname`) AS employeename,`picture`, `gender`, `dateofbirth`, `placeofbirth`, `gradeid`, `idno`, `healthnotes`, `married`, `active`, `verified`, `tbldesignation`.`designation` AS designation, `tbldepartments`.`departmentname` AS department"
                 + " FROM `tblguards`"
                 + " INNER JOIN `tbldesignation`"
                 + " ON `tbldesignation`.`designationid` = `tblguards`.`designationid`"
@@ -234,10 +251,8 @@ public class EmployeeDocumentsController implements Initializable {
             lblEmployeeName.setText(rs.getString("employeename"));
             lblDesignation.setText(rs.getString("designation"));
             lblDepartment.setText(rs.getString("department"));
-            //System.out.println("\nProfile loaded\n"+employeename+" "+designation+" "+department);
+            functions.retrieveImage(imageView, rs);
         }
-//        functions.loadEmployeeProfile(lblEmployeeId.getText(),employeename, lblDesignation.getText(), lblDepartment.getText());
-//        lblEmployeeName.setText(employeename);
     }
 
     @FXML
@@ -271,14 +286,49 @@ public class EmployeeDocumentsController implements Initializable {
     }
 
     @FXML
+    public void setSubmittedColumns() {
+        columns = tableSubmittedDocuments.getColumns();
+        final TableColumn<SubmittedDocuments, ?> colSubmittedDocumentName = new TableColumn<>("Document Name");
+        colSubmittedDocumentName.setCellValueFactory(new PropertyValueFactory("DocumentName"));
+        colSubmittedDocumentName.setPrefWidth(200);
+        columns.add(colSubmittedDocumentName);
+
+        final TableColumn<SubmittedDocuments, ?> colSubmittedDocumentType = new TableColumn<>("Document Type");
+        colSubmittedDocumentType.setCellValueFactory(new PropertyValueFactory("DocumentType"));
+        colSubmittedDocumentType.setPrefWidth(200);
+        columns.add(colSubmittedDocumentType);
+
+        final TableColumn<SubmittedDocuments, ?> colSubmittedSubmitDate = new TableColumn<>("Submitted Date");
+        colSubmittedSubmitDate.setCellValueFactory(new PropertyValueFactory("SubmittedDate"));
+        colSubmittedSubmitDate.setPrefWidth(100);
+        columns.add(colSubmittedSubmitDate);
+
+        final TableColumn<SubmittedDocuments, ?> colSubmittedDuplicate = new TableColumn<>("Duplicate");
+        colSubmittedDuplicate.setCellValueFactory(new PropertyValueFactory("Duplicate"));
+        colSubmittedDuplicate.setPrefWidth(100);
+        columns.add(colSubmittedDuplicate);
+
+        final TableColumn<SubmittedDocuments, ?> colSubmittedEmailed = new TableColumn<>("Emailed");
+        colSubmittedEmailed.setCellValueFactory(new PropertyValueFactory("emailed"));
+        colSubmittedEmailed.setPrefWidth(100);
+        columns.add(colSubmittedEmailed);
+    }
+
+    @FXML
     public void loadEmployeeSubmittedDocuments() throws SQLException, ClassNotFoundException {
+
         connection = connexion.getConnetion();
-        pst = connection.prepareStatement("");
-        
-        
-        
-        
-        
-        
+        pst = connection.prepareStatement("SELECT `tblemployeedocs`.`id` AS id, `tblemployeedocs`.`documentid` AS documentid, `employeeid`, `documentname`, `documenttype`, `submittedtoemployee`, `submittedateissueddate`, `duplicate`, `expire`, `expirydate`,`emailed`, `deleted` "
+                + "FROM `tblemployeedocs`"
+                + "INNER JOIN `tblemployeedocuments`"
+                + "ON `tblemployeedocuments`.`documentid` = `tblemployeedocs`.`documentid`");
+        rs = pst.executeQuery();
+        dataSubmitIssuedDocuments.clear();
+        tableSubmittedDocuments.getItems().clear();
+        while (rs.next()) {
+            dataSubmitIssuedDocuments.add(new SubmittedDocuments(rs.getString("documentname"), rs.getString("documenttype"), rs.getDate("submittedateissueddate"),
+                    rs.getBoolean("duplicate"), rs.getBoolean("emailed")));
+            tableSubmittedDocuments.setItems(dataSubmitIssuedDocuments);
+        }
     }
 }
