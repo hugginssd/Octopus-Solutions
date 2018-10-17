@@ -11,7 +11,7 @@
     -fx-background-style:flat;
     -fx-background-radius: 5px;
 }
-#btnListAll,#btnEdit,#btnViewDetail,#btnDelete,#btnAddNew,#btnClose{
+#btnListAll,#btnEdit,#btnViewDetail,#btnDelete,#btnAddNew,#btnClose,#btnSearch{
      -fx-background-color:#ffffff;
     -fx-background-style:flat;
     -fx-background-radius: 5px;
@@ -28,5 +28,9 @@
 }
 .table-view{
     -fx-font-family:Arial Unicade MS;
+}
+.date-picker{
+    -fx-font-size: 12px;
+   -fx-font-family:Arial Unicode MS;
 }
 

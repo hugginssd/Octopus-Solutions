@@ -148,7 +148,7 @@
                <font>
                   <Font name="Arial Unicode MS" size="12.0" />
                </font></Label>
-                <TextField fx:id="txtSelectDocument" layoutX="166.0" layoutY="102.0" prefHeight="28.0" prefWidth="208.0" promptText="Select document" />
+                <TextField fx:id="txtSelectDocument" layoutX="166.0" layoutY="102.0" onAction="#selectDocument" prefHeight="28.0" prefWidth="208.0" promptText="Select document" />
                 <DatePicker fx:id="dtpSubmitteddate" layoutX="166.0" layoutY="137.0" prefHeight="28.0" prefWidth="208.0" promptText="Submitted/Issue date" />
                 <ToggleButton fx:id="toggleDuplicate" layoutX="166.0" layoutY="171.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Original/Duplicate">
                     <font>
@@ -165,7 +165,7 @@
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="btnUpload" layoutX="219.0" layoutY="233.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0" text="Upload">
+                <Button fx:id="btnUpload" layoutX="219.0" layoutY="233.0" mnemonicParsing="false" onAction="#uploadEmployeeDocuments" prefHeight="28.0" prefWidth="70.0" text="Upload">
                     <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                     </font>
@@ -175,7 +175,7 @@
                         <Image url="@../../resources/icons/add.png" />
                     </image>
                 </ImageView>
-            <RadioButton fx:id="rdbYes" layoutX="173.0" layoutY="207.0" mnemonicParsing="false" text="Yes" textFill="#00ffc8">
+            <RadioButton fx:id="rdbYes" layoutX="173.0" layoutY="207.0" mnemonicParsing="false" onAction="#expiryDateVisible" text="Yes" textFill="#00ffc8">
                <font>
                   <Font name="Arial Unicode MS" size="12.0" />
                </font>
@@ -185,6 +185,12 @@
                   <Font name="Arial Unicode MS" size="12.0" />
                </font>
             </RadioButton>
+            <DatePicker fx:id="dtpExpirydate" layoutX="371.0" layoutY="203.0" prefHeight="28.0" prefWidth="189.0" promptText="Expiry date" />
+            <Label fx:id="lblPath" layoutX="377.0" layoutY="104.0" prefHeight="25.0" prefWidth="270.0" text="Label" textFill="#00ffc8">
+               <font>
+                  <Font name="Arial Unicode MS" size="12.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
         <Pane layoutX="569.0" layoutY="327.0" prefHeight="323.0" prefWidth="659.0">
@@ -204,15 +210,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <TableView fx:id="tableIssuedDocuments" prefHeight="286.0" prefWidth="643.0">
-                                            <columns>
-                                                <TableColumn prefWidth="188.0" text="Document Name" />
-                                                <TableColumn prefWidth="147.0" text="Document Type" />
-                                                <TableColumn prefWidth="133.0" text="Issue Date" />
-                                                <TableColumn prefWidth="111.0" text="Original/Duplicate" />
-                                                <TableColumn prefWidth="62.0" text="Emailed" />
-                                            </columns>
-                                        </TableView>
+                                        <TableView fx:id="tableIssuedDocuments" prefHeight="286.0" prefWidth="652.0" />
                                     </children>
                                 </AnchorPane>
                             </content>
@@ -226,8 +224,8 @@
                                     <Font name="Arial Unicode MS" size="12.0" />
                                  </font></Label>
                                         <Separator layoutX="64.0" layoutY="15.0" prefHeight="3.0" prefWidth="578.0" />
-                                        <DatePicker fx:id="dtpDateTo" layoutX="368.0" layoutY="26.0" promptText="Date to" />
-                                        <DatePicker fx:id="dtpDateFrom" layoutX="178.0" layoutY="26.0" promptText="Date from" />
+                                        <DatePicker fx:id="dtpDateTo" layoutX="368.0" layoutY="23.0" prefHeight="28.0" prefWidth="180.0" promptText="Date to" />
+                                        <DatePicker fx:id="dtpDateFrom" layoutX="178.0" layoutY="23.0" prefHeight="28.0" prefWidth="180.0" promptText="Date from" />
                                         <Button fx:id="btnSearch" layoutX="552.0" layoutY="23.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="91.0" text="Search">
                                             <font>
                                                 <Font name="Arial Unicode MS" size="13.0" />

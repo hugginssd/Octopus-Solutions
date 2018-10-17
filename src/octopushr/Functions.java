@@ -131,6 +131,7 @@ import jxl.write.WriteException;
 import octopushr.employees.ViewEmployeeDetails;
 ////=======
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -537,6 +538,26 @@ public class Functions {
 
         }
     }
+    
+//    @FXML
+//    public void selectDocument(TextField txtSelectDocument, Label lblPath){
+//      String fileName;
+//        JFileChooser chooser = new JFileChooser();
+//        chooser.setCurrentDirectory(new java.io.File("."));
+//        chooser.setDialogTitle("Select document name");
+//        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+//        chooser.setAcceptAllFileFilterUsed(false);
+//
+//        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+//            fileName = chooser.getSelectedFile().getName();
+//            txtSelectDocument.setText(fileName);
+//            lblPath.setText(chooser.getCurrentDirectory().getAbsolutePath());
+//            System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
+//            System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
+//        } else {
+//            System.out.println("No Selection ");
+//        }
+//    }
 
     public void createExcel() {
         try {
@@ -842,7 +863,7 @@ public class Functions {
             imageView.setImage(image1);
             System.out.println("image set\n\n");
         } catch (Exception ex) {
-            imageView.setImage(new Image("../resources/icons/no-image.jpg"));
+           // imageView.setImage(new Image("../resources/icons/no-image.jpg"));
         }
 
     }

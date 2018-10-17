@@ -157,6 +157,7 @@
                         <MenuItem fx:id="exteDocs" mnemonicParsing="false" onAction="#showExternalDocuments" text="External Documents" />
                         <MenuItem fx:id="refDocs" mnemonicParsing="false" onAction="#showReferenceDocuments" text="Reference Documents" />
                         <MenuItem fx:id="expDocs" mnemonicParsing="false" onAction="#showExpiredDocuments" text="Expired Documents" />
+                        <MenuItem fx:id="menuItemClientDocuments" mnemonicParsing="false" text="Client Documents" />
                      </items>
                   </Menu>
                   <Menu fx:id="perfMenu" mnemonicParsing="false" text="Performance">

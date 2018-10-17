@@ -1,12 +1,16 @@
 package octopushr.documents;
 
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -28,6 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javax.swing.JFileChooser;
 import octopushr.Connexion;
 import octopushr.Functions;
 import octopushr.employees.Skills;
@@ -83,7 +89,7 @@ public class EmployeeDocumentsController implements Initializable {
     private Label lblDesignation;
 
     @FXML
-    private Label lblDepartment;
+    private Label lblDepartment, lblPath;
 
     @FXML
     private ComboBox<?> cmbSelectDocumentType;
@@ -95,7 +101,7 @@ public class EmployeeDocumentsController implements Initializable {
     private TextField txtSelectDocument;
 
     @FXML
-    private DatePicker dtpSubmitteddate;
+    private DatePicker dtpSubmitteddate, dtpExpirydate;
 
     @FXML
     private ToggleButton toggleDuplicate;
@@ -131,7 +137,7 @@ public class EmployeeDocumentsController implements Initializable {
     private Tab tabIssuedDocuments;
 
     @FXML
-    private TableView<?> tableIssuedDocuments;
+    private TableView<IssuedDocuments> tableIssuedDocuments;
 
     @FXML
     private Tab tabInternalDocuments;
@@ -170,7 +176,13 @@ public class EmployeeDocumentsController implements Initializable {
     private ObservableList<TableColumn<SubmittedDocuments, ?>> columns;
 
     @FXML
+    private ObservableList<TableColumn<IssuedDocuments, ?>> column;
+
+    @FXML
     private ObservableList<SubmittedDocuments> dataSubmitIssuedDocuments = FXCollections.observableArrayList();
+
+    @FXML
+    private ObservableList<IssuedDocuments> dataIssuedDocuments = FXCollections.observableArrayList();
 
     Functions functions = new Functions();
     Connexion connexion = new Connexion();
@@ -179,6 +191,7 @@ public class EmployeeDocumentsController implements Initializable {
     Statement st;
     ResultSet rs;
     String employeename;
+    Alert alert;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -187,7 +200,9 @@ public class EmployeeDocumentsController implements Initializable {
             cmbSelectDepartment.getItems().addAll(functions.loadDepartments());
             loadDocumentTypes();
             setSubmittedColumns();
-            loadEmployeeSubmittedDocuments();
+            setIssuedColumns();
+            dtpExpirydate.setVisible(false);
+            //loadEmployeeSubmittedDocuments();
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(EmployeeDocumentsController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -253,6 +268,8 @@ public class EmployeeDocumentsController implements Initializable {
             lblDepartment.setText(rs.getString("department"));
             functions.retrieveImage(imageView, rs);
         }
+        loadEmployeeSubmittedDocuments();
+        loadEmployeeIssuedDocuments();
     }
 
     @FXML
@@ -315,20 +332,137 @@ public class EmployeeDocumentsController implements Initializable {
     }
 
     @FXML
+    public void setIssuedColumns() {
+        column = tableIssuedDocuments.getColumns();
+        final TableColumn<IssuedDocuments, ?> colSubmittedDocumentName = new TableColumn<>("Document Name");
+        colSubmittedDocumentName.setCellValueFactory(new PropertyValueFactory("DocumentName"));
+        colSubmittedDocumentName.setPrefWidth(200);
+        column.add(colSubmittedDocumentName);
+
+        final TableColumn<IssuedDocuments, ?> colSubmittedDocumentType = new TableColumn<>("Document Type");
+        colSubmittedDocumentType.setCellValueFactory(new PropertyValueFactory("DocumentType"));
+        colSubmittedDocumentType.setPrefWidth(200);
+        column.add(colSubmittedDocumentType);
+
+        final TableColumn<IssuedDocuments, ?> colSubmittedSubmitDate = new TableColumn<>("Submitted Date");
+        colSubmittedSubmitDate.setCellValueFactory(new PropertyValueFactory("SubmittedDate"));
+        colSubmittedSubmitDate.setPrefWidth(100);
+        column.add(colSubmittedSubmitDate);
+
+        final TableColumn<IssuedDocuments, ?> colSubmittedDuplicate = new TableColumn<>("Duplicate");
+        colSubmittedDuplicate.setCellValueFactory(new PropertyValueFactory("Duplicate"));
+        colSubmittedDuplicate.setPrefWidth(100);
+        column.add(colSubmittedDuplicate);
+
+        final TableColumn<IssuedDocuments, ?> colSubmittedEmailed = new TableColumn<>("Emailed");
+        colSubmittedEmailed.setCellValueFactory(new PropertyValueFactory("emailed"));
+        colSubmittedEmailed.setPrefWidth(100);
+        column.add(colSubmittedEmailed);
+    }
+
+    @FXML
     public void loadEmployeeSubmittedDocuments() throws SQLException, ClassNotFoundException {
 
         connection = connexion.getConnetion();
-        pst = connection.prepareStatement("SELECT `tblemployeedocs`.`id` AS id, `tblemployeedocs`.`documentid` AS documentid, `employeeid`, `documentname`, `documenttype`, `submittedtoemployee`, `submittedateissueddate`, `duplicate`, `expire`, `expirydate`,`emailed`, `deleted` "
-                + "FROM `tblemployeedocs`"
-                + "INNER JOIN `tblemployeedocuments`"
-                + "ON `tblemployeedocuments`.`documentid` = `tblemployeedocs`.`documentid`");
+        pst = connection.prepareStatement("SELECT `tblemployeedocs`.`id` AS id, `tblemployeedocs`.`documentid` AS documentid, "
+                + " `tblemployeedocs`.`employeeid`, `documentname`, `documenttype`, `submittedtoemployee`, `submittedateissueddate`, "
+                + " `duplicate`, `expire`, `expirydate`,`emailed`, `deleted`,`tblguards`.`active` AS active "
+                + " FROM `tblemployeedocs` "
+                + " INNER JOIN `tblguards` "
+                + " ON `tblguards`.`employeeid` = `tblemployeedocs`.`employeeid` "
+                + " INNER JOIN `tblemployeedocuments` "
+                + " ON `tblemployeedocuments`.`documentid` = `tblemployeedocs`.`documentid` "
+                + " WHERE `tblemployeedocs`.`employeeid` = ? AND `tblguards`.`active` = '1' AND `submittedtoemployee` = '1'");
+        pst.setString(1, lblEmployeeId.getText());
         rs = pst.executeQuery();
         dataSubmitIssuedDocuments.clear();
         tableSubmittedDocuments.getItems().clear();
         while (rs.next()) {
             dataSubmitIssuedDocuments.add(new SubmittedDocuments(rs.getString("documentname"), rs.getString("documenttype"), rs.getDate("submittedateissueddate"),
-                    rs.getBoolean("duplicate"), rs.getBoolean("emailed")));
+                    String.valueOf(rs.getBoolean("duplicate")), String.valueOf(rs.getBoolean("emailed"))));
             tableSubmittedDocuments.setItems(dataSubmitIssuedDocuments);
+        }
+    }
+
+    @FXML
+    public void loadEmployeeIssuedDocuments() throws SQLException, ClassNotFoundException {
+
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("SELECT `tblemployeedocs`.`id` AS id, `tblemployeedocs`.`documentid` AS documentid, "
+                + " `tblemployeedocs`.`employeeid`, `documentname`, `documenttype`, `submittedtoemployee`, `submittedateissueddate`, "
+                + " `duplicate`, `expire`, `expirydate`,`emailed`, `deleted`,`tblguards`.`active` AS active "
+                + " FROM `tblemployeedocs` "
+                + " INNER JOIN `tblguards` "
+                + " ON `tblguards`.`employeeid` = `tblemployeedocs`.`employeeid` "
+                + " INNER JOIN `tblemployeedocuments` "
+                + " ON `tblemployeedocuments`.`documentid` = `tblemployeedocs`.`documentid` "
+                + " WHERE `tblemployeedocs`.`employeeid` = ? AND `tblguards`.`active` = '1' AND `submittedtoemployee` = '0'");
+        pst.setString(1, lblEmployeeId.getText());
+        rs = pst.executeQuery();
+        dataIssuedDocuments.clear();
+        tableIssuedDocuments.getItems().clear();
+        while (rs.next()) {
+            dataIssuedDocuments.add(new IssuedDocuments(rs.getString("documentname"), rs.getString("documenttype"), rs.getDate("submittedateissueddate"),
+                    String.valueOf(rs.getBoolean("duplicate")), String.valueOf(rs.getBoolean("emailed"))));
+            tableIssuedDocuments.setItems(dataIssuedDocuments);
+        }
+    }
+
+    @FXML
+    public void uploadEmployeeDocuments() throws SQLException, ClassNotFoundException, UnknownHostException {
+        if (txtSelectDocument.getText().isEmpty() && dtpSubmitteddate.getValue() == null) {
+            functions.alertInformation(alert, "Not valid.\n" + "Please make sure all input fields are valid before submission");
+            return;
+        }
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement("INSERT INTO `tblemployeedocs`( `documentid`, `employeeid`, `documentname`,"
+                + "`submittedateissueddate`, `duplicate`, `expire`, `emailed`, `expirydate`, `deleted`, `usercreated`, "
+                + "`datecreated`, `machinecreatedon`, `lastdatemodified`, `lastmachinemodifiedon`) "
+                + " VALUES (?,?,?,?,?,?,?,?,?,?,CURDATE(),?,?,?)");
+        pst.setString(1, lblDocumentTypeCategory_.getText());
+        pst.setString(2, lblEmployeeId.getText());
+        pst.setString(3, cmbSelectDocumentType.getSelectionModel().getSelectedItem().toString());
+        pst.setString(4, dtpSubmitteddate.getValue().getYear() + "-" + dtpSubmitteddate.getValue().getMonthValue() + "-" + dtpSubmitteddate.getValue().getDayOfMonth());
+        pst.setBoolean(5, toggleDuplicate.getToggleGroup().getSelectedToggle().isSelected());
+        pst.setBoolean(6, tglbExpiryDate.getToggleGroup().getSelectedToggle().isSelected());
+        pst.setBoolean(7, false);//dtpExpirydate
+        if (rdbYes.isSelected()) {
+            pst.setString(8, dtpExpirydate.getValue().getYear() + "-" + dtpExpirydate.getValue().getMonthValue() + "-" + dtpExpirydate.getValue().getDayOfMonth());
+        }
+        pst.setBoolean(9, false);
+        pst.setString(10, Inet4Address.getLocalHost().getHostName());
+        pst.setString(11, Inet4Address.getLocalHost().getHostName());
+        pst.setDate(12, Date.valueOf(LocalDate.now()));
+        pst.setString(13, Inet4Address.getLocalHost().getHostName());
+        pst.execute();
+        System.out.println("DOcument successfully uploaded");
+    }
+
+    @FXML
+    public void expiryDateVisible() {
+        if (rdbYes.isSelected()) {
+            dtpExpirydate.setVisible(true);
+        }
+
+    }
+
+    @FXML
+    public void selectDocument() {
+        String fileName;
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setDialogTitle("Select document name");
+        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        chooser.setAcceptAllFileFilterUsed(false);
+
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            fileName = chooser.getSelectedFile().getName();
+            txtSelectDocument.setText(fileName);
+            lblPath.setText(chooser.getCurrentDirectory().getAbsolutePath());
+            System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
+            System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
+        } else {
+            System.out.println("No Selection ");
         }
     }
 }

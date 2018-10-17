@@ -74,20 +74,13 @@ public class SubmitIssuedDocuments {
     private String duplicate;
 
     //INTERNAL DOCUMENTS
-    private int _id;
+    private int iid;
     private String employeeno;
     private String name;
     private String title;
     private String documenttype;
     private Boolean submitted;
     private String authority;
-
-    //SUBMITTED EMPLOYEE DOCUMENTS
-    private String DocumentName;
-    private String DocumentType;
-    private Date SubmittedDate;
-    private Boolean dDuplicate;
-    private Boolean emailed;
 
     public SubmitIssuedDocuments(int id, String documentName, String documentType, Date submittedDate, Date expiryDate, String duplicate) {
         this.id = id;
@@ -98,8 +91,8 @@ public class SubmitIssuedDocuments {
         this.duplicate = duplicate;
     }
 
-    public SubmitIssuedDocuments(int _id, String employeeno, String name, String title, String documenttype, Boolean submitted, String authority) {
-        this._id = _id;
+    public SubmitIssuedDocuments(int iid, String employeeno, String name, String title, String documenttype, Boolean submitted, String authority) {
+        this.iid = iid;
         this.employeeno = employeeno;
         this.name = name;
         this.title = title;
@@ -108,61 +101,13 @@ public class SubmitIssuedDocuments {
         this.authority = authority;
     }
 
-    public SubmitIssuedDocuments(String DocumentName, String DocumentType, Date SubmittedDate, Boolean Duplicate, Boolean emailed) {
-        this.DocumentName = DocumentName;
-        this.DocumentType = DocumentType;
-        this.SubmittedDate = SubmittedDate;
-        this.dDuplicate = Duplicate;
-        this.emailed = emailed;
-    }
-
-    public String getdDocumentName() {
-        return DocumentName;
-    }
-
-    public void setdDocumentName(String documentName) {
-        this.DocumentName = documentName;
-    }
-
-    public String getdDocumentType() {
-        return DocumentType;
-    }
-
-    public void setdDocumentType(String documentType) {
-        this.DocumentType = documentType;
-    }
-
-    public Date getsSubmittedDate() {
-        return SubmittedDate;
-    }
-
-    public void setsSubmittedDate(Date submittedDate) {
-        this.SubmittedDate = submittedDate;
-    }
-
-    public Boolean getdDuplicate() {
-        return dDuplicate;
-    }
-
-    public void setdDuplicate(Boolean Duplicate) {
-        this.dDuplicate = Duplicate;
-    }
-
-    public Boolean getEmailed() {
-        return emailed;
-    }
-
-    public void setEmailed(Boolean emailed) {
-        this.emailed = emailed;
-    }
-
     //INTERNAL DOCUMENTS
-    public int get_Id() {
-        return _id;
+    public int getiId() {
+        return iid;
     }
 
-    public void set_Id(int _id) {
-        this._id = _id;
+    public void setiId(int iid) {
+        this.iid = iid;
     }
 
     public String getEmployeeno() {
@@ -254,7 +199,7 @@ public class SubmitIssuedDocuments {
     }
 
     public String getDuplicate() {
-        return duplicate;
+        return duplicate.toUpperCase();
     }
 
     public void setDuplicate(String duplicate) {

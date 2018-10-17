@@ -68,10 +68,10 @@ public class SubmittedDocuments {
     private String DocumentName;
     private String DocumentType;
     private Date SubmittedDate;
-    private Boolean Duplicate;
-    private Boolean emailed;
+    private String Duplicate;
+    private String emailed;
 
-    public SubmittedDocuments(String documentName, String documentType, Date submittedDate, Boolean duplicate, Boolean emailed) {
+    public SubmittedDocuments(String documentName, String documentType, Date submittedDate, String duplicate, String emailed) {
         this.DocumentName = documentName;
         this.DocumentType = documentType;
         this.SubmittedDate = submittedDate;
@@ -103,19 +103,19 @@ public class SubmittedDocuments {
         this.SubmittedDate = submittedDate;
     }
 
-    public Boolean getDuplicate() {
-        return Duplicate;
+    public String getDuplicate() {
+        return Duplicate.toUpperCase();
     }
 
-    public void setDuplicate(Boolean duplicate) {
+    public void setDuplicate(String duplicate) {
         this.Duplicate = duplicate;
     }
 
-    public Boolean getEmailed() {
-        return emailed;
+    public String getEmailed() {
+        return emailed.toUpperCase();
     }
 
-    public void setEmailed(Boolean emailed) {
+    public void setEmailed(String emailed) {
         this.emailed = emailed;
     }
 

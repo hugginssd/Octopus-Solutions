@@ -59,8 +59,23 @@
 package octopushr.documents;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import octopushr.Connexion;
+import octopushr.Functions;
 
 /**
  * FXML Controller class
@@ -72,9 +87,125 @@ public class ReferenceDocumentsController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private ComboBox<?> cmbDocumenttype;
+
+    @FXML
+    private TextField txtDocumentnumber;
+
+    @FXML
+    private TextField txtDocumentitle;
+
+    @FXML
+    private TextArea txaDescription;
+
+    @FXML
+    private TextField txtSelectdocument;
+
+    @FXML
+    private DatePicker dtpIssuedon;
+
+    @FXML
+    private ComboBox<?> cmbAuthority;
+
+    @FXML
+    private TextField txtBuyFee;
+
+    @FXML
+    private TextArea txtFeedetails;
+
+    @FXML
+    private TextArea txtStatussummary;
+
+    @FXML
+    private Button btnUpdate;
+
+    @FXML
+    private Button btnAddNew;
+
+    @FXML
+    private ComboBox<?> cmbAuthourity;
+
+    @FXML
+    private DatePicker dtpFrom;
+
+    @FXML
+    private DatePicker dtpTo;
+
+    @FXML
+    private TableView<?> tableReferenceDocuments;
+
+    @FXML
+    private TableColumn<?, ?> colSno;
+
+    @FXML
+    private TableColumn<?, ?> colTitle;
+
+    @FXML
+    private TableColumn<?, ?> colDocumentType;
+
+    @FXML
+    private TableColumn<?, ?> colAuthority;
+
+    @FXML
+    private TableColumn<?, ?> colIssuedOn;
+
+    @FXML
+    private TableColumn<?, ?> colBuyFee;
+
+    @FXML
+    private TableColumn<?, ?> colFeeDetail;
+
+    @FXML
+    private Button btnViewAll;
+
+    @FXML
+    private Button btnDelete;
+
+    @FXML
+    private Button btnDownloadFile;
+
+    @FXML
+    private Button btnClose;
+
+    @FXML
+    private Button btnEmployeeDocuments;
+
+    @FXML
+    private Button btnExternalDocuments;
+
+    @FXML
+    private Button btnExpiredDocuments;
+
+    @FXML
+    private Button btnCompanyDocuments;
+
+    Functions functions = new Functions();
+    Connexion connexion = new Connexion();
+    Connection connection;
+    Statement st;
+    PreparedStatement pst;
+    ResultSet rs;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+
+    }
+
+    @FXML
+    public void uploadReferenceDocuments() throws SQLException, ClassNotFoundException {
+        //INSERT INTO `tblreferencedocuments`(`id`, `documentnumber`, `documenttitle`, `issuedon`, `documentname`, 
+        //`description`, `documentid`, `authorityid`, `buyfee`, `feedetails`, `statussummary`) 
+        // VALUES([value - 1],[value - 2],[value - 3],[value - 4],[value - 5],[value - 6],[value - 7],[value - 8],[value - 9],[value - 10],[value - 11
+        //])
+        //if(){
+        connection = connexion.getConnetion();
+        pst = connection.prepareStatement(" INSERT INTO `tblreferencedocuments`(`documentnumber`, `documenttitle`, `issuedon`, `documentname`, "
+                + " `description`, `documentid`, `authorityid`, `buyfee`, `feedetails`, `statussummary`) "
+                + " VALUES (?,?,?,?,?,?,?,?,?,?)");
+
+    }
+
 }
+
