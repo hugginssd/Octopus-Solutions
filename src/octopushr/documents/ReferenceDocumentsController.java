@@ -204,6 +204,7 @@ public class ReferenceDocumentsController implements Initializable {
         pst = connection.prepareStatement(" INSERT INTO `tblreferencedocuments`(`documentnumber`, `documenttitle`, `issuedon`, `documentname`, "
                 + " `description`, `documentid`, `authorityid`, `buyfee`, `feedetails`, `statussummary`) "
                 + " VALUES (?,?,?,?,?,?,?,?,?,?)");
+        
 
     }
 
