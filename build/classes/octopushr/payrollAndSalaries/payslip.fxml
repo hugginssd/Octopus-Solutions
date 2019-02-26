@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="689.0" prefWidth="855.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.PayslipController">
+    <stylesheets>
+        <URL value="@/resources/css/payslip.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="4.0" layoutY="34.0" prefHeight="67.0" prefWidth="846.0" style="-fx-border-color: #66ADCD;">
+         <children>
+            <Label layoutX="6.0" layoutY="5.0" text="Employee Name">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="39.0" text="Employee Number">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="251.0" layoutY="5.0" prefHeight="16.0" prefWidth="185.0" text="Tanaka Kwaadini">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEmployeeNumber" layoutX="251.0" layoutY="39.0" prefHeight="16.0" prefWidth="185.0" text="EMP001">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="451.0" layoutY="5.0" text="Payroll Date">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="451.0" layoutY="39.0" text="Company Name">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPayDate" layoutX="705.0" layoutY="5.0" prefHeight="16.0" prefWidth="138.0" text="Employee Name">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCompanyName" layoutX="705.0" layoutY="39.0" prefHeight="16.0" prefWidth="138.0" text="Kamlink (Pvt) Ltd">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="395.0" layoutY="3.0" text="Payslip">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Label>
+      <Pane layoutX="4.0" layoutY="110.0" prefHeight="356.0" prefWidth="846.0" style="-fx-border-color: #66ADCD;">
+         <children>
+            <TableView fx:id="tablePayslip" layoutX="1.0" layoutY="1.0" prefHeight="299.0" prefWidth="844.0" />
+            <Label layoutX="1.0" layoutY="300.0" prefHeight="28.0" prefWidth="844.0" style="-fx-background-color: #c5c5c5;" text="Total Pay">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotalPay" layoutX="249.0" layoutY="299.0" prefHeight="28.0" prefWidth="97.0">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="453.0" layoutY="299.0" prefHeight="28.0" prefWidth="112.0" text="Total Deductions">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="453.0" layoutY="327.0" prefHeight="28.0" prefWidth="392.0" style="-fx-background-color: #c5c5c5;" text="Net Pay">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNetPay" layoutX="701.0" layoutY="329.0" prefHeight="28.0" prefWidth="144.0">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotalDeductions" layoutX="701.0" layoutY="300.0" prefHeight="28.0" prefWidth="144.0">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="4.0" layoutY="468.0" prefHeight="87.0" prefWidth="846.0" style="-fx-border-color: #66ADCD;">
+         <children>
+            <Label layoutY="1.0" prefHeight="28.0" prefWidth="845.0" style="-fx-background-color: #a1d6e4;" text="Net Pay Distributions">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="1.0" layoutY="35.0" text="Payment Method" textFill="#393737">
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="35.0" text="Bank Name">
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="345.0" layoutY="35.0" text="Account Number">
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="549.0" layoutY="34.0" text="Description">
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="701.0" layoutY="34.0" text="Paid Amount">
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPaymentMethod" layoutX="2.0" layoutY="61.0" prefHeight="18.0" prefWidth="172.0" text="Cash">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblBankName" layoutX="198.0" layoutY="61.0" prefHeight="18.0" prefWidth="128.0" text="ZB Bank">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAccountNumber" layoutX="345.0" layoutY="61.0" prefHeight="18.0" prefWidth="193.0" text="100234234234">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDescription" layoutX="550.0" layoutY="60.0" prefHeight="18.0" prefWidth="144.0" text="This is the salary">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPaidAmount" layoutX="702.0" layoutY="60.0" prefHeight="18.0" prefWidth="138.0" text="10,000,45">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="4.0" layoutY="558.0" prefHeight="87.0" prefWidth="846.0" style="-fx-border-color: #66ADCD; -fx-background-color: #FFFFFF;">
+         <children>
+            <Label layoutX="1.0" layoutY="1.0" prefHeight="28.0" prefWidth="844.0" style="-fx-background-color: #FFFFFF;" text="Comments">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblComments" alignment="TOP_LEFT" layoutX="74.0" layoutY="29.0" prefHeight="56.0" prefWidth="769.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btnPrint" layoutX="4.0" layoutY="648.0" mnemonicParsing="false" onAction="#Print" prefHeight="28.0" prefWidth="112.0" text="Print">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEmail" layoutX="123.0" layoutY="648.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" text="Email">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClose" cancelButton="true" layoutX="241.0" layoutY="648.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="28.0" prefWidth="112.0" text="Close">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

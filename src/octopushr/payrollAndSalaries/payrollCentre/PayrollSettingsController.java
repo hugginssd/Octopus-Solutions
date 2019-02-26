@@ -54,16 +54,22 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  * and open the template in the editor.
  */
-package octopushr.payrollAndSalaries;
+package octopushr.payrollAndSalaries.payrollCentre;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import octopushr.Functions;
 
 /**
@@ -73,7 +79,6 @@ import octopushr.Functions;
  */
 public class PayrollSettingsController implements Initializable {
 
-  
     @FXML
     private MenuItem itemClose;
 
@@ -211,6 +216,9 @@ public class PayrollSettingsController implements Initializable {
 
     @FXML
     private MenuItem itemAbout;
+
+    @FXML
+    private Stage stage;
 
     Functions functions = new Functions();
 
@@ -420,7 +428,7 @@ public class PayrollSettingsController implements Initializable {
         itemLeaveDeductionView.setFitHeight(20);
         itemLeaveDeduction.setGraphic(itemLeaveDeductionView);//setting the disc to menuItem disciplinary
 
-          //payroll
+        //payroll
         //add the itemClose icon
         Image itemAttendanceDashboardIcon = new Image(getClass().getResourceAsStream("/resources/icons/dashboard.png"));
         ImageView itemAttendanceDashboardView = new ImageView(itemAttendanceDashboardIcon);
@@ -451,8 +459,8 @@ public class PayrollSettingsController implements Initializable {
         itemOrganisationCalendarView.setFitWidth(20);
         itemOrganisationCalendarView.setFitHeight(20);//staff-settings
         itemOrganisationCalendar.setGraphic(itemOrganisationCalendarView);//setting the disc to menuItem disciplinary
- 
-             //payroll
+
+        //payroll
         //add the itemClose icon
         Image itemStaffSettingsIcon = new Image(getClass().getResourceAsStream("/resources/icons/staff-settings.png"));
         ImageView itemStaffSettingsView = new ImageView(itemStaffSettingsIcon);
@@ -483,8 +491,8 @@ public class PayrollSettingsController implements Initializable {
         itemLateOvertimeCalculatorView.setFitWidth(20);
         itemLateOvertimeCalculatorView.setFitHeight(20);//staff-settings
         itemLateOvertimeCalculator.setGraphic(itemLateOvertimeCalculatorView);//setting the disc to menuItem disciplinary
- 
-                //payroll
+
+        //payroll
         //add the itemClose icon
         Image itemAbsentIcon = new Image(getClass().getResourceAsStream("/resources/icons/absent.png"));
         ImageView itemAbsentView = new ImageView(itemAbsentIcon);
@@ -515,8 +523,7 @@ public class PayrollSettingsController implements Initializable {
         itemLateMinutesView.setFitWidth(20);
         itemLateMinutesView.setFitHeight(20);//staff-settings
         itemLateMinutes.setGraphic(itemLateMinutesView);//setting the disc to menuItem disciplinary
- 
-        
+
         //payroll
         //add the itemDashboard icon
         Image itemLateOvertimeCalculator_Icon = new Image(getClass().getResourceAsStream("/resources/icons/calculator.png"));
@@ -524,8 +531,8 @@ public class PayrollSettingsController implements Initializable {
         itemLateOvertimeCalculator_View.setFitWidth(20);
         itemLateOvertimeCalculator_View.setFitHeight(20);//staff-settings
         itemLateOvertimeCalculator.setGraphic(itemLateOvertimeCalculator_View);//setting the disc to menuItem disciplinary
- 
-                //payroll
+
+        //payroll
         //add the itemClose icon
         Image itemAbsent_Icon = new Image(getClass().getResourceAsStream("/resources/icons/absent.png"));
         ImageView itemAbsent_View = new ImageView(itemAbsent_Icon);
@@ -556,8 +563,8 @@ public class PayrollSettingsController implements Initializable {
         itemApproveleaveView.setFitWidth(20);
         itemApproveleaveView.setFitHeight(20);//staff-settings
         itemApproveleave.setGraphic(itemApproveleaveView);//setting the disc to menuItem disciplinary
- 
-          //payroll
+
+        //payroll
         //add the itemClose icon
         Image itemOrganisationCalendar_Icon = new Image(getClass().getResourceAsStream("/resources/icons/calendar.png"));
         ImageView itemOrganisationCalendar_View = new ImageView(itemOrganisationCalendar_Icon);
@@ -572,8 +579,8 @@ public class PayrollSettingsController implements Initializable {
         itemEmployeeLeaveCalendarView.setFitWidth(20);
         itemEmployeeLeaveCalendarView.setFitHeight(20);//staff-settings
         itemEmployeeLeaveCalendar.setGraphic(itemEmployeeLeaveCalendarView);//setting the disc to menuItem disciplinary
- 
-                //payroll
+
+        //payroll
         //add the itemClose icon
         Image itemLeaveTypesIcon = new Image(getClass().getResourceAsStream("/resources/icons/leave-type.png"));
         ImageView itemLeaveTypesView = new ImageView(itemLeaveTypesIcon);
@@ -588,8 +595,8 @@ public class PayrollSettingsController implements Initializable {
         itemEmployeeLeaveSettingsView.setFitWidth(20);
         itemEmployeeLeaveSettingsView.setFitHeight(20);//staff-settings
         itemEmployeeLeaveSettings.setGraphic(itemEmployeeLeaveSettingsView);//setting the disc to menuItem disciplinary
- 
-          //payroll
+
+        //payroll
         //add the itemClose icon
         Image itemHolidayVacationsIcon = new Image(getClass().getResourceAsStream("/resources/icons/holiday.png"));
         ImageView itemHolidayVacationsView = new ImageView(itemHolidayVacationsIcon);
@@ -604,17 +611,109 @@ public class PayrollSettingsController implements Initializable {
         itemAboutView.setFitWidth(20);
         itemAboutView.setFitHeight(20);//staff-settings
         itemAbout.setGraphic(itemAboutView);//setting the disc to menuItem disciplinary
- 
-        
-        
-        
-        
-        
+
     }
 
     @FXML
     public void closeThisStage(Event event) {
         functions.closeWindow(event);
-    
+    }
+
+    @FXML
+    public void showProcessPayroll() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payrollCentre/processPayroll.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/processpayroll.css");
+        stage.setTitle("Process payroll");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/wages.png")));
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void showWagesAndBilling() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/employeeBilling.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/employeebilling.css");
+        stage.setTitle("Wages and Billing");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/process.png")));
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void showSalaryHistory() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/employeeSalaryHistory.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/employeesalaryhistory.css");
+        stage.setTitle("Salary history");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/salary-history.png")));
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void showLoanAndAdvances() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/loanAndAdvances.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/loanandadvances.css");
+        stage.setTitle("Loan and Advances");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/loan.png")));
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void showBankSheet() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/bankSheet.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/banksheet.css");
+        stage.setTitle("Loan and Advances");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/bank-sheet.png")));
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void showSavingsAndGOSI() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payrollCentre/savings.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/savings.css");
+        stage.setTitle("Savings");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/savings.png")));
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void showOverTime() throws IOException {
+        stage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/employeeBilling.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("/resources/css/employeebilling.css");
+        stage.setTitle("Savings");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/icons/billing.png")));
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
     }
 }

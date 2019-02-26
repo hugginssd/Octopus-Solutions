@@ -133,7 +133,7 @@ public class EmployeeListController implements Initializable {
     ObservableList<ViewEmployeeDetails> data;
     @FXML
     private TableView<ViewEmployeeDetails> tableView;
-    
+
     ViewEmployeeDetails viewEmployeeDetails;
 
     @Override
@@ -146,15 +146,9 @@ public class EmployeeListController implements Initializable {
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(EmployeeListController.class.getName()).log(Level.SEVERE, null, ex);
         }
-//=======
-   // private Button btnClose;
 
-//    @Override
-//    public void initialize(URL url, ResourceBundle rb) {
-//        // TODO
-//////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
-//    }
     }
+
     @FXML
     public void qiut(Event event) throws Exception {
 //<<<<<<< HEAD
@@ -312,7 +306,7 @@ public class EmployeeListController implements Initializable {
             functions.alertSuccessful(alert, "You cannot execute this file. Please close the file if it is open. ");
             return;
         }
-        functions.writeExcel(tableView,viewEmployeeDetails);
+        functions.writeExcel(tableView, viewEmployeeDetails);
     }
 
     @FXML
@@ -374,12 +368,7 @@ public class EmployeeListController implements Initializable {
         //verify
         final TableColumn<ViewEmployeeDetails, Boolean> colVerify = new TableColumn("Verify");
         colVerify.setCellValueFactory(new PropertyValueFactory("verify"));
-        colVerify.setCellFactory(new Callback<TableColumn<ViewEmployeeDetails, Boolean>, TableCell<ViewEmployeeDetails, Boolean>>() {
-            @Override
-            public TableCell<ViewEmployeeDetails, Boolean> call(TableColumn<ViewEmployeeDetails, Boolean> param) {
-                return new CheckBoxTableCell<>();
-            }
-        });
+        colVerify.setCellFactory((TableColumn<ViewEmployeeDetails, Boolean> param) -> new CheckBoxTableCell<>());
         columns.add(colVerify);
         //active
         final TableColumn<ViewEmployeeDetails, Boolean> colActive = new TableColumn<>("Active");
@@ -418,10 +407,7 @@ public class EmployeeListController implements Initializable {
         tableView.setEditable(true);
         pst.close();
         rs.close();
-//=======
         closeQuit closeStage = new closeQuit();
-      //  closeStage.qiutScene(event);
-////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
 
     }
 }

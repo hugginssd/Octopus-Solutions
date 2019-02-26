@@ -46,4 +46,13 @@
     -fx-border-color:#cccccc;
     -fx-border-radius: 5px;
 }
-
+.button{
+/*    -fx-border-color:#66ADCD;*/
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+.combo-box{
+    -fx-font-family:Arial Rounded MT Bold;
+}

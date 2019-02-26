@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -47,20 +46,23 @@
                </font>
             </Label>
             <ProgressIndicator fx:id="progressIndicator" layoutX="240.0" layoutY="342.0" prefHeight="33.0" prefWidth="29.0" progress="0.0" visible="false" />
-              <Button fx:id="btnSignIn" layoutX="34.0" layoutY="349.0" mnemonicParsing="false" onAction="#userSignin" prefHeight="33.0" prefWidth="244.0" text="SIGN IN" />
-            <Label layoutX="20.0" layoutY="142.0" prefHeight="40.0" prefWidth="269.0" text="Welcome to Octopus" textFill="#1a81db">
+              <Button fx:id="btnSignIn" layoutX="34.0" layoutY="349.0" mnemonicParsing="false" onAction="#userSignin" prefHeight="33.0" prefWidth="244.0" text="SIGN IN">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="20.0" layoutY="142.0" prefHeight="40.0" prefWidth="269.0" text="Welcome to Kamlink" textFill="#1a81db">
                <font>
                   <Font name="Arial Rounded MT Bold" size="26.0" />
                </font>
             </Label>
-            <Label layoutX="80.0" layoutY="401.0" text="Forgot Password?" textFill="#1b23cd">
+            <Label layoutX="80.0" layoutY="401.0" onMouseClicked="#forgotPassword" text="Forgot Password?" textFill="#1b23cd">
                <font>
                   <Font name="Arial Rounded MT Bold" size="15.0" />
                </font>
             </Label>
-            <ImageView fitHeight="75.0" fitWidth="123.0" layoutX="113.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="75.0" fitWidth="123.0" layoutX="91.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/icons/octopuslogo..png" />
+                  <Image url="@../../resources/icons/kamlink-logo.png" />
                </image>
             </ImageView>
             <PasswordField fx:id="txtPassword" layoutX="36.0" layoutY="287.0" prefHeight="33.0" prefWidth="244.0" promptText="Enter your password" text="123456">

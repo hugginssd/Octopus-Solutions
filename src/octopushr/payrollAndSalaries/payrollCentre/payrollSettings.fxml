@@ -22,7 +22,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="774.0" prefWidth="1409.0" style="-fx-background-color: #1980C1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.PayrollSettingsController">
+<AnchorPane id="AnchorPane" prefHeight="815.0" prefWidth="1429.0" style="-fx-background-color: #1980C1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.payrollCentre.PayrollSettingsController">
 
     <stylesheets>
         <URL value="@/resources/css/payrollsettings.css" />
@@ -41,13 +41,13 @@
                       <Menu mnemonicParsing="false" text="Payroll">
                           <items>
                               <MenuItem fx:id="itemDashboard" mnemonicParsing="false" text="Dashboard" />
-                              <MenuItem fx:id="itemProcessPayroll" mnemonicParsing="false" text="Process Payroll" />
-                              <MenuItem fx:id="itemWagesBilling" mnemonicParsing="false" text="Wages  &amp; Billing" />
-                              <MenuItem fx:id="itemSalaryHistory" mnemonicParsing="false" text="Salary History" />
-                              <MenuItem fx:id="itemLoanAdvances" mnemonicParsing="false" text="Loan Advances" />
-                              <MenuItem fx:id="itemBankSheet" mnemonicParsing="false" text="Bank Sheet" />
-                              <MenuItem fx:id="itemSavingsGOSI" mnemonicParsing="false" text="Savings/GOSI" />
-                              <MenuItem fx:id="itemPayOvertime" mnemonicParsing="false" text="Pay Overtime" />
+                              <MenuItem fx:id="itemProcessPayroll" mnemonicParsing="false" onAction="#showProcessPayroll" text="Process Payroll" />
+                              <MenuItem fx:id="itemWagesBilling" mnemonicParsing="false" onAction="#showWagesAndBilling" text="Wages  &amp; Billing" />
+                              <MenuItem fx:id="itemSalaryHistory" mnemonicParsing="false" onAction="#showSalaryHistory" text="Salary History" />
+                              <MenuItem fx:id="itemLoanAdvances" mnemonicParsing="false" onAction="#showLoanAndAdvances" text="Loan Advances" />
+                              <MenuItem fx:id="itemBankSheet" mnemonicParsing="false" onAction="#showBankSheet" text="Bank Sheet" />
+                              <MenuItem fx:id="itemSavingsGOSI" mnemonicParsing="false" onAction="#showSavingsAndGOSI" text="Savings/GOSI" />
+                              <MenuItem fx:id="itemPayOvertime" mnemonicParsing="false" onAction="#showOverTime" text="Pay Overtime" />
                           </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Payroll Settings">
@@ -130,12 +130,18 @@
                      <children>
                         <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="1404.0">
                            <children>
-                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="1403.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" text="Payroll Centre" textFill="#1980c1">
+                              <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="1435.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" text="Payroll Centre" textFill="#1980c1">
                                  <font>
                                     <Font name="Arial Rounded MT Bold" size="20.0" />
                                  </font>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
                         </HBox>
                         <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="200.0" spacing="5.0">
                            <children>

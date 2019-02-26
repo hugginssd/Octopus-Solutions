@@ -1,380 +1,392 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="814.0" prefWidth="1373.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.PayEmployeeSalaryController">
-
-    <stylesheets>
-        <URL value="@/resources/css/payemployeesalary.css" />
-    </stylesheets>
-    <children>
-        <Pane fx:id="paneMain" layoutX="6.0" layoutY="7.0" prefHeight="795.0" prefWidth="1350.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
-            <children>
-                <Pane fx:id="pane1" layoutX="4.0" layoutY="4.0" prefHeight="128.0" prefWidth="537.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
-                    <children>
-                        <ComboBox fx:id="cmbSelectDepartment" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="223.0" promptText="---Select Department---" />
-                        <ComboBox fx:id="cmbSelectEmployee" layoutX="14.0" layoutY="72.0" prefHeight="31.0" prefWidth="223.0" promptText="---Select Employee---" />
-                        <Button fx:id="btnViewSalaryStructure" layoutX="254.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="195.0" text="VIEW SALARY STRUCTURE" />
-                        <Button fx:id="btnUploadAttendanceSheet" layoutX="254.0" layoutY="72.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="195.0" text="UPLOAD ATTENDANCE SHEET" />
-                    </children>
-                </Pane>
-                <Pane fx:id="pane2" layoutX="3.0" layoutY="134.0" prefHeight="101.0" prefWidth="537.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
-                    <children>
-                        <ImageView fitHeight="94.0" fitWidth="91.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true">
-                            <image>
-                                <Image url="@../../resources/icons/no-image.jpg" />
-                            </image>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1350.0" style="-fx-background-color: #66ADCD;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.PayEmployeeSalaryController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1356.0" minWidth="9.0" prefWidth="1356.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="818.0" minWidth="0.0" prefWidth="0.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="833.0" minHeight="0.0" prefHeight="745.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="643.0" minHeight="0.0" prefHeight="5.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Pane fx:id="paneMain" prefHeight="809.0" prefWidth="1350.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+         <children>
+            <Pane fx:id="pane1" layoutX="3.0" layoutY="3.0" prefHeight="101.0" prefWidth="537.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+               <children>
+                  <ComboBox fx:id="cmbSelectDepartment" layoutX="14.0" layoutY="14.0" onAction="#loadDepartmentId" prefHeight="31.0" prefWidth="289.0" promptText="---Select Department---" />
+                  <ComboBox fx:id="cmbSelectEmployee" layoutX="14.0" layoutY="55.0" onAction="#selectEmployeeDetails" prefHeight="31.0" prefWidth="289.0" promptText="---Select Employee---" />
+                  <Button fx:id="btnViewSalaryStructure" layoutX="319.0" layoutY="14.0" mnemonicParsing="false" onAction="#viewSalaryStructure" prefHeight="31.0" prefWidth="195.0" text="VIEW SALARY STRUCTURE">
+                     <font>
+                        <Font name="Cambria Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnUploadAttendanceSheet" layoutX="319.0" layoutY="55.0" mnemonicParsing="false" onAction="#uploadAttendanceSheet" prefHeight="31.0" prefWidth="195.0" text="UPLOAD ATTENDANCE SHEET">
+                     <font>
+                        <Font name="Cambria Bold" size="12.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+            <Pane fx:id="pane2" layoutX="3.0" layoutY="102.0" prefHeight="101.0" prefWidth="537.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+               <children>
+                  <ImageView fx:id="imgPerson" fitHeight="94.0" fitWidth="91.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../resources/icons/no-image.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblDesignation" layoutX="115.0" layoutY="30.0" prefHeight="17.0" prefWidth="252.0" style="-fx-text-fill: #00ffc8;" text="============">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lblDepartment" layoutX="115.0" layoutY="63.0" prefHeight="17.0" prefWidth="252.0" style="-fx-text-fill: #00ffc8;" text="============">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="lblDepartmentId" layoutX="487.0" layoutY="22.0" text="Label" textFill="#00ffc8">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pane3" layoutX="3.0" layoutY="201.0" prefHeight="516.0" prefWidth="537.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" style="-fx-text-fill: #00ffc8;" text="Payslip for:">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dtpSelectMonth" layoutX="95.0" layoutY="10.0" onAction="#calculatePromptDays" prefHeight="31.0" prefWidth="174.0" promptText="Select Month" />
+                  <Label fx:id="lblOctopusCalSalary" layoutX="283.0" layoutY="17.0" prefHeight="17.0" prefWidth="252.0" style="-fx-text-fill: #00ffc8;" text="How OctopusHR Calculates Salary?">
+                     <font>
+                        <Font name="Cambria Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dtpFrom" layoutX="95.0" layoutY="52.0" prefHeight="31.0" prefWidth="223.0" promptText="From" />
+                  <DatePicker fx:id="dtpTo" layoutX="322.0" layoutY="52.0" prefHeight="31.0" prefWidth="201.0" promptText="To" />
+                  <Text fill="#00ffc8" layoutX="117.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="No. of days   =" wrappingWidth="98.5078125">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="36.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Actual Work / Base Days  =">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="35.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Total Earnings  =" textAlignment="RIGHT" wrappingWidth="161.984375">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="42.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Salary Deductions  =" textAlignment="RIGHT" wrappingWidth="155.13671875">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="33.0" layoutY="186.0" prefHeight="0.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
+                  <Separator layoutX="33.0" layoutY="208.0" prefHeight="0.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
+                  <Text fill="#00ffc8" layoutX="60.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Salary  =" textAlignment="RIGHT" wrappingWidth="137.0">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtTotalSalary" fill="#00ffc8" layoutX="386.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="0.00">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="78.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Salary of one day  =" textAlignment="RIGHT" wrappingWidth="121.0">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="69.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="No. of days of Salary =">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="32.0" layoutY="261.0" prefHeight="3.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
+                  <ImageView fitHeight="31.0" fitWidth="25.0" layoutX="20.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="8.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/info.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="31.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/icons/info.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#00ffc8" layoutX="62.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Net Salary  =" textAlignment="RIGHT" wrappingWidth="137.0">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="57.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Loan Deductions  =" textAlignment="RIGHT" wrappingWidth="145.0">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="6.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Advance Payment Deductions  =" textAlignment="RIGHT" wrappingWidth="195.0000185519457">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="64.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Bonus /Incentive  =" textAlignment="RIGHT" wrappingWidth="137.0">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="81.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="OverTime Bill  =" textAlignment="RIGHT" wrappingWidth="121.0">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="43.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Deduction For Leave  =" textAlignment="RIGHT" wrappingWidth="155.13671875">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="27.0" layoutY="419.0" prefHeight="3.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
+                  <Text fill="#00ffc8" layoutX="76.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Salary To Pay  =" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00ffc8" layoutX="98.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Note:" textAlignment="RIGHT" wrappingWidth="76.13671875">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtNote" layoutX="176.0" layoutY="451.0" prefHeight="25.0" prefWidth="331.0" style="-fx-border-color: #FFFFFF;">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <tooltip>
+                        <Tooltip text="Salary note" />
+                     </tooltip>
+                  </TextField>
+                  <Text fx:id="txtSalaryToPay" fill="#00ffc8" layoutX="388.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtDeductionForLeave" alignment="CENTER" layoutX="371.0" layoutY="390.0" onAction="#calculateDeductionForLeave" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #FFFFFF;" />
+                  <TextField fx:id="txtOvertimebill" alignment="CENTER" layoutX="371.0" layoutY="362.0" onAction="#calculateBonusIncentive" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #FFFFFF;" />
+                  <TextField fx:id="txtBonusIncentive" alignment="CENTER" layoutX="371.0" layoutY="334.0" onKeyTyped="#calculateBonusIncentive" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #FFFFFF;" />
+                  <Label fx:id="lblAdvancePaymentDeductions" alignment="CENTER" layoutX="368.0" layoutY="311.0" prefHeight="17.0" prefWidth="66.0" style="-fx-text-fill: #00ffc8;" text="0.00">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblLoanDeductions" alignment="CENTER" layoutX="367.0" layoutY="290.0" prefHeight="17.0" prefWidth="66.0" style="-fx-text-fill: #00ffc8;" text="0.00">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNetSalary" alignment="CENTER" layoutX="370.0" layoutY="263.0" prefHeight="17.0" prefWidth="66.0" style="-fx-text-fill: #00ffc8;" text="0.00">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSalaryOfOneDay" alignment="CENTER" layoutX="361.0" layoutY="210.0" prefHeight="17.0" prefWidth="76.0" style="-fx-text-fill: #00ffc8;" text="0.00">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSalaryDeductions" alignment="CENTER" layoutX="371.0" layoutY="169.0" prefHeight="17.0" prefWidth="56.0" style="-fx-text-fill: #00ffc8;" text="0.00">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTotalEarnings" alignment="CENTER" layoutX="361.0" layoutY="149.0" prefHeight="17.0" prefWidth="76.0" style="-fx-text-fill: #00ffc8;" text="0.00">
+                     <font>
+                        <Font name="Cambria" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNoOfDays" alignment="CENTER" layoutX="359.0" layoutY="97.0" prefHeight="17.0" prefWidth="88.0" text="1">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtActualWorkBaseDays" alignment="CENTER" layoutX="368.0" layoutY="115.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #FFFFFF;" />
+                  <TextField fx:id="txtNoOfDayssalary" alignment="CENTER" layoutX="367.0" layoutY="230.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #FFFFFF;" />
+                  <Button layoutX="176.0" layoutY="481.0" mnemonicParsing="false" onAction="#loadPayslip" prefHeight="28.0" prefWidth="100.0" text="Confirm">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="289.0" layoutY="481.0" mnemonicParsing="false" onAction="#loadPayslip" prefHeight="28.0" prefWidth="113.0" text="Payslip Preview">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnClose" layoutX="406.0" layoutY="481.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="28.0" prefWidth="102.0" text="Close">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="panemain" layoutX="541.0" layoutY="3.0" prefHeight="715.0" prefWidth="805.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+               <children>
+                  <Pane fx:id="pane4" layoutX="3.0" layoutY="18.0" prefHeight="162.0" prefWidth="799.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                     <children>
+                        <TableView fx:id="tableLoan" layoutX="4.0" layoutY="4.0" onMouseClicked="#showTableData" prefHeight="155.0" prefWidth="792.0" />
+                     </children>
+                  </Pane>
+                  <Text fill="#00ffc8" layoutX="9.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Loan &amp; Advance Calculation">
+                     <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="pane5" layoutX="4.0" layoutY="179.0" prefHeight="169.0" prefWidth="799.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+                     <children>
+                        <Pane fx:id="pane8" layoutX="427.0" layoutY="19.0" prefHeight="150.0" prefWidth="371.0" style="-fx-border-color: #FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                           <children>
+                              <Text fill="#00ffc8" layoutX="58.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned On:" wrappingWidth="103.99999916553497">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#00ffc8" layoutX="85.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Closing On:" wrappingWidth="76.13671875">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="lblSanctionedOn" layoutX="161.0" layoutY="68.0" prefHeight="17.0" prefWidth="201.0" style="-fx-text-fill: #00ffc8;">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="lblClosingOn" layoutX="161.0" layoutY="96.0" prefHeight="17.0" prefWidth="201.0" style="-fx-text-fill: #00ffc8;">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Label>
+                              <Text fill="#00ffc8" layoutX="7.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Detail" wrappingWidth="76.13671875">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <ImageView fx:id="imgPerson1" fitHeight="143.0" fitWidth="137.0" layoutX="6.0" layoutY="22.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../../resources/icons/no-image.jpg" />
+                           </image>
                         </ImageView>
-                        <Label layoutX="98.0" layoutY="30.0" prefHeight="17.0" prefWidth="121.0" style="-fx-text-fill: #00ffc8;" text="//============" />
-                        <Label layoutX="98.0" layoutY="63.0" style="-fx-text-fill: #00ffc8;" text="//============" />
-                    </children>
-                </Pane>
-                <Pane fx:id="pane3" layoutX="3.0" layoutY="236.0" prefHeight="555.0" prefWidth="537.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
-                    <children>
-                        <Label layoutX="14.0" layoutY="14.0" style="-fx-text-fill: #00ffc8;" text="Payslip for:">
-                            <font>
-                                <Font name="Cambria Bold Italic" size="13.0" />
-                            </font>
-                        </Label>
-                        <DatePicker fx:id="dtpSelectMonth" layoutX="95.0" layoutY="10.0" prefHeight="31.0" prefWidth="174.0" promptText="Select Month" />
-                        <Label fx:id="lblOctopusCalSalary" layoutX="283.0" layoutY="17.0" prefHeight="17.0" prefWidth="252.0" style="-fx-text-fill: #00ffc8;" text="How OctopusHR Calculates Salary?">
-/
-                            <font>
-                                <Font name="Cambria Bold" size="13.0" />
-                            </font>
-                        </Label>
-                        <DatePicker fx:id="dtpFrom" layoutX="95.0" layoutY="52.0" prefHeight="31.0" prefWidth="223.0" promptText="From" />
-                        <DatePicker fx:id="dtpTo" layoutX="322.0" layoutY="52.0" prefHeight="31.0" prefWidth="201.0" promptText="To" />
-                        <Text fill="#00ffc8" layoutX="108.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="No. of days   =" wrappingWidth="98.5078125">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
+                        <Text fx:id="lblSanctionByName" fill="#00ffc8" layoutX="152.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" wrappingWidth="264.0000185519457">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font></Text>
+                        <Text fx:id="lblSanctionByDesignation" fill="#00ffc8" layoutX="152.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" wrappingWidth="252.0000010728836">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font></Text>
+                        <Text fx:id="lblSanctionByDepartment" fill="#00ffc8" layoutX="152.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" wrappingWidth="252.00000358745456">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font></Text>
+                        <Text fill="#00ffc8" layoutX="702.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned By">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="14.0" />
+                           </font>
                         </Text>
-                        <Text fill="#00ffc8" layoutX="27.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Actual Work / Base Days  =">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
+                     </children>
+                  </Pane>
+                  <Text fill="#00ffc8" layoutX="682.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Loans Sanctioned" wrappingWidth="121.0">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="pane5_" layoutX="4.0" layoutY="346.0" prefHeight="155.0" prefWidth="799.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                     <children>
+                        <TableView fx:id="tableAdvance" layoutX="3.0" layoutY="17.0" onMouseClicked="#showAdvanceTableData" prefHeight="137.0" prefWidth="792.0" />
+                        <Text fill="#00ffc8" layoutX="702.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Paid Advances">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="14.0" />
+                           </font>
                         </Text>
-                        <Text fill="#00ffc8" layoutX="26.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Total Earnings  =" textAlignment="RIGHT" wrappingWidth="161.984375">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="33.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Salary Deductions  =" textAlignment="RIGHT" wrappingWidth="155.13671875">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Separator layoutX="33.0" layoutY="203.0" prefHeight="0.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
-                        <Separator layoutX="33.0" layoutY="243.0" prefHeight="0.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
-                        <Text fill="#00ffc8" layoutX="42.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Salary  =" textAlignment="RIGHT" wrappingWidth="137.0">
-
-                            <font>
-                                <Font name="Cambria Bold Italic" size="13.0" />
-                            </font>
-                        </Text>
-                        <Text fx:id="txtTotalSalary" fill="#00ffc8" layoutX="386.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-
-                            <font>
-                                <Font name="Cambria Bold Italic" size="13.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="59.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Salary of one day  =" textAlignment="RIGHT" wrappingWidth="121.0">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="50.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="No. of days of Salary =">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Separator layoutX="32.0" layoutY="306.0" prefHeight="3.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
-                        <ImageView fitHeight="31.0" fitWidth="25.0" layoutX="20.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="8.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../resources/icons/info.png" />
-
-                            </image>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pane6" layoutX="3.0" layoutY="500.0" prefHeight="162.0" prefWidth="799.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                     <children>
+                        <ImageView fx:id="imgPerson2" fitHeight="129.0" fitWidth="128.0" layoutX="7.0" layoutY="30.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../../resources/icons/no-image.jpg" />
+                           </image>
                         </ImageView>
-                        <ImageView fitHeight="17.0" fitWidth="25.0" layoutX="31.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../resources/icons/info.png" />
-                            </image>
-                        </ImageView>
-                        <Text fill="#00ffc8" layoutX="43.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Net Salary  =" textAlignment="RIGHT" wrappingWidth="137.0">
-                            <font>
-                                <Font name="Cambria Bold Italic" size="13.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="59.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Loan Deductions  =" textAlignment="RIGHT" wrappingWidth="121.0">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="6.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Advance Payment Deductions  =" textAlignment="RIGHT" wrappingWidth="174.0">
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="43.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Bonus /Incentive  =" textAlignment="RIGHT" wrappingWidth="137.0">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="57.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="OverTime Bill  =" textAlignment="RIGHT" wrappingWidth="121.0">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="22.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Deduction For Leave  =" textAlignment="RIGHT" wrappingWidth="155.13671875">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Text>
-                        <Separator layoutX="27.0" layoutY="484.0" prefHeight="3.0" prefWidth="481.0" style="-fx-background-color: #000000;" />
-                        <Text fill="#00ffc8" layoutX="76.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Salary To Pay  =" textAlignment="RIGHT">
-
-                            <font>
-                                <Font name="Cambria Bold Italic" size="14.0" />
-                            </font>
-                        </Text>
-                        <Text fill="#00ffc8" layoutX="98.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Note:" textAlignment="RIGHT" wrappingWidth="76.13671875">
-
-                            <font>
-                                <Font name="Cambria Bold Italic" size="14.0" />
-                            </font>
-                        </Text>
-                        <TextField fx:id="txtNote" layoutX="176.0" layoutY="516.0" prefHeight="25.0" prefWidth="331.0" style="-fx-border-color: #000000;">
-                            <effect>
-                                <Blend />
-                            </effect>
-                            <tooltip>
-                                <Tooltip text="Salary note" />
-                            </tooltip>
-                        </TextField>
-                        <Text fx:id="txtSalaryToPay" fill="#00ffc8" layoutX="388.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
-                            <font>
-                                <Font name="Cambria Bold Italic" size="12.0" />
-                            </font>
-                        </Text>
-                        <TextField layoutX="371.0" layoutY="454.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #000000;" />
-                        <TextField layoutX="371.0" layoutY="426.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #000000;" />
-                        <TextField layoutX="371.0" layoutY="398.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #000000;" />
-                        <Label fx:id="lblAdvancePaymentDeductions" alignment="CENTER" layoutX="368.0" layoutY="371.0" prefHeight="17.0" prefWidth="66.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblLoanDeductions" alignment="CENTER" layoutX="367.0" layoutY="339.0" prefHeight="17.0" prefWidth="66.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblNetSalary" alignment="CENTER" layoutX="370.0" layoutY="312.0" prefHeight="17.0" prefWidth="66.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-
-                            <font>
-                                <Font name="Cambria Bold Italic" size="13.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblNoOfDaysOfSalary" alignment="CENTER" layoutX="362.0" layoutY="277.0" prefHeight="25.0" prefWidth="76.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblSalaryOfOneDay" alignment="CENTER" layoutX="361.0" layoutY="249.0" prefHeight="17.0" prefWidth="76.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblSalaryDeductions" alignment="CENTER" layoutX="371.0" layoutY="176.0" prefHeight="17.0" prefWidth="56.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblTotalEarnings" alignment="CENTER" layoutX="361.0" layoutY="149.0" prefHeight="17.0" prefWidth="76.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblActualWorkBaseDays" alignment="CENTER" layoutX="367.0" layoutY="125.0" prefHeight="17.0" prefWidth="66.0" style="-fx-text-fill: #00ffc8;" text="0.00">
-
-                            <font>
-                                <Font name="Cambria" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="lblNoOfDays" alignment="CENTER" layoutX="359.0" layoutY="97.0" prefHeight="17.0" prefWidth="88.0" text="1">
-                            <font>
-                                <Font name="Cambria" size="13.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </Pane>
-                <Pane fx:id="panemain" layoutX="542.0" layoutY="4.0" prefHeight="787.0" prefWidth="804.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
-                    <children>
-                        <Pane fx:id="pane4" layoutX="3.0" layoutY="24.0" prefHeight="211.0" prefWidth="799.0">
-
-                            <children>
-                                <TableView layoutX="3.0" layoutY="4.0" prefHeight="200.0" prefWidth="792.0">
-                                    <columns>
-                                        <TableColumn prefWidth="55.0" text="ID" />
-                                        <TableColumn prefWidth="190.0" text="Name" />
-                                        <TableColumn prefWidth="91.0" text="LoanAmount" />
-                                        <TableColumn prefWidth="117.0" text="Balance" />
-                                        <TableColumn prefWidth="92.0" text="EnterAmount" />
-                                        <TableColumn prefWidth="130.0" text="DeductionFromSalary" />
-                                        <TableColumn prefWidth="116.0" text="TakeEMISeperate" />
-                                    </columns>
-                                </TableView>
-                            </children>
+                        <Text fx:id="lblSanctionByPaidName" fill="#00ffc8" layoutX="143.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" wrappingWidth="273.158203125">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font></Text>
+                        <Text fx:id="lblSanctionByPaidDesignation" fill="#00ffc8" layoutX="143.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" wrappingWidth="273.1581995263696">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Text>
+                        <Text fx:id="lblSanctionByPaidDepartment" fill="#00ffc8" layoutX="143.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" wrappingWidth="273.1581995263696">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font></Text>
+                        <Pane fx:id="pane9" layoutX="433.0" layoutY="21.0" prefHeight="137.0" prefWidth="363.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+                           <children>
+                              <Text fill="#00ffc8" layoutX="3.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Detail">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="lblClosingOnA" layoutX="157.0" layoutY="90.0" prefHeight="17.0" prefWidth="201.0" style="-fx-text-fill: #00ffc8;">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="lblSanctionedOnA" layoutX="157.0" layoutY="62.0" prefHeight="17.0" prefWidth="201.0" style="-fx-text-fill: #00ffc8;">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="12.0" />
+                                 </font></Label>
+                              <Text fill="#00ffc8" layoutX="77.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Closing On:" wrappingWidth="76.00001022219658">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#00ffc8" layoutX="52.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned On:" wrappingWidth="103.99999916553497">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
                         </Pane>
-                        <Text fill="#00ffc8" layoutX="9.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Loan &amp; Advance Calculation">
-
-                            <font>
-                                <Font name="Cambria Bold" size="14.0" />
-                            </font>
+                        <Text fill="#00ffc8" layoutX="703.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned By">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="14.0" />
+                           </font>
                         </Text>
-                        <Pane fx:id="pane5" layoutX="3.0" layoutY="235.0" prefHeight="173.0" prefWidth="797.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
-                            <children>
-                                <Pane fx:id="pane8" layoutX="423.0" layoutY="16.0" prefHeight="155.0" prefWidth="371.0">
-                                    <children>
-                                        <Text fill="#00ffc8" layoutX="29.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned On:" wrappingWidth="96.13671875">
-
-                                            <font>
-                                                <Font size="13.0" />
-                                            </font>
-                                        </Text>
-                                        <Text fill="#00ffc8" layoutX="49.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Closing On:" wrappingWidth="76.13671875">
-
-                                            <font>
-                                                <Font size="13.0" />
-                                            </font>
-                                        </Text>
-                                        <Label layoutX="125.0" layoutY="45.0" prefHeight="17.0" prefWidth="104.0" style="-fx-text-fill: #00ffc8;" text="Label" />
-                                        <Label layoutX="125.0" layoutY="73.0" prefHeight="17.0" prefWidth="121.0" style="-fx-text-fill: #00ffc8;" text="Label" />
-                                        <Text fill="#00ffc8" layoutX="7.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Detail" wrappingWidth="76.13671875">
-                                            <font>
-                                                <Font name="Cambria Bold Italic" size="13.0" />
-                                            </font>
-                                        </Text>
-                                    </children>
-                                </Pane>
-                                <ImageView fitHeight="143.0" fitWidth="137.0" layoutX="6.0" layoutY="22.0" pickOnBounds="true" smooth="false">
-                                    <image>
-                                        <Image url="@../../resources/icons/no-image.jpg" />
-                                    </image>
-                                </ImageView>
-                                <Text fill="#00ffc8" layoutX="152.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="//========" />
-                                <Text fill="#00ffc8" layoutX="152.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="//========" />
-                                <Text fill="#00ffc8" layoutX="152.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="//========" />
-                                <Text fill="#00ffc8" layoutX="702.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned By">
-                                    <font>
-                                        <Font name="Cambria Bold Italic" size="14.0" />
-                                    </font>
-                                </Text>
-                            </children>
-                        </Pane>
-                        <Text fill="#00ffc8" layoutX="682.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Loans Sanctioned" wrappingWidth="121.0">
-
-                            <font>
-                                <Font name="Cambria Bold Italic" size="14.0" />
-                            </font>
-                        </Text>
-                        <Pane fx:id="pane5_" layoutX="3.0" layoutY="409.0" prefHeight="193.0" prefWidth="797.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
-
-                            <children>
-                                <TableView layoutX="7.0" layoutY="17.0" prefHeight="173.0" prefWidth="786.0">
-                                    <columns>
-                                        <TableColumn prefWidth="50.0" text="ID" />
-                                        <TableColumn prefWidth="180.0" text="Name" />
-                                        <TableColumn prefWidth="110.0" text="AdvanceAmount" />
-                                        <TableColumn prefWidth="90.0" text="Balance" />
-                                        <TableColumn prefWidth="138.0" text="EnterAmount" />
-                                        <TableColumn prefWidth="128.0" text="DeductFromSalary" />
-                                        <TableColumn prefWidth="89.0" text="TakeSeperate" />
-                                    </columns>
-                                </TableView>
-                                <Text fill="#00ffc8" layoutX="702.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Paid Advances">
-
-                                    <font>
-                                        <Font name="Cambria Bold Italic" size="14.0" />
-                                    </font>
-                                </Text>
-                            </children>
-                        </Pane>
-                        <Pane fx:id="pane6" layoutX="3.0" layoutY="603.0" prefHeight="180.0" prefWidth="797.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
-                            <children>
-                                <ImageView fitHeight="137.0" fitWidth="128.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" smooth="false">
-                                    <image>
-                                        <Image url="@../../resources/icons/no-image.jpg" />
-                                    </image>
-                                </ImageView>
-                                <Text fill="#00ffc8" layoutX="143.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="//========" />
-                                <Text fill="#00ffc8" layoutX="143.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="//========" />
-                                <Text fill="#00ffc8" layoutX="143.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="//========" />
-                                <Pane fx:id="pane9" layoutX="431.0" layoutY="18.0" prefHeight="158.0" prefWidth="363.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
-                                    <children>
-                                        <Text fill="#00ffc8" layoutX="3.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Detail">
-                                            <font>
-                                                <Font name="Cambria Bold Italic" size="13.0" />
-                                            </font>
-                                        </Text>
-                                        <Label layoutX="118.0" layoutY="64.0" prefHeight="17.0" prefWidth="121.0" style="-fx-text-fill: #00ffc8;" text="Label" />
-                                        <Label layoutX="118.0" layoutY="36.0" prefHeight="17.0" prefWidth="104.0" style="-fx-text-fill: #00ffc8;" text="Label" />
-                                        <Text fill="#00ffc8" layoutX="42.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Closing On:" wrappingWidth="76.13671875">
-
-                                            <font>
-                                                <Font size="13.0" />
-                                            </font>
-                                        </Text>
-                                        <Text fill="#00ffc8" layoutX="22.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned On:" wrappingWidth="96.13671875">
-
-                                            <font>
-                                                <Font size="13.0" />
-                                            </font>
-                                        </Text>
-                                    </children>
-                                </Pane>
-                                <Text fill="#00ffc8" layoutX="703.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #00ffc8;" text="Sanctioned By">
-
-                                    <font>
-                                        <Font name="Cambria Bold Italic" size="14.0" />
-                                    </font>
-                                </Text>
-                            </children>
-                        </Pane>
-                    </children>
-                </Pane>
-            </children>
-        </Pane>
-    </children>
-</AnchorPane>
+                     </children>
+                  </Pane>
+                  <Button layoutX="5.0" layoutY="681.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Bank Sheet">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</GridPane>

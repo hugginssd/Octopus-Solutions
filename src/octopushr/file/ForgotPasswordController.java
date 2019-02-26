@@ -7,6 +7,8 @@ package octopushr.file;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,53 +25,51 @@ import octopushr.Functions;
  *
  * @author user
  */
-
 public class ForgotPasswordController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
     @FXML
-    private TextField txtEnterMail,txtEnterMobileNumber;
-    
+    private TextField txtEnterMail, txtEnterMobileNumber;
+
     @FXML
-    private Button btnOk,btnCancel;
-    
+    private Button btnOk, btnCancel;
+
     Connexion connection = new Connexion();
     Functions functions = new Functions();
     Alert alert;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }   
+    }
+
     @FXML
-    public void sendMaill() throws MessagingException{
-        String username; 
+    public void sendMaill() {
+        String username;
         String memberName;
         String password;
-       if(txtEnterMail.getText().isEmpty()){
-        alert = new Alert(AlertType.INFORMATION);
-        alert.setHeaderText(null);
-        alert.setContentText("Please enter your mail");
-        alert.showAndWait();
-        return;
-       }
-       if(txtEnterMobileNumber.getText().isEmpty()){
-        alert = new Alert(AlertType.INFORMATION);
-        alert.setHeaderText(null);
-        alert.setContentText("Please enter your mobile number");
-        alert.showAndWait();
-        return;
-       }
-       username = txtEnterMail.getText();
-       password = "0782326160Ht";
-       memberName = "Dennis";
-       functions.sendMail(username, memberName, password);
+        if (txtEnterMail.getText().isEmpty()) {
+            functions.alertError(alert, "Please enter your mail");
+            return;
+        }
+        if (txtEnterMobileNumber.getText().isEmpty()) {
+            functions.alertError(alert, "Please enter your mobile number");
+            return;
+        }
+        try {
+            username = txtEnterMail.getText();
+            password = "0782326160Ht";
+            memberName = "Dennis";
+            functions.sendMail(username, memberName, password);
+        } catch (MessagingException ex) {
+            functions.alertError(alert, ex.toString());
+        }
     }
-    
+
     @FXML
-    public void closeThisStage(Event event){
-    functions.closeWindow(event);
-    
+    public void closeThisStage(Event event) {
+        functions.closeWindow(event);
     }
 }

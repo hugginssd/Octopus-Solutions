@@ -12,3 +12,6 @@
 .titled-pane{
         -fx-font-size:10pt; 
 }
+.button{
+    -fx-border-color: #00ffc8;
+}

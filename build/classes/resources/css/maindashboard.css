@@ -10,11 +10,11 @@
 }
 .chart-title {
   -fx-text-fill: #4682b4;
-  -fx-font-family: Arial Unicode MS;
-  -fx-font-size: 9pt;
+  -fx-font-family:Arial Unicode MS;
+  -fx-font-size: 12pt;
 }
 .chart-legend {
-   -fx-background-color:  transparent;
+/*   -fx-background-color:  transparent;*/
    -fx-font-family: Arial Unicode MS;
    -fx-font-size:9pt;
 }

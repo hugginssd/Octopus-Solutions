@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -117,27 +116,31 @@
                                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <ComboBox fx:id="cmbAttributeType" layoutX="134.0" layoutY="77.0" prefHeight="32.0" prefWidth="299.0" promptText="---Earning---" />
-                                                <TextField fx:id="txtPayrollAttribute" layoutX="134.0" layoutY="131.0" prefHeight="31.0" prefWidth="298.0" promptText="Payroll Attribute" />
+                                                <ComboBox fx:id="cmbAttributeType" layoutX="134.0" layoutY="77.0" prefHeight="32.0" prefWidth="299.0" promptText="---Select attribute type---" />
+                                                <TextField fx:id="txtPayrollAttribute" layoutX="134.0" layoutY="131.0" prefHeight="31.0" prefWidth="298.0" promptText="Payroll Attribute">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font></TextField>
 
                                                 <Button fx:id="btnCloseForm" layoutX="309.0" layoutY="189.0" mnemonicParsing="false" onAction="#closeThisStage" prefHeight="30.0" prefWidth="123.0" text="Close Form">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="12.0" />
                                        </font></Button>
-                                                <Button fx:id="btnAdd" layoutX="223.0" layoutY="189.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="71.0" text="Add">
+                                                <Button fx:id="btnAdd" layoutX="223.0" layoutY="189.0" mnemonicParsing="false" onAction="#addPayrollAttributes" prefHeight="30.0" prefWidth="71.0" text="Add">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="12.0" />
                                        </font></Button>
-                                                <Text layoutX="43.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attribute type:">
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font></Text>
                                                 <Text layoutX="30.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payroll Attribute:">
 
                                                     <font>
                                                         <Font size="13.0" />
                                                     </font>
                                                 </Text>
+                                    <Label fx:id="lblAttributeid" alignment="CENTER_RIGHT" layoutX="258.0" layoutY="110.0" prefHeight="19.0" prefWidth="173.0" text="Label" textFill="#24dada">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="13.0" />
+                                       </font>
+                                    </Label>
                                             </children>
                                         </Pane>
                                         <Pane fx:id="pane2" layoutX="540.0" layoutY="57.0" prefHeight="525.0" prefWidth="596.0">
@@ -147,13 +150,7 @@
                                                         <Font name="Arial Rounded MT Bold" size="13.0" />
                                                     </font>
                                                 </Label>
-                                                <TableView layoutX="6.0" layoutY="56.0" prefHeight="421.0" prefWidth="581.0">
-                                                    <columns>
-                                                        <TableColumn prefWidth="86.0" text="ID" />
-                                                        <TableColumn prefWidth="273.0" text="Attribute" />
-                                                        <TableColumn prefWidth="220.0" text="Attribute Types" />
-                                                    </columns>
-                                                </TableView>
+                                                <TableView fx:id="tableAttributeList" layoutX="6.0" layoutY="56.0" prefHeight="421.0" prefWidth="581.0" />
                                                 <Button fx:id="btnAddNew" layoutX="477.0" layoutY="486.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="110.0" text="ADD NEW">
                                        <font>
                                           <Font name="Arial Rounded MT Bold" size="12.0" />

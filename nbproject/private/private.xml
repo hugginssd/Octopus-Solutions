@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/employees/NewEmployeeController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/documents/DocumentTypesController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/Functions.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/employees/UpdateEmployeeDetailsController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/documents/ReferenceDocumentsController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/documents/EmployeeDocumentsController.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/resources/css/employeedocuments.css</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/Connexion.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/file/LoginController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/constructors/AdvancePayment.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/OctopusHR/src/octopushr/OctopusHR.java</file>
         </group>
     </open-files>
 </project-private>

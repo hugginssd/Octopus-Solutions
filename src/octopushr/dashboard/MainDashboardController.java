@@ -74,6 +74,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -89,12 +90,17 @@ import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import octopushr.Connexion;
+import octopushr.Functions;
 
 public class MainDashboardController implements Initializable {
+
+    @FXML
+    private AnchorPane anchorRoot;
 
     @FXML
     private Menu file;
@@ -467,6 +473,7 @@ public class MainDashboardController implements Initializable {
     PreparedStatement pst;
     ResultSet rs;
     Connexion connexion;
+    Functions functions = new Functions();
 
     @FXML
     public void forgotPassword() throws IOException {
@@ -510,12 +517,10 @@ public class MainDashboardController implements Initializable {
         scene.getStylesheets().add("/resources/css/neworganizationorbranch.css");
         stage.setTitle("New Branch");
         stage.setScene(scene);
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
         stage.show();
     }
 
     @FXML
-//<<<<<<< HEAD
     public void addOrganizationStage() throws IOException {
         stage = new Stage();
         Pane root = FXMLLoader.load(getClass().getResource("/octopushr/file/newOrganisation.fxml"));
@@ -551,17 +556,15 @@ public class MainDashboardController implements Initializable {
 
     @FXML
     public void addNewEmployee() throws IOException {
-            stage = new Stage();
-            Pane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/updateEmployeeDetails.fxml"));
-            Scene scene = new Scene(root, 1700, 840);
-            out.print("updateEmployeeDetails.fxml");
-            scene.getStylesheets().add("/resources/css/updateemployeedetails.css");
-            stage.setTitle("Update Employee Details");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
-        
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
+        stage = new Stage();
+        Pane root = FXMLLoader.load(getClass().getResource("/octopushr/employees/updateEmployeeDetails.fxml"));
+        Scene scene = new Scene(root, 1700, 840);
+        out.print("updateEmployeeDetails.fxml");
+        scene.getStylesheets().add("/resources/css/updateemployeedetails.css");
+        stage.setTitle("Update Employee Details");
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -703,15 +706,15 @@ public class MainDashboardController implements Initializable {
     @FXML
     public void showPayEmployeeSalary() throws IOException {
         stage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payEmployeeSalary.fxml"));
+        GridPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payEmployeeSalary.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/payemployeesalary.css");
         stage.setTitle("Pay Employee Salary");
         stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.setWidth(1380);
-        stage.setHeight(840);
+//        stage.setWidth(1355);
+        stage.setHeight(748);
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -734,14 +737,16 @@ public class MainDashboardController implements Initializable {
     public void showEmployeeSalaryHistory() throws IOException {
         stage = new Stage();
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/employeeSalaryHistory.fxml"));
-        Scene scene = new Scene(root, 1340, 885);
+        Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/employeesalaryhistory.css");
         stage.setTitle("Employee Salary History");
         stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.setWidth(1340);
-        stage.setHeight(885);
+        
+//        stage.setWidth(1335);
+//        stage.setHeight(820);
+//, 1340, 885
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -1007,11 +1012,11 @@ public class MainDashboardController implements Initializable {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/payrollsettingsandstructure.css");
         stage.setTitle("Payroll Settings");
-        stage.centerOnScreen();
-        stage.setWidth(1362);
-        stage.setHeight(705);
+//        stage.setWidth(1362);
+//        stage.setHeight(705);
         stage.setResizable(false);
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
 
     }
@@ -1023,11 +1028,11 @@ public class MainDashboardController implements Initializable {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/resources/css/payrollsettingsandstructure.css");
         stage.setTitle("Payroll Structure");
-        stage.setWidth(1362);
-        stage.setHeight(705);
+//        stage.setWidth(1362);
+//        stage.setHeight(705);
         stage.setResizable(false);
-        stage.centerOnScreen();
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
 
     }
@@ -1035,19 +1040,17 @@ public class MainDashboardController implements Initializable {
     @FXML
     public void showPayrollStettings() throws IOException {
         stage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payrollSettings.fxml"));
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/payrollAndSalaries/payrollCentre/payrollSettings.fxml"));
         Scene scene = new Scene(root, 1300, 750);
         scene.getStylesheets().add("/resources/css/payrollsettings.css");
         stage.setTitle("Payroll Centre");
-        stage.centerOnScreen();
         stage.setWidth(1450);
         stage.setHeight(875);
-        //stage.setFullScreen(true);
-        stage.setFullScreenExitHint("Press Esc to exit Pay Centre full screen");
         stage.getIcons().add(new Image("/resources/icons/payrol.png"));
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setIconified(false);
+        stage.centerOnScreen();
         stage.show();
 
     }
@@ -1305,7 +1308,8 @@ public class MainDashboardController implements Initializable {
     }
 
     @FXML
-    public void closeMain() {
+    public void closeMain(Event event) {
+        functions.closeWindow(event);
         Platform.exit();
 
     }
@@ -1383,7 +1387,8 @@ public class MainDashboardController implements Initializable {
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now)); //2016/11/16 12:08:43
         lblDate.setText(String.valueOf(dtf.format(now)));
-        lblAdminDashboard.setText("Admin Dashboard \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMonthly Analysis");
+        lblAdminDashboard.setText("Admin Dashboard \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMonthly Analysis");
+//        anchorRoot.setPrefSize(this.stage.getWidth(), this.stage.getHeight());
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("On-time", 75),
                 new PieChart.Data("Late", 8),

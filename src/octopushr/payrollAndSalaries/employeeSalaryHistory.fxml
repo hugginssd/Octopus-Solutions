@@ -14,13 +14,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="anchorPane" prefHeight="796.0" prefWidth="1336.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.EmployeeSalaryHistoryController">
+<AnchorPane id="anchorPane" prefHeight="701.0" prefWidth="1322.0" style="-fx-background-color: #66ADCD;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.payrollAndSalaries.EmployeeSalaryHistoryController">
 
     <stylesheets>
         <URL value="@/resources/css/employeesalaryhistory.css" />
     </stylesheets>
     <children>
-        <Pane fx:id="pane1" layoutX="8.0" layoutY="2.0" prefHeight="129.0" prefWidth="594.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+        <Pane fx:id="pane1" layoutY="2.0" prefHeight="129.0" prefWidth="594.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
             <children>
                 <ComboBox fx:id="cmbSelectAllDepartments" layoutX="272.0" layoutY="11.0" prefHeight="31.0" prefWidth="303.0" promptText="---Select Departments---" />
                 <ComboBox fx:id="cmbSelectEmployee" layoutX="272.0" layoutY="76.0" prefHeight="31.0" prefWidth="303.0" promptText="---Select Employee---" />
@@ -31,7 +31,7 @@
               </Label>
             </children>
         </Pane>
-        <Pane fx:id="pane2" layoutX="8.0" layoutY="132.0" prefHeight="144.0" prefWidth="594.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
+        <Pane fx:id="pane2" layoutY="132.0" prefHeight="144.0" prefWidth="594.0" style="-fx-border-color: FFFFFF; -fx-border-radius: 5; -fx-border-width: 2;">
             <children>
                 <ImageView fitHeight="129.0" fitWidth="121.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" smooth="false">
                     <image>
@@ -53,9 +53,9 @@
                </font></Label>
             </children>
         </Pane>
-        <Pane fx:id="pane3" layoutX="8.0" layoutY="278.0" prefHeight="509.0" prefWidth="594.0" style="-fx-border-color: FFFFFF;">
+        <Pane fx:id="pane3" layoutY="278.0" prefHeight="419.0" prefWidth="594.0" style="-fx-border-color: FFFFFF;">
             <children>
-                <TableView layoutX="3.0" layoutY="67.0" prefHeight="440.0" prefWidth="588.0">
+                <TableView layoutX="3.0" layoutY="67.0" prefHeight="349.0" prefWidth="588.0">
                     <columns>
                         <TableColumn prefWidth="53.0" text="ID" />
                         <TableColumn prefWidth="122.0" text="PaySlipFor" />
@@ -89,14 +89,14 @@
                 </Label>
             </children>
         </Pane>
-        <Pane fx:id="pane4" layoutX="604.0" layoutY="2.0" prefHeight="784.0" prefWidth="723.0" style="-fx-border-color: FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
+        <Pane fx:id="pane4" layoutX="595.0" layoutY="2.0" prefHeight="695.0" prefWidth="723.0" style="-fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-radius: 5;">
             <children>
                 <ImageView fx:id="imgLogo" fitHeight="90.0" fitWidth="118.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" smooth="false">
                     <image>
                         <Image url="@../../resources/icons/octopuslogo..png" />
                     </image>
                 </ImageView>
-                <Label fx:id="lblCompanyName" layoutX="302.0" layoutY="9.0" prefHeight="23.0" prefWidth="175.0" text="Octopus Inc.">
+                <Label fx:id="lblCompanyName" layoutX="243.0" layoutY="9.0" prefHeight="23.0" prefWidth="247.0" text="Kamlink Systems (Pvt) Ltd">
                     <font>
                         <Font name="Arial Rounded MT Bold" size="19.0" />
                     </font>
@@ -111,7 +111,7 @@
                         <Font name="System Bold Italic" size="12.0" />
                     </font>
                 </Label>
-                <Label fx:id="lblMonth" layoutX="356.0" layoutY="157.0" prefHeight="17.0" prefWidth="94.0" text="................................" />
+                <Label fx:id="lblMonth" layoutX="356.0" layoutY="157.0" prefHeight="17.0" prefWidth="94.0" text="......................................." />
                 <Label layoutX="23.0" layoutY="176.0" text="Employee Name:">
                     <font>
                         <Font name="Cambria Italic" size="14.0" />
@@ -152,65 +152,65 @@
                         <Font name="Cambria Bold" size="13.0" />
                     </font>
                 </Label>
-                <Label layoutX="12.0" layoutY="630.0" prefHeight="31.0" prefWidth="320.0" style="-fx-border-color: #000000;" text="Total Earnings">
+                <Label layoutX="12.0" layoutY="511.0" prefHeight="31.0" prefWidth="320.0" style="-fx-border-color: #000000;" text="Total Earnings">
                     <font>
                         <Font name="Cambria" size="14.0" />
                     </font>
                 </Label>
-                <Label layoutX="377.0" layoutY="630.0" prefHeight="31.0" prefWidth="320.0" style="-fx-border-color: #000000;" text="Total Deductions">
+                <Label layoutX="377.0" layoutY="511.0" prefHeight="31.0" prefWidth="320.0" style="-fx-border-color: #000000;" text="Total Deductions">
                     <font>
                         <Font name="Cambria" size="14.0" />
                     </font>
                 </Label>
-                <Label fx:id="lblTotalEarnings" layoutX="275.0" layoutY="693.0" prefHeight="23.0" prefWidth="53.0" text="0.00">
+                <Label fx:id="lblTotalEarnings" layoutX="275.0" layoutY="515.0" prefHeight="23.0" prefWidth="53.0" text="0.00">
                     <font>
                         <Font name="Cambria" size="13.0" />
                     </font>
                 </Label>
-                <Label fx:id="lblTotalDeductions" layoutX="649.0" layoutY="636.0" prefHeight="22.0" prefWidth="47.0" text="0.00">
+                <Label fx:id="lblTotalDeductions" layoutX="649.0" layoutY="515.0" prefHeight="22.0" prefWidth="47.0" text="0.00">
                     <font>
                         <Font name="Cambria" size="13.0" />
                     </font>
                 </Label>
-                <Label alignment="TOP_LEFT" layoutX="12.0" layoutY="660.0" prefHeight="57.0" prefWidth="685.0" style="-fx-border-color: #000000;" text="Net Salary (in words):">
+                <Label alignment="TOP_LEFT" layoutX="12.0" layoutY="541.0" prefHeight="57.0" prefWidth="685.0" style="-fx-border-color: #000000;" text="Net Salary (in words):">
                     <font>
                         <Font name="Cambria Italic" size="12.0" />
                     </font>
                 </Label>
-                <Label alignment="TOP_LEFT" layoutX="133.0" layoutY="660.0" prefHeight="70.0" prefWidth="200.0" text="Label">
+                <Label alignment="TOP_LEFT" layoutX="133.0" layoutY="541.0" prefHeight="57.0" prefWidth="200.0" text="Label">
                     <font>
                         <Font name="Cambria Italic" size="12.0" />
                     </font>
                 </Label>
-                <Label layoutX="377.0" layoutY="661.0" prefHeight="23.0" prefWidth="155.0" text="Net Salary">
+                <Label layoutX="377.0" layoutY="542.0" prefHeight="23.0" prefWidth="155.0" text="Net Salary">
                     <font>
                         <Font name="Cambria Bold Italic" size="15.0" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" layoutX="622.0" layoutY="660.0" prefHeight="23.0" prefWidth="74.0" text="0.00">
+                <Label alignment="CENTER" layoutX="622.0" layoutY="541.0" prefHeight="23.0" prefWidth="74.0" text="0.00">
                     <font>
                         <Font name="Cambria Bold Italic" size="13.0" />
                     </font>
                 </Label>
-                <Label layoutX="12.0" layoutY="716.0" text="NOTE:">
+                <Label layoutX="12.0" layoutY="597.0" text="NOTE:">
                     <font>
                         <Font name="Cambria" size="13.0" />
                     </font>
                 </Label>
-                <Label layoutX="51.0" layoutY="716.0" text="Classified">
+                <Label layoutX="51.0" layoutY="597.0" text="Classified">
                     <font>
                         <Font name="Cambria" size="13.0" />
                     </font>
                 </Label>
-                <Button fx:id="btnEmailSalarySlip" layoutX="152.0" layoutY="748.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="EMAIL SALARY SLIP">
+                <Button fx:id="btnEmailSalarySlip" layoutX="152.0" layoutY="629.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="EMAIL SALARY SLIP">
                <font>
                   <Font name="Arial Unicode MS" size="12.0" />
                </font></Button>
-                <Button fx:id="btnPrintSalarySlip" layoutX="300.0" layoutY="748.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="PRINT SALARY SLIP">
+                <Button fx:id="btnPrintSalarySlip" layoutX="300.0" layoutY="629.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="PRINT SALARY SLIP">
                <font>
                   <Font name="Arial Unicode MS" size="12.0" />
                </font></Button>
-                <Button fx:id="btnCloseForm" layoutX="448.0" layoutY="748.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="CLOSE FORM">
+                <Button fx:id="btnCloseForm" layoutX="448.0" layoutY="629.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="CLOSE FORM">
                <font>
                   <Font name="Arial Unicode MS" size="12.0" />
                </font></Button>

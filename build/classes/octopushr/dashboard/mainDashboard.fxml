@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -21,12 +20,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="838.0" prefWidth="1489.0" style="-fx-background-color: #1980C1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.dashboard.MainDashboardController">
-    <stylesheets>
-        <URL value="@/resources/css/maindashboard.css" />
-    </stylesheets>
+<AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="859.0" prefWidth="1607.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="octopushr.dashboard.MainDashboardController">
    <children>
-      <BorderPane prefHeight="838.0" prefWidth="1325.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="852.0" prefWidth="1607.0" style="-fx-background-color: #66ADCD;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <MenuBar prefHeight="34.0" prefWidth="1341.0" BorderPane.alignment="CENTER">
                <menus>
@@ -276,20 +272,12 @@
                               <Insets left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </HBox>
-                        <HBox prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
                            <padding>
                               <Insets left="5.0" right="5.0" />
                            </padding>
                            <children>
-                              <LineChart fx:id="lineChart1" prefHeight="225.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
-                                <xAxis>
-                                  <CategoryAxis side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis side="LEFT" />
-                                </yAxis>
-                              </LineChart>
-                              <LineChart fx:id="lineChart2" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                              <LineChart fx:id="lineChart1" prefHeight="225.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>
@@ -297,7 +285,7 @@
                                     <NumberAxis side="LEFT" />
                                  </yAxis>
                               </LineChart>
-                              <LineChart fx:id="lineChart3" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                              <LineChart fx:id="lineChart2" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css" title="Employee" titleSide="BOTTOM">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>
@@ -305,7 +293,15 @@
                                     <NumberAxis side="LEFT" />
                                  </yAxis>
                               </LineChart>
-                              <LineChart fx:id="lineChart4" prefHeight="225.0" prefWidth="381.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                              <LineChart fx:id="lineChart3" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css" title="Payroll" titleSide="BOTTOM">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                              <LineChart fx:id="lineChart4" prefHeight="225.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css" title="Visitors" titleSide="BOTTOM">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>
@@ -315,20 +311,12 @@
                               </LineChart>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="110.0" prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="110.0" prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
                            <padding>
                               <Insets left="5.0" right="5.0" />
                            </padding>
                            <children>
-                              <AreaChart fx:id="areaChart1" prefHeight="225.0" prefWidth="363.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
-                                <xAxis>
-                                  <CategoryAxis side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis side="LEFT" />
-                                </yAxis>
-                              </AreaChart>
-                              <AreaChart fx:id="areaChart2" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                              <AreaChart fx:id="areaChart1" prefHeight="225.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>
@@ -336,7 +324,7 @@
                                     <NumberAxis side="LEFT" />
                                  </yAxis>
                               </AreaChart>
-                              <AreaChart fx:id="areaChart3" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                              <AreaChart fx:id="areaChart2" prefHeight="191.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>
@@ -344,7 +332,15 @@
                                     <NumberAxis side="LEFT" />
                                  </yAxis>
                               </AreaChart>
-                              <AreaChart fx:id="areaChart4" prefHeight="225.0" prefWidth="382.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;">
+                              <AreaChart fx:id="areaChart3" prefHeight="191.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                              <AreaChart fx:id="areaChart4" prefHeight="225.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>
@@ -354,48 +350,48 @@
                               </AreaChart>
                            </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="309.0" prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="309.0" prefHeight="230.0" prefWidth="1099.0" spacing="5.0">
                            <children>
-                              <PieChart fx:id="pieChart1" legendSide="RIGHT" onMouseMoved="#onMouseMoved" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Attendance" />
-                              <PieChart fx:id="pieChart2" legendSide="RIGHT" prefHeight="190.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Leave" />
-                              <PieChart fx:id="pieChart3" legendSide="RIGHT" prefHeight="191.0" prefWidth="361.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Training" />
-                              <PieChart fx:id="pieChart4" legendSide="LEFT" prefHeight="225.0" prefWidth="382.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" title="Schedule &amp; Travel" />
+                              <PieChart fx:id="pieChart1" legendSide="RIGHT" onMouseMoved="#onMouseMoved" prefHeight="191.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css" title="Attendance" />
+                              <PieChart fx:id="pieChart2" legendSide="RIGHT" prefHeight="190.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css" title="Leave" />
+                              <PieChart fx:id="pieChart3" legendSide="RIGHT" prefHeight="191.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css" title="Training" />
+                              <PieChart fx:id="pieChart4" legendSide="LEFT" prefHeight="225.0" prefWidth="395.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 5;" stylesheets="@../../resources/css/maindashboard.css" title="Schedule &amp; Travel" />
                            </children>
                            <padding>
                               <Insets left="5.0" right="5.0" />
                            </padding>
                         </HBox>
-                        <ToolBar fx:id="toolBar" prefHeight="28.0" prefWidth="1484.0">
-                           <VBox.margin>
-                              <Insets left="5.0" />
-                           </VBox.margin>
-                           <items>
-                              <Label text="LoggeIn As :" textFill="#1980c1">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblDeveloper" text="Developer" textFill="#1980c1">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="1172.0" text="Today :" textFill="#1980c1">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblDate" text="Label" textFill="#1980c1">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                           </items></ToolBar>
                      </children>
                   </VBox>
                </children>
             </StackPane>
          </center>
+         <bottom>
+            <ToolBar fx:id="toolBar" prefHeight="28.0" prefWidth="1484.0" BorderPane.alignment="CENTER">
+               <items>
+                  <Label text="LoggeIn As :" textFill="#1980c1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDeveloper" text="Developer" textFill="#1980c1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="1272.0" text="Today :" textFill="#1980c1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" text="Label" textFill="#1980c1">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </items>
+            </ToolBar>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

@@ -1,5 +1,5 @@
 #AnchorPane{
-   -fx-background-color:#0E3C55;
+    -fx-background-color:#0E3C55;
 }
 #anchorPaneSettings{
     -fx-background-color:#0E3C55;
@@ -16,9 +16,21 @@
     -fx-border-width:1pt;
     -fx-background-color:#FFFFFF;
 }
+.combo-box{
+    -fx-font-family: Cambria;
+    -fx-font-size:12px; 
+}
+.table-view .table-row-cell{
+    -fx-font-family: Cambria;
+    -fx-font-size:12px; 
+}
+.table-view .column-header-background{
+    -fx-font-family: Times New Roman;
+    -fx-font-size:12px; 
+}
 #lblPayrollSettings{
- -fx-background-color:#66ADCD;
- -fx-background-radius: 3px;   
+    -fx-background-color:#66ADCD;
+    -fx-background-radius: 3px;   
 }
 #paneButtons,#paneSettings{
     -fx-border-color:#FFFFFF;
@@ -36,7 +48,7 @@
     -fx-font-family:Arial Rounded MT Bold;
     -fx-font-style:Regular;
 
-    -fx-background-color:#0099ff;
+    /*    -fx-background-color:#0099ff;*/
 }
 #pane1{
     -fx-border-color:#000000;

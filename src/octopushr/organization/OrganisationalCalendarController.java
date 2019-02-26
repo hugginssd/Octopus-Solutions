@@ -76,12 +76,7 @@ public class OrganisationalCalendarController implements Initializable {
 
         categoryCol.setCellValueFactory(new PropertyValueFactory("category"));
         categoryCol.setPrefWidth(131);
-        categoryCol.setCellFactory(new Callback<TableColumn<NewEventsCalendarConstructor, Category>, TableCell<NewEventsCalendarConstructor, Category>>() {
-            @Override
-            public TableCell<NewEventsCalendarConstructor, Category> call(TableColumn<NewEventsCalendarConstructor, Category> param) {
-                return new ComboBoxTableCell<>();
-            }
-        });
+        categoryCol.setCellFactory((TableColumn<NewEventsCalendarConstructor, Category> param) -> new ComboBoxTableCell<>());
 
         ObservableList<NewEventsCalendarConstructor> tableData1 = createData();
         tblCalendar.setItems(tableData1);

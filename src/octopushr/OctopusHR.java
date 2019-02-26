@@ -25,10 +25,9 @@ public class OctopusHR extends Application {
     @Override
     public void start(Stage stage) throws IOException {
       
-        
         AnchorPane root = FXMLLoader.load(getClass().getResource("/octopushr/file/login.fxml"));
         scene = new Scene(root);  
-        stage.setTitle("OctopusHR");
+        stage.setTitle("InterAfrica");
         stage.setWidth(320);
         stage.setHeight(476);
         stage.setScene(scene);

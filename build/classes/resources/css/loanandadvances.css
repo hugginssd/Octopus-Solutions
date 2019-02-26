@@ -5,3 +5,15 @@
 .mainFxmlClass {
 
 }
+.combo-box{
+    -fx-font-family:Arial Rounded MT Bold;
+}
+.date-picker{
+    -fx-font-family:Cambria;
+    -fx-font-size: 12px;
+}
+#imgView{
+    -fx-border-color: #FFFFFF;
+    -fx-border-radius: 5px;
+
+}

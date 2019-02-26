@@ -6,11 +6,7 @@
  *  The Original Software is NetBeans. The Initial Developer of the Original
  *  Software is Sun Microsystems, Inc. Portions Copyright 1997-2010 Sun
  *  Microsystems, Inc.
-//<<<<<<< HEAD
  *  The developer of this software is HUGGINS
-//=======
- *  The developer of this software is SIR HUGGINS
-//>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
  *  
  *  
  *  If you wish your version of this file to be governed by only the CDDL
@@ -61,7 +57,6 @@
 package octopushr;
 
 import java.awt.image.BufferedImage;
-////<<<<<<< HEAD
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -71,17 +66,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.sql.Blob;
-////=======
 import java.io.File;
 import java.io.IOException;
 import javax.mail.PasswordAuthentication;
-////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-//<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -91,14 +83,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-////=======
-////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
-//<<<<<<< HEAD
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
@@ -129,9 +118,7 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import octopushr.employees.ViewEmployeeDetails;
-////=======
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -143,8 +130,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMultipart;
 import jxl.format.Border;
 import jxl.write.Label;
-//import sun.plugin2.message.transport.Transport;
-////>>>>>>> f5c7a74c0fba43c1a593f4c9fd5c119e38b274d5
 
 /**
  *
@@ -347,7 +332,7 @@ public class Functions {
     public void closeWindow(Event event) {
         alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText(null);
-        alert.setContentText("Do you want to close this form?");
+        alert.setContentText("Do you want to close this form?\nAll information not saved will be lost and difficult to recover.\nSave all information and continue.");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
             ((Node) (event.getSource())).getScene().getWindow().hide();
@@ -538,7 +523,7 @@ public class Functions {
 
         }
     }
-    
+
 //    @FXML
 //    public void selectDocument(TextField txtSelectDocument, Label lblPath){
 //      String fileName;
@@ -558,7 +543,6 @@ public class Functions {
 //            System.out.println("No Selection ");
 //        }
 //    }
-
     public void createExcel() {
         try {
             WritableWorkbook wb = Workbook.createWorkbook(new File("employeelist.xls"));
@@ -863,7 +847,7 @@ public class Functions {
             imageView.setImage(image1);
             System.out.println("image set\n\n");
         } catch (Exception ex) {
-           // imageView.setImage(new Image("../resources/icons/no-image.jpg"));
+            // imageView.setImage(new Image("../resources/icons/no-image.jpg"));
         }
 
     }
@@ -896,4 +880,17 @@ public class Functions {
         }
     }
 
+    public void earningAndDeduction(ObservableList earnings) {
+        try {
+            connection = connexion.getConnetion();
+            rs = st.executeQuery("SELECT * FROM `tblattribute`");
+            while(rs.next())
+            {
+            
+            
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            alertError(alert,ex.toString());
+        }
+    }
 }

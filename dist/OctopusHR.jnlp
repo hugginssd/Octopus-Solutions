@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="OctopusHR.jar" size="4917863" download="eager" />
+    <jar href="OctopusHR.jar" size="5612214" download="eager" />
     <jar href="lib\FXRibbon-1.0.1.jar" size="23926" download="eager" />
     <jar href="lib\Medusa-8.0.jar" size="1463851" download="eager" />
     <jar href="lib\c3p0-0.9.1-pre6.jar" size="531005" download="eager" />
@@ -22,7 +22,7 @@
     <jar href="lib\joda-time-2.9.1.jar" size="625986" download="eager" />
     <jar href="lib\jxl-2.6.12.jar" size="725735" download="eager" />
     <jar href="lib\jxl.jar" size="725735" download="eager" />
-    <jar href="lib\mysql-connector-java-8.0.12.jar" size="2020431" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.11.jar" size="2036609" download="eager" />
     <jar href="lib\protobuf-java-2.6.0.jar" size="593799" download="eager" />
     <jar href="lib\recurrence-8.5.0.jar" size="159938" download="eager" />
     <jar href="lib\slf4j-api-1.6.1.jar" size="25496" download="eager" />

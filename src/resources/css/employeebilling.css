@@ -5,3 +5,27 @@
 .mainFxmlClass {
 
 }
+.combo-box{
+    -fx-font-family: Arial Rounded MT Bold;
+    -fx-font-size: 12px;
+}
+.tab{
+    -fx-font-family: Arial Rounded MT Bold;
+    -fx-font-size: 12px;
+}
+.button{
+    /*    -fx-border-color:#66ADCD;*/
+    -fx-border-color: #FFFFFF;
+    -fx-background-style:flat;
+    -fx-border-radius: 5px;
+    -fx-border-width:1pt;
+    -fx-background-color:#FFFFFF;
+}
+.date-picker{
+    -fx-font-family:Cambria;
+    -fx-font-size:12px;
+}
+.text-field{
+  -fx-font-family:Arial Unicode MS;
+    -fx-font-size:12px;   
+}

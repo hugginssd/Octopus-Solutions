@@ -195,18 +195,15 @@ public class ReferenceDocumentsController implements Initializable {
 
     @FXML
     public void uploadReferenceDocuments() throws SQLException, ClassNotFoundException {
-        //INSERT INTO `tblreferencedocuments`(`id`, `documentnumber`, `documenttitle`, `issuedon`, `documentname`, 
-        //`description`, `documentid`, `authorityid`, `buyfee`, `feedetails`, `statussummary`) 
-        // VALUES([value - 1],[value - 2],[value - 3],[value - 4],[value - 5],[value - 6],[value - 7],[value - 8],[value - 9],[value - 10],[value - 11
-        //])
-        //if(){
+        
         connection = connexion.getConnetion();
         pst = connection.prepareStatement(" INSERT INTO `tblreferencedocuments`(`documentnumber`, `documenttitle`, `issuedon`, `documentname`, "
                 + " `description`, `documentid`, `authorityid`, `buyfee`, `feedetails`, `statussummary`) "
                 + " VALUES (?,?,?,?,?,?,?,?,?,?)");
-        
 
+        
+        
+        
     }
 
 }
-

@@ -2598,12 +2598,7 @@ public class HrandAdminController implements Initializable {
         columns.add(colDepartment);
         final TableColumn<HrandadminConstructor, Boolean> colVerify = new TableColumn<>("VERIFY");
         colVerify.setCellValueFactory(new PropertyValueFactory<>("verify"));
-        colVerify.setCellFactory(new Callback<TableColumn<HrandadminConstructor, Boolean>, TableCell<HrandadminConstructor, Boolean>>() {
-            @Override
-            public TableCell<HrandadminConstructor, Boolean> call(TableColumn<HrandadminConstructor, Boolean> param) {
-                return new CheckBoxTableCell<>();
-            }
-        });
+        colVerify.setCellFactory((TableColumn<HrandadminConstructor, Boolean> param) -> new CheckBoxTableCell<>());
         columns.add(colVerify);
         final TableColumn<HrandadminConstructor, Boolean> colActive = new TableColumn<>("ACTIVE");
         colActive.setCellValueFactory(new PropertyValueFactory<>("active"));

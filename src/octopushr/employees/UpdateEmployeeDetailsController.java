@@ -562,7 +562,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
         pst.setString(1, txtfirstname.getText().toUpperCase());
         pst.setString(2, txtmiddlename.getText().toUpperCase());
         pst.setString(3, txtlastname.getText().toUpperCase());
-       // pst.setString(4, (TextField)dtpbirthDate.getValue().getYear() + "-" + dtpbirthDate.getValue().getMonthValue() + "-" + dtpbirthDate.getValue().getDayOfMonth());
+        pst.setString(4, dtpbirthDate.getValue().getYear() + "-" + dtpbirthDate.getValue().getMonthValue() + "-" + dtpbirthDate.getValue().getDayOfMonth());
         pst.setString(5, txaidentificationDetails.getText().toUpperCase());
         pst.setInt(6, cmbActivatedEmployee.getSelectionModel().getSelectedIndex());
         pst.setInt(7, cmbverifiedEmployee.getSelectionModel().getSelectedIndex());
@@ -1074,12 +1074,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
         colDelete.setCellValueFactory(new PropertyValueFactory("delete"));
         colDelete.setSortable(false);
         colDelete.setPrefWidth(75);
-        colDelete.setCellFactory(new Callback<TableColumn<Skills, Boolean>, TableCell<Skills, Boolean>>() {
-            @Override
-            public TableCell<Skills, Boolean> call(TableColumn<Skills, Boolean> param) {
-                return new ButtonCell(tableNewSkills);
-            }
-        });
+        colDelete.setCellFactory((TableColumn<Skills, Boolean> param) -> new ButtonCell(tableNewSkills));
         columns.add(colDelete);
         // tableNewSkills.getColumns().addAll(colNo, colSkills, colLevel, colExperience, colCurrentlyEngaged, colDelete);
     }
@@ -1245,7 +1240,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
         connection = connexion.getConnetion();
         pst = connection.prepareStatement("SELECT `id`, `documentid`, `documenttype`, `submittedtoemployee` "
                 + " FROM `tblemployeedocuments` WHERE `documenttype` =?");
-        pst.setString(1, cmbDocumentType.getValue().toString());
+        pst.setString(1, cmbDocumentType.getSelectionModel().getSelectedItem().toString());
         rs = pst.executeQuery();
         while (rs.next()) {
             lblDocumentId.setText(rs.getString("documentid"));
@@ -1613,7 +1608,7 @@ public class UpdateEmployeeDetailsController implements Initializable {
         pst.setString(9, txaOtherDetails.getText().toUpperCase());
         pst.setString(10, java.net.Inet4Address.getLocalHost().getHostName());
         pst.setString(11, cmbSelectEmployee.getSelectionModel().getSelectedItem().toString());
-        pst.setString(13, lblId.getText());
+        pst.setString(12, lblId.getText());
         pst.execute();
         functions.alertSuccessful(alert, "Successfully updated");
         refreshWorkExperienceInputControls();
@@ -1773,25 +1768,21 @@ public class UpdateEmployeeDetailsController implements Initializable {
         final Button cellButton = new Button("Delete");
 
         ButtonCell(final TableView tblView) {
-            cellButton.setOnAction(new EventHandler<ActionEvent>() {
-
-                @Override
-                public void handle(ActionEvent t) {
-                    try {
-                        int selectedIndex = getTableRow().getIndex();
-                        Skills toRemove = (Skills) tblView.getItems().get(selectedIndex);
-                        connection = connexion.getConnetion();
-                        pst = connection.prepareStatement("UPDATE `tblemployeeskills` SET `active`=?,`deleted`=?"
-                                + " WHERE `id`=?");
-                        pst.setBoolean(1, true);
-                        pst.setBoolean(2, true);
-                        pst.setInt(3, toRemove.getId());
-                        pst.executeUpdate();
-                        functions.alertSuccessful(alert, "Successfully deleted");
-                        loadSkillDetails();
-                    } catch (SQLException | ClassNotFoundException ex) {
-                        functions.alertSuccessful(alert, "Error" + ex);
-                    }
+            cellButton.setOnAction((ActionEvent t) -> {
+                try {
+                    int selectedIndex = getTableRow().getIndex();
+                    Skills toRemove = (Skills) tblView.getItems().get(selectedIndex);
+                    connection = connexion.getConnetion();
+                    pst = connection.prepareStatement("UPDATE `tblemployeeskills` SET `active`=?,`deleted`=?"
+                            + " WHERE `id`=?");
+                    pst.setBoolean(1, true);
+                    pst.setBoolean(2, true);
+                    pst.setInt(3, toRemove.getId());
+                    pst.executeUpdate();
+                    functions.alertSuccessful(alert, "Successfully deleted");
+                    loadSkillDetails();
+                } catch (SQLException | ClassNotFoundException ex) {
+                    functions.alertSuccessful(alert, "Error" + ex);
                 }
             });
         }
